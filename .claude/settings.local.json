@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__figma__get_variable_defs",
+      "mcp__figma__get_metadata",
+      "Bash(python3:*)",
+      "mcp__figma__get_design_context",
+      "mcp__figma__get_screenshot",
+      "Bash(python:*)",
+      "Bash(npx tsc:*)",
+      "Bash(node -e \"require\\(''''react-icons''''\\)\")",
+      "Bash(npm install:*)",
+      "Bash(find 'C:\\\\Users\\\\arnol\\\\Lumiron\\\\Ori phone\\\\src\\\\components' -name *.tsx)",
+      "Bash(find 'C:\\\\Users\\\\arnol\\\\Lumiron\\\\Ori phone\\\\src' -name *.tsx -path */sections/*)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(sed -i 's/font-semibold text-sm text-text-primary dark:text-text/font-semibold text-base text-text-primary dark:text-text/g' \"c:\\\\Users\\\\arnol\\\\Lumiron\\\\Ori phone\\\\src\\\\components\\\\sections\\\\ori-phone\\\\comparison-section.tsx\")",
+      "Bash(sed -i 's/font-normal text-xs text-text-primary/font-normal text-sm text-text-primary/g' \"c:\\\\Users\\\\arnol\\\\Lumiron\\\\Ori phone\\\\src\\\\components\\\\sections\\\\ori-phone\\\\comparison-section.tsx\")",
+      "Bash(sed -i 's/font-bold text-xs text-text-primary/font-bold text-sm text-text-primary/g' \"c:\\\\Users\\\\arnol\\\\Lumiron\\\\Ori phone\\\\src\\\\components\\\\sections\\\\ori-phone\\\\comparison-section.tsx\")",
+      "Bash(sed -i 's/text-sm sm:text-lg text-text-secondary/text-base sm:text-xl text-text-secondary/g' \"c:\\\\Users\\\\arnol\\\\Lumiron\\\\Ori phone\\\\src\\\\components\\\\sections\\\\ori-phone\\\\comparison-section.tsx\")",
+      "WebFetch(domain:api.figma.com)",
+      "mcp__figma__search_design_system",
+      "mcp__figma__use_figma",
+      "Bash(mkdir -p \"C:/Users/arnol/Lumiron/Ori phone/src/components/sections/ori-messages/interface\")",
+      "Bash(mkdir -p \"C:/Users/arnol/Lumiron/Ori phone/src/components/sections/ori-messages/pricing\")",
+      "Bash(mkdir -p \"C:/Users/arnol/Lumiron/Ori phone/src/app/solutions/messages\")",
+      "Bash(npx next:*)"
+    ]
+  }
+}
