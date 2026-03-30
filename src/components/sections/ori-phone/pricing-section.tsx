@@ -26,7 +26,7 @@ export function OriPhonePricingSection() {
 					subtitle="Ori prend le relais. Vous gardez l'esprit libre."
 				/>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 max-w-5xl mx-auto">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 max-w-[55rem] mx-auto">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}

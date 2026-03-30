@@ -64,7 +64,8 @@ export function OriMessagesFAQSection() {
 							className={buttonClass({
 								variant: "ghost-primary",
 								size: "lg",
-								className: "w-full sm:w-[292px] mt-8 border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20",
+								className:
+									"w-full sm:w-[292px] mt-8 border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20",
 							})}
 						>
 							Voir toutes les questions
@@ -82,7 +83,7 @@ export function OriMessagesFAQSection() {
 									onClick={() => setOpen(open === i ? null : i)}
 									className="w-full flex items-center gap-4 sm:gap-6 text-left group min-h-[80px] sm:min-h-[96px]"
 								>
-									<div className="w-1.5 h-[28px] sm:h-[33px] rounded-sm shrink-0 transition-colors bg-ori-message" />
+									<div className="w-1.5 h-[28px] sm:h-[28px] rounded-sm shrink-0 transition-colors bg-ori-message" />
 									<span className="flex-1 font-display font-semibold text-base sm:text-xl lg:text-2xl text-text-primary dark:text-text">
 										{faq.question}
 									</span>

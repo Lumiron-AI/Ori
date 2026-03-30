@@ -5,6 +5,7 @@ import { Minus, CheckCircle2 } from "lucide-react";
 
 import { SectionHeader } from "@/components/ui/section-header";
 import { useSectionFade } from "@/hooks/use-section-fade";
+import { AiOutlineMinusCircle } from "react-icons/ai";
 
 const ROWS = [
 	{
@@ -92,7 +93,7 @@ export function ComparisonSection() {
 
 									<td className="bg-background-secondary dark:border-dark-bg">
 										<div className=" dark:bg-dark-elevated px-5 py-4 flex items-start gap-3">
-											<Minus
+											<AiOutlineMinusCircle
 												size={20}
 												className="text-text-secondary dark:text-text-tertiary shrink-0 mt-0.5"
 												strokeWidth={2.5}

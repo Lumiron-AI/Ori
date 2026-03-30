@@ -19,10 +19,10 @@ export function AdvancedCard() {
 		<div className="bg-background dark:bg-dark-surface rounded-3xl px-7 py-6 flex flex-col gap-3.5 shadow-card h-full border border-transparent hover:border-primary transition-colors">
 			{/* Title */}
 			<div>
-				<p className="font-display font-bold text-base text-text-heading dark:text-text">
+				<p className="font-display font-bold text-2xl text-text-heading dark:text-text">
 					AVANCÉ
 				</p>
-				<p className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary mt-0.5">
+				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-0.5">
 					Multi-sites et options personnalisés
 				</p>
 			</div>
@@ -34,7 +34,7 @@ export function AdvancedCard() {
 				<p className="font-display font-bold text-3xl text-text-heading dark:text-text">
 					Sur-mesure
 				</p>
-				<p className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary mt-3">
+				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-2">
 					Configuration adaptée
 				</p>
 			</div>
@@ -42,7 +42,11 @@ export function AdvancedCard() {
 			{/* CTA */}
 			<Link
 				href="/contact"
-				className={buttonClass({ variant: "primary", size: "sm", className: "w-full" })}
+				className={buttonClass({
+					variant: "primary",
+					size: "lg",
+					className: "w-full",
+				})}
 			>
 				Planifier un appel
 			</Link>

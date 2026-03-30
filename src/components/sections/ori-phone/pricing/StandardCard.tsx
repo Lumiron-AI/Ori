@@ -28,10 +28,10 @@ export function StandardCard({
 		<div className="bg-background dark:bg-dark-surface rounded-3xl px-7 py-6 flex flex-col gap-3.5 shadow-card h-full border border-transparent hover:border-primary transition-colors">
 			{/* Title */}
 			<div>
-				<p className="font-display font-bold text-base text-text-heading dark:text-text">
+				<p className="font-display font-bold text-2xl text-text-heading dark:text-text">
 					STANDARD
 				</p>
-				<p className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary mt-0.5">
+				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-0.5">
 					1 établissement
 				</p>
 			</div>
@@ -53,7 +53,7 @@ export function StandardCard({
 				<div className="flex items-center gap-2">
 					<button
 						onClick={() => setAnnual(!annual)}
-						className={`relative w-8 h-4 rounded-full transition-colors shrink-0 ${
+						className={`relative w-12 h-6 rounded-full transition-colors shrink-0 ${
 							annual
 								? "bg-primary"
 								: "bg-background-secondary dark:bg-dark-overlay"
@@ -63,8 +63,8 @@ export function StandardCard({
 						aria-label="Facturation annuelle"
 					>
 						<span
-							className={`absolute top-0.5 left-0.5 w-3 h-3 rounded-full bg-white shadow-sm transition-transform ${
-								annual ? "translate-x-4" : "translate-x-0"
+							className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${
+								annual ? "translate-x-6" : "translate-x-0"
 							}`}
 						/>
 					</button>
@@ -82,7 +82,7 @@ export function StandardCard({
 				href="#trial"
 				className={buttonClass({
 					variant: "primary",
-					size: "sm",
+					size: "lg",
 					className: "w-full",
 				})}
 			>
