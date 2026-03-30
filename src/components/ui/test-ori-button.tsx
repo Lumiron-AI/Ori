@@ -45,7 +45,7 @@ export function TestOriButton() {
       {/* Main button */}
       <button
         onClick={handleMain}
-        className="inline-flex items-center justify-center gap-2.5 bg-primary text-text font-display font-bold text-base sm:text-xl rounded-3xl h-[52px] sm:h-[63px] w-full sm:w-[350px] px-5 sm:px-8 shadow-orange-btn hover:bg-primary/90 active:bg-primary/80 transition-colors"
+        className="inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-primary text-text font-display font-bold text-base sm:text-lg rounded-xl h-[46px] sm:h-[52px] w-full sm:w-auto px-5 sm:px-7 shadow-orange-btn hover:bg-primary/90 active:bg-primary/80 transition-colors"
       >
         <Phone size={18} strokeWidth={2.5} className="shrink-0" />
         {isActive ? "Arrêter la démo" : "Tester Ori maintenant"}

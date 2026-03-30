@@ -52,7 +52,7 @@ export function AutomationPanel() {
 									a.active ? "bg-agent-active" : "bg-text-secondary"
 								}`}
 							>
-								<RiPhoneLine className="text-white" size={16} />
+								<RiPhoneLine className="text-white" size={20} />
 							</div>
 							<div className="min-w-0">
 								<p className="font-display font-semibold text-sm text-text-primary dark:text-text truncate">

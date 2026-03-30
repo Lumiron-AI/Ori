@@ -129,10 +129,10 @@ module.exports = {
         DEFAULT: '6px',   // default — inputs, small buttons
         md:      '8px',   // input field fills (InterfaceSection)
         lg:      '10px',  // medium panels
-        xl:      '12px',  // tab buttons, form sections
-        '2xl':   '16px',  // large buttons, CTA buttons
-        '3xl':   '20px',  // cards, main panels
-        '4xl':   '24px',  // hero panels, large overlays
+        xl:      '14px',  // tab buttons, form sections
+        '2xl':   '20px',  // large buttons, CTA buttons
+        '3xl':   '24px',  // cards, main panels
+        '4xl':   '28px',  // hero panels, large overlays
         '5xl':   '40px',  // solution cards
         full:    '9999px',
       },

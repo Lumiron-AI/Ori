@@ -66,7 +66,7 @@ export function OriMessagesHeroSection() {
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text-primary dark:text-text leading-tight lg:leading-[80px] max-w-6xl text-center"
+					className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text-primary dark:text-text leading-tight max-w-6xl text-center"
 				>
 					<span className="text-ori-message">Ori,</span>
 					<br />

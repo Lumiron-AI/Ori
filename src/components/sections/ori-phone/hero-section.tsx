@@ -48,7 +48,7 @@ export function OriPhoneHeroSection() {
 		<motion.section
 			ref={ref}
 			style={{ opacity }}
-			className="relative flex flex-col items-center justify-center text-center px-5 pt-[110px] sm:pt-[130px] md:pt-[140px] pb-16 sm:pb-20 overflow-hidden bg-background dark:bg-dark-bg"
+			className="relative flex flex-col items-center justify-center text-center px-5 pt-[110px] sm:pt-[110px] md:pt-[80px] pb-16 sm:pb-20 overflow-hidden bg-background dark:bg-dark-bg"
 		>
 			<div
 				aria-hidden
@@ -59,13 +59,13 @@ export function OriPhoneHeroSection() {
 				className="pointer-events-none absolute left-1/4 -translate-x-1/2 top-[-80px] w-[400px] sm:w-[700px] h-[300px] sm:h-[500px] blur-3xl opacity-20 rounded-full bg-primary-glow"
 			/>
 
-			<div className="relative w-full max-w-6xl lg:max-w-7xl mx-auto flex flex-col items-center my-6 sm:my-12 gap-4">
+			<div className="relative w-full max-w-6xl lg:max-w-7xl mx-auto flex flex-col items-center my-6 sm:my-12 gap-3">
 				<motion.h1
 					custom={0}
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text-primary dark:text-text leading-tight lg:leading-[80px] max-w-6xl"
+					className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text-primary dark:text-text leading-tight max-w-6xl"
 				>
 					Ori,
 					<br /> le <span className="text-primary">
@@ -106,7 +106,7 @@ export function OriPhoneHeroSection() {
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="font-display font-normal text-sm sm:text-lg text-text-secondary dark:text-text-tertiary"
+					className="font-display font-normal text-xs sm:text-base text-text-secondary dark:text-text-tertiary"
 				>
 					Parlez à Ori comme un vrai client
 				</motion.p>
@@ -118,19 +118,16 @@ export function OriPhoneHeroSection() {
 					animate="show"
 					className="w-full mt-2 sm:mt-4"
 				>
-					<div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-0">
+					<div className="flex flex-wrap justify-center gap-x-8 sm:gap-x-12 gap-y-4">
 						{STATS.map((stat, i) => (
-							<div
-								key={i}
-								className="flex items-center justify-center gap-4 sm:gap-6 py-4 sm:py-6"
-							>
-								<div className="w-1 h-10 sm:h-12 bg-primary rounded-full shrink-0" />
-								<div className="flex flex-col text-left">
+							<div key={i} className="flex flex-col items-center min-w-[10rem]">
+								<div className="flex items-center gap-4">
+									<div className="w-1 h-8 sm:h-10 bg-primary rounded-full shrink-0" />
 									<AnimatedStatValue stat={stat} />
-									<span className="font-display font-normal text-xs sm:text-sm lg:text-base text-text-secondary dark:text-text-tertiary	">
-										{stat.label}
-									</span>
 								</div>
+								<span className="font-display font-normal text-xs sm:text-sm lg:text-base text-text-secondary dark:text-text-tertiary pl-3">
+									{stat.label}
+								</span>
 							</div>
 						))}
 					</div>

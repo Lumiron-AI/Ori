@@ -184,7 +184,7 @@ export function AudioCard({
 
 	return (
 		<div
-			className={`w-full rounded-4xl p-8 flex flex-col gap-5 shadow-card transition-colors duration-300 border border-transparent dark:border-text-secondary/30 ${
+			className={`w-full rounded-4xl p-6 flex flex-col gap-4 shadow-card transition-colors duration-300 border border-transparent dark:border-text-secondary/30 ${
 				playing
 					? "bg-dark-elevated"
 					: "bg-background-element dark:bg-dark-surface"
@@ -200,7 +200,7 @@ export function AudioCard({
 			</p>
 
 			{/* Player row: [Play btn] [──progress──] [timer] */}
-			<div className="flex items-center gap-4">
+			<div className="flex items-center gap-3">
 				<button
 					onClick={handlePlayStop}
 					aria-label={playing ? "Arrêter" : "Lire"}
@@ -255,7 +255,7 @@ export function AudioCard({
 					<button
 						key={s.label}
 						onClick={() => handleSpeed(s.value)}
-						className={`font-display font-semibold text-sm px-3 py-1.5 rounded-full transition-colors ${
+						className={`font-display font-semibold text-sm px-2.5 py-1 rounded-full transition-colors ${
 							speed === s.value
 								? "bg-primary/10 text-primary"
 								: playing
@@ -279,7 +279,7 @@ export function AudioCard({
 							animate={{ opacity: 1, y: 0 }}
 							exit={{ opacity: 0, y: -6 }}
 							transition={{ duration: 0.25 }}
-							className="flex flex-wrap gap-2"
+							className="flex flex-wrap gap-1.5"
 						>
 							{currentTags.map((tag, i) => (
 								<motion.span
@@ -287,7 +287,7 @@ export function AudioCard({
 									initial={{ opacity: 0, scale: 0.88 }}
 									animate={{ opacity: 1, scale: 1 }}
 									transition={{ delay: i * 0.18 + 0.05, duration: 0.22 }}
-									className="font-display font-medium text-sm text-text bg-dark-overlay px-3 py-1.5 rounded-full"
+									className="font-display font-medium text-sm text-text bg-dark-overlay px-2.5 py-1 rounded-full"
 								>
 									{tag}
 								</motion.span>

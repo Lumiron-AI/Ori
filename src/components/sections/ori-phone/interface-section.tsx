@@ -71,7 +71,7 @@ export function InterfaceSection() {
 
 				<InterfaceTabsPhone />
 
-				<p className="font-display font-semibold text-lg text-text-secondary dark:text-text-tertiary text-center mt-12 max-w-3xl mx-auto">
+				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-3xl mx-auto">
 					Une gestion simplifiée pour vous concentrer sur l&apos;essentiel :
 					l&apos;accueil de vos clients et la qualité de votre service.
 				</p>
