@@ -54,7 +54,7 @@ export function Hero() {
 					className="font-display font-semibold text-base sm:text-lg lg:text-2xl/8 text-text-secondary dark:text-text-tertiary max-w-3xl"
 				>
 					Automatisez vos conversations clients par téléphone, WhatsApp et
-					Instagram. Ori décroche, répond et prend les réservations —{" "}
+					Instagram. Ori décroche, répond et prend les réservations ahah —{" "}
 					<span className="font-bold">24h/24, 7j/7.</span>
 				</motion.p>
 
