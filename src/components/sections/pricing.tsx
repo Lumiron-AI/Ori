@@ -1,31 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { pricingPlans } from "@/lib/stripe";
+import { pricingPlans } from "@/lib/pricing";
 
 export function PricingSection() {
-	const [loading, setLoading] = useState<string | null>(null);
-
-	async function handleCheckout(priceId: string, planId: string) {
-		if (!priceId) return;
-		setLoading(planId);
-		try {
-			const res = await fetch("/api/stripe/checkout", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ priceId }),
-			});
-			const data = await res.json();
-			if (data.url) window.location.href = data.url;
-		} finally {
-			setLoading(null);
-		}
-	}
-
 	return (
 		<div className="max-w-5xl mx-auto">
 			<div className="text-center mb-14">
@@ -100,10 +81,7 @@ export function PricingSection() {
 								<li key={f} className="flex items-start gap-2">
 									<Check
 										size={16}
-										className={cn(
-											"mt-0.5 shrink-0",
-											plan.highlighted ? "text-primary" : "text-primary",
-										)}
+										className="mt-0.5 shrink-0 text-primary"
 									/>
 									<span
 										className={cn(
@@ -121,10 +99,8 @@ export function PricingSection() {
 							variant={plan.highlighted ? "primary" : "outline"}
 							size="md"
 							className="mt-auto w-full"
-							disabled={loading === plan.id || !plan.stripePriceId}
-							onClick={() => handleCheckout(plan.stripePriceId, plan.id)}
 						>
-							{loading === plan.id ? "Chargement…" : "Commencer gratuitement"}
+							Commencer gratuitement
 						</Button>
 					</motion.div>
 				))}
