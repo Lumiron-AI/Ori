@@ -75,7 +75,8 @@ export function OriMessagesSponsorshipSection() {
 							className={buttonClass({
 								variant: "ghost-primary",
 								size: "lg",
-								className: "shadow-blue-btn border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20 w-full sm:w-auto",
+								className:
+									"shadow-blue-btn border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20 w-full sm:w-auto",
 							})}
 						>
 							Voir les conditions

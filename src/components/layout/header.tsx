@@ -43,9 +43,9 @@ export function Header() {
 						<Image
 							src="/img/LogoOriText.svg"
 							alt="Ori"
-							width={64}
-							height={26}
-							className="h-6 w-auto"
+							width={80}
+							height={32}
+							className="h-7 w-auto"
 							priority
 						/>
 					</Link>

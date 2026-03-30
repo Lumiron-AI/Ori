@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -10,110 +10,114 @@
    Source: Charte graphique · Lumiron / Ori phone · fileKey: 3bbfpp468BTC9HL3yVQjGC
    ═══════════════════════════════════════════════════════════════════════════ */
 :root {
-  /* Brand */
-  --color-primary:       #FF4F38;
-  --color-brand-accent:  #99ADD3;
-  --color-ori-message:   #3E67B5;
+	/* Brand */
+	--color-primary: #ff4f38;
+	--color-brand-accent: #99add3;
+	--color-ori-message: #3e67b5;
 
-  /* Light mode surfaces */
-  --color-bg:            #FAF8F6;
-  --color-bg-secondary:  #E9E9E9;
-  --color-bg-tertiary:   #DFDFDF;
-  --color-bg-element:    #FFFFFF;
+	/* Light mode surfaces */
+	--color-bg: #faf8f6;
+	--color-bg-secondary: #e9e9e9;
+	--color-bg-tertiary: #dfdfdf;
+	--color-bg-element: #ffffff;
 
-  /* Light mode text */
-  --color-text:          #FFFFFF;
-  --color-text-primary:  #131923;
-  --color-text-heading:  #243447;
-  --color-text-secondary:#6F7C8C;
-  --color-text-tertiary: #9EAEC2;
+	/* Light mode text */
+	--color-text: #ffffff;
+	--color-text-primary: #131923;
+	--color-text-heading: #243447;
+	--color-text-secondary: #6f7c8c;
+	--color-text-tertiary: #9eaec2;
 
-  /* Dark mode surfaces */
-  --color-dark-bg:       #0E1116;
-  --color-dark-surface:  #131923;
-  --color-dark-elevated: #1F293A;
-  --color-dark-overlay:  #2A374D;
+	/* Dark mode surfaces */
+	--color-dark-bg: #0e1116;
+	--color-dark-surface: #131923;
+	--color-dark-elevated: #1f293a;
+	--color-dark-overlay: #2a374d;
 
-  /* Shadows */
-  --shadow-card:         0px 0px 50px 0px rgba(0, 0, 0, 0.18);
-  --shadow-orange-btn:   0px 4px 40px 0px rgba(255, 79, 56, 0.30);
-  --shadow-blue-btn:     0px 4px 40px 0px rgba(62, 103, 181, 0.30);
+	/* Shadows */
+	--shadow-card: 0px 0px 50px 0px rgba(0, 0, 0, 0.18);
+	--shadow-orange-btn: 0px 4px 40px 0px rgba(255, 79, 56, 0.3);
+	--shadow-blue-btn: 0px 4px 40px 0px rgba(62, 103, 181, 0.3);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    BASE STYLES
    ═══════════════════════════════════════════════════════════════════════════ */
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+	html {
+		scroll-behavior: smooth;
+	}
 
-  body {
-    @apply bg-background text-text-primary font-sans antialiased;
-  }
+	body {
+		@apply bg-background text-text-primary font-sans antialiased;
+	}
 
-  .dark body {
-    @apply bg-dark-bg text-text;
-  }
+	.dark body {
+		@apply bg-dark-bg text-text;
+	}
 
-  /* Typography reset — ensure Red Hat Display is always used */
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
-  }
+	/* Typography reset — ensure Red Hat Display is always used */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-display;
+	}
 
-  /* Remove outline on mouse click, preserve it for keyboard navigation */
-  button:focus:not(:focus-visible),
-  a:focus:not(:focus-visible) {
-    @apply outline-none;
-  }
+	/* Remove outline on mouse click, preserve it for keyboard navigation */
+	button:focus:not(:focus-visible),
+	a:focus:not(:focus-visible) {
+		@apply outline-none;
+	}
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    COMPONENT UTILITIES
    ═══════════════════════════════════════════════════════════════════════════ */
 @layer utilities {
-  /* Safe area for mobile bottom nav / home indicator */
-  .pb-safe {
-    padding-bottom: env(safe-area-inset-bottom, 1.5rem);
-  }
+	/* Safe area for mobile bottom nav / home indicator */
+	.pb-safe {
+		padding-bottom: env(safe-area-inset-bottom, 1.5rem);
+	}
 
-  /* Responsive horizontal padding — matches Figma screen margins */
-  .section-padding {
-    @apply px-5 md:px-12 lg:px-24;
-  }
+	/* Responsive horizontal padding — matches Figma screen margins */
+	.section-padding {
+		@apply px-5 md:px-12 lg:px-24;
+	}
 
-  /* Consistent section vertical rhythm (~0.8 scale on desktop) */
-  .section-y {
-    @apply py-10 md:py-14 lg:py-16;
-  }
+	/* Consistent section vertical rhythm (~0.8 scale on desktop) */
+	.section-y {
+		@apply py-10 md:py-14 lg:py-16;
+	}
 
-  /* Centered content container — 1152px max (was 1280px) */
-  .container-site {
-    @apply w-full max-w-6xl mx-auto px-5 md:px-8;
-  }
+	/* Centered content container — 1152px max (was 1280px) */
+	.container-site {
+		@apply w-full mx-auto;
+	}
 
-  /* ── Compact card padding (desktop ~0.8 scale) ── */
-  .card-pad {
-    @apply p-4 md:p-5 lg:p-6;
-  }
+	/* ── Compact card padding (desktop ~0.8 scale) ── */
+	.card-pad {
+		@apply p-4 md:p-5 lg:p-6;
+	}
 
-  /* ── Section inner gap (replaces gap-8 / gap-10 / gap-12 on desktop) ── */
-  .section-gap {
-    @apply gap-4 md:gap-6 lg:gap-8;
-  }
+	/* ── Section inner gap (replaces gap-8 / gap-10 / gap-12 on desktop) ── */
+	.section-gap {
+		@apply gap-4 md:gap-6 lg:gap-8;
+	}
 
-  /* ── Heading block spacing (replaces mt-12 / mt-16 below section header) ── */
-  .content-mt {
-    @apply mt-8 md:mt-10 lg:mt-12;
-  }
+	/* ── Heading block spacing (replaces mt-12 / mt-16 below section header) ── */
+	.content-mt {
+		@apply mt-8 md:mt-10 lg:mt-12;
+	}
 
-  /* ── Desktop density overrides — apply .compact to any container ──────── */
-  /* Usage: <section className="section-y compact"> */
-  .compact .card-pad {
-    @apply lg:p-5;
-  }
-  .compact .section-gap {
-    @apply lg:gap-6;
-  }
+	/* ── Desktop density overrides — apply .compact to any container ──────── */
+	/* Usage: <section className="section-y compact"> */
+	.compact .card-pad {
+		@apply lg:p-5;
+	}
+	.compact .section-gap {
+		@apply lg:gap-6;
+	}
 }
-

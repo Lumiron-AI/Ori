@@ -59,7 +59,7 @@ export function OriMessagesPricingSection() {
 					</motion.div>
 				</div>
 
-				<p className="font-display font-normal text-sm sm:text-lg text-text-secondary dark:text-text-tertiary text-center mt-8 sm:mt-10 max-w-3xl mx-auto">
+				<p className="font-display font-normal text-sm sm:text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-3xl mx-auto">
 					Un seul client perdu coûte plus cher qu&apos;un mois d&apos;Ori.
 				</p>
 			</div>

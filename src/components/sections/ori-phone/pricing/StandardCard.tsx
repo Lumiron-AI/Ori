@@ -25,13 +25,13 @@ export function StandardCard({
 	const annualPrice = 961;
 
 	return (
-		<div className="bg-background-element dark:bg-dark-surface rounded-3xl p-8 flex flex-col gap-5 shadow-card h-full border border-transparent hover:border-primary transition-colors">
+		<div className="bg-background dark:bg-dark-surface rounded-3xl px-7 py-6 flex flex-col gap-3.5 shadow-card h-full border border-transparent hover:border-primary transition-colors">
 			{/* Title */}
 			<div>
-				<p className="font-display font-bold text-2xl text-text-heading dark:text-text">
+				<p className="font-display font-bold text-base text-text-heading dark:text-text">
 					STANDARD
 				</p>
-				<p className="font-display font-normal text-lg text-text-secondary dark:text-text-tertiary mt-1">
+				<p className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary mt-0.5">
 					1 établissement
 				</p>
 			</div>
@@ -39,21 +39,21 @@ export function StandardCard({
 			<Divider />
 
 			{/* Price + toggle */}
-			<div className="flex flex-col gap-3">
+			<div className="flex flex-col gap-2">
 				<div className="flex items-baseline gap-2">
-					<span className="font-display font-bold text-4xl text-text-heading dark:text-text">
+					<span className="font-display font-bold text-3xl text-text-heading dark:text-text">
 						{annual ? annualPrice : monthlyPrice}€
 					</span>
-					<span className="font-display font-semibold text-2xl text-text-secondary dark:text-text-tertiary">
+					<span className="font-display font-semibold text-base text-text-secondary dark:text-text-tertiary">
 						{annual ? "/ an" : "/ mois"}
 					</span>
 				</div>
 
 				{/* Toggle */}
-				<div className="flex items-center gap-3">
+				<div className="flex items-center gap-2">
 					<button
 						onClick={() => setAnnual(!annual)}
-						className={`relative w-16 h-7 rounded-full transition-colors shrink-0 ${
+						className={`relative w-8 h-4 rounded-full transition-colors shrink-0 ${
 							annual
 								? "bg-primary"
 								: "bg-background-secondary dark:bg-dark-overlay"
@@ -63,15 +63,15 @@ export function StandardCard({
 						aria-label="Facturation annuelle"
 					>
 						<span
-							className={`absolute top-1 left-1 w-5 h-5 rounded-full bg-white shadow-sm transition-transform ${
-								annual ? "translate-x-8" : "translate-x-0"
+							className={`absolute top-0.5 left-0.5 w-3 h-3 rounded-full bg-white shadow-sm transition-transform ${
+								annual ? "translate-x-4" : "translate-x-0"
 							}`}
 						/>
 					</button>
-					<span className="font-display font-normal text-lg text-text-secondary dark:text-text-tertiary">
+					<span className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
 						Annuel
 					</span>
-					<span className="font-display font-bold text-lg text-primary">
+					<span className="font-display font-bold text-sm text-primary">
 						-10%
 					</span>
 				</div>
@@ -82,8 +82,8 @@ export function StandardCard({
 				href="#trial"
 				className={buttonClass({
 					variant: "primary",
-					size: "lg",
-					className: "w-full text-xl",
+					size: "sm",
+					className: "w-full",
 				})}
 			>
 				Commencer l&apos;essai gratuit
@@ -96,14 +96,14 @@ export function StandardCard({
 				<FeatureList features={STANDARD_FEATURES} />
 			</div>
 
-			<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary">
+			<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
 				Minutes supplémentaires : 0,20 € / minute
 			</p>
 
 			<Divider />
 
 			{/* Bottom note */}
-			<p className="font-display font-semibold text-lg text-text-secondary dark:text-text-tertiary text-center">
+			<p className="font-display font-semibold text-sm text-text-secondary dark:text-text-tertiary text-center">
 				Essai gratuit 7 jours — sans engagement
 				<br />
 				Facturation uniquement après l&apos;essai

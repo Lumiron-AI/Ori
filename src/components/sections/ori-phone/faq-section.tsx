@@ -49,7 +49,7 @@ export function FAQSection() {
 			className="bg-background dark:bg-dark-bg py-16 sm:py-20 px-5"
 		>
 			<div className="max-w-8xl lg:max-w-9xl mx-auto">
-				<div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
+				<div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
 					{/* Left: title block */}
 					<div className="lg:w-[560px] shrink-0 flex flex-col">
 						<SectionHeader
@@ -104,7 +104,7 @@ export function FAQSection() {
 											transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
 											className="overflow-hidden"
 										>
-											<p className="font-display font-normal text-base sm:text-lg text-text-primary dark:text-text-tertiary pb-6 sm:pb-8 pl-4 sm:pl-6 leading-relaxed">
+											<p className="font-display font-normal text-sm sm:text-base text-text-primary dark:text-text-tertiary pb-6 sm:pb-8 pl-4 sm:pl-6 leading-relaxed">
 												{faq.answer}
 											</p>
 										</motion.div>

@@ -26,7 +26,7 @@ export function OriPhonePricingSection() {
 					subtitle="Ori prend le relais. Vous gardez l'esprit libre."
 				/>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 lg:gap-24 max-w-5xl mx-auto">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 max-w-5xl mx-auto">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export function OriPhonePricingSection() {
 					</motion.div>
 				</div>
 
-				<p className="font-display font-normal text-sm sm:text-lg text-text-secondary dark:text-text-tertiary text-center mt-8 sm:mt-10 max-w-3xl mx-auto">
+				<p className="font-display font-normal text-sm sm:text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-3xl mx-auto">
 					Un seul client perdu coûte plus cher qu&apos;un mois d&apos;Ori.
 				</p>
 			</div>

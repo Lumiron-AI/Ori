@@ -16,13 +16,13 @@ const ADVANCED_FEATURES = [
 
 export function AdvancedCard() {
 	return (
-		<div className="bg-background-element dark:bg-dark-surface rounded-3xl p-8 flex flex-col gap-5 shadow-card h-full border border-transparent hover:border-primary transition-colors">
+		<div className="bg-background dark:bg-dark-surface rounded-3xl px-7 py-6 flex flex-col gap-3.5 shadow-card h-full border border-transparent hover:border-primary transition-colors">
 			{/* Title */}
 			<div>
-				<p className="font-display font-bold text-2xl text-text-heading dark:text-text">
+				<p className="font-display font-bold text-base text-text-heading dark:text-text">
 					AVANCÉ
 				</p>
-				<p className="font-display font-normal text-lg text-text-secondary dark:text-text-tertiary mt-1">
+				<p className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary mt-0.5">
 					Multi-sites et options personnalisés
 				</p>
 			</div>
@@ -31,10 +31,10 @@ export function AdvancedCard() {
 
 			{/* "Price" */}
 			<div>
-				<p className="font-display font-bold text-4xl text-text-heading dark:text-text">
+				<p className="font-display font-bold text-3xl text-text-heading dark:text-text">
 					Sur-mesure
 				</p>
-				<p className="font-display font-normal text-lg text-text-secondary dark:text-text-tertiary mt-1">
+				<p className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary mt-3">
 					Configuration adaptée
 				</p>
 			</div>
@@ -42,7 +42,7 @@ export function AdvancedCard() {
 			{/* CTA */}
 			<Link
 				href="/contact"
-				className={buttonClass({ variant: "primary", size: "lg", className: "w-full text-xl" })}
+				className={buttonClass({ variant: "primary", size: "sm", className: "w-full" })}
 			>
 				Planifier un appel
 			</Link>
@@ -57,7 +57,7 @@ export function AdvancedCard() {
 			<Divider />
 
 			{/* Bottom note */}
-			<p className="font-display font-semibold text-lg text-text-secondary dark:text-text-tertiary text-center">
+			<p className="font-display font-semibold text-sm text-text-secondary dark:text-text-tertiary text-center">
 				Solution et tarification personnalisée selon votre organisation.
 			</p>
 		</div>

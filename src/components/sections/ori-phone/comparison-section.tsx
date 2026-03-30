@@ -54,16 +54,16 @@ export function ComparisonSection() {
 
 				{/* Desktop table — hidden on mobile */}
 				<div className="hidden sm:block overflow-x-auto">
-					<table className="w-full border-separate border-spacing-y-1.5 min-w-[560px]">
+					<table className="w-full border-separate border-spacing-x-0 border-spacing-y-1.5 min-w-[560px]">
 						<thead>
 							<tr>
-								<th className="w-[22%] pb-2" />
+								<th className="w-[22%]" />
 								<th className="w-[39%]">
-									<div className="bg-dark-overlay text-text font-display font-semibold text-xl rounded-tl-2xl rounded-tr-2xl px-5 py-3 text-center">
+									<div className="bg-dark-overlay text-text font-display font-semibold text-lg rounded-tl-2xl rounded-tr-2xl px-5 py-3 text-center">
 										Standard classique
 									</div>
 								</th>
-								<th className="w-[39%]">
+								<th className="w-[39%] border-l-4 border-background p-0!">
 									<div className="bg-primary text-text font-display font-semibold text-lg rounded-tl-2xl rounded-tr-2xl px-5 py-3 text-center">
 										Avec Ori
 									</div>
@@ -80,9 +80,9 @@ export function ComparisonSection() {
 									viewport={{ once: true }}
 									transition={{ delay: i * 0.07, duration: 0.4 }}
 								>
-									<td className="bg-background-secondary border-r-4 border-background rounded-l-2xl pr-1.5">
+									<td className="bg-background-secondary border-r-4 border-background rounded-l-2xl">
 										<div
-											className={` dark:bg-dark-elevated px-5 py-5 font-display font-semibold text-lg text-text-primary dark:text-text  ${
+											className={` dark:bg-dark-elevated px-5 py-4 font-display font-semibold text-lg text-text-primary dark:text-text  ${
 												i === ROWS.length - 1 ? "rounded-bl-2xl" : ""
 											}`}
 										>
@@ -91,7 +91,7 @@ export function ComparisonSection() {
 									</td>
 
 									<td className="bg-background-secondary dark:border-dark-bg">
-										<div className=" dark:bg-dark-elevated px-5 py-5 flex items-start gap-3">
+										<div className=" dark:bg-dark-elevated px-5 py-4 flex items-start gap-3">
 											<Minus
 												size={20}
 												className="text-text-secondary dark:text-text-tertiary shrink-0 mt-0.5"
@@ -103,9 +103,9 @@ export function ComparisonSection() {
 										</div>
 									</td>
 
-									<td className="bg-background-secondary border-l-2 border-background dark:border-dark-bg">
+									<td className="bg-background-secondary border-l-4 border-background dark:border-dark-bg">
 										<div
-											className={`bg-background-secondary dark:bg-dark-elevated px-5 py-5 flex items-start gap-3 rounded-r-2xl ${
+											className={`bg-background-secondary dark:bg-dark-elevated px-5 py-4 flex items-start gap-3 rounded-r-2xl ${
 												i === ROWS.length - 1 ? "rounded-br-2xl" : ""
 											}`}
 										>
@@ -179,7 +179,7 @@ export function ComparisonSection() {
 					))}
 				</div>
 
-				<p className="font-display font-normal text-lg text-text-secondary dark:text-text-tertiary text-center mt-8 sm:mt-10 max-w-3xl mx-auto">
+				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-3xl mx-auto">
 					Maximisez votre chiffre d&apos;affaires en ne laissant plus aucun
 					appel sans réponse. Chaque appel décroché est une opportunité
 					préservée.

@@ -26,12 +26,16 @@ export function SectionHeaderMessages({
 				<span className="font-display font-bold text-base sm:text-xl text-ori-message">
 					{label}
 				</span>
-				<ChevronRight size={18} className="text-ori-message" strokeWidth={2.5} />
+				<ChevronRight
+					size={18}
+					className="text-ori-message"
+					strokeWidth={2.5}
+				/>
 			</div>
 
 			<h2
 				className={cn(
-					"font-display font-bold text-3xl sm:text-4xl text-text-primary dark:text-text leading-tight mb-2 sm:mb-3",
+					"font-display font-bold text-3xl sm:text-4xl text-text-primary dark:text-text leading-tight mb-2",
 					titleClassName,
 				)}
 			>
