@@ -4,14 +4,23 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus } from "lucide-react";
 
-import { TabId, TABS } from "../interface-section";
+import { TabId, TAB_ICONS, TAB_IDS } from "../interface-section";
 import { QuickSetUpPanel } from "./QuickSetUpPanel";
 import { CustomizePanel } from "./CustomizePanel";
 import { AutomationPanel } from "./AutomationPanel";
 import { TrackingPanel } from "./TrackingPanel";
+import { useLocale } from "@/context/locale-context";
 
 export function InterfaceTabsPhone() {
 	const [active, setActive] = useState<TabId>("setup");
+	const { t } = useLocale();
+
+	const TABS = t.interface.tabs.map((tab: { label: string; description: string }, i: number) => ({
+		id: TAB_IDS[i],
+		label: tab.label,
+		Icon: TAB_ICONS[i],
+		description: tab.description,
+	}));
 
 	const panels: Record<TabId, React.ReactNode> = {
 		setup: <QuickSetUpPanel />,

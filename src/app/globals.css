@@ -66,6 +66,21 @@
 		@apply font-display;
 	}
 
+	/* Non-editable elements — hide text cursor */
+	h1,
+	h2,
+	button,
+	header,
+	header *,
+	.rounded-3xl,
+	.rounded-3xl *,
+	.rounded-4xl,
+	.rounded-4xl *,
+	.rounded-5xl,
+	.rounded-5xl * {
+		caret-color: transparent;
+	}
+
 	/* Remove outline on mouse click, preserve it for keyboard navigation */
 	button:focus:not(:focus-visible),
 	a:focus:not(:focus-visible) {

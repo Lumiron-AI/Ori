@@ -58,7 +58,7 @@ export function OriMessagesSponsorshipSection() {
 									<div className="w-24 h-0.5 bg-ori-message" />
 								</div>
 
-								<div className="w-full bg-dark-elevated dark:bg-dark-surface border border-transparent dark:border-text-secondary/30 rounded-4xl flex items-center justify-center py-10 sm:py-14 px-6">
+								<div className="w-full bg-dark-elevated dark:bg-dark-surface border border-transparent dark:border-text-secondary/30 rounded-4xl flex items-center justify-center py-10 sm:py-12 px-6">
 									<p className="font-display font-bold text-2xl sm:text-3xl text-center">
 										<span className="text-ori-message">{card.highlight}</span>
 										<span className="text-text">{card.rest}</span>

@@ -39,7 +39,7 @@ export function ComparisonSection() {
 										{comparison.withoutHeader}
 									</div>
 								</th>
-								<th className="w-[39%] border-l-4 border-background p-0!">
+								<th className="w-[39%] border-l-4 border-background dark:border-x-dark-bg p-0!">
 									<div className="bg-primary text-text font-display font-semibold text-lg rounded-tl-2xl rounded-tr-2xl px-5 py-3 text-center">
 										{comparison.withHeader}
 									</div>
@@ -56,20 +56,18 @@ export function ComparisonSection() {
 									viewport={{ once: true }}
 									transition={{ delay: i * 0.07, duration: 0.4 }}
 								>
-									<td className="bg-background-secondary border-r-4 border-background rounded-l-2xl">
+									<td className="bg-background-secondary dark:bg-dark-elevated border-r-4 border-background dark:border-x-dark-bg rounded-l-2xl">
 										<div
-											className={` dark:bg-dark-elevated px-5 py-4 font-display font-semibold text-lg text-text-primary dark:text-text  ${
-												i === comparison.rows.length - 1
-													? "rounded-bl-2xl"
-													: ""
+											className={` px-5 py-4 font-display font-semibold text-lg text-text-primary dark:text-text  ${
+												i === comparison.rows.length - 1 ? "rounded-bl-2xl" : ""
 											}`}
 										>
 											{row.topic}
 										</div>
 									</td>
 
-									<td className="bg-background-secondary dark:border-dark-bg">
-										<div className=" dark:bg-dark-elevated px-5 py-4 flex items-start gap-3">
+									<td className="bg-background-secondary dark:border-dark-bg dark:bg-dark-elevated">
+										<div className="  px-5 py-4 flex items-start gap-3">
 											<AiOutlineMinusCircle
 												size={20}
 												className="text-text-secondary dark:text-text-tertiary shrink-0 mt-0.5"
@@ -81,12 +79,10 @@ export function ComparisonSection() {
 										</div>
 									</td>
 
-									<td className="bg-background-secondary border-l-4 border-background dark:border-dark-bg">
+									<td className="bg-background-secondary dark:bg-dark-elevated border-l-4 border-background dark:border-dark-bg">
 										<div
-											className={`bg-background-secondary dark:bg-dark-elevated px-5 py-4 flex items-start gap-3 rounded-r-2xl ${
-												i === comparison.rows.length - 1
-													? "rounded-br-2xl"
-													: ""
+											className={`px-5 py-4 flex items-start gap-3 rounded-r-2xl ${
+												i === comparison.rows.length - 1 ? "rounded-br-2xl" : ""
 											}`}
 										>
 											<CheckCircle2

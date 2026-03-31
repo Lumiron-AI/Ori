@@ -49,7 +49,7 @@ export function OriMessagesFAQSection() {
 			className="bg-background dark:bg-dark-bg py-16 sm:py-20 px-5"
 		>
 			<div className="max-w-8xl lg:max-w-9xl mx-auto">
-				<div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
+				<div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
 					{/* Left: title block */}
 					<div className="lg:w-[560px] shrink-0 flex flex-col">
 						<SectionHeaderMessages
@@ -81,7 +81,7 @@ export function OriMessagesFAQSection() {
 							>
 								<button
 									onClick={() => setOpen(open === i ? null : i)}
-									className="w-full flex items-center gap-4 sm:gap-6 text-left group min-h-[80px] sm:min-h-[96px]"
+									className="w-full flex items-center gap-4 sm:gap-6 text-left group min-h-[80px] sm:min-h-[82px]"
 								>
 									<div className="w-1.5 h-[28px] sm:h-[28px] rounded-sm shrink-0 transition-colors bg-ori-message" />
 									<span className="flex-1 font-display font-semibold text-base sm:text-xl lg:text-2xl text-text-primary dark:text-text">
@@ -105,7 +105,7 @@ export function OriMessagesFAQSection() {
 											transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
 											className="overflow-hidden"
 										>
-											<p className="font-display font-normal text-base sm:text-lg text-text-primary dark:text-text-tertiary pb-6 sm:pb-8 pl-4 sm:pl-6 leading-relaxed">
+											<p className="font-display font-normal text-sm sm:text-base text-text-primary dark:text-text-tertiary pb-6 sm:pb-8 pl-4 sm:pl-6 leading-relaxed">
 												{faq.answer}
 											</p>
 										</motion.div>

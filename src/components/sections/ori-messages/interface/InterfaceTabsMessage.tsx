@@ -66,10 +66,10 @@ export function InterfaceTabsMessage() {
 							)}
 							<button
 								onClick={() => setActive(tab.id)}
-								className="w-full flex items-center gap-3 sm:gap-4 py-5 sm:py-8 text-left min-h-[64px] sm:min-h-0"
+								className="w-full flex items-center gap-2 sm:gap-3 py-4 sm:py-6 text-left min-h-[52px] sm:min-h-0"
 							>
 								<tab.Icon
-									size={26}
+									size={22}
 									className={`shrink-0 transition-colors ${
 										isActive
 											? "text-ori-message"
@@ -86,7 +86,7 @@ export function InterfaceTabsMessage() {
 									{tab.label}
 								</span>
 								<Plus
-									size={24}
+									size={20}
 									strokeWidth={1.5}
 									className={`shrink-0 text-text-secondary dark:text-text transition-transform duration-300 ${
 										isActive ? "rotate-45" : ""
@@ -104,7 +104,7 @@ export function InterfaceTabsMessage() {
 										transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
 										className="overflow-hidden"
 									>
-										<p className="font-display font-normal text-base sm:text-lg text-text-heading dark:text-brand-accent pb-6 sm:pb-8 pr-6 sm:pr-10">
+										<p className="font-display font-normal text-sm sm:text-base text-text-heading dark:text-brand-accent pb-5 sm:pb-6 pr-5 sm:pr-8">
 											{tab.description}
 										</p>
 									</motion.div>
@@ -116,7 +116,7 @@ export function InterfaceTabsMessage() {
 			</div>
 
 			{/* ── Right: dashboard panel ── */}
-			<div className="bg-background-element dark:bg-dark-surface rounded-3xl sm:rounded-4xl p-5 sm:p-8 lg:p-10 shadow-card overflow-hidden lg:min-h-[550px] flex flex-col justify-center">
+			<div className="bg-background-element dark:bg-dark-surface rounded-3xl sm:rounded-4xl p-4 sm:p-6 lg:p-8 shadow-card overflow-hidden lg:min-h-[440px] flex flex-col justify-center">
 				<AnimatePresence mode="wait">
 					<motion.div
 						key={active}

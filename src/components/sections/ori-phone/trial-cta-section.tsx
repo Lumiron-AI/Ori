@@ -4,8 +4,12 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { buttonClass } from "@/components/ui/button";
+import { useLocale } from "@/context/locale-context";
 
 export function TrialCTASection() {
+	const { t } = useLocale();
+	const { trialCta } = t;
+
 	return (
 		<motion.section
 			id="trial"
@@ -37,12 +41,14 @@ export function TrialCTASection() {
 			<div className="relative max-w-4xl mx-auto flex flex-col items-center gap-5 sm:gap-6">
 				{/* Title */}
 				<h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-text-primary dark:text-text leading-tight">
-					ESSAYER ORI <span className="text-primary">7 JOURS</span> GRATUITS
+					{trialCta.title1}{" "}
+					<span className="text-primary">{trialCta.titleHighlight}</span>{" "}
+					{trialCta.title2}
 				</h2>
 
 				{/* Subtitle */}
 				<p className="font-display font-semibold text-base sm:text-xl lg:text-2xl text-text-primary dark:text-text max-w-2xl">
-					Sans engagement. Configuration en 5 minutes.
+					{trialCta.subtitle}
 				</p>
 
 				{/* CTA */}
@@ -54,7 +60,7 @@ export function TrialCTASection() {
 						className: "w-full sm:w-[261px] text-base sm:text-xl mt-2",
 					})}
 				>
-					Démarrer l&apos;essai
+					{trialCta.cta}
 					<ArrowRight size={18} strokeWidth={2.5} />
 				</Link>
 			</div>

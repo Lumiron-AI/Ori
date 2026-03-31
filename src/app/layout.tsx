@@ -3,6 +3,7 @@ import './globals.css';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { ThemeProvider } from '@/context/theme-context';
+import { LocaleProvider } from '@/context/locale-context';
 
 export const metadata: Metadata = {
   title: {
@@ -31,9 +32,11 @@ export default function RootLayout({
     <html lang="fr" suppressHydrationWarning>
       <body>
         <ThemeProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
+          <LocaleProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </LocaleProvider>
         </ThemeProvider>
       </body>
     </html>

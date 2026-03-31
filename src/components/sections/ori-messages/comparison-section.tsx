@@ -59,12 +59,12 @@ export function OriMessagesComparisonSection() {
 							<tr>
 								<th className="w-[22%]" />
 								<th className="w-[39%] pr-1.5">
-									<div className="bg-dark-overlay text-text font-display font-semibold text-xl rounded-tl-2xl rounded-tr-2xl px-5 py-3 text-center">
+									<div className="bg-dark-overlay text-text font-display font-semibold text-lg rounded-tl-2xl rounded-tr-2xl px-5 py-3 text-center">
 										Gestion manuelle
 									</div>
 								</th>
 								<th className="w-[39%]">
-									<div className="bg-ori-message text-text font-display font-semibold text-xl rounded-tl-2xl rounded-tr-2xl px-5 py-3 text-center">
+									<div className="bg-ori-message text-text font-display font-semibold text-lg rounded-tl-2xl rounded-tr-2xl px-5 py-3 text-center">
 										Avec Ori
 									</div>
 								</th>
@@ -82,7 +82,7 @@ export function OriMessagesComparisonSection() {
 								>
 									<td className="pr-1.5">
 										<div
-											className={`bg-background-secondary dark:bg-dark-elevated px-5 py-5 font-display font-semibold text-xl text-text-primary dark:text-text rounded-l-2xl ${
+											className={`bg-background-secondary dark:bg-dark-elevated px-5 py-4 font-display font-semibold text-lg text-text-primary dark:text-text rounded-l-2xl ${
 												i === ROWS.length - 1 ? "rounded-bl-2xl" : ""
 											}`}
 										>
@@ -91,26 +91,26 @@ export function OriMessagesComparisonSection() {
 									</td>
 
 									<td className="pr-1.5">
-										<div className="bg-background-secondary dark:bg-dark-elevated px-5 py-5 flex items-start gap-3">
+										<div className="bg-background-secondary dark:bg-dark-elevated px-5 py-4 flex items-start gap-3">
 											<Minus
 												size={20}
 												className="text-text-secondary dark:text-text-tertiary shrink-0 mt-0.5"
 												strokeWidth={2.5}
 											/>
-											<span className="font-display font-normal text-xl text-text-primary dark:text-text">
+											<span className="font-display font-normal text-base text-text-primary dark:text-text">
 												{row.without}
 											</span>
 										</div>
 									</td>
 
 									<td>
-										<div className="bg-background-secondary dark:bg-dark-elevated px-5 py-5 flex items-start gap-3">
+										<div className="bg-background-secondary dark:bg-dark-elevated px-5 py-4 flex items-start gap-3">
 											<CheckCircle2
 												size={20}
 												className="text-ori-message shrink-0 mt-0.5"
 												strokeWidth={2.5}
 											/>
-											<span className="font-display font-bold text-xl text-text-primary dark:text-text">
+											<span className="font-display font-bold text-base text-text-primary dark:text-text">
 												{row.with}
 											</span>
 										</div>

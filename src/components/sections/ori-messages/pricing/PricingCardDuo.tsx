@@ -23,7 +23,7 @@ export function PricingCardDuo({
 	const annualPrice = Math.round(monthlyPrice * 12 * 0.9);
 
 	return (
-		<div className="relative bg-background-element dark:bg-dark-surface rounded-3xl p-8 flex flex-col gap-5 shadow-card h-full border border-ori-message transition-colors">
+		<div className="relative bg-background-element dark:bg-dark-surface rounded-3xl px-7 py-6 flex flex-col gap-3.5 shadow-card h-full border border-ori-message transition-colors">
 			{/* "Le plus populaire" badge */}
 			<div className="absolute -top-4 left-1/2 -translate-x-1/2">
 				<div className="bg-brand-accent/20 border-2 border-ori-message rounded-xl px-5 py-1.5">
@@ -38,7 +38,7 @@ export function PricingCardDuo({
 				<p className="font-display font-bold text-2xl text-text-heading dark:text-text">
 					PACK DUO
 				</p>
-				<p className="font-display font-normal text-lg text-text-secondary dark:text-text-tertiary mt-1">
+				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-0.5">
 					Le combo complet.
 				</p>
 			</div>
@@ -46,20 +46,20 @@ export function PricingCardDuo({
 			<Divider />
 
 			{/* Price + toggle */}
-			<div className="flex flex-col gap-3">
+			<div className="flex flex-col gap-2">
 				<div className="flex items-baseline gap-2">
-					<span className="font-display font-bold text-4xl text-text-heading dark:text-text">
+					<span className="font-display font-bold text-3xl text-text-heading dark:text-text">
 						{annual ? annualPrice : monthlyPrice}€
 					</span>
-					<span className="font-display font-semibold text-2xl text-text-secondary dark:text-text-tertiary">
+					<span className="font-display font-semibold text-base text-text-secondary dark:text-text-tertiary">
 						{annual ? "/ an" : "/ mois"}
 					</span>
 				</div>
 
-				<div className="flex items-center gap-3">
+				<div className="flex items-center gap-2">
 					<button
 						onClick={() => setAnnual(!annual)}
-						className={`relative w-16 h-7 rounded-full transition-colors shrink-0 ${
+						className={`relative w-12 h-6 rounded-full transition-colors shrink-0 ${
 							annual
 								? "bg-ori-message"
 								: "bg-background-secondary dark:bg-dark-overlay"
@@ -69,15 +69,15 @@ export function PricingCardDuo({
 						aria-label="Facturation annuelle"
 					>
 						<span
-							className={`absolute top-1 left-1 w-5 h-5 rounded-full bg-white shadow-sm transition-transform ${
-								annual ? "translate-x-8" : "translate-x-0"
+							className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${
+								annual ? "translate-x-6" : "translate-x-0"
 							}`}
 						/>
 					</button>
-					<span className="font-display font-normal text-lg text-text-secondary dark:text-text-tertiary">
+					<span className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
 						Annuel
 					</span>
-					<span className="font-display font-bold text-lg text-ori-message">
+					<span className="font-display font-bold text-sm text-ori-message">
 						-10%
 					</span>
 				</div>
@@ -86,7 +86,7 @@ export function PricingCardDuo({
 			{/* CTA */}
 			<Link
 				href="#trial"
-				className="inline-flex items-center justify-center gap-2 font-display font-bold rounded-2xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ori-message focus-visible:ring-offset-2 w-full text-xl px-8 h-[50px] bg-ori-message text-text shadow-blue-btn hover:bg-ori-message/90 active:bg-ori-message/80"
+				className="inline-flex items-center justify-center gap-2 font-display font-bold rounded-2xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ori-message focus-visible:ring-offset-2 w-full text-lg px-8 h-[46px] bg-ori-message text-text shadow-blue-btn hover:bg-ori-message/90 active:bg-ori-message/80"
 			>
 				Activer le Pack Duo
 			</Link>
@@ -103,7 +103,7 @@ export function PricingCardDuo({
 								className="text-ori-message shrink-0 mt-0.5"
 								strokeWidth={2.5}
 							/>
-							<span className="font-display font-normal text-base text-text-heading dark:text-text-tertiary">
+							<span className="font-display font-normal text-sm text-text-heading dark:text-text-tertiary">
 								{f}
 							</span>
 						</li>
@@ -113,7 +113,7 @@ export function PricingCardDuo({
 
 			<Divider />
 
-			<p className="font-display font-semibold text-lg text-text-secondary dark:text-text-tertiary text-center">
+			<p className="font-display font-semibold text-sm text-text-secondary dark:text-text-tertiary text-center">
 				Essai gratuit 7 jours — sans engagement
 				<br />
 				Facturation uniquement après l&apos;essai

@@ -398,7 +398,7 @@ export const translations = {
 							at: 20,
 							tags: [
 								"Customer identified by number",
-								"Preference "quiet table" confirmed",
+								"Preference \u201cquiet table\u201d confirmed",
 							],
 						},
 						{ at: 40, tags: ["Reservation recorded in CRM"] },
