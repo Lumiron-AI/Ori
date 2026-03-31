@@ -43,7 +43,7 @@ export function Header() {
 					{/* Logo */}
 					<Link href="/" className="flex items-center gap-2 shrink-0 w-fit">
 						<Image
-							src="/img/LogoOriText.svg"
+							src={isMessages ? "/img/LogoOriTextBlue.svg" : "/img/LogoOriText.svg"}
 							alt="Ori"
 							width={80}
 							height={32}
