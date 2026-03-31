@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { TestOriButton } from "@/components/ui/test-ori-button";
 import { useCountUp } from "@/hooks/use-count-up";
 import { useSectionFade } from "@/hooks/use-section-fade";
+import { useLocale } from "@/context/locale-context";
 
 const fadeUp = {
 	hidden: { opacity: 0, y: 24 },
@@ -14,21 +15,16 @@ const fadeUp = {
 	}),
 };
 
-interface Stat {
+const STAT_NUMERICS = [100, 12, 5, 24];
+
+function AnimatedStatValue({
+	numeric,
+	suffix,
+}: {
 	numeric: number;
 	suffix: string;
-	label: string;
-}
-
-const STATS: Stat[] = [
-	{ numeric: 100, suffix: "%", label: "Appels pris en charge" },
-	{ numeric: 12, suffix: "h", label: "Économisées par semaine" },
-	{ numeric: 5, suffix: "min", label: "De configuration" },
-	{ numeric: 24, suffix: "/7", label: "Disponibilité" },
-];
-
-function AnimatedStatValue({ stat }: { stat: Stat }) {
-	const { count, ref } = useCountUp({ target: stat.numeric, duration: 2800 });
+}) {
+	const { count, ref } = useCountUp({ target: numeric, duration: 2800 });
 
 	return (
 		<span
@@ -36,13 +32,15 @@ function AnimatedStatValue({ stat }: { stat: Stat }) {
 			className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-text-primary dark:text-text leading-none"
 		>
 			{count}
-			{stat.suffix}
+			{suffix}
 		</span>
 	);
 }
 
 export function OriPhoneHeroSection() {
 	const { ref, opacity } = useSectionFade();
+	const { t } = useLocale();
+	const { hero } = t;
 
 	return (
 		<motion.section
@@ -67,13 +65,15 @@ export function OriPhoneHeroSection() {
 					animate="show"
 					className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text-primary dark:text-text leading-tight max-w-6xl"
 				>
-					Ori,
-					<br /> le <span className="text-primary">
-						standard téléphonique
-					</span>{" "}
+					{hero.title1}
+					<br /> {hero.title2}{" "}
+					<span className="text-primary">{hero.titleHighlight}</span>{" "}
 					<br />
-					automatique pour votre{" "}
-					<span className="border-b-8 border-primary pb-0.5"> restaurant</span>.
+					{hero.title3}{" "}
+					<span className="border-b-8 border-primary pb-0.5">
+						{hero.titleUnderline}
+					</span>
+					.
 				</motion.h1>
 
 				<motion.p
@@ -83,12 +83,11 @@ export function OriPhoneHeroSection() {
 					animate="show"
 					className="font-display font-semibold text-base sm:text-lg lg:text-2xl text-text-secondary dark:text-text-tertiary max-w-5xl gap-4 py-4"
 				>
-					Il décroche instantanément, répond aux questions de vos clients et
-					enregistre vos réservations.{" "}
+					{hero.subtitle}{" "}
 					<span className="hidden sm:inline">
 						<br />
 					</span>
-					24h/24, sans jamais interrompre votre équipe.
+					{hero.subtitleLine2}
 				</motion.p>
 
 				<motion.div
@@ -108,7 +107,7 @@ export function OriPhoneHeroSection() {
 					animate="show"
 					className="font-display font-normal text-xs sm:text-base text-text-secondary dark:text-text-tertiary"
 				>
-					Parlez à Ori comme un vrai client
+					{hero.testPrompt}
 				</motion.p>
 
 				<motion.div
@@ -119,11 +118,14 @@ export function OriPhoneHeroSection() {
 					className="w-full mt-2 sm:mt-4"
 				>
 					<div className="flex flex-wrap justify-center gap-x-8 sm:gap-x-12 gap-y-4">
-						{STATS.map((stat, i) => (
+						{hero.stats.map((stat, i) => (
 							<div key={i} className="flex flex-col items-center min-w-[10rem]">
 								<div className="flex items-center gap-4">
 									<div className="w-1 h-8 sm:h-10 bg-primary rounded-full shrink-0" />
-									<AnimatedStatValue stat={stat} />
+									<AnimatedStatValue
+										numeric={STAT_NUMERICS[i]}
+										suffix={stat.suffix}
+									/>
 								</div>
 								<span className="font-display font-normal text-xs sm:text-sm lg:text-base text-text-secondary dark:text-text-tertiary pl-3">
 									{stat.label}

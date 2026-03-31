@@ -8,38 +8,13 @@ import Link from "next/link";
 
 import { SectionHeader } from "@/components/ui/section-header";
 import { buttonClass } from "@/components/ui/button";
-
-const FAQS = [
-	{
-		question: "Dois-je changer de numéro ou de matériel ?",
-		answer:
-			"Non. Ori se connecte à votre numéro existant via un simple renvoi d'appel. Aucun matériel à acheter, aucune installation technique — tout fonctionne avec votre ligne actuelle.",
-	},
-	{
-		question: "Ori peut-il vraiment prendre des réservations automatiquement ?",
-		answer:
-			"Oui. Ori dispose de votre planning en temps réel et peut confirmer, modifier ou annuler une réservation directement dans votre logiciel. Le client reçoit une confirmation par SMS.",
-	},
-	{
-		question: "Que se passe t-il en cas de demande urgente ?",
-		answer:
-			"Ori détecte les situations urgentes et peut transférer l'appel à votre équipe selon des règles que vous définissez : plages horaires, mots-clés, ou à tout moment sur demande du client.",
-	},
-	{
-		question: "Est-ce rentable pour un petit restaurant ?",
-		answer:
-			"Absolument. Un seul client perdu à cause d'un appel manqué peut coûter plus qu'un mois d'abonnement à Ori. Et les heures économisées par votre équipe sur la gestion des appels représentent un gain immédiat.",
-	},
-	{
-		question: "Comment fonctionne l'essai de 7 jours ?",
-		answer:
-			"Vous activez Ori en 5 minutes, sans carte bancaire requise. Pendant 7 jours, Ori gère vos appels réels. À la fin de l'essai, vous choisissez si vous continuez — sans aucun engagement.",
-	},
-];
+import { useLocale } from "@/context/locale-context";
 
 export function FAQSection() {
 	const [open, setOpen] = useState<number | null>(null);
 	const { ref, opacity } = useSectionFade();
+	const { t } = useLocale();
+	const { faq } = t;
 
 	return (
 		<motion.section
@@ -53,9 +28,9 @@ export function FAQSection() {
 					{/* Left: title block */}
 					<div className="lg:w-[560px] shrink-0 flex flex-col">
 						<SectionHeader
-							label="FAQ"
-							title="Vos questions sur Ori"
-							subtitle="Tout savoir sur l'assistant conçu pour les restaurants."
+							label={faq.label}
+							title={faq.title}
+							subtitle={faq.subtitle}
 							className="mb-0"
 						/>
 
@@ -67,13 +42,13 @@ export function FAQSection() {
 								className: "w-full sm:w-[292px]",
 							})}
 						>
-							Voir toutes les questions
+							{faq.seeAll}
 						</Link>
 					</div>
 
 					{/* Right: accordion */}
 					<div className="flex-1">
-						{FAQS.map((faq, i) => (
+						{faq.items.map((item, i) => (
 							<div
 								key={i}
 								className="border-b border-background-secondary dark:border-dark-elevated"
@@ -84,7 +59,7 @@ export function FAQSection() {
 								>
 									<div className="w-1.5 h-[28px] sm:h-[33px] rounded-sm shrink-0 transition-colors bg-primary" />
 									<span className="flex-1 font-display font-semibold text-base sm:text-xl lg:text-2xl text-text-primary dark:text-text">
-										{faq.question}
+										{item.question}
 									</span>
 									<ChevronDown
 										size={22}
@@ -105,7 +80,7 @@ export function FAQSection() {
 											className="overflow-hidden"
 										>
 											<p className="font-display font-normal text-sm sm:text-base text-text-primary dark:text-text-tertiary pb-6 sm:pb-8 pl-4 sm:pl-6 leading-relaxed">
-												{faq.answer}
+												{item.answer}
 											</p>
 										</motion.div>
 									)}

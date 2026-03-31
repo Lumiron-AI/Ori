@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Pause } from "lucide-react";
+import { useLocale } from "@/context/locale-context";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -18,6 +19,8 @@ export type TagGroup = {
 
 export type AudioCardProps = {
 	title: string;
+	/** Lucide icon component rendered to the left of the title */
+	icon?: React.ElementType;
 	/** Path relative to /public, e.g. "/audio/ori-reservation.mp3" */
 	src: string;
 	/**
@@ -75,6 +78,7 @@ function activeGroupIndex(tagGroups: TagGroup[], currentTime: number): number {
 
 export function AudioCard({
 	title,
+	icon: Icon,
 	src,
 	tagGroups,
 	simulatedDuration = 41,
@@ -90,6 +94,9 @@ export function AudioCard({
 	const [currentTime, setCurrentTime] = useState(0);
 	const [duration, setDuration] = useState(0);
 	const [speed, setSpeed] = useState(1);
+
+	const { t } = useLocale();
+	const { audioCard } = t;
 
 	// Index of the currently displayed tag group (-1 = none yet)
 	const groupIdx = playing ? activeGroupIndex(tagGroups, currentTime) : -1;
@@ -191,19 +198,40 @@ export function AudioCard({
 			}`}
 		>
 			{/* Title */}
+			<div className="flex items-center gap-2">
+				{Icon && (
+					<Icon
+						size={22}
+						className={`shrink-0 transition-colors duration-300 ${
+							playing ? "text-primary" : "text-text-heading dark:text-text"
+						}`}
+					/>
+				)}
+				<p
+					className={`font-display font-semibold text-2xl transition-colors duration-300 ${
+						playing ? "text-text" : "text-text-heading dark:text-text"
+					}`}
+				>
+					{title}
+				</p>
+			</div>
+
+			{/* "Écouter la conversation" label */}
 			<p
-				className={`font-display font-semibold text-2xl transition-colors duration-300 ${
-					playing ? "text-text" : "text-text-heading dark:text-text"
+				className={`font-display font-normal text-base transition-colors duration-300 ${
+					playing
+						? "text-text/60"
+						: "text-text-secondary dark:text-text-tertiary"
 				}`}
 			>
-				{title}
+				{audioCard.listenLabel}
 			</p>
 
 			{/* Player row: [Play btn] [──progress──] [timer] */}
 			<div className="flex items-center gap-3">
 				<button
 					onClick={handlePlayStop}
-					aria-label={playing ? "Arrêter" : "Lire"}
+					aria-label={playing ? audioCard.stop : audioCard.play}
 					className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-orange-btn hover:bg-primary/90 active:bg-primary/80 transition-colors shrink-0"
 				>
 					{playing ? (
@@ -250,23 +278,25 @@ export function AudioCard({
 			</div>
 
 			{/* Speed controls — only shown while playing */}
-			{playing && <div className="flex items-center gap-1">
-				{SPEEDS.map((s) => (
-					<button
-						key={s.label}
-						onClick={() => handleSpeed(s.value)}
-						className={`font-display font-semibold text-sm px-2.5 py-1 rounded-full transition-colors ${
-							speed === s.value
-								? "bg-primary/10 text-primary"
-								: playing
-									? "text-text/40 hover:text-text/70"
-									: "text-text-secondary dark:text-text-tertiary hover:text-text-primary dark:hover:text-text"
-						}`}
-					>
-						{s.label}
-					</button>
-				))}
-			</div>}
+			{playing && (
+				<div className="flex items-center gap-1">
+					{SPEEDS.map((s) => (
+						<button
+							key={s.label}
+							onClick={() => handleSpeed(s.value)}
+							className={`font-display font-semibold text-sm px-2.5 py-1 rounded-full transition-colors ${
+								speed === s.value
+									? "bg-primary/10 text-primary"
+									: playing
+										? "text-text/40 hover:text-text/70"
+										: "text-text-secondary dark:text-text-tertiary hover:text-text-primary dark:hover:text-text"
+							}`}
+						>
+							{s.label}
+						</button>
+					))}
+				</div>
+			)}
 
 			{/* Tag groups — one group visible at a time, animated on change */}
 			<div>

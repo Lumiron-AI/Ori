@@ -6,37 +6,12 @@ import { Minus, CheckCircle2 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section-header";
 import { useSectionFade } from "@/hooks/use-section-fade";
 import { AiOutlineMinusCircle } from "react-icons/ai";
-
-const ROWS = [
-	{
-		topic: "Disponibilité",
-		without: "Appels manqués pendant le rush ou après minuit",
-		with: "Décroché instantané 24h/24 et 7j/7",
-	},
-	{
-		topic: "Charge de travail",
-		without: "Interruption constante du personnel en plein service",
-		with: "Équipe 100% concentrée sur les clients en salle",
-	},
-	{
-		topic: "Réservations",
-		without: "Risque d'erreurs de saisie et d'oublis",
-		with: "Saisie automatique et fiable dans votre logiciel",
-	},
-	{
-		topic: "Coût d'exploitation",
-		without: "Un poste coûteux et difficile à recruter",
-		with: "Un investissement rentable dès le premier jour",
-	},
-	{
-		topic: "Sérénité",
-		without: "Stress lié au téléphone qui sonne dans le vide",
-		with: "Esprit libre : chaque appel est traité",
-	},
-];
+import { useLocale } from "@/context/locale-context";
 
 export function ComparisonSection() {
 	const { ref, opacity } = useSectionFade();
+	const { t } = useLocale();
+	const { comparison } = t;
 
 	return (
 		<motion.section
@@ -47,9 +22,9 @@ export function ComparisonSection() {
 		>
 			<div className="max-w-8xl lg:max-w-9xl mx-auto">
 				<SectionHeader
-					label="COMPARATIF"
-					title="Bien plus qu'un standard, un atout pour votre équipe."
-					subtitle="Comparez l'impact d'Ori sur votre quotidien face à une gestion classique."
+					label={comparison.label}
+					title={comparison.title}
+					subtitle={comparison.subtitle}
 					subtitleClassName="max-w-3xl"
 				/>
 
@@ -61,19 +36,19 @@ export function ComparisonSection() {
 								<th className="w-[22%]" />
 								<th className="w-[39%]">
 									<div className="bg-dark-overlay text-text font-display font-semibold text-lg rounded-tl-2xl rounded-tr-2xl px-5 py-3 text-center">
-										Standard classique
+										{comparison.withoutHeader}
 									</div>
 								</th>
 								<th className="w-[39%] border-l-4 border-background p-0!">
 									<div className="bg-primary text-text font-display font-semibold text-lg rounded-tl-2xl rounded-tr-2xl px-5 py-3 text-center">
-										Avec Ori
+										{comparison.withHeader}
 									</div>
 								</th>
 							</tr>
 						</thead>
 
 						<tbody>
-							{ROWS.map((row, i) => (
+							{comparison.rows.map((row, i) => (
 								<motion.tr
 									key={i}
 									initial={{ opacity: 0, x: -10 }}
@@ -84,7 +59,9 @@ export function ComparisonSection() {
 									<td className="bg-background-secondary border-r-4 border-background rounded-l-2xl">
 										<div
 											className={` dark:bg-dark-elevated px-5 py-4 font-display font-semibold text-lg text-text-primary dark:text-text  ${
-												i === ROWS.length - 1 ? "rounded-bl-2xl" : ""
+												i === comparison.rows.length - 1
+													? "rounded-bl-2xl"
+													: ""
 											}`}
 										>
 											{row.topic}
@@ -107,7 +84,9 @@ export function ComparisonSection() {
 									<td className="bg-background-secondary border-l-4 border-background dark:border-dark-bg">
 										<div
 											className={`bg-background-secondary dark:bg-dark-elevated px-5 py-4 flex items-start gap-3 rounded-r-2xl ${
-												i === ROWS.length - 1 ? "rounded-br-2xl" : ""
+												i === comparison.rows.length - 1
+													? "rounded-br-2xl"
+													: ""
 											}`}
 										>
 											<CheckCircle2
@@ -131,14 +110,14 @@ export function ComparisonSection() {
 					{/* Column headers */}
 					<div className="grid grid-cols-2 gap-2">
 						<div className="bg-dark-overlay text-text font-display font-semibold text-lg rounded-2xl px-4 py-2.5 text-center">
-							Standard classique
+							{comparison.withoutHeader}
 						</div>
 						<div className="bg-primary text-text font-display font-semibold text-lg rounded-2xl px-4 py-2.5 text-center">
-							Avec Ori
+							{comparison.withHeader}
 						</div>
 					</div>
 
-					{ROWS.map((row, i) => (
+					{comparison.rows.map((row, i) => (
 						<motion.div
 							key={i}
 							initial={{ opacity: 0, y: 10 }}
@@ -181,9 +160,7 @@ export function ComparisonSection() {
 				</div>
 
 				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-3xl mx-auto">
-					Maximisez votre chiffre d&apos;affaires en ne laissant plus aucun
-					appel sans réponse. Chaque appel décroché est une opportunité
-					préservée.
+					{comparison.footer}
 				</p>
 			</div>
 		</motion.section>

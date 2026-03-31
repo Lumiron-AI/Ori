@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { SponsorshipFormValues } from "@/hooks/use-sponsorship-modal";
+import { useLocale } from "@/context/locale-context";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -63,6 +64,8 @@ export function SponsorshipModal({
 	onSubmit,
 }: SponsorshipModalProps) {
 	const firstInputRef = useRef<HTMLInputElement>(null);
+	const { t } = useLocale();
+	const { sponsorshipModal } = t;
 
 	return (
 		<AnimatePresence>
@@ -104,7 +107,7 @@ export function SponsorshipModal({
 							<button
 								type="button"
 								onClick={onClose}
-								aria-label="Fermer"
+								aria-label={sponsorshipModal.close}
 								className="absolute top-5 right-5 w-9 h-9 flex items-center justify-center rounded-full text-text-heading dark:text-text hover:bg-background-secondary dark:hover:bg-dark-elevated transition-colors"
 							>
 								<X size={20} strokeWidth={2} />
@@ -116,39 +119,42 @@ export function SponsorshipModal({
 									id="sponsorship-title"
 									className="font-display font-bold text-xl sm:text-2xl text-text-heading dark:text-text"
 								>
-									Comment fonctionne le parrainage ?
+									{sponsorshipModal.title}
 								</h2>
 							</div>
 
 							<p className="font-display font-normal text-sm sm:text-lg text-text-secondary dark:text-text-tertiary mb-6 leading-relaxed">
-								Le restaurant recommandé crée son compte et active Ori.
-								<br />
-								Vous êtes tous les deux récompensés.
+								{sponsorshipModal.description.split("\n").map((line, i) => (
+									<span key={i}>
+										{line}
+										{i === 0 && <br />}
+									</span>
+								))}
 							</p>
 
 							{/* Form */}
 							<form onSubmit={onSubmit} noValidate className="flex flex-col gap-5">
 								<p className="font-display font-semibold text-lg sm:text-2xl text-text-heading dark:text-text">
-									Indiquez les adresses e-mails
+									{sponsorshipModal.formTitle}
 								</p>
 
 								<div className="flex flex-col gap-4" ref={firstInputRef as unknown as React.RefObject<HTMLDivElement>}>
 									<EmailField
 										id="recommended-email"
-										label="E-mail du restaurant recommandé"
+										label={sponsorshipModal.recommendedEmailLabel}
 										value={form.recommendedEmail}
 										onChange={(v) => onSetField("recommendedEmail", v)}
 									/>
 									<EmailField
 										id="your-email"
-										label="Votre e-mail"
+										label={sponsorshipModal.yourEmailLabel}
 										value={form.yourEmail}
 										onChange={(v) => onSetField("yourEmail", v)}
 									/>
 								</div>
 
 								<p className="font-display font-normal text-xs sm:text-base text-text-secondary dark:text-text-tertiary text-center">
-									Offre valable pour tout nouveau compte activé.
+									{sponsorshipModal.offerNote}
 								</p>
 
 								<button
@@ -160,7 +166,7 @@ export function SponsorshipModal({
 										"shadow-orange-btn hover:bg-primary/90 active:bg-primary/80 transition-colors"
 									)}
 								>
-									Envoyer la demande
+									{sponsorshipModal.submit}
 									<Send size={20} strokeWidth={2} className="rotate-12" />
 								</button>
 							</form>

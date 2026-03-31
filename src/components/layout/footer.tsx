@@ -3,23 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { AudioLines, Linkedin, Instagram } from "lucide-react";
-
-const NAV_LINKS = [
-	{ href: "/solutions/phone#use-case", label: "Cas d'usage" },
-	{ href: "/solutions/phone#interface", label: "Interface" },
-	{ href: "/solutions/phone#comparison", label: "Comparatif" },
-	{ href: "/solutions/phone#sponsorship", label: "Parrainage" },
-	{ href: "/solutions/phone#faq", label: "FAQ" },
-	{ href: "/solutions/phone#pricing", label: "Tarifs" },
-	{ href: "/blog", label: "Ressources" },
-];
-
-const LEGAL_LINKS = [
-	{ href: "/legal/mentions", label: "Mentions légales" },
-	{ href: "/legal/cgv", label: "CGV" },
-	{ href: "/legal/confidentialite", label: "Politique de confidentialité" },
-];
+import { Linkedin, Instagram } from "lucide-react";
+import { useLocale } from "@/context/locale-context";
+import type { Locale } from "@/context/locale-context";
 
 const XIcon = () => (
 	<svg
@@ -54,6 +40,13 @@ const SOCIAL = [
 export function Footer() {
 	const pathname = usePathname();
 	const isMessages = pathname === "/solutions/messages";
+	const { locale, setLocale, t } = useLocale();
+	const { footer } = t;
+
+	function toggle(next: Locale) {
+		if (next !== locale) setLocale(next);
+	}
+
 	return (
 		<footer className="relative mt-16 overflow-hidden bg-background dark:bg-gradient-to-t dark:from-dark-surface dark:to-dark-bg border-t border-text-secondary/20 dark:border-text-tertiary/50">
 			{/* Lights glow effect (dark mode only) */}
@@ -82,8 +75,7 @@ export function Footer() {
 							/>
 						</Link>
 						<p className="font-display font-normal text-sm text-text-primary dark:text-text max-w-xs leading-relaxed">
-							Le standard téléphonique IA pour restaurants. Ori gère vos
-							réservations, commandes et questions clients, 24h/24.
+							{footer.brandTagline}
 						</p>
 					</div>
 
@@ -92,9 +84,9 @@ export function Footer() {
 						{/* Navigation */}
 						<div className="flex flex-col gap-3 sm:gap-4 md:flex-1">
 							<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
-								Navigation
+								{footer.navTitle}
 							</p>
-							{NAV_LINKS.map((link) => (
+							{footer.navLinks.map((link) => (
 								<Link
 									key={link.href}
 									href={link.href}
@@ -108,9 +100,9 @@ export function Footer() {
 						{/* Legal */}
 						<div className="flex flex-col gap-3 sm:gap-4 md:flex-1">
 							<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
-								Légal
+								{footer.legalTitle}
 							</p>
-							{LEGAL_LINKS.map((link) => (
+							{footer.legalLinks.map((link) => (
 								<Link
 									key={link.href}
 									href={link.href}
@@ -124,7 +116,7 @@ export function Footer() {
 						{/* Social */}
 						<div className="col-span-2 sm:col-span-1 flex flex-col items-end gap-3 sm:gap-4 md:flex-1">
 							<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
-								Réseaux sociaux
+								{footer.socialTitle}
 							</p>
 							<div className="flex gap-2">
 								{SOCIAL.map(({ label, href, icon: Icon }) => (
@@ -141,21 +133,38 @@ export function Footer() {
 								))}
 							</div>
 							{/* Language toggle */}
-							<button
-								type="button"
-								className="w-fit font-display font-semibold text-sm text-text-secondary dark:text-text/50 flex gap-2 items-center hover:text-text-primary dark:hover:text-text transition-colors"
-								aria-label="Changer de langue"
+							<div
+								className="w-fit font-display font-semibold text-sm flex gap-2 items-center"
+								aria-label={footer.changeLang}
 							>
-								<span className="text-text-secondary dark:text-text/50">
+								<button
+									type="button"
+									onClick={() => toggle("fr")}
+									className={`transition-colors ${
+										locale === "fr"
+											? isMessages
+												? "text-ori-message"
+												: "text-primary"
+											: "text-text-secondary dark:text-text/50 hover:text-text-primary dark:hover:text-text"
+									}`}
+								>
 									FR
-								</span>
+								</button>
 								<span className="text-text-secondary dark:text-text/50">|</span>
-								<span
-									className={isMessages ? "text-ori-message" : "text-primary"}
+								<button
+									type="button"
+									onClick={() => toggle("en")}
+									className={`transition-colors ${
+										locale === "en"
+											? isMessages
+												? "text-ori-message"
+												: "text-primary"
+											: "text-text-secondary dark:text-text/50 hover:text-text-primary dark:hover:text-text"
+									}`}
 								>
 									EN
-								</span>
-							</button>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -165,10 +174,10 @@ export function Footer() {
 			<div className="border-t border-text-secondary/20 dark:border-text-tertiary/50">
 				<div className="container-site max-w-[82rem] py-3 sm:py-4 pb-8 sm:pb-10 px-5 md:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
 					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
-						© 2026 ORI. Tous droits réservés.
+						{footer.copyright}
 					</p>
 					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
-						Un produit de{" "}
+						{footer.madeBy}{" "}
 						<span
 							className={`${isMessages ? "text-ori-message" : "text-primary"} font-semibold`}
 						>

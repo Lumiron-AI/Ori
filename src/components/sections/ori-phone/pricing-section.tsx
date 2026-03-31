@@ -7,10 +7,13 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { useSectionFade } from "@/hooks/use-section-fade";
 import { StandardCard } from "./pricing/StandardCard";
 import { AdvancedCard } from "./pricing/AdvancedCard";
+import { useLocale } from "@/context/locale-context";
 
 export function OriPhonePricingSection() {
 	const [annual, setAnnual] = useState(false);
 	const { ref, opacity } = useSectionFade();
+	const { t } = useLocale();
+	const { pricing } = t;
 
 	return (
 		<motion.section
@@ -21,9 +24,9 @@ export function OriPhonePricingSection() {
 		>
 			<div className="max-w-8xl lg:max-w-9xl mx-auto">
 				<SectionHeader
-					label="TARIFS"
-					title="Ne courez plus jamais après le téléphone."
-					subtitle="Ori prend le relais. Vous gardez l'esprit libre."
+					label={pricing.label}
+					title={pricing.title}
+					subtitle={pricing.subtitle}
 				/>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 max-w-[55rem] mx-auto">
@@ -49,7 +52,7 @@ export function OriPhonePricingSection() {
 				</div>
 
 				<p className="font-display font-normal text-sm sm:text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-3xl mx-auto">
-					Un seul client perdu coûte plus cher qu&apos;un mois d&apos;Ori.
+					{pricing.footer}
 				</p>
 			</div>
 		</motion.section>

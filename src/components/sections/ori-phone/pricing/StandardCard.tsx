@@ -5,14 +5,7 @@ import Link from "next/link";
 import { Divider } from "./Divider";
 import { FeatureList } from "./FeatureList";
 import { buttonClass } from "@/components/ui/button";
-
-const STANDARD_FEATURES = [
-	"Jusqu'à 400 minutes d'appels entrants",
-	"Réservations, annulations et réponses aux questions fréquentes prises en charge",
-	"Transfert vers l'équipe si nécessaire",
-	"Statistiques en temps réel",
-	"Interface de gestion complète",
-];
+import { useLocale } from "@/context/locale-context";
 
 export function StandardCard({
 	annual,
@@ -24,15 +17,18 @@ export function StandardCard({
 	const monthlyPrice = 80;
 	const annualPrice = 961;
 
+	const { t } = useLocale();
+	const { standard } = t.pricing;
+
 	return (
 		<div className="bg-background dark:bg-dark-surface rounded-3xl px-7 py-6 flex flex-col gap-3.5 shadow-card h-full border border-transparent hover:border-primary transition-colors">
 			{/* Title */}
 			<div>
 				<p className="font-display font-bold text-2xl text-text-heading dark:text-text">
-					STANDARD
+					{standard.name}
 				</p>
 				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-0.5">
-					1 établissement
+					{standard.tagline}
 				</p>
 			</div>
 
@@ -45,7 +41,7 @@ export function StandardCard({
 						{annual ? annualPrice : monthlyPrice}€
 					</span>
 					<span className="font-display font-semibold text-base text-text-secondary dark:text-text-tertiary">
-						{annual ? "/ an" : "/ mois"}
+						{annual ? standard.perYear : standard.perMonth}
 					</span>
 				</div>
 
@@ -60,7 +56,7 @@ export function StandardCard({
 						}`}
 						aria-checked={annual}
 						role="switch"
-						aria-label="Facturation annuelle"
+						aria-label={standard.annualLabel}
 					>
 						<span
 							className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${
@@ -69,10 +65,10 @@ export function StandardCard({
 						/>
 					</button>
 					<span className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
-						Annuel
+						{standard.annual}
 					</span>
 					<span className="font-display font-bold text-sm text-primary">
-						-10%
+						{standard.discount}
 					</span>
 				</div>
 			</div>
@@ -86,27 +82,27 @@ export function StandardCard({
 					className: "w-full",
 				})}
 			>
-				Commencer l&apos;essai gratuit
+				{standard.cta}
 			</Link>
 
 			<Divider />
 
 			{/* Features */}
 			<div className="flex-1">
-				<FeatureList features={STANDARD_FEATURES} />
+				<FeatureList features={standard.features as unknown as string[]} />
 			</div>
 
 			<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
-				Minutes supplémentaires : 0,20 € / minute
+				{standard.extraMinutes}
 			</p>
 
 			<Divider />
 
 			{/* Bottom note */}
 			<p className="font-display font-semibold text-sm text-text-secondary dark:text-text-tertiary text-center">
-				Essai gratuit 7 jours — sans engagement
+				{standard.trialNote}
 				<br />
-				Facturation uniquement après l&apos;essai
+				{standard.billingNote}
 			</p>
 		</div>
 	);

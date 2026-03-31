@@ -7,23 +7,13 @@ import { buttonClass } from "@/components/ui/button";
 import { SponsorshipModal } from "@/components/ui/sponsorship-modal";
 import { useSectionFade } from "@/hooks/use-section-fade";
 import { useSponsorshipModal } from "@/hooks/use-sponsorship-modal";
-
-const CARDS = [
-	{
-		tag: "POUR LE RESTAURANT PARRAIN",
-		highlight: "200 minutes",
-		rest: " offertes",
-	},
-	{
-		tag: "POUR LE RESTAURANT RECOMMANDÉ",
-		highlight: "1 mois",
-		rest: " offert",
-	},
-];
+import { useLocale } from "@/context/locale-context";
 
 export function SponsorshipSection() {
 	const { ref, opacity } = useSectionFade();
 	const modal = useSponsorshipModal();
+	const { t } = useLocale();
+	const { sponsorship } = t;
 
 	return (
 		<>
@@ -35,14 +25,14 @@ export function SponsorshipSection() {
 			>
 				<div className="max-w-8xl lg:max-w-9xl mx-auto">
 					<SectionHeader
-						label="PARRAINAGE"
-						title="Partagez Ori, gagnez ensemble."
-						subtitle="Recommandez Ori à vos confrères et profitez d'avantages exclusifs sur votre abonnement."
+						label={sponsorship.label}
+						title={sponsorship.title}
+						subtitle={sponsorship.subtitle}
 						subtitleClassName="max-w-8xl"
 					/>
 
 					<div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8 mb-10 sm:mb-12">
-						{CARDS.map((card, i) => (
+						{sponsorship.cards.map((card, i) => (
 							<motion.div
 								key={i}
 								initial={{ opacity: 0, y: 20 }}
@@ -78,7 +68,7 @@ export function SponsorshipSection() {
 								className: "shadow-orange-btn w-full sm:w-auto",
 							})}
 						>
-							Voir les conditions
+							{sponsorship.seeCta}
 						</button>
 					</div>
 				</div>

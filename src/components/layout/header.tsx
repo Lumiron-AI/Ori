@@ -4,14 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, Sun, Moon, AudioLines, ArrowRight } from "lucide-react";
+import { Menu, X, Sun, Moon, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/context/theme-context";
-
-const NAV_LINKS = [
-	{ href: "/solutions/messages", label: "Ori messages" },
-	{ href: "/solutions/phone", label: "Ori téléphone" },
-];
+import { useLocale } from "@/context/locale-context";
 
 export function Header() {
 	const [open, setOpen] = useState(false);
@@ -20,6 +16,13 @@ export function Header() {
 	const pathname = usePathname();
 	const ctaHref = pathname === "/solutions/phone" ? "#pricing" : "/pricing";
 	const isMessages = pathname === "/solutions/messages";
+	const { t } = useLocale();
+	const { header } = t;
+
+	const NAV_LINKS = [
+		{ href: "/solutions/messages", label: header.navOriMessages },
+		{ href: "/solutions/phone", label: header.navOriPhone },
+	];
 
 	useEffect(() => {
 		const onScroll = () => setScrolled(window.scrollY > 10);
@@ -66,7 +69,7 @@ export function Header() {
 					<div className="hidden md:flex items-center gap-3 lg:gap-8 justify-end">
 						<button
 							onClick={toggle}
-							aria-label="Basculer le thème"
+							aria-label={header.toggleTheme}
 							className="w-[28px] h-[28px] flex items-center justify-center text-text-secondary dark:text-text-tertiary hover:text-text-primary dark:hover:text-text transition-colors"
 						>
 							{theme === "dark" ? (
@@ -80,14 +83,14 @@ export function Header() {
 							href="/compte"
 							className="hidden lg:block font-display font-bold text-sm lg:text-base text-text-primary dark:text-text hover:text-primary dark:hover:text-primary transition-colors whitespace-nowrap"
 						>
-							Mon compte
+							{header.myAccount}
 						</Link>
 
 						<Link
 							href={ctaHref}
 							className={`inline-flex items-center gap-1.5 text-text font-display font-bold text-sm lg:text-base rounded-xl px-3 lg:px-4 py-1.5 lg:py-2 transition-colors whitespace-nowrap ${isMessages ? "bg-ori-message hover:bg-ori-message/90 active:bg-ori-message/80 shadow-blue-btn" : "bg-primary hover:bg-primary/90 active:bg-primary/80 shadow-orange-btn"}`}
 						>
-							Commencer
+							{header.start}
 							<ArrowRight
 								size={14}
 								strokeWidth={2}
@@ -100,7 +103,7 @@ export function Header() {
 					<button
 						className="md:hidden p-2 text-text-primary dark:text-text justify-self-end min-w-[44px] min-h-[44px] flex items-center justify-center"
 						onClick={() => setOpen((v) => !v)}
-						aria-label="Toggle menu"
+						aria-label={header.toggleMenu}
 					>
 						{open ? <X size={22} /> : <Menu size={22} />}
 					</button>
@@ -134,11 +137,11 @@ export function Header() {
 									onClick={() => setOpen(false)}
 									className="font-display font-bold text-base text-text-primary dark:text-text hover:text-primary transition-colors"
 								>
-									Mon compte
+									{header.myAccount}
 								</Link>
 								<button
 									onClick={toggle}
-									aria-label="Basculer le thème"
+									aria-label={header.toggleTheme}
 									className="w-[44px] h-[44px] flex items-center justify-center text-text-secondary dark:text-text-tertiary"
 								>
 									{theme === "dark" ? (
@@ -153,7 +156,7 @@ export function Header() {
 								onClick={() => setOpen(false)}
 								className={`inline-flex items-center justify-center gap-2 text-text font-display font-bold text-lg rounded-xl px-5 py-3 mt-1 w-full transition-colors ${isMessages ? "bg-ori-message hover:bg-ori-message/90" : "bg-primary hover:bg-primary/90"}`}
 							>
-								Commencer <ArrowRight size={18} />
+								{header.start} <ArrowRight size={18} />
 							</Link>
 						</motion.div>
 					)}

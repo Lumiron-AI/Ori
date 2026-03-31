@@ -5,25 +5,21 @@ import Link from "next/link";
 import { Divider } from "./Divider";
 import { FeatureList } from "./FeatureList";
 import { buttonClass } from "@/components/ui/button";
-
-const ADVANCED_FEATURES = [
-	"Multi-établissements",
-	"Modules complémentaires",
-	"Règles spécifiques",
-	"Intégrations techniques",
-	"Suivi centralisé",
-];
+import { useLocale } from "@/context/locale-context";
 
 export function AdvancedCard() {
+	const { t } = useLocale();
+	const { advanced } = t.pricing;
+
 	return (
 		<div className="bg-background dark:bg-dark-surface rounded-3xl px-7 py-6 flex flex-col gap-3.5 shadow-card h-full border border-transparent hover:border-primary transition-colors">
 			{/* Title */}
 			<div>
 				<p className="font-display font-bold text-2xl text-text-heading dark:text-text">
-					AVANCÉ
+					{advanced.name}
 				</p>
 				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-0.5">
-					Multi-sites et options personnalisés
+					{advanced.tagline}
 				</p>
 			</div>
 
@@ -32,10 +28,10 @@ export function AdvancedCard() {
 			{/* "Price" */}
 			<div>
 				<p className="font-display font-bold text-3xl text-text-heading dark:text-text">
-					Sur-mesure
+					{advanced.price}
 				</p>
 				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-2">
-					Configuration adaptée
+					{advanced.priceNote}
 				</p>
 			</div>
 
@@ -48,21 +44,21 @@ export function AdvancedCard() {
 					className: "w-full",
 				})}
 			>
-				Planifier un appel
+				{advanced.cta}
 			</Link>
 
 			<Divider />
 
 			{/* Features */}
 			<div className="flex-1">
-				<FeatureList features={ADVANCED_FEATURES} />
+				<FeatureList features={advanced.features as unknown as string[]} />
 			</div>
 
 			<Divider />
 
 			{/* Bottom note */}
 			<p className="font-display font-semibold text-sm text-text-secondary dark:text-text-tertiary text-center">
-				Solution et tarification personnalisée selon votre organisation.
+				{advanced.note}
 			</p>
 		</div>
 	);
