@@ -14,7 +14,7 @@ import { useLocale } from "@/context/locale-context";
 export type TagGroup = {
 	/** Audio time (seconds) at which this group of tags becomes visible */
 	at: number;
-	tags: string[];
+	tags: readonly string[];
 };
 
 export type AudioCardProps = {
@@ -34,7 +34,7 @@ export type AudioCardProps = {
 	 *   { at: 38, tags: ["Réservation enregistrée dans le CRM"] },
 	 * ]
 	 */
-	tagGroups: TagGroup[];
+	tagGroups: readonly TagGroup[];
 	/**
 	 * Fallback duration (seconds) used for visual simulation when the audio
 	 * file is not yet present. Replace with your real file and this is ignored.
@@ -66,7 +66,7 @@ function fmt(s: number) {
  * Returns the index of the active tag group for the given currentTime,
  * or -1 if playback hasn't reached the first group yet.
  */
-function activeGroupIndex(tagGroups: TagGroup[], currentTime: number): number {
+function activeGroupIndex(tagGroups: readonly TagGroup[], currentTime: number): number {
 	let idx = -1;
 	for (let i = 0; i < tagGroups.length; i++) {
 		if (currentTime >= tagGroups[i].at) idx = i;
