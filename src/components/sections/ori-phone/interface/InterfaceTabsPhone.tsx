@@ -15,12 +15,14 @@ export function InterfaceTabsPhone() {
 	const [active, setActive] = useState<TabId>("setup");
 	const { t } = useLocale();
 
-	const TABS = t.interface.tabs.map((tab: { label: string; description: string }, i: number) => ({
-		id: TAB_IDS[i],
-		label: tab.label,
-		Icon: TAB_ICONS[i],
-		description: tab.description,
-	}));
+	const TABS = t.interface.tabs.map(
+		(tab: { label: string; description: string }, i: number) => ({
+			id: TAB_IDS[i],
+			label: tab.label,
+			Icon: TAB_ICONS[i],
+			description: tab.description,
+		}),
+	);
 
 	const panels: Record<TabId, React.ReactNode> = {
 		setup: <QuickSetUpPanel />,
@@ -30,7 +32,7 @@ export function InterfaceTabsPhone() {
 	};
 
 	return (
-		<div className="grid grid-cols-1 lg:grid-cols-[50%_1fr] gap-6 lg:gap-11 items-start lg:items-center">
+		<div className="grid grid-cols-1 lg:grid-cols-[45%_1fr] gap-6 lg:gap-11 items-start lg:items-center px-12">
 			{/* ── Left: accordion ── */}
 			<div>
 				{TABS.map((tab, i) => {

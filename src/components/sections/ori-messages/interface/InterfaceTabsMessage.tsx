@@ -59,7 +59,7 @@ export function InterfaceTabsMessage() {
 	};
 
 	return (
-		<div className="grid grid-cols-1 lg:grid-cols-[50%_1fr] gap-8 lg:gap-14 items-start lg:items-center">
+		<div className="grid grid-cols-1 lg:grid-cols-[45%_1fr] gap-8 lg:gap-14 items-start lg:items-center px-12">
 			{/* ── Left: accordion ── */}
 			<div>
 				{TABS.map((tab, i) => {

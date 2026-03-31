@@ -7,7 +7,7 @@ export function OriMessagesTrialCTASection() {
 	return (
 		<motion.section
 			id="trial"
-			className="relative bg-background-secondary dark:bg-dark-surface py-12 my-12 sm:py-20 px-5 text-center"
+			className="relative bg-background-secondary dark:bg-dark-surface py-16 my-16 sm:py-24 px-5 text-center"
 		>
 			{/* Ambient lights */}
 			<div
@@ -33,7 +33,7 @@ export function OriMessagesTrialCTASection() {
 			/>
 
 			<div className="relative max-w-4xl mx-auto flex flex-col items-center gap-5 sm:gap-6">
-				<h2 className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-text-primary dark:text-text leading-tight">
+				<h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-text-primary dark:text-text leading-tight">
 					ESSAYER ORI <span className="text-ori-message">7 JOURS</span> GRATUITS
 				</h2>
 
@@ -43,7 +43,7 @@ export function OriMessagesTrialCTASection() {
 
 				<Link
 					href="#pricing"
-					className="inline-flex items-center justify-center gap-2 font-display font-bold rounded-2xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ori-message focus-visible:ring-offset-2 w-full sm:w-[240px] text-sm sm:text-lg mt-2 h-[46px] px-8 bg-ori-message text-text shadow-blue-btn hover:bg-ori-message/90 active:bg-ori-message/80"
+					className="inline-flex items-center justify-center gap-2 font-display font-bold rounded-2xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ori-message focus-visible:ring-offset-2 w-full sm:w-[261px] text-sm sm:text-lg mt-2 h-[50px] px-8 bg-ori-message text-text shadow-blue-btn hover:bg-ori-message/90 active:bg-ori-message/80"
 				>
 					Démarrer l&apos;essai
 					<ArrowRight size={18} strokeWidth={2.5} />

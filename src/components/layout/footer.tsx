@@ -60,7 +60,7 @@ export function Footer() {
 			/>
 
 			{/* Main content */}
-			<div className="container-site py-6 sm:py-8 max-w-[82rem] px-5">
+			<div className="container-site py-6 sm:py-8 max-w-[80rem] px-5">
 				<div className="flex flex-col md:flex-row gap-8 md:gap-6 lg:gap-10 items-start">
 					{/* Brand */}
 					<div className="w-full md:flex-[2] flex flex-col gap-4">
@@ -172,7 +172,7 @@ export function Footer() {
 
 			{/* Bottom bar */}
 			<div className="border-t border-text-secondary/20 dark:border-text-tertiary/50">
-				<div className="container-site max-w-[82rem] py-3 sm:py-4 pb-8 sm:pb-10 px-5 md:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
+				<div className="container-site py-3 sm:py-4 pb-8 sm:pb-10 px-5 md:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
 					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
 						{footer.copyright}
 					</p>

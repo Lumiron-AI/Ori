@@ -20,12 +20,12 @@ export function OriMessagesInterfaceSection() {
 					label="INTERFACE"
 					title="Votre messagerie en pilote automatique."
 					subtitle="Configurez Ori en quelques minutes et laissez-le gérer chaque message avec précision, selon vos règles."
-					subtitleClassName="max-w-3xl"
+					subtitleClassName="max-w-5xl"
 				/>
 
 				<InterfaceTabsMessage />
 
-				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-3xl mx-auto">
+				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-4xl mx-auto">
 					Une gestion simplifiée pour vous concentrer sur l&apos;essentiel :
 					l&apos;accueil de vos clients et la qualité de votre service.
 				</p>

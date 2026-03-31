@@ -10,7 +10,9 @@ import { PricingCardWhatsApp } from "./pricing/PricingCardWhatsApp";
 import { PricingCardDuo } from "./pricing/PricingCardDuo";
 
 export function OriMessagesPricingSection() {
-	const [annual, setAnnual] = useState(false);
+	const [annualInstagram, setAnnualInstagram] = useState(false);
+	const [annualWhatsApp, setAnnualWhatsApp] = useState(false);
+	const [annualDuo, setAnnualDuo] = useState(false);
 	const { ref, opacity } = useSectionFade();
 
 	return (
@@ -27,7 +29,7 @@ export function OriMessagesPricingSection() {
 					subtitle="Commencez avec un canal ou combinez-les pour une gestion complète."
 				/>
 
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-12">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -35,7 +37,10 @@ export function OriMessagesPricingSection() {
 						transition={{ duration: 0.5 }}
 						className="h-full"
 					>
-						<PricingCardInstagram annual={annual} setAnnual={setAnnual} />
+						<PricingCardInstagram
+							annual={annualInstagram}
+							setAnnual={setAnnualInstagram}
+						/>
 					</motion.div>
 
 					<motion.div
@@ -45,7 +50,10 @@ export function OriMessagesPricingSection() {
 						transition={{ delay: 0.1, duration: 0.5 }}
 						className="h-full"
 					>
-						<PricingCardWhatsApp annual={annual} setAnnual={setAnnual} />
+						<PricingCardWhatsApp
+							annual={annualWhatsApp}
+							setAnnual={setAnnualWhatsApp}
+						/>
 					</motion.div>
 
 					<motion.div
@@ -55,7 +63,7 @@ export function OriMessagesPricingSection() {
 						transition={{ delay: 0.2, duration: 0.5 }}
 						className="h-full"
 					>
-						<PricingCardDuo annual={annual} setAnnual={setAnnual} />
+						<PricingCardDuo annual={annualDuo} setAnnual={setAnnualDuo} />
 					</motion.div>
 				</div>
 

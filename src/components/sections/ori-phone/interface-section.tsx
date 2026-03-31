@@ -23,7 +23,12 @@ export const TAB_ICONS = [
 	RiPhoneLine,
 	RiBarChart2Line,
 ];
-export const TAB_IDS: TabId[] = ["setup", "customize", "automation", "tracking"];
+export const TAB_IDS: TabId[] = [
+	"setup",
+	"customize",
+	"automation",
+	"tracking",
+];
 
 // ─── Section ──────────────────────────────────────────────────────────────────
 
@@ -44,7 +49,7 @@ export function InterfaceSection() {
 					label={iface.label}
 					title={iface.title}
 					subtitle={iface.subtitle}
-					subtitleClassName="max-w-3xl"
+					subtitleClassName="max-w-5xl"
 				/>
 
 				<InterfaceTabsPhone />

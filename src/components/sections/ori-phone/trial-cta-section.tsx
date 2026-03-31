@@ -47,7 +47,7 @@ export function TrialCTASection() {
 				</h2>
 
 				{/* Subtitle */}
-				<p className="font-display font-semibold text-base sm:text-xl lg:text-2xl text-text-primary dark:text-text max-w-2xl">
+				<p className="font-display font-semibold text-base sm:text-lg lg:text-2xl text-text-primary dark:text-text max-w-2xl">
 					{trialCta.subtitle}
 				</p>
 
@@ -57,7 +57,7 @@ export function TrialCTASection() {
 					className={buttonClass({
 						variant: "primary",
 						size: "lg",
-						className: "w-full sm:w-[261px] text-base sm:text-xl mt-2",
+						className: "w-full sm:w-[261px] text-sm sm:text-lg mt-2",
 					})}
 				>
 					{trialCta.cta}

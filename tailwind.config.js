@@ -141,7 +141,7 @@ module.exports = {
 			boxShadow: {
 				// Button shadows
 				"orange-btn": "0px 4px 40px 0px rgba(255, 79, 56, 0.30)",
-				"blue-btn": "0px 4px 40px 0px rgba(62, 103, 181, 0.03)",
+				"blue-btn": "0px 4px 40px 0px rgba(62, 103, 181, 0.30)",
 				// Card shadows
 				card: "0px 0px 50px 0px rgba(0, 0, 0, 0.18)",
 				"card-sm": "0px 0px 20px 0px rgba(0, 0, 0, 0.10)",

@@ -49,7 +49,7 @@ export function OriMessagesSponsorshipSection() {
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ delay: i * 0.1, duration: 0.5 }}
-								className="flex flex-col items-center gap-5 w-full sm:w-[45%]"
+								className="flex flex-col items-center gap-5 w-full sm:w-[40%]"
 							>
 								<div className="flex flex-col items-center gap-2">
 									<p className="font-display font-semibold text-lg sm:text-2xl text-text-primary dark:text-text text-center">
