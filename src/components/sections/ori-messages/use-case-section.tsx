@@ -69,16 +69,16 @@ function InstagramLogo() {
 
 const CARDS = [
 	{
-		platform: "WhatsApp",
-		logo: <WhatsAppLogo />,
-		caption:
-			"Questions sur la carte, réservations ou infos pratiques : Ori répond avec précision à toutes les demandes de vos clients, 24h/24",
-	},
-	{
 		platform: "Instagram",
 		logo: <InstagramLogo />,
 		caption:
 			"Ori traite vos messages privés instantanément pour transformer l'intérêt de vos contacts en actions concrètes, sans aucun délai.",
+	},
+	{
+		platform: "WhatsApp",
+		logo: <WhatsAppLogo />,
+		caption:
+			"Questions sur la carte, réservations ou infos pratiques : Ori répond avec précision à toutes les demandes de vos clients, 24h/24",
 	},
 ];
 
@@ -121,7 +121,7 @@ export function OriMessagesUseCaseSection() {
 									className="mx-5 mb-6 rounded-2xl w-[calc(100%-2.5rem)] object-cover"
 									src={
 										card.platform === "WhatsApp"
-											? "/video/MessagesWhatsAapp.mp4"
+											? "/video/MessagesWhatsApp.mp4"
 											: "/video/MessagesInstagram.mp4"
 									}
 									autoPlay

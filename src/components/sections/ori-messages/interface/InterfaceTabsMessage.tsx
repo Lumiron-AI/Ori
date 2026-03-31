@@ -3,7 +3,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus } from "lucide-react";
-import { RiSettings3Line, RiUser3Line, RiMessage2Line, RiBarChart2Line } from "react-icons/ri";
+import {
+	RiSettings3Line,
+	RiUser3Line,
+	RiMessage2Line,
+	RiBarChart2Line,
+} from "react-icons/ri";
 
 import { QuickSetUpPanel } from "./QuickSetUpPanel";
 import { CustomizePanel } from "./CustomizePanel";
@@ -54,7 +59,7 @@ export function InterfaceTabsMessage() {
 	};
 
 	return (
-		<div className="grid grid-cols-1 lg:grid-cols-[42%_1fr] gap-8 lg:gap-14 items-start lg:items-center">
+		<div className="grid grid-cols-1 lg:grid-cols-[50%_1fr] gap-8 lg:gap-14 items-start lg:items-center">
 			{/* ── Left: accordion ── */}
 			<div>
 				{TABS.map((tab, i) => {
