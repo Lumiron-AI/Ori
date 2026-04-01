@@ -31,10 +31,10 @@ export function OriMessagesPricingSection() {
 
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-12">
 					<motion.div
-						initial={{ opacity: 0, y: 20 }}
+						initial={{ opacity: 0, y: 24 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						transition={{ duration: 0.5 }}
+						transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
 						className="h-full"
 					>
 						<PricingCardInstagram
@@ -47,7 +47,7 @@ export function OriMessagesPricingSection() {
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						transition={{ delay: 0.1, duration: 0.5 }}
+						transition={{ delay: 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
 						className="h-full"
 					>
 						<PricingCardWhatsApp
@@ -60,7 +60,7 @@ export function OriMessagesPricingSection() {
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						transition={{ delay: 0.2, duration: 0.5 }}
+						transition={{ delay: 0.24, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
 						className="h-full"
 					>
 						<PricingCardDuo annual={annualDuo} setAnnual={setAnnualDuo} />

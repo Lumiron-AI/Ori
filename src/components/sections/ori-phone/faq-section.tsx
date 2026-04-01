@@ -26,7 +26,13 @@ export function FAQSection() {
 			<div className="max-w-8xl lg:max-w-9xl mx-auto">
 				<div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
 					{/* Left: title block */}
-					<div className="lg:w-[560px] shrink-0 flex flex-col">
+					<motion.div
+						initial={{ opacity: 0, y: 24 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+						className="lg:w-[560px] shrink-0 flex flex-col"
+					>
 						<SectionHeader
 							label={faq.label}
 							title={faq.title}
@@ -44,13 +50,19 @@ export function FAQSection() {
 						>
 							{faq.seeAll}
 						</Link>
-					</div>
+					</motion.div>
 
 					{/* Right: accordion */}
 					<div className="flex-1">
 						{faq.items.map((item, i) => (
-							<div
+							<motion.div
 								key={i}
+								initial={{ opacity: 0, y: 24 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ delay: i * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+							>
+							<div
 								className="border-b border-background-secondary dark:border-dark-elevated"
 							>
 								<button
@@ -86,6 +98,7 @@ export function FAQSection() {
 									)}
 								</AnimatePresence>
 							</div>
+							</motion.div>
 						))}
 					</div>
 				</div>

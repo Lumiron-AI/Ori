@@ -35,10 +35,10 @@ export function SponsorshipSection() {
 						{sponsorship.cards.map((card, i) => (
 							<motion.div
 								key={i}
-								initial={{ opacity: 0, y: 20 }}
+								initial={{ opacity: 0, y: 24 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
-								transition={{ delay: i * 0.1, duration: 0.5 }}
+								transition={{ delay: i * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
 								className="flex flex-col items-center gap-5 w-full sm:w-[40%]"
 							>
 								<div className="flex flex-col items-center gap-2">

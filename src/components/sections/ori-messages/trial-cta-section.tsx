@@ -33,21 +33,40 @@ export function OriMessagesTrialCTASection() {
 			/>
 
 			<div className="relative max-w-4xl mx-auto flex flex-col items-center gap-5 sm:gap-6">
-				<h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-text-primary dark:text-text leading-tight">
-					ESSAYER ORI <span className="text-ori-message">7 JOURS</span> GRATUITS
-				</h2>
-
-				<p className="font-display font-semibold text-sm sm:text-lg lg:text-xl text-text-primary dark:text-text max-w-2xl">
-					Sans engagement. Configuration en 5 minutes.
-				</p>
-
-				<Link
-					href="#pricing"
-					className="inline-flex items-center justify-center gap-2 font-display font-bold rounded-2xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ori-message focus-visible:ring-offset-2 w-full sm:w-[261px] text-sm sm:text-lg mt-2 h-[50px] px-8 bg-ori-message text-text shadow-blue-btn hover:bg-ori-message/90 active:bg-ori-message/80"
+				<motion.h2
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+					className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-text-primary dark:text-text leading-tight"
 				>
-					Démarrer l&apos;essai
-					<ArrowRight size={18} strokeWidth={2.5} />
-				</Link>
+					ESSAYER ORI <span className="text-ori-message">7 JOURS</span> GRATUITS
+				</motion.h2>
+
+				<motion.p
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ delay: 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+					className="font-display font-semibold text-sm sm:text-lg lg:text-xl text-text-primary dark:text-text max-w-2xl"
+				>
+					Sans engagement. Configuration en 5 minutes.
+				</motion.p>
+
+				<motion.div
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ delay: 0.24, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+				>
+					<Link
+						href="#pricing"
+						className="inline-flex items-center justify-center gap-2 font-display font-bold rounded-2xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ori-message focus-visible:ring-offset-2 w-full sm:w-[261px] text-sm sm:text-lg mt-2 h-[50px] px-8 bg-ori-message text-text shadow-blue-btn hover:bg-ori-message/90 active:bg-ori-message/80"
+					>
+						Démarrer l&apos;essai
+						<ArrowRight size={18} strokeWidth={2.5} />
+					</Link>
+				</motion.div>
 			</div>
 		</motion.section>
 	);

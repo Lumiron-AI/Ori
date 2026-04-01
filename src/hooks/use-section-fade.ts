@@ -21,7 +21,7 @@ export function useSectionFade(): UseSectionFadeReturn {
 		offset: ["start end", "end start"],
 	});
 
-	const opacity = useTransform(scrollYProgress, [0, 0.4, 0.7, 1], [0, 1, 1, 0]);
+	const opacity = useTransform(scrollYProgress, [0, 0.3, 0.8, 1], [0, 1, 1, 0]);
 
 	return { ref, opacity };
 }

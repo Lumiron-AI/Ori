@@ -76,10 +76,10 @@ export function OriMessagesComparisonSection() {
 							{ROWS.map((row, i) => (
 								<motion.tr
 									key={i}
-									initial={{ opacity: 0, x: -10 }}
-									whileInView={{ opacity: 1, x: 0 }}
+									initial={{ opacity: 0, y: 24 }}
+									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true }}
-									transition={{ delay: i * 0.07, duration: 0.4 }}
+									transition={{ delay: i * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
 								>
 									<td className="bg-background-secondary dark:bg-dark-elevated border-r-4 border-background dark:border-x-dark-bg rounded-l-2xl">
 										<div
@@ -140,10 +140,10 @@ export function OriMessagesComparisonSection() {
 					{ROWS.map((row, i) => (
 						<motion.div
 							key={i}
-							initial={{ opacity: 0, y: 10 }}
+							initial={{ opacity: 0, y: 24 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
-							transition={{ delay: i * 0.07, duration: 0.4 }}
+							transition={{ delay: i * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
 							className="rounded-2xl overflow-hidden"
 						>
 							<div className="bg-background-tertiary dark:bg-dark-overlay px-4 py-2">
