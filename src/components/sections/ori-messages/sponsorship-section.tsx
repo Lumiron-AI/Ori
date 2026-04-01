@@ -76,7 +76,7 @@ export function OriMessagesSponsorshipSection() {
 								variant: "ghost-primary",
 								size: "lg",
 								className:
-									"shadow-blue-btn border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20 w-full sm:w-auto",
+									"shadow-blue-btn-soft border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20 w-full sm:w-auto",
 							})}
 						>
 							Voir les conditions
@@ -91,6 +91,7 @@ export function OriMessagesSponsorshipSection() {
 				onClose={modal.close}
 				onSetField={modal.setField}
 				onSubmit={modal.handleSubmit}
+				product="ori-messages"
 			/>
 		</>
 	);

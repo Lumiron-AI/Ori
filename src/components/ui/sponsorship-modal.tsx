@@ -4,6 +4,7 @@ import { useRef, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { buttonClass } from "@/components/ui/button";
 import type { SponsorshipFormValues } from "@/hooks/use-sponsorship-modal";
 import { useLocale } from "@/context/locale-context";
 
@@ -15,6 +16,7 @@ interface SponsorshipModalProps {
 	onClose: () => void;
 	onSetField: (field: keyof SponsorshipFormValues, value: string) => void;
 	onSubmit: (e: FormEvent<HTMLFormElement>) => void;
+	product?: "ori-phone" | "ori-messages";
 }
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
@@ -24,14 +26,15 @@ interface InputFieldProps {
 	label: string;
 	value: string;
 	onChange: (value: string) => void;
+	product?: "ori-phone" | "ori-messages";
 }
 
-function EmailField({ id, label, value, onChange }: InputFieldProps) {
+function EmailField({ id, label, value, onChange, product }: InputFieldProps) {
 	return (
-		<div className="flex flex-col gap-1.5">
+		<div className="flex flex-col gap-1">
 			<label
 				htmlFor={id}
-				className="font-display font-normal text-base sm:text-lg text-text-heading dark:text-text"
+				className="font-display font-normal text-sm sm:text-base text-text-heading dark:text-text"
 			>
 				{label}
 			</label>
@@ -42,12 +45,15 @@ function EmailField({ id, label, value, onChange }: InputFieldProps) {
 				onChange={(e) => onChange(e.target.value)}
 				required
 				className={cn(
-					"w-full h-[52px] sm:h-[60px] px-4 rounded-xl border-2",
+					"w-full h-[36px] sm:h-[42px] px-3 rounded-xl border-2",
 					"bg-background dark:bg-dark-bg",
 					"border-text-heading/60 dark:border-text-tertiary",
 					"text-text-heading dark:text-text font-display font-normal text-base",
 					"placeholder:text-text-secondary dark:placeholder:text-text-tertiary",
-					"transition-colors focus:border-primary dark:focus:border-primary outline-none"
+					"transition-colors outline-none",
+					product === "ori-messages"
+						? "focus:border-ori-message dark:focus:border-ori-message"
+						: "focus:border-primary dark:focus:border-primary",
 				)}
 			/>
 		</div>
@@ -62,6 +68,7 @@ export function SponsorshipModal({
 	onClose,
 	onSetField,
 	onSubmit,
+	product = "ori-phone",
 }: SponsorshipModalProps) {
 	const firstInputRef = useRef<HTMLInputElement>(null);
 	const { t } = useLocale();
@@ -97,10 +104,10 @@ export function SponsorshipModal({
 							aria-modal="true"
 							aria-labelledby="sponsorship-title"
 							className={cn(
-								"relative w-full max-w-[582px] rounded-3xl p-6 sm:p-8",
+								"relative w-full max-w-[480px] rounded-3xl p-6 sm:p-8",
 								"bg-background dark:bg-dark-bg",
 								"border border-transparent dark:border-text-secondary/40",
-								"shadow-card dark:shadow-[0px_4px_50px_0px_rgba(255,255,255,0.10)]"
+								"shadow-card dark:shadow-[0px_4px_50px_0px_rgba(255,255,255,0.10)]",
 							)}
 						>
 							{/* Close button */}
@@ -108,13 +115,13 @@ export function SponsorshipModal({
 								type="button"
 								onClick={onClose}
 								aria-label={sponsorshipModal.close}
-								className="absolute top-5 right-5 w-9 h-9 flex items-center justify-center rounded-full text-text-heading dark:text-text hover:bg-background-secondary dark:hover:bg-dark-elevated transition-colors"
+								className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full text-text-heading dark:text-text hover:bg-background-secondary dark:hover:bg-dark-elevated transition-colors"
 							>
-								<X size={20} strokeWidth={2} />
+								<X size={18} strokeWidth={2} />
 							</button>
 
 							{/* Header */}
-							<div className="pr-10 mb-3">
+							<div className="pr-8 mb-2">
 								<h2
 									id="sponsorship-title"
 									className="font-display font-bold text-xl sm:text-2xl text-text-heading dark:text-text"
@@ -123,7 +130,7 @@ export function SponsorshipModal({
 								</h2>
 							</div>
 
-							<p className="font-display font-normal text-sm sm:text-lg text-text-secondary dark:text-text-tertiary mb-6 leading-relaxed">
+							<p className="font-display font-normal text-sm sm:text-base text-text-secondary dark:text-text-tertiary mb-4 leading-relaxed">
 								{sponsorshipModal.description.split("\n").map((line, i) => (
 									<span key={i}>
 										{line}
@@ -133,23 +140,34 @@ export function SponsorshipModal({
 							</p>
 
 							{/* Form */}
-							<form onSubmit={onSubmit} noValidate className="flex flex-col gap-5">
+							<form
+								onSubmit={onSubmit}
+								noValidate
+								className="flex flex-col gap-3"
+							>
 								<p className="font-display font-semibold text-lg sm:text-2xl text-text-heading dark:text-text">
 									{sponsorshipModal.formTitle}
 								</p>
 
-								<div className="flex flex-col gap-4" ref={firstInputRef as unknown as React.RefObject<HTMLDivElement>}>
+								<div
+									className="flex flex-col gap-3"
+									ref={
+										firstInputRef as unknown as React.RefObject<HTMLDivElement>
+									}
+								>
 									<EmailField
 										id="recommended-email"
 										label={sponsorshipModal.recommendedEmailLabel}
 										value={form.recommendedEmail}
 										onChange={(v) => onSetField("recommendedEmail", v)}
+										product={product}
 									/>
 									<EmailField
 										id="your-email"
 										label={sponsorshipModal.yourEmailLabel}
 										value={form.yourEmail}
 										onChange={(v) => onSetField("yourEmail", v)}
+										product={product}
 									/>
 								</div>
 
@@ -159,15 +177,18 @@ export function SponsorshipModal({
 
 								<button
 									type="submit"
-									className={cn(
-										"w-full h-[52px] sm:h-[60px] rounded-2xl",
-										"inline-flex items-center justify-center gap-3",
-										"bg-primary text-text font-display font-bold text-base sm:text-xl",
-										"shadow-orange-btn hover:bg-primary/90 active:bg-primary/80 transition-colors"
-									)}
+									className={buttonClass({
+										variant: "primary",
+										size: "md",
+										className: cn(
+											"w-full gap-3",
+											product === "ori-messages" &&
+												"bg-ori-message shadow-blue-btn hover:bg-ori-message/90 active:bg-ori-message/80",
+										),
+									})}
 								>
 									{sponsorshipModal.submit}
-									<Send size={20} strokeWidth={2} className="rotate-12" />
+									<Send size={16} strokeWidth={2} className="rotate-12" />
 								</button>
 							</form>
 						</div>

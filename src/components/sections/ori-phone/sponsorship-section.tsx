@@ -65,7 +65,7 @@ export function SponsorshipSection() {
 							className={buttonClass({
 								variant: "ghost-primary",
 								size: "lg",
-								className: "shadow-orange-btn w-full sm:w-auto",
+								className: "shadow-orange-btn-soft w-full sm:w-auto",
 							})}
 						>
 							{sponsorship.seeCta}

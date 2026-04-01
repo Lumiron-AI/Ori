@@ -39,7 +39,7 @@ export function FAQSection() {
 							className={buttonClass({
 								variant: "ghost-primary",
 								size: "lg",
-								className: "w-full sm:w-[292px] shadow-orange-btn",
+								className: "w-full sm:w-[292px] shadow-orange-btn-soft",
 							})}
 						>
 							{faq.seeAll}

@@ -140,8 +140,10 @@ module.exports = {
 			// ═══════════════════════════════════════════════════════════════════════
 			boxShadow: {
 				// Button shadows
-				"orange-btn": "0px 4px 40px 0px rgba(255, 79, 56, 0.30)",
-				"blue-btn": "0px 4px 40px 0px rgba(62, 103, 181, 0.30)",
+				"orange-btn": "0px 4px 40px 0px rgba(255, 79, 56, 0.35)",
+				"orange-btn-soft": "0px 4px 40px 0px rgba(255, 79, 56, 0.20)",
+				"blue-btn": "0px 4px 40px 0px rgba(62, 103, 181, 0.35)",
+				"blue-btn-soft": "0px 4px 40px 0px rgba(62, 103, 181, 0.20)",
 				// Card shadows
 				card: "0px 0px 50px 0px rgba(0, 0, 0, 0.18)",
 				"card-sm": "0px 0px 20px 0px rgba(0, 0, 0, 0.10)",

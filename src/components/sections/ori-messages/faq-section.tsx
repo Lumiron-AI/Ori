@@ -65,7 +65,7 @@ export function OriMessagesFAQSection() {
 								variant: "ghost-primary",
 								size: "lg",
 								className:
-									"w-full sm:w-[292px] mt-8 border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20",
+									"w-full sm:w-[292px] mt-8 border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20 shadow-blue-btn-soft",
 							})}
 						>
 							Voir toutes les questions
