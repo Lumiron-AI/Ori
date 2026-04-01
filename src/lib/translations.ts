@@ -2,8 +2,8 @@ export const translations = {
 	fr: {
 		// ── Header ────────────────────────────────────────────────────────────────
 		header: {
-			navOriMessages: "Ori messages",
-			navOriPhone: "Ori téléphone",
+			navOriMessages: "Ori Messages",
+			navOriPhone: "Ori Téléphone",
 			myAccount: "Mon compte",
 			start: "Commencer",
 			toggleTheme: "Basculer le thème",

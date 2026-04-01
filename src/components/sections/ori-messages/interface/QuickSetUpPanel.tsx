@@ -11,7 +11,7 @@ export function QuickSetUpPanel() {
 					Bienvenue dans votre espace
 				</p>
 				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-0.5">
-					Je suis Ori, votre assistant messagerie
+					Je suis Ori, votre assistant vocal
 				</p>
 			</div>
 
@@ -38,7 +38,7 @@ export function QuickSetUpPanel() {
 						/>
 					</div>
 					<div className="flex flex-col min-w-0">
-						<span className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
+						<span className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
 							Nom de l&apos;établissement
 						</span>
 						<span className="font-display font-medium text-base text-text-primary dark:text-text truncate">
@@ -55,7 +55,7 @@ export function QuickSetUpPanel() {
 						/>
 					</div>
 					<div className="flex flex-col min-w-0">
-						<span className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
+						<span className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
 							Site web
 						</span>
 						<span className="font-display font-medium text-base text-text-primary dark:text-text truncate">
@@ -72,11 +72,11 @@ export function QuickSetUpPanel() {
 						/>
 					</div>
 					<div className="flex flex-col min-w-0">
-						<span className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
+						<span className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
 							Adresse
 						</span>
 						<span className="font-display font-medium text-base text-text-primary dark:text-text truncate">
-							18 Rue de la Mer, 13001 Marseille
+							18 Rue de la Mer, 13001 Marseille, France
 						</span>
 					</div>
 				</div>
@@ -90,10 +90,10 @@ export function QuickSetUpPanel() {
 							/>
 						</div>
 						<div className="flex flex-col min-w-0">
-							<span className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
+							<span className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
 								Email
 							</span>
-							<span className="font-display font-medium text-sm text-text-primary dark:text-text truncate">
+							<span className="font-display font-medium text-base text-text-primary dark:text-text truncate">
 								latableduphoceen.fr@gmail.com
 							</span>
 						</div>
@@ -106,10 +106,10 @@ export function QuickSetUpPanel() {
 							/>
 						</div>
 						<div className="flex flex-col min-w-0">
-							<span className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
+							<span className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
 								Téléphone
 							</span>
-							<span className="font-display font-medium text-sm text-text-primary dark:text-text truncate">
+							<span className="font-display font-medium text-base text-text-primary dark:text-text truncate">
 								04 91 23 45 67
 							</span>
 						</div>

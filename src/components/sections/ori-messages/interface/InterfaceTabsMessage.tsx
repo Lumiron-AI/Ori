@@ -131,7 +131,7 @@ export function InterfaceTabsMessage() {
 			</div>
 
 			{/* ── Right: dashboard panel ── */}
-			<div className="bg-background-element dark:bg-dark-surface rounded-3xl sm:rounded-4xl p-4 sm:p-6 lg:p-8 shadow-card overflow-hidden lg:min-h-[440px] flex flex-col justify-center">
+			<div className="bg-background-element dark:bg-dark-surface rounded-3xl sm:rounded-4xl p-4 sm:p-6 lg:p-8 shadow-card overflow-hidden lg:min-h-[525px] flex flex-col justify-center">
 				<AnimatePresence mode="wait">
 					<motion.div
 						key={lastActiveRef.current}

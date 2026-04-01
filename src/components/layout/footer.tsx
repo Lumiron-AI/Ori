@@ -10,8 +10,8 @@ import type { Locale } from "@/context/locale-context";
 const XIcon = () => (
 	<svg
 		viewBox="0 0 24 24"
-		width={14}
-		height={14}
+		width={18}
+		height={18}
 		fill="currentColor"
 		aria-hidden="true"
 	>
@@ -61,13 +61,17 @@ export function Footer() {
 			/>
 
 			{/* Main content */}
-			<div className="container-site py-6 sm:py-8 max-w-[80rem] px-5">
+			<div className="container-site py-8 sm:py-10 max-w-[83rem] px-5">
 				<div className="flex flex-col md:flex-row gap-8 md:gap-6 lg:gap-10 items-start">
 					{/* Brand */}
 					<div className="w-full md:flex-[2] flex flex-col gap-4">
 						<Link href="/" className="flex items-center gap-3 w-fit">
 							<Image
-								src={isMessages ? "/img/LogoOriTextBlue.svg" : "/img/LogoOriText.svg"}
+								src={
+									isMessages
+										? "/img/LogoOriTextBlue.svg"
+										: "/img/LogoOriText.svg"
+								}
 								alt="Ori"
 								width={64}
 								height={26}
@@ -127,9 +131,9 @@ export function Footer() {
 										target="_blank"
 										rel="noopener noreferrer"
 										aria-label={label}
-										className={`w-9 h-9 rounded-full bg-background-secondary dark:bg-dark-chip flex items-center justify-center text-text-primary dark:text-text transition-colors ${isMessages ? "hover:bg-ori-message hover:text-text" : "hover:bg-primary hover:text-text"}`}
+										className={`w-10 h-10 rounded-full bg-background-secondary dark:bg-dark-chip flex items-center justify-center text-text-primary dark:text-text transition-colors ${isMessages ? "hover:bg-ori-message hover:text-text" : "hover:bg-primary hover:text-text"}`}
 									>
-										<Icon size={14} strokeWidth={1.75} />
+										<Icon size={18} strokeWidth={1.75} />
 									</a>
 								))}
 							</div>
@@ -172,8 +176,8 @@ export function Footer() {
 			</div>
 
 			{/* Bottom bar */}
-			<div className="border-t border-text-secondary/20 dark:border-text-tertiary/50">
-				<div className="container-site py-3 sm:py-4 pb-8 sm:pb-10 px-5 md:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
+			<div className="border-t border-text-secondary/20 dark:border-text-tertiary/50 max-w-[83rem] px-5 container-site">
+				<div className="py-4 sm:py-8 pb-8 sm:pb-10 px-5 md:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
 					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
 						{footer.copyright}
 					</p>

@@ -1,51 +1,150 @@
 "use client";
 
-import { Check } from "lucide-react";
+import { RiWhatsappLine, RiInstagramLine } from "react-icons/ri";
 
-const TASKS = [
-	{ done: true, text: "Réservation — Table de 2, samedi 20h" },
-	{ done: true, text: "FAQ — Horaires du restaurant" },
-	{ done: true, text: "FAQ — Disponibilité menu végétarien" },
-	{ done: false, text: "Réservation — Table de 6, dimanche midi" },
-	{ done: false, text: "FAQ — Formule déjeuner prix" },
+type AvailabilityStatus = "active" | "inactive";
+
+interface Agent {
+	name: string;
+	restaurant: string;
+	platform: "whatsapp" | "instagram" | "whatsapp-inactive";
+	messagesReceived: number;
+	availability: string;
+	availabilityStatus: AvailabilityStatus;
+	active: boolean;
+}
+
+const AGENTS: Agent[] = [
+	{
+		name: "Ori 1",
+		restaurant: "Trattoria",
+		platform: "whatsapp",
+		messagesReceived: 78,
+		availability: "Toute la journée",
+		availabilityStatus: "active",
+		active: true,
+	},
+	{
+		name: "Ori 2",
+		restaurant: "Trattoria",
+		platform: "whatsapp",
+		messagesReceived: 0,
+		availability: "Indisponible",
+		availabilityStatus: "inactive",
+		active: false,
+	},
+	{
+		name: "Ori 3",
+		restaurant: "Trattoria",
+		platform: "instagram",
+		messagesReceived: 45,
+		availability: "12h00-15h00",
+		availabilityStatus: "active",
+		active: true,
+	},
+	{
+		name: "Ori 4",
+		restaurant: "Trattoria",
+		platform: "whatsapp",
+		messagesReceived: 45,
+		availability: "12h00-15h00",
+		availabilityStatus: "active",
+		active: true,
+	},
 ];
+
+const STATUS_DOT: Record<AvailabilityStatus, string> = {
+	active: "bg-green-500",
+	inactive: "bg-red-500",
+};
+
+function PlatformLogo({ platform }: { platform: Agent["platform"] }) {
+	if (platform === "whatsapp") {
+		return (
+			<div className="w-full h-full bg-green-500 flex items-center justify-center">
+				<RiWhatsappLine size={22} className="text-white" />
+			</div>
+		);
+	}
+	return (
+		<div className="w-full h-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 flex items-center justify-center">
+			<RiInstagramLine size={22} className="text-white" />
+		</div>
+	);
+}
 
 export function AutomationPanel() {
 	return (
 		<div className="flex flex-col gap-4">
-			<div>
-				<p className="font-display font-medium text-xl text-text-primary dark:text-text">
-					Gestion 100% autonome
-				</p>
-				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-0.5">
-					Ori traite chaque message en temps réel, sans intervention de votre équipe.
-				</p>
-			</div>
+			<p className="font-display font-bold text-xl text-text-primary dark:text-text">
+				Agents IA
+			</p>
 
-			<div className="flex flex-col gap-2 mt-1">
-				{TASKS.map((task, i) => (
+			<div className="flex flex-col gap-3">
+				{AGENTS.map((agent) => (
 					<div
-						key={i}
-						className="flex items-center gap-3 bg-background-secondary dark:bg-dark-overlay rounded-xl px-4 py-3"
+						key={agent.name}
+						className="bg-background-secondary dark:bg-dark-overlay rounded-2xl px-4 py-6 flex items-center gap-3"
 					>
-						<div
-							className={`shrink-0 w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-								task.done
-									? "bg-ori-message border-ori-message"
-									: "border-background-tertiary dark:border-dark-overlay bg-transparent"
-							}`}
-						>
-							{task.done && <Check size={12} strokeWidth={3} className="text-text" />}
+						{/* Platform logo */}
+						<div className="shrink-0 w-10 h-10 rounded-xl overflow-hidden">
+							<PlatformLogo platform={agent.platform} />
 						</div>
-						<span
-							className={`font-display font-normal text-base ${
-								task.done
-									? "line-through text-text-secondary dark:text-text-tertiary"
-									: "text-text-primary dark:text-text"
-							}`}
-						>
-							{task.text}
-						</span>
+
+						{/* Name + restaurant */}
+						<div className="w-16 shrink-0">
+							<p className="font-display font-semibold text-sm text-text-primary dark:text-text">
+								{agent.name}
+							</p>
+							<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
+								{agent.restaurant}
+							</p>
+						</div>
+
+						{/* Messages reçus */}
+						<div className="flex-1 text-center">
+							<p className="font-display font-medium text-sm text-text-primary dark:text-text">
+								Messages reçus
+							</p>
+							<p className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
+								{agent.messagesReceived}
+							</p>
+						</div>
+
+						{/* Disponibilité */}
+						<div className="flex-1 text-center">
+							<p className="font-display font-medium text-sm text-text-primary dark:text-text">
+								Disponibilité
+							</p>
+							<div className="flex items-center justify-center gap-1.5 mt-0.5">
+								<div
+									className={`w-2 h-2 rounded-full shrink-0 ${STATUS_DOT[agent.availabilityStatus]}`}
+								/>
+								<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
+									{agent.availability}
+								</p>
+							</div>
+						</div>
+
+						{/* Toggle activité */}
+						<div className="shrink-0 text-center">
+							<p className="font-display font-medium text-sm text-text-primary dark:text-text mb-1">
+								Activité
+							</p>
+							<div
+								className={`w-9 h-5 rounded-full flex items-center px-0.5 mx-auto ${
+									agent.active
+										? "bg-ori-message"
+										: "bg-background-tertiary dark:bg-dark-elevated"
+								}`}
+							>
+								<div
+									className={`w-3.5 h-3.5 rounded-full bg-text transition-transform ${
+										agent.active ? "translate-x-4" : "translate-x-0"
+									}`}
+								/>
+							</div>
+						</div>
 					</div>
 				))}
 			</div>
