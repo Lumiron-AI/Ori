@@ -89,6 +89,9 @@ export function AudioCard({
 	const tickerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 	const speedRef = useRef(1);
 	const simTimeRef = useRef(0);
+	const progressBarRef = useRef<HTMLDivElement | null>(null);
+	const isDraggingRef = useRef(false);
+	const loadedDurationRef = useRef(0);
 
 	const [playing, setPlaying] = useState(false);
 	const [currentTime, setCurrentTime] = useState(0);
@@ -126,9 +129,10 @@ export function AudioCard({
 		}, 50);
 	}
 
-	function startSimulatedTicker(simDur: number) {
+	function startSimulatedTicker(simDur: number, fromTime?: number) {
 		stopTicker();
-		simTimeRef.current = 0;
+		if (fromTime !== undefined) simTimeRef.current = fromTime;
+		else simTimeRef.current = 0;
 		setDuration(simDur);
 		tickerRef.current = setInterval(() => {
 			simTimeRef.current += 0.05 * speedRef.current;
@@ -171,7 +175,7 @@ export function AudioCard({
 			})
 			.catch(() => {
 				setPlaying(true);
-				startSimulatedTicker(simulatedDuration);
+				startSimulatedTicker(loadedDurationRef.current > 0 ? loadedDurationRef.current : simulatedDuration);
 			});
 	}
 
@@ -182,6 +186,56 @@ export function AudioCard({
 	}
 
 	const activeDuration = duration > 0 ? duration : simulatedDuration;
+
+	function seekToRatio(ratio: number) {
+		const clamped = Math.max(0, Math.min(1, ratio));
+		const target = clamped * activeDuration;
+
+		simTimeRef.current = target;
+		setCurrentTime(target);
+
+		if (audioRef.current && duration > 0) {
+			audioRef.current.currentTime = target;
+		}
+	}
+
+	function getRatioFromPointer(clientX: number) {
+		const bar = progressBarRef.current;
+		if (!bar) return 0;
+		const rect = bar.getBoundingClientRect();
+		return (clientX - rect.left) / rect.width;
+	}
+
+	function handleProgressMouseDown(e: React.MouseEvent) {
+		e.preventDefault();
+		isDraggingRef.current = true;
+
+		// Pause le ticker pendant le drag pour qu'il n'écrase pas la position
+		stopTicker();
+		seekToRatio(getRatioFromPointer(e.clientX));
+
+		const onMouseMove = (ev: MouseEvent) => {
+			if (!isDraggingRef.current) return;
+			seekToRatio(getRatioFromPointer(ev.clientX));
+		};
+		const onMouseUp = () => {
+			isDraggingRef.current = false;
+			window.removeEventListener("mousemove", onMouseMove);
+			window.removeEventListener("mouseup", onMouseUp);
+
+			// Reprend le ticker après le drag depuis la nouvelle position
+			if (playing) {
+				const el = audioRef.current;
+				if (el && duration > 0) {
+					startRealTicker();
+				} else {
+					startSimulatedTicker(activeDuration, simTimeRef.current);
+				}
+			}
+		};
+		window.addEventListener("mousemove", onMouseMove);
+		window.addEventListener("mouseup", onMouseUp);
+	}
 	const progress =
 		activeDuration > 0
 			? Math.min((currentTime / activeDuration) * 100, 100)
@@ -250,16 +304,22 @@ export function AudioCard({
 				</button>
 
 				<div
-					className={`flex-1 relative h-1.5 rounded-full overflow-hidden transition-colors duration-300 ${
-						playing
-							? "bg-dark-overlay"
-							: "bg-background-tertiary dark:bg-dark-overlay"
-					}`}
+					className="flex-1 relative flex items-center cursor-pointer py-2 -my-2"
+					onMouseDown={handleProgressMouseDown}
 				>
 					<div
-						className="absolute inset-y-0 left-0 bg-primary rounded-full"
-						style={{ width: `${progress}%` }}
-					/>
+						ref={progressBarRef}
+						className={`w-full relative h-1.5 rounded-full overflow-hidden transition-colors duration-300 ${
+							playing
+								? "bg-dark-overlay"
+								: "bg-background-tertiary dark:bg-dark-overlay"
+						}`}
+					>
+						<div
+							className="absolute inset-y-0 left-0 bg-primary rounded-full"
+							style={{ width: `${progress}%` }}
+						/>
+					</div>
 				</div>
 
 				<span
@@ -332,7 +392,11 @@ export function AudioCard({
 				ref={audioRef}
 				src={src}
 				preload="metadata"
-				onLoadedMetadata={() => setDuration(audioRef.current?.duration ?? 0)}
+				onLoadedMetadata={() => {
+					const d = audioRef.current?.duration ?? 0;
+					loadedDurationRef.current = d;
+					setDuration(d);
+				}}
 				onEnded={reset}
 			/>
 		</div>

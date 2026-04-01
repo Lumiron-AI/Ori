@@ -11,7 +11,7 @@ import { useLocale } from "@/context/locale-context";
 
 const CARD_ICONS = [CalendarCheck, CircleHelp];
 const CARD_SRCS = ["/audio/ori-reservation.ogg", "/audio/ori-faq.ogg"];
-const CARD_DURATIONS = [57, 51];
+const CARD_DURATIONS = [39, 44];
 
 export function UseCaseSection() {
 	const { ref, opacity } = useSectionFade();
