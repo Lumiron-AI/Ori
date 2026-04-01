@@ -27,7 +27,7 @@ const AGENTS: Agent[] = [
 	{
 		name: "Ori 2",
 		restaurant: "Trattoria",
-		platform: "whatsapp",
+		platform: "instagram",
 		messagesReceived: 0,
 		availability: "Indisponible",
 		availabilityStatus: "inactive",

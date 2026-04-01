@@ -77,7 +77,7 @@ export function OriMessagesHeroSection() {
 					{` et `}
 					<span className="text-ori-message">Instagram</span>
 					{` pour votre `}
-					<span className="border-b-8 border-ori-message pb-0.5">
+					<span className="relative after:absolute after:bottom-[0px] after:left-0 after:w-full after:h-2 after:bg-ori-message after:opacity-60">
 						restaurant
 					</span>
 					.

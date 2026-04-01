@@ -65,14 +65,14 @@ export function TrackingPanel() {
 					{["Date & Heure", "De", "Durée", "Action"].map((col) => (
 						<span
 							key={col}
-							className="font-display font-semibold text-sm text-background-secondary text-center first:text-left"
+							className="font-display font-semibold text-sm text-text text-center first:text-left"
 						>
 							{col}
 						</span>
 					))}
 				</div>
 				{/* Rows */}
-				<div className="bg-background-element dark:bg-dark-elevated divide-y divide-background-secondary dark:divide-dark-overlay">
+				<div className="bg-background-secondary dark:bg-dark-elevated divide-y divide-background-secondary dark:divide-dark-overlay">
 					{HISTORY.map((row, i) => (
 						<div
 							key={i}
