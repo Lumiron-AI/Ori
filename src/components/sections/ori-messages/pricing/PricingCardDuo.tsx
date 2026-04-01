@@ -26,7 +26,7 @@ export function PricingCardDuo({
 		<div className="relative bg-background-element dark:bg-dark-surface rounded-3xl px-7 py-6 flex flex-col gap-3.5 shadow-card h-full border border-transparent hover:border-ori-message transition-colors">
 			{/* "Le plus populaire" badge */}
 			<div className="absolute -top-4 left-1/2 -translate-x-1/2">
-				<div className="bg-dark-bg -z-10 border-2 border-ori-message rounded-xl px-5 py-1.5">
+				<div className="bg-[#E2E5FF] dark:bg-dark-bg -z-10 border-2 border-ori-message rounded-xl px-5 py-1">
 					<span className="font-display font-bold text-base text-ori-message whitespace-nowrap">
 						Le plus populaire
 					</span>
@@ -34,7 +34,7 @@ export function PricingCardDuo({
 			</div>
 
 			{/* Title */}
-			<div className="mt-2">
+			<div>
 				<p className="font-display font-bold text-2xl text-text-heading dark:text-text">
 					PACK DUO
 				</p>
