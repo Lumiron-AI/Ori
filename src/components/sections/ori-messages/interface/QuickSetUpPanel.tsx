@@ -17,13 +17,13 @@ export function QuickSetUpPanel() {
 
 			{/* Tabs */}
 			<div className="flex items-center gap-2">
-				<button className="px-4 py-2 rounded-xl bg-ori-message text-text font-display font-medium text-sm">
+				<button className="px-4 py-2 rounded-xl bg-ori-message text-text font-display font-medium text-sm cursor-default">
 					Informations
 				</button>
-				<button className="px-4 py-2 rounded-xl text-text-secondary dark:text-text-tertiary font-display font-medium text-sm">
+				<button className="px-4 py-2 rounded-xl text-text-secondary dark:text-text-tertiary font-display font-medium text-sm cursor-default">
 					Fonctionnement
 				</button>
-				<button className="px-4 py-2 rounded-xl text-text-secondary dark:text-text-tertiary font-display font-medium text-sm">
+				<button className="px-4 py-2 rounded-xl text-text-secondary dark:text-text-tertiary font-display font-medium text-sm cursor-default">
 					Récapitulatif
 				</button>
 			</div>
@@ -32,7 +32,10 @@ export function QuickSetUpPanel() {
 			<div className="flex flex-col gap-3 mt-1">
 				<div className="bg-background-secondary dark:bg-dark-overlay rounded-xl p-3 flex items-center gap-3">
 					<div className="bg-background-tertiary dark:bg-dark-elevated rounded-lg p-2 shrink-0">
-						<Settings size={18} className="text-text-secondary dark:text-text-tertiary" />
+						<Settings
+							size={18}
+							className="text-text-secondary dark:text-text-tertiary"
+						/>
 					</div>
 					<div className="flex flex-col min-w-0">
 						<span className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
@@ -46,7 +49,10 @@ export function QuickSetUpPanel() {
 
 				<div className="bg-background-secondary dark:bg-dark-overlay rounded-xl p-3 flex items-center gap-3">
 					<div className="bg-background-tertiary dark:bg-dark-elevated rounded-lg p-2 shrink-0">
-						<Globe size={18} className="text-text-secondary dark:text-text-tertiary" />
+						<Globe
+							size={18}
+							className="text-text-secondary dark:text-text-tertiary"
+						/>
 					</div>
 					<div className="flex flex-col min-w-0">
 						<span className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
@@ -60,7 +66,10 @@ export function QuickSetUpPanel() {
 
 				<div className="bg-background-secondary dark:bg-dark-overlay rounded-xl p-3 flex items-center gap-3">
 					<div className="bg-background-tertiary dark:bg-dark-elevated rounded-lg p-2 shrink-0">
-						<MapPin size={18} className="text-text-secondary dark:text-text-tertiary" />
+						<MapPin
+							size={18}
+							className="text-text-secondary dark:text-text-tertiary"
+						/>
 					</div>
 					<div className="flex flex-col min-w-0">
 						<span className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
@@ -75,20 +84,26 @@ export function QuickSetUpPanel() {
 				<div className="grid grid-cols-2 gap-3">
 					<div className="bg-background-secondary dark:bg-dark-overlay rounded-xl p-3 flex items-center gap-3">
 						<div className="bg-background-tertiary dark:bg-dark-elevated rounded-lg p-2 shrink-0">
-							<Mail size={18} className="text-text-secondary dark:text-text-tertiary" />
+							<Mail
+								size={18}
+								className="text-text-secondary dark:text-text-tertiary"
+							/>
 						</div>
 						<div className="flex flex-col min-w-0">
 							<span className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
 								Email
 							</span>
 							<span className="font-display font-medium text-sm text-text-primary dark:text-text truncate">
-								contact@...
+								latableduphoceen.fr@gmail.com
 							</span>
 						</div>
 					</div>
 					<div className="bg-background-secondary dark:bg-dark-overlay rounded-xl p-3 flex items-center gap-3">
 						<div className="bg-background-tertiary dark:bg-dark-elevated rounded-lg p-2 shrink-0">
-							<Phone size={18} className="text-text-secondary dark:text-text-tertiary" />
+							<Phone
+								size={18}
+								className="text-text-secondary dark:text-text-tertiary"
+							/>
 						</div>
 						<div className="flex flex-col min-w-0">
 							<span className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
