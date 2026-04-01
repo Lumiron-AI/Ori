@@ -194,7 +194,7 @@ export function AudioCard({
 		simTimeRef.current = target;
 		setCurrentTime(target);
 
-		if (audioRef.current && duration > 0) {
+		if (audioRef.current) {
 			audioRef.current.currentTime = target;
 		}
 	}

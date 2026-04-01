@@ -78,37 +78,40 @@ export const translations = {
 					title: "Gestion des réservations",
 					tagGroups: [
 						{
-							at: 0,
+							at: 10,
 							tags: [
 								"Créneau 20h complet",
 								"Proposition alternative 20h30 acceptée",
 							],
 						},
 						{
-							at: 20,
+							at: 23,
 							tags: [
 								"Client identifié via numéro",
 								"Préférence « table au calme » confirmée",
 							],
 						},
-						{ at: 40, tags: ["Réservation enregistrée dans le CRM"] },
+						{ at: 30, tags: ["Réservation enregistrée dans le CRM"] },
 					],
 				},
 				{
 					title: "Questions fréquentes",
 					tagGroups: [
 						{
-							at: 0,
+							at: 7,
 							tags: ["Informations menu communiquées", "Horaires transmis"],
 						},
 						{
-							at: 18,
+							at: 19,
+							tags: ["Demande anniversaire qualifiée (15 pers)"],
+						},
+						{
+							at: 28,
 							tags: [
-								"Demande anniversaire qualifiée (15 pers)",
+								"Responsable événements notifié",
 								"Formules groupe envoyées par SMS",
 							],
 						},
-						{ at: 38, tags: ["Responsable événements notifié"] },
 					],
 				},
 			],
@@ -391,34 +394,34 @@ export const translations = {
 					title: "Reservation management",
 					tagGroups: [
 						{
-							at: 0,
+							at: 10,
 							tags: ["8 PM slot full", "8:30 PM alternative accepted"],
 						},
 						{
-							at: 20,
+							at: 23,
 							tags: [
 								"Customer identified by number",
 								"Preference \u201cquiet table\u201d confirmed",
 							],
 						},
-						{ at: 40, tags: ["Reservation recorded in CRM"] },
+						{ at: 30, tags: ["Reservation recorded in CRM"] },
 					],
 				},
 				{
 					title: "Frequently asked questions",
 					tagGroups: [
 						{
-							at: 0,
+							at: 7,
 							tags: ["Menu information provided", "Opening hours shared"],
 						},
 						{
-							at: 18,
+							at: 19,
 							tags: [
 								"Birthday request qualified (15 guests)",
 								"Group packages sent by SMS",
 							],
 						},
-						{ at: 38, tags: ["Events manager notified"] },
+						{ at: 28, tags: ["Events manager notified"] },
 					],
 				},
 			],
