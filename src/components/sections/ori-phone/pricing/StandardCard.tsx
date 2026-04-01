@@ -14,7 +14,7 @@ export function StandardCard({
 	annual: boolean;
 	setAnnual: (v: boolean) => void;
 }) {
-	const monthlyPrice = 80;
+	const monthlyPrice = 89;
 	const annualPrice = 961;
 
 	const { t } = useLocale();

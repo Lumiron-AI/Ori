@@ -67,10 +67,9 @@ export function OriPhoneHeroSection() {
 				>
 					{hero.title1}
 					<br /> {hero.title2}{" "}
-					<span className="text-primary">{hero.titleHighlight}</span>{" "}
-					<br />
+					<span className="text-primary">{hero.titleHighlight}</span> <br />
 					{hero.title3}{" "}
-					<span className="border-b-8 border-primary pb-0.5">
+					<span className="relative after:absolute after:bottom-[0px] after:left-0 after:w-full after:h-2 after:bg-primary after:opacity-60">
 						{hero.titleUnderline}
 					</span>
 					.
