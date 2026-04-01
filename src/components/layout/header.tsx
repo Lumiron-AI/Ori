@@ -16,6 +16,8 @@ export function Header() {
 	const pathname = usePathname();
 	const ctaHref = pathname === "/solutions/phone" ? "#pricing" : "/pricing";
 	const isMessages = pathname === "/solutions/messages";
+	const isPhone = pathname === "/solutions/phone";
+	const isProduct = isMessages || isPhone;
 	const { t } = useLocale();
 	const { header } = t;
 	const hoverColor = isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary";
@@ -43,7 +45,7 @@ export function Header() {
 				<div className="px-4 sm:px-5 md:px-8 lg:px-6 h-[44px] sm:h-[50px] grid grid-cols-3 items-center">
 					{/* Logo */}
 					<Link href="/" className="flex items-center gap-2 shrink-0 w-fit">
-						{isMessages ? (
+						{isProduct ? (
 							<>
 								<Image
 									src="/img/LogoOriTextDark.svg"

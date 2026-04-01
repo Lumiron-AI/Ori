@@ -31,7 +31,7 @@ export function Cta() {
 						href="/pricing?product=phone"
 						className="inline-flex items-center justify-center gap-2.5 bg-primary shadow-orange-btn text-text font-display font-bold text-base sm:text-lg rounded-xl h-[46px] sm:h-[52px] px-5 sm:px-7 hover:bg-primary/90 active:bg-primary/80 transition-colors whitespace-nowrap"
 					>
-						Essayer Ori Phone
+						Essayer Ori Téléphone
 						<ArrowRight size={18} strokeWidth={2.5} />
 					</Link>
 					<Link

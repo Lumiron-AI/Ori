@@ -103,7 +103,7 @@ export function OriMessagesHeroSection() {
 				>
 					{/* Instagram CTA */}
 					<Link
-						href="#pricing"
+						href="#use-case"
 						className="relative overflow-visible inline-flex items-center justify-center gap-3 h-[50px] px-8 rounded-2xl font-display font-bold text-lg text-text opacity-95 transition-[filter] hover:brightness-90 active:brightness-80"
 						style={{
 							background:
@@ -125,7 +125,7 @@ export function OriMessagesHeroSection() {
 
 					{/* WhatsApp CTA */}
 					<Link
-						href="#pricing"
+						href="#use-case"
 						className="relative overflow-visible inline-flex items-center justify-center gap-3 h-[50px] px-8 rounded-2xl font-display font-bold text-lg text-text opacity-95 transition-[filter] hover:brightness-90 active:brightness-80"
 						style={{ background: "linear-gradient(115deg, #2bad3d, #108821)" }}
 					>

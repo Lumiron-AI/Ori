@@ -40,6 +40,7 @@ const SOCIAL = [
 export function Footer() {
 	const pathname = usePathname();
 	const isMessages = pathname === "/solutions/messages";
+	const isProduct = isMessages || pathname === "/solutions/phone";
 	const { locale, setLocale, t } = useLocale();
 	const { footer } = t;
 
@@ -66,18 +67,35 @@ export function Footer() {
 					{/* Brand */}
 					<div className="w-full md:flex-[2] flex flex-col gap-4">
 						<Link href="/" className="flex items-center gap-3 w-fit">
-							<Image
-								src={
-									isMessages
-										? "/img/LogoOriTextBlue.svg"
-										: "/img/LogoOriText.svg"
-								}
-								alt="Ori"
-								width={64}
-								height={26}
-								className="h-6 w-auto"
-								priority
-							/>
+							{isProduct ? (
+								<>
+									<Image
+										src="/img/LogoOriTextDark.svg"
+										alt="Ori"
+										width={64}
+										height={26}
+										className="h-6 w-auto dark:hidden"
+										priority
+									/>
+									<Image
+										src="/img/LogoOriTextLight.svg"
+										alt="Ori"
+										width={64}
+										height={26}
+										className="h-6 w-auto hidden dark:block"
+										priority
+									/>
+								</>
+							) : (
+								<Image
+									src="/img/LogoOriText.svg"
+									alt="Ori"
+									width={64}
+									height={26}
+									className="h-6 w-auto"
+									priority
+								/>
+							)}
 						</Link>
 						<p className="font-display font-normal text-sm text-text-primary dark:text-text max-w-xs leading-relaxed">
 							{footer.brandTagline}
@@ -176,7 +194,7 @@ export function Footer() {
 			</div>
 
 			{/* Bottom bar */}
-			<div className="border-t border-text-secondary/20 dark:border-text-tertiary/50 max-w-[83rem] px-5 container-site">
+			<div className="border-t border-text-secondary/20 dark:border-text-tertiary/50 max-w-[83rem] container-site">
 				<div className="py-4 sm:py-8 pb-8 sm:pb-10 px-5 md:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
 					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
 						{footer.copyright}
