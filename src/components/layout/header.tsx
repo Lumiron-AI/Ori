@@ -18,6 +18,7 @@ export function Header() {
 	const isMessages = pathname === "/solutions/messages";
 	const { t } = useLocale();
 	const { header } = t;
+	const hoverColor = isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary";
 
 	const NAV_LINKS = [
 		{ href: "/solutions/messages", label: header.navOriMessages },
@@ -58,7 +59,7 @@ export function Header() {
 							<Link
 								key={link.href}
 								href={link.href}
-								className="font-display font-normal text-sm lg:text-base text-text-primary dark:text-text hover:text-primary dark:hover:text-primary transition-colors whitespace-nowrap"
+								className={`font-display font-normal text-sm lg:text-base text-text-primary dark:text-text ${hoverColor} transition-colors whitespace-nowrap`}
 							>
 								{link.label}
 							</Link>
@@ -81,7 +82,7 @@ export function Header() {
 
 						<Link
 							href="/compte"
-							className="hidden lg:block font-display font-bold text-sm lg:text-base text-text-primary dark:text-text hover:text-primary dark:hover:text-primary transition-colors whitespace-nowrap"
+							className={`hidden lg:block font-display font-bold text-sm lg:text-base text-text-primary dark:text-text ${hoverColor} transition-colors whitespace-nowrap`}
 						>
 							{header.myAccount}
 						</Link>
@@ -135,7 +136,7 @@ export function Header() {
 								<Link
 									href="/compte"
 									onClick={() => setOpen(false)}
-									className="font-display font-bold text-base text-text-primary dark:text-text hover:text-primary transition-colors"
+									className={`font-display font-bold text-base text-text-primary dark:text-text ${hoverColor} transition-colors`}
 								>
 									{header.myAccount}
 								</Link>

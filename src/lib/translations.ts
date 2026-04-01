@@ -549,7 +549,8 @@ export const translations = {
 		faq: {
 			label: "FAQ",
 			title: "Your questions about Ori",
-			subtitle: "Everything you need to know about the assistant built for restaurants.",
+			subtitle:
+				"Everything you need to know about the assistant built for restaurants.",
 			seeAll: "See all questions",
 			items: [
 				{

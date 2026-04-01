@@ -54,8 +54,9 @@ export function Footer() {
 				aria-hidden
 				className="pointer-events-none absolute inset-x-0 top-0 h-[480px] dark:block hidden"
 				style={{
-					background:
-						"radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,79,56,0.13) 0%, transparent 70%)",
+					background: isMessages
+						? "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(62,103,181,0.13) 0%, transparent 70%)"
+						: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,79,56,0.13) 0%, transparent 70%)",
 				}}
 			/>
 
@@ -66,7 +67,7 @@ export function Footer() {
 					<div className="w-full md:flex-[2] flex flex-col gap-4">
 						<Link href="/" className="flex items-center gap-3 w-fit">
 							<Image
-								src="/img/LogoOriText.svg"
+								src={isMessages ? "/img/LogoOriTextBlue.svg" : "/img/LogoOriText.svg"}
 								alt="Ori"
 								width={64}
 								height={26}
@@ -90,7 +91,7 @@ export function Footer() {
 								<Link
 									key={link.href}
 									href={link.href}
-									className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text hover:text-primary dark:hover:text-primary transition-colors"
+									className={`font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text transition-colors ${isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary"}`}
 								>
 									{link.label}
 								</Link>
@@ -106,7 +107,7 @@ export function Footer() {
 								<Link
 									key={link.href}
 									href={link.href}
-									className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text hover:text-primary dark:hover:text-primary transition-colors"
+									className={`font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text transition-colors ${isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary"}`}
 								>
 									{link.label}
 								</Link>
@@ -126,7 +127,7 @@ export function Footer() {
 										target="_blank"
 										rel="noopener noreferrer"
 										aria-label={label}
-										className="w-9 h-9 rounded-full bg-background-secondary dark:bg-dark-chip flex items-center justify-center text-text-primary dark:text-text hover:bg-primary hover:text-text transition-colors"
+										className={`w-9 h-9 rounded-full bg-background-secondary dark:bg-dark-chip flex items-center justify-center text-text-primary dark:text-text transition-colors ${isMessages ? "hover:bg-ori-message hover:text-text" : "hover:bg-primary hover:text-text"}`}
 									>
 										<Icon size={14} strokeWidth={1.75} />
 									</a>
