@@ -54,7 +54,11 @@ export function OriMessagesComparisonSection() {
 									initial={{ opacity: 0, y: 24 }}
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true }}
-									transition={{ delay: i * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+									transition={{
+										delay: i * 0.12,
+										duration: 0.6,
+										ease: [0.22, 1, 0.36, 1],
+									}}
 								>
 									<td className="bg-background-secondary dark:bg-dark-elevated border-r-4 border-background dark:border-x-dark-bg rounded-l-2xl">
 										<div
@@ -118,7 +122,11 @@ export function OriMessagesComparisonSection() {
 							initial={{ opacity: 0, y: 24 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
-							transition={{ delay: i * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+							transition={{
+								delay: i * 0.12,
+								duration: 0.6,
+								ease: [0.22, 1, 0.36, 1],
+							}}
 							className="rounded-2xl overflow-hidden"
 						>
 							<div className="bg-background-tertiary dark:bg-dark-overlay px-4 py-2">
@@ -152,7 +160,7 @@ export function OriMessagesComparisonSection() {
 					))}
 				</div>
 
-				<p className="font-display font-normal text- sm:text-lg text-text-secondary dark:text-text-tertiary text-center mt-8 sm:mt-10 max-w-3xl mx-auto">
+				<p className="font-display font-semibold text-sm sm:text-base text-text-secondary dark:text-text-tertiary text-center mt-8 sm:mt-10 max-w-3xl mx-auto">
 					{d.footer}
 				</p>
 			</div>

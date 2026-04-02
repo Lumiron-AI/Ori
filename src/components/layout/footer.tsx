@@ -48,7 +48,7 @@ export function Footer() {
 	}
 
 	return (
-		<footer className="relative mt-16 overflow-hidden bg-background dark:bg-dark-bg border-t border-text-secondary/20 dark:border-text-tertiary/50  max-w-[85%] mx-auto">
+		<footer className="relative mt-16 overflow-hidden bg-background dark:bg-dark-bg border-t border-text-secondary/20 dark:border-text-tertiary/50 md:mx-24 3xl:mx-32">
 			{/* Lights glow effect (dark mode only) */}
 			<div
 				aria-hidden
@@ -56,7 +56,7 @@ export function Footer() {
 			/>
 
 			{/* Main content */}
-			<div className="py-8 sm:py-10 max-w-[83rem]">
+			<div className="py-8 md:py-10 lg:py-12">
 				<div className="flex flex-col md:flex-row gap-8 md:gap-6 lg:gap-10 items-start">
 					{/* Brand */}
 					<div className="w-full md:flex-[2] flex flex-col gap-4">
@@ -122,7 +122,7 @@ export function Footer() {
 						</div>
 
 						{/* Social */}
-						<div className="col-span-2 sm:col-span-1 flex flex-col items-end gap-3 sm:gap-4 md:flex-1">
+						<div className="col-span-2 sm:col-span-1 flex flex-col items-start sm:items-end gap-3 sm:gap-4 md:flex-1">
 							<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
 								{footer.socialTitle}
 							</p>
@@ -179,8 +179,8 @@ export function Footer() {
 			</div>
 
 			{/* Bottom bar */}
-			<div className="border-t border-text-secondary/20 dark:border-text-tertiary/50 max-w-[83rem]">
-				<div className="py-4 sm:py-8 pb-8 sm:pb-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
+			<div className="border-t border-text-secondary/20 dark:border-text-tertiary/50">
+				<div className="py-6 md:py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
 					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
 						{footer.copyright}
 					</p>

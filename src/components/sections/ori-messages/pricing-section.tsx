@@ -50,7 +50,11 @@ export function OriMessagesPricingSection() {
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						transition={{ delay: 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+						transition={{
+							delay: 0.12,
+							duration: 0.6,
+							ease: [0.22, 1, 0.36, 1],
+						}}
 						className="h-full"
 					>
 						<PricingCardWhatsApp
@@ -63,14 +67,18 @@ export function OriMessagesPricingSection() {
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						transition={{ delay: 0.24, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+						transition={{
+							delay: 0.24,
+							duration: 0.6,
+							ease: [0.22, 1, 0.36, 1],
+						}}
 						className="h-full"
 					>
 						<PricingCardDuo annual={annualDuo} setAnnual={setAnnualDuo} />
 					</motion.div>
 				</div>
 
-				<p className="font-display font-normal text-sm sm:text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-3xl mx-auto">
+				<p className="font-display font-semibold text-sm sm:text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-3xl mx-auto">
 					{d.footer}
 				</p>
 			</div>

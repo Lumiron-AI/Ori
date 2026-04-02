@@ -42,7 +42,7 @@ export function InterfaceTabsPhone() {
 	};
 
 	return (
-		<div className="grid grid-cols-1 lg:grid-cols-[45%_1fr] gap-6 lg:gap-11 items-start lg:items-center px-12">
+		<div className="grid grid-cols-1 lg:grid-cols-[45%_1fr] gap-6 lg:gap-11 items-start lg:items-center px-0 md:px-6 lg:px-8 3xl:px-12">
 			{/* ── Left: accordion ── */}
 			<div>
 				{TABS.map((tab, i) => {
@@ -54,7 +54,7 @@ export function InterfaceTabsPhone() {
 							)}
 							<button
 								onClick={() => handleTabClick(tab.id)}
-								className="w-full flex items-center gap-2 sm:gap-3 py-4 sm:py-6 text-left min-h-[52px] sm:min-h-0"
+								className="w-full flex items-center gap-2 md:gap-3 py-4 md:py-6 text-left min-h-[52px] md:min-h-0"
 							>
 								<tab.Icon
 									size={22}
@@ -65,7 +65,7 @@ export function InterfaceTabsPhone() {
 									}`}
 								/>
 								<span
-									className={`flex-1 font-display text-lg sm:text-2xl leading-snug transition-colors ${
+									className={`flex-1 font-display text-base xs:text-lg md:text-2xl leading-snug transition-colors ${
 										isActive
 											? "font-bold text-primary"
 											: "font-semibold text-text-heading dark:text-text"
@@ -92,7 +92,7 @@ export function InterfaceTabsPhone() {
 										transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
 										className="overflow-hidden"
 									>
-										<p className="font-display font-normal text-sm sm:text-base text-text-heading dark:text-brand-accent pb-5 sm:pb-6 pr-5 sm:pr-8">
+										<p className="font-display font-normal text-sm md:text-base text-text-heading dark:text-brand-accent pb-4 md:pb-6 pr-4 md:pr-8">
 											{tab.description}
 										</p>
 									</motion.div>
@@ -104,7 +104,7 @@ export function InterfaceTabsPhone() {
 			</div>
 
 			{/* ── Right: dashboard panel ── */}
-			<div className="bg-background-element dark:bg-dark-surface rounded-3xl sm:rounded-4xl p-4 sm:p-6 lg:p-8 shadow-card overflow-hidden lg:min-h-[525px] flex flex-col justify-center">
+			<div className="bg-background-element dark:bg-dark-surface rounded-3xl md:rounded-4xl p-4 md:p-6 lg:p-8 shadow-card overflow-hidden lg:min-h-[525px] flex flex-col justify-center">
 				<AnimatePresence mode="wait">
 					<motion.div
 						key={lastActiveRef.current}

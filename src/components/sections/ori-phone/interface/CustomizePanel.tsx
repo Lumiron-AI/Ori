@@ -18,7 +18,7 @@ export function CustomizePanel() {
 
 	return (
 		<>
-			<p className="font-display font-medium text-2xl text-text-primary dark:text-text">
+			<p className="font-display font-medium text-xl xs:text-2xl text-text-primary dark:text-text">
 				{d.welcome}
 			</p>
 			<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-1 mb-5">
@@ -27,14 +27,14 @@ export function CustomizePanel() {
 			<DashboardTabs activeIndex={1} />
 			<div className="flex flex-col gap-3">
 				{/* Voix de l'agent */}
-				<div className="bg-background-secondary dark:bg-dark-elevated rounded-2xl flex items-center justify-between p-4">
+				<div className="bg-background-secondary dark:bg-dark-elevated rounded-2xl flex flex-col xs:flex-row xs:items-center xs:justify-between p-3 xs:p-4 gap-2 xs:gap-0">
 					<div className="flex items-center gap-3">
 						<FieldIconBox icon={RiVolumeUpLine} />
-						<p className="font-display font-medium text-base text-text-primary dark:text-text">
+						<p className="font-display font-medium text-sm xs:text-base text-text-primary dark:text-text">
 							{d.voiceAgent}
 						</p>
 					</div>
-					<div className="flex gap-5 items-center">
+					<div className="flex flex-wrap gap-3 xs:gap-5 items-center mt-2 xs:mt-0">
 						<p className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
 							{d.voiceGender}
 						</p>

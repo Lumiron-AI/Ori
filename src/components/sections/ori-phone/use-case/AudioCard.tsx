@@ -245,7 +245,7 @@ export function AudioCard({
 
 	return (
 		<div
-			className={`w-full rounded-4xl p-6 flex flex-col gap-4 shadow-card transition-colors duration-300 border border-transparent dark:border-text-secondary/30 ${
+			className={`w-full rounded-4xl p-4 xs:p-5 md:p-6 flex flex-col gap-3 xs:gap-4 shadow-card transition-colors duration-300 border border-transparent dark:border-text-secondary/30 ${
 				playing
 					? "bg-dark-elevated"
 					: "bg-background-element dark:bg-dark-surface"
@@ -262,7 +262,7 @@ export function AudioCard({
 					/>
 				)}
 				<p
-					className={`font-display font-semibold text-2xl transition-colors duration-300 ${
+					className={`font-display font-semibold text-xl xs:text-2xl transition-colors duration-300 ${
 						playing ? "text-text" : "text-text-heading dark:text-text"
 					}`}
 				>
@@ -323,7 +323,7 @@ export function AudioCard({
 				</div>
 
 				<span
-					className={`shrink-0 font-display font-normal text-base tabular-nums transition-colors duration-300 ${
+					className={`shrink-0 font-display font-normal text-sm xs:text-base tabular-nums transition-colors duration-300 ${
 						playing
 							? "text-text/70"
 							: "text-text-secondary dark:text-text-tertiary"

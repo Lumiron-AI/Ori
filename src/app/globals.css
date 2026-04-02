@@ -61,3 +61,7 @@
 		@apply px-5 md:px-12 lg:px-24;
 	}
 }
+
+@theme {
+	--breakpoint-3xl: 120rem;
+}

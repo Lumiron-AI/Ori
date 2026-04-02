@@ -20,7 +20,7 @@ export function OriPhonePricingSection() {
 			id="pricing"
 			ref={ref}
 			style={{ opacity }}
-			className="bg-background dark:bg-dark-bg py-16 sm:py-20 px-5"
+			className="bg-background dark:bg-dark-bg py-16 md:py-20 lg:py-24 px-5 md:px-10 3xl:px-16"
 		>
 			<div className="max-w-8xl lg:max-w-9xl mx-auto">
 				<SectionHeader
@@ -29,7 +29,7 @@ export function OriPhonePricingSection() {
 					subtitle={pricing.subtitle}
 				/>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 max-w-[55rem] mx-auto">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-[55rem] mx-auto">
 					<motion.div
 						initial={{ opacity: 0, y: 24 }}
 						whileInView={{ opacity: 1, y: 0 }}

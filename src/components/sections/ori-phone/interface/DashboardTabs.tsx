@@ -10,7 +10,7 @@ export function DashboardTabs({ activeIndex }: { activeIndex: number }) {
 			{tabs.map((tab, i) => (
 				<div
 					key={tab}
-					className={`px-4 py-2 rounded-xl font-display font-medium text-base whitespace-nowrap ${
+					className={`px-3 xs:px-4 py-1.5 xs:py-2 rounded-xl font-display font-medium text-sm xs:text-base whitespace-nowrap ${
 						i === activeIndex ? "bg-primary text-text" : "text-text-secondary dark:text-text-tertiary"
 					}`}
 				>

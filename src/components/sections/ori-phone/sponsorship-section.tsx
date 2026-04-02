@@ -21,7 +21,7 @@ export function SponsorshipSection() {
 				id="sponsorship"
 				ref={ref}
 				style={{ opacity }}
-				className="bg-background dark:bg-dark-bg py-16 sm:py-20 px-5"
+				className="bg-background dark:bg-dark-bg py-16 md:py-20 lg:py-24 px-5 md:px-10 3xl:px-16"
 			>
 				<div className="max-w-8xl lg:max-w-9xl mx-auto">
 					<SectionHeader
@@ -42,14 +42,14 @@ export function SponsorshipSection() {
 								className="flex flex-col items-center gap-5 w-full sm:w-[40%]"
 							>
 								<div className="flex flex-col items-center gap-2">
-									<p className="font-display font-semibold text-lg sm:text-2xl text-text-primary dark:text-text text-center">
+									<p className="font-display font-semibold text-base xs:text-lg md:text-2xl text-text-primary dark:text-text text-center">
 										{card.tag}
 									</p>
 									<div className="w-24 h-0.5 bg-primary" />
 								</div>
 
-								<div className="w-full bg-dark-elevated dark:bg-dark-surface border border-transparent dark:border-text-secondary/30 rounded-4xl flex items-center justify-center py-10 sm:py-12 px-6">
-									<p className="font-display font-bold text-2xl sm:text-3xl text-center">
+								<div className="w-full bg-dark-elevated dark:bg-dark-surface border border-transparent dark:border-text-secondary/30 rounded-4xl flex items-center justify-center py-8 xs:py-10 md:py-12 px-4 xs:px-6">
+									<p className="font-display font-bold text-xl xs:text-2xl md:text-3xl text-center">
 										<span className="text-primary">{card.highlight}</span>
 										<span className="text-text">{card.rest}</span>
 									</p>

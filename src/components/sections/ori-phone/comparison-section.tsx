@@ -18,7 +18,7 @@ export function ComparisonSection() {
 			id="comparison"
 			ref={ref}
 			style={{ opacity }}
-			className="bg-background dark:bg-dark-bg py-16 sm:py-20 px-5"
+			className="bg-background dark:bg-dark-bg py-16 md:py-20 lg:py-24 px-5 md:px-10 3xl:px-16"
 		>
 			<div className="max-w-8xl lg:max-w-9xl mx-auto">
 				<SectionHeader
@@ -35,12 +35,12 @@ export function ComparisonSection() {
 							<tr>
 								<th className="w-[22%]" />
 								<th className="w-[39%]">
-									<div className="bg-dark-overlay text-text font-display font-semibold text-lg rounded-tl-2xl rounded-tr-2xl px-5 py-3 text-center">
+									<div className="bg-dark-overlay text-text font-display font-semibold text-base md:text-lg rounded-tl-2xl rounded-tr-2xl px-3 md:px-5 py-3 text-center">
 										{comparison.withoutHeader}
 									</div>
 								</th>
 								<th className="w-[39%] border-l-4 border-background dark:border-x-dark-bg p-0!">
-									<div className="bg-primary text-text font-display font-semibold text-lg rounded-tl-2xl rounded-tr-2xl px-5 py-3 text-center">
+									<div className="bg-primary text-text font-display font-semibold text-base md:text-lg rounded-tl-2xl rounded-tr-2xl px-3 md:px-5 py-3 text-center">
 										{comparison.withHeader}
 									</div>
 								</th>
@@ -105,10 +105,10 @@ export function ComparisonSection() {
 				<div className="flex flex-col gap-4 sm:hidden overflow-hidden">
 					{/* Column headers */}
 					<div className="grid grid-cols-2 gap-2">
-						<div className="bg-dark-overlay text-text font-display font-semibold text-lg rounded-2xl px-4 py-2.5 text-center">
+						<div className="bg-dark-overlay text-text font-display font-semibold text-sm xs:text-base rounded-2xl px-3 py-2 xs:px-4 xs:py-2.5 text-center">
 							{comparison.withoutHeader}
 						</div>
-						<div className="bg-primary text-text font-display font-semibold text-lg rounded-2xl px-4 py-2.5 text-center">
+						<div className="bg-primary text-text font-display font-semibold text-sm xs:text-base rounded-2xl px-3 py-2 xs:px-4 xs:py-2.5 text-center">
 							{comparison.withHeader}
 						</div>
 					</div>
@@ -123,8 +123,8 @@ export function ComparisonSection() {
 							className="rounded-2xl overflow-hidden"
 						>
 							{/* Topic label */}
-							<div className="bg-background-tertiary dark:bg-dark-overlay px-4 py-2">
-								<span className="font-display font-semibold text-lg text-text-primary dark:text-text">
+							<div className="bg-background-tertiary dark:bg-dark-overlay px-3 xs:px-4 py-2">
+								<span className="font-display font-semibold text-base xs:text-lg text-text-primary dark:text-text">
 									{row.topic}
 								</span>
 							</div>

@@ -21,7 +21,7 @@ export function FAQSection() {
 			id="faq"
 			ref={ref}
 			style={{ opacity }}
-			className="bg-background dark:bg-dark-bg py-16 sm:py-20 px-5"
+			className="bg-background dark:bg-dark-bg py-16 md:py-20 lg:py-24 px-5 md:px-10 3xl:px-16"
 		>
 			<div className="max-w-8xl lg:max-w-9xl mx-auto">
 				<div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
@@ -67,10 +67,10 @@ export function FAQSection() {
 							>
 								<button
 									onClick={() => setOpen(open === i ? null : i)}
-									className="w-full flex items-center gap-4 sm:gap-6 text-left group min-h-[80px] sm:min-h-[82px]"
+									className="w-full flex items-center gap-3 xs:gap-4 md:gap-6 text-left group min-h-[72px] xs:min-h-[80px] md:min-h-[82px]"
 								>
-									<div className="w-1.5 h-[28px] sm:h-[33px] rounded-sm shrink-0 transition-colors bg-primary" />
-									<span className="flex-1 font-display font-semibold text-base sm:text-xl lg:text-2xl text-text-primary dark:text-text">
+									<div className="w-1.5 h-[24px] xs:h-[28px] md:h-[33px] rounded-sm shrink-0 transition-colors bg-primary" />
+									<span className="flex-1 font-display font-semibold text-sm xs:text-base md:text-xl lg:text-2xl text-text-primary dark:text-text">
 										{item.question}
 									</span>
 									<ChevronDown
@@ -91,7 +91,7 @@ export function FAQSection() {
 											transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
 											className="overflow-hidden"
 										>
-											<p className="font-display font-normal text-sm sm:text-base text-text-primary dark:text-text-tertiary pb-6 sm:pb-8 pl-4 sm:pl-6 leading-relaxed">
+											<p className="font-display font-normal text-sm md:text-base text-text-primary dark:text-text-tertiary pb-5 md:pb-8 pl-4 md:pl-6 leading-relaxed">
 												{item.answer}
 											</p>
 										</motion.div>

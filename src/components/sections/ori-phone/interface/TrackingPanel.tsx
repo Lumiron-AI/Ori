@@ -43,7 +43,7 @@ export function TrackingPanel() {
 			{/* Call history table */}
 			<div className="bg-background-secondary dark:bg-dark-elevated rounded-2xl overflow-hidden">
 				<div className="overflow-x-auto">
-					<div className="min-w-[340px]">
+					<div className="min-w-[300px] xs:min-w-[340px]">
 						<div className="grid grid-cols-[1fr_1fr_48px_64px] bg-dark-elevated px-3 sm:px-4 py-3 gap-2 sm:gap-3">
 							{d.tableHeaders.map((h) => (
 								<p

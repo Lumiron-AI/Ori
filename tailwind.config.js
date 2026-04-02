@@ -154,6 +154,11 @@ module.exports = {
 			// ═══════════════════════════════════════════════════════════════════════
 			// LAYOUT
 			// ═══════════════════════════════════════════════════════════════════════
+			screens: {
+				xs: "375px", // Mobile M — iPhone SE / standard small phones
+				"3xl": "1600px", // Above large desktop — extra wide screens
+			},
+
 			maxWidth: {
 				"6xl": "72rem", // 1152px — default content container
 				"7xl": "80rem", // 1280px — wider layouts

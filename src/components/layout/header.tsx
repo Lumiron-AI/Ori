@@ -38,13 +38,13 @@ export function Header() {
 	return (
 		<header className="fixed top-0 inset-x-0 z-50 flex justify-center pt-4">
 			<div
-				className={`w-[94vw] sm:w-[88vw] md:w-[83vw] rounded-full border transition-all duration-300 py-1 ${
+				className={`w-[94vw] xs:w-[92vw] md:w-[88vw] lg:w-[83vw] 3xl:w-[78vw] rounded-full border transition-all duration-300 py-1 ${
 					scrolled
 						? "bg-white/75 dark:bg-dark-bg/80 backdrop-blur-md border-white dark:border-secondary shadow-[-1px_-1px_31px_-1px_rgba(0,0,0,0.12)]"
 						: "bg-transparent border-transparent shadow-none backdrop-blur-none"
 				}`}
 			>
-				<div className="px-4 sm:px-5 md:px-8 lg:px-6 h-[44px] sm:h-[50px] grid grid-cols-3 items-center">
+				<div className="px-3 xs:px-4 md:px-6 lg:px-8 h-[44px] md:h-[50px] grid grid-cols-3 items-center">
 					{/* Logo */}
 					<Link href="/" className="flex items-center gap-2 shrink-0 w-fit">
 						<>

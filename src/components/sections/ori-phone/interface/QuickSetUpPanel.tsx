@@ -51,7 +51,7 @@ export function QuickSetUpPanel() {
 
 	return (
 		<>
-			<p className="font-display font-medium text-2xl text-text-primary dark:text-text">
+			<p className="font-display font-medium text-xl xs:text-2xl text-text-primary dark:text-text">
 				{t.dashboardPhone.welcome}
 			</p>
 			<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-1 mb-5">

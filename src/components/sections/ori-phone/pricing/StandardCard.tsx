@@ -21,7 +21,7 @@ export function StandardCard({
 	const { standard } = t.pricing;
 
 	return (
-		<div className="bg-background dark:bg-dark-surface rounded-3xl px-7 py-6 flex flex-col gap-3.5 shadow-card h-full border border-transparent hover:border-primary transition-colors">
+		<div className="bg-background dark:bg-dark-surface rounded-3xl px-5 xs:px-7 py-5 xs:py-6 flex flex-col gap-3 xs:gap-3.5 shadow-card h-full border border-transparent hover:border-primary transition-colors">
 			{/* Title */}
 			<div>
 				<p className="font-display font-bold text-2xl text-text-heading dark:text-text">
@@ -37,7 +37,7 @@ export function StandardCard({
 			{/* Price + toggle */}
 			<div className="flex flex-col gap-2">
 				<div className="flex items-baseline gap-2">
-					<span className="font-display font-bold text-3xl text-text-heading dark:text-text">
+					<span className="font-display font-bold text-2xl xs:text-3xl text-text-heading dark:text-text">
 						{annual ? annualPrice : monthlyPrice}€
 					</span>
 					<span className="font-display font-semibold text-base text-text-secondary dark:text-text-tertiary">

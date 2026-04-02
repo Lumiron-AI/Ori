@@ -29,7 +29,7 @@ function AnimatedStatValue({
 	return (
 		<span
 			ref={ref as React.RefObject<HTMLSpanElement>}
-			className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-text-primary dark:text-text leading-none"
+			className="font-display font-bold text-2xl xs:text-3xl md:text-4xl lg:text-5xl text-text-primary dark:text-text leading-none"
 		>
 			{count}
 			{suffix}
@@ -46,7 +46,7 @@ export function OriPhoneHeroSection() {
 		<motion.section
 			ref={ref}
 			style={{ opacity }}
-			className="relative flex flex-col items-center justify-center text-center px-5 pt-[110px] sm:pt-[110px] md:pt-[80px] pb-16 sm:pb-20 overflow-hidden bg-background dark:bg-dark-bg"
+			className="relative flex flex-col items-center justify-center text-center px-5 pt-[100px] xs:pt-[110px] md:pt-[80px] 3xl:pt-[170px] 3xl:pb-32 pb-16 md:pb-20 overflow-hidden bg-background dark:bg-dark-bg"
 		>
 			<div
 				aria-hidden
@@ -63,7 +63,7 @@ export function OriPhoneHeroSection() {
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text-primary dark:text-text leading-tight max-w-6xl"
+					className="font-display font-bold text-3xl xs:text-4xl md:text-5xl lg:text-6xl text-text-primary dark:text-text leading-tight max-w-6xl"
 				>
 					{hero.title1}
 					<br /> {hero.title2}{" "}
@@ -80,7 +80,7 @@ export function OriPhoneHeroSection() {
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="font-display font-semibold text-base sm:text-lg lg:text-2xl text-text-secondary dark:text-text-tertiary max-w-5xl gap-4 py-4"
+					className="font-display font-semibold text-sm xs:text-base md:text-lg lg:text-2xl text-text-secondary dark:text-text-tertiary max-w-5xl gap-4 py-4"
 				>
 					{hero.subtitle}{" "}
 					<span className="hidden sm:inline">
@@ -104,7 +104,7 @@ export function OriPhoneHeroSection() {
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="font-display font-normal text-xs sm:text-base text-text-secondary dark:text-text-tertiary"
+					className="font-display font-normal text-xs md:text-base text-text-secondary dark:text-text-tertiary"
 				>
 					{hero.testPrompt}
 				</motion.p>
@@ -116,17 +116,20 @@ export function OriPhoneHeroSection() {
 					animate="show"
 					className="w-full mt-2 sm:mt-4"
 				>
-					<div className="flex flex-wrap justify-center gap-x-8 sm:gap-x-12 gap-y-4">
+					<div className="flex flex-wrap justify-center gap-x-5 xs:gap-x-8 md:gap-x-12 gap-y-4">
 						{hero.stats.map((stat, i) => (
-							<div key={i} className="flex flex-col items-center min-w-[10rem]">
-								<div className="flex items-center gap-4">
-									<div className="w-1 h-8 sm:h-10 bg-primary rounded-full shrink-0" />
+							<div
+								key={i}
+								className="flex flex-col items-center min-w-[7rem] xs:min-w-[8rem] md:min-w-[10rem]"
+							>
+								<div className="flex items-center gap-2 xs:gap-4">
+									<div className="w-1 h-7 xs:h-8 md:h-10 bg-primary rounded-full shrink-0" />
 									<AnimatedStatValue
 										numeric={STAT_NUMERICS[i]}
 										suffix={stat.suffix}
 									/>
 								</div>
-								<span className="font-display font-normal text-xs sm:text-sm lg:text-base text-text-secondary dark:text-text-tertiary pl-3">
+								<span className="font-display font-normal text-xs md:text-sm lg:text-base text-text-secondary dark:text-text-tertiary pl-3">
 									{stat.label}
 								</span>
 							</div>

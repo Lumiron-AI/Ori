@@ -17,14 +17,14 @@ export function OriMessagesTrialCTASection() {
 			{/* Ambient lights */}
 			<div
 				aria-hidden
-				className="pointer-events-none absolute right-[0px] top-[-200px] w-[300px] sm:w-[512px] h-[300px] sm:h-[508px] rounded-full blur-3xl opacity-20 z-10"
+				className="pointer-events-none absolute right-[0px] top-[-100px] w-[210px] sm:w-[358px] h-[210px] sm:h-[356px] rounded-full blur-3xl opacity-20 z-10"
 				style={{
 					background: "radial-gradient(ellipse, #3E67B5 0%, transparent 70%)",
 				}}
 			/>
 			<div
 				aria-hidden
-				className="pointer-events-none absolute left-[-100px] top-[-200px] w-[300px] sm:w-[696px] h-[300px] sm:h-[701px] rounded-full blur-3xl opacity-15 z-10"
+				className="pointer-events-none absolute left-[-50px] top-[-100px] w-[210px] sm:w-[487px] h-[210px] sm:h-[491px] rounded-full blur-3xl opacity-20 z-10"
 				style={{
 					background: "radial-gradient(ellipse, #3E67B5 0%, transparent 70%)",
 				}}
