@@ -5,50 +5,56 @@ import { X } from "lucide-react";
 
 import { RiVolumeUpLine, RiMessage3Line } from "react-icons/ri";
 
+import { useLocale } from "@/context/locale-context";
 import { DashboardTabs } from "./DashboardTabs";
 import { FieldIconBox } from "./FieldIconBox";
 
 export function CustomizePanel() {
-	const [voice, setVoice] = useState<"Homme" | "Femme">("Femme");
+	const { t } = useLocale();
+	const d = t.dashboardPhone;
+
+	const [voiceIndex, setVoiceIndex] = useState<0 | 1>(1);
+	const voices = [d.voiceMale, d.voiceFemale] as const;
+
 	return (
 		<>
 			<p className="font-display font-medium text-2xl text-text-primary dark:text-text">
-				Bienvenue dans votre espace
+				{d.welcome}
 			</p>
 			<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-1 mb-5">
-				Je suis Ori, votre assistant vocal
+				{d.subtitle}
 			</p>
-			<DashboardTabs active="Fonctionnement" />
+			<DashboardTabs activeIndex={1} />
 			<div className="flex flex-col gap-3">
 				{/* Voix de l'agent */}
 				<div className="bg-background-secondary dark:bg-dark-elevated rounded-2xl flex items-center justify-between p-4">
 					<div className="flex items-center gap-3">
 						<FieldIconBox icon={RiVolumeUpLine} />
 						<p className="font-display font-medium text-base text-text-primary dark:text-text">
-							Voix de l&apos;agent
+							{d.voiceAgent}
 						</p>
 					</div>
 					<div className="flex gap-5 items-center">
 						<p className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
-							Genre :
+							{d.voiceGender}
 						</p>
-						{(["Homme", "Femme"] as const).map((g) => (
+						{voices.map((label, i) => (
 							<label
-								key={g}
+								key={label}
 								className="flex items-center gap-2 cursor-pointer"
-								onClick={() => setVoice(g)}
+								onClick={() => setVoiceIndex(i as 0 | 1)}
 							>
 								<div
 									className={`w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors ${
-										voice === g ? "border-primary" : "border-text-secondary"
+										voiceIndex === i ? "border-primary" : "border-text-secondary"
 									}`}
 								>
-									{voice === g && (
+									{voiceIndex === i && (
 										<div className="w-2 h-2 rounded-full bg-primary" />
 									)}
 								</div>
 								<span className="font-display font-normal text-sm text-text-primary dark:text-text">
-									{g}
+									{label}
 								</span>
 							</label>
 						))}
@@ -60,7 +66,7 @@ export function CustomizePanel() {
 					<div className="flex items-center gap-3 mb-3">
 						<FieldIconBox icon={RiMessage3Line} />
 						<p className="font-display font-medium text-base text-text-primary dark:text-text">
-							Phrase prononcée au début de l&apos;appel
+							{d.greeting}
 						</p>
 					</div>
 					<div className="border border-text-secondary/30 dark:border-dark-overlay rounded bg-background-element dark:bg-dark-overlay px-3 py-2">
@@ -75,31 +81,28 @@ export function CustomizePanel() {
 					<div className="flex items-center gap-3 mb-3">
 						<FieldIconBox icon={RiVolumeUpLine} />
 						<p className="font-display font-medium text-base text-text-primary dark:text-text">
-							Transfert de l&apos;appel à votre équipe
+							{d.transfer}
 						</p>
 					</div>
 					<p className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary mb-3">
-						Choisissez les situations où l&apos;agent doit vous passer
-						l&apos;appel
+						{d.transferSubtitle}
 					</p>
 					<div className="flex flex-wrap gap-2">
-						{["Annulation d'une réservation", "Demande urgente"].map(
-							(chip) => (
-								<div
-									key={chip}
-									className="flex items-center gap-1.5 bg-background-tertiary dark:bg-dark-overlay border border-text-secondary/30 dark:border-dark-overlay rounded px-2.5 py-1"
-								>
-									<span className="font-display font-normal text-sm text-text-primary dark:text-text">
-										{chip}
-									</span>
-									<X
-										size={12}
-										className="text-text-secondary dark:text-text-tertiary shrink-0"
-										strokeWidth={2.5}
-									/>
-								</div>
-							),
-						)}
+						{d.transferChips.map((chip) => (
+							<div
+								key={chip}
+								className="flex items-center gap-1.5 bg-background-tertiary dark:bg-dark-overlay border border-text-secondary/30 dark:border-dark-overlay rounded px-2.5 py-1"
+							>
+								<span className="font-display font-normal text-sm text-text-primary dark:text-text">
+									{chip}
+								</span>
+								<X
+									size={12}
+									className="text-text-secondary dark:text-text-tertiary shrink-0"
+									strokeWidth={2.5}
+								/>
+							</div>
+						))}
 					</div>
 				</div>
 			</div>

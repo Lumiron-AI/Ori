@@ -4,9 +4,12 @@ import { motion } from "framer-motion";
 import { SectionHeaderMessages } from "@/components/ui/section-header-messages";
 import { InterfaceTabsMessage } from "./interface/InterfaceTabsMessage";
 import { useSectionFade } from "@/hooks/use-section-fade";
+import { useLocale } from "@/context/locale-context";
 
 export function OriMessagesInterfaceSection() {
 	const { ref, opacity } = useSectionFade();
+	const { t } = useLocale();
+	const d = t.messagesInterface;
 
 	return (
 		<motion.section
@@ -23,9 +26,9 @@ export function OriMessagesInterfaceSection() {
 					transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
 				>
 					<SectionHeaderMessages
-						label="INTERFACE"
-						title="Votre messagerie en pilote automatique."
-						subtitle="Configurez Ori en quelques minutes et laissez-le gérer chaque message avec précision, selon vos règles."
+						label={d.label}
+						title={d.title}
+						subtitle={d.subtitle}
 						subtitleClassName="max-w-5xl"
 					/>
 				</motion.div>
@@ -46,8 +49,7 @@ export function OriMessagesInterfaceSection() {
 					transition={{ delay: 0.24, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
 					className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-4xl mx-auto"
 				>
-					Une gestion simplifiée pour vous concentrer sur l&apos;essentiel :
-					l&apos;accueil de vos clients et la qualité de votre service.
+					{d.footer}
 				</motion.p>
 			</div>
 		</motion.section>

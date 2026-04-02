@@ -98,7 +98,7 @@ export function Footer() {
 							)}
 						</Link>
 						<p className="font-display font-normal text-sm text-text-primary dark:text-text max-w-xs leading-relaxed">
-							{footer.brandTagline}
+							{isMessages ? footer.messagesBrandTagline : footer.brandTagline}
 						</p>
 					</div>
 
@@ -109,7 +109,7 @@ export function Footer() {
 							<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
 								{footer.navTitle}
 							</p>
-							{footer.navLinks.map((link) => (
+							{(isMessages ? footer.messagesNavLinks : footer.navLinks).map((link) => (
 								<Link
 									key={link.href}
 									href={link.href}

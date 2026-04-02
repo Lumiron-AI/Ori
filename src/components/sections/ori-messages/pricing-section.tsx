@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 import { SectionHeaderMessages } from "@/components/ui/section-header-messages";
 import { useSectionFade } from "@/hooks/use-section-fade";
+import { useLocale } from "@/context/locale-context";
 import { PricingCardInstagram } from "./pricing/PricingCardInstagram";
 import { PricingCardWhatsApp } from "./pricing/PricingCardWhatsApp";
 import { PricingCardDuo } from "./pricing/PricingCardDuo";
@@ -14,6 +15,8 @@ export function OriMessagesPricingSection() {
 	const [annualWhatsApp, setAnnualWhatsApp] = useState(false);
 	const [annualDuo, setAnnualDuo] = useState(false);
 	const { ref, opacity } = useSectionFade();
+	const { t } = useLocale();
+	const d = t.messagesPricing;
 
 	return (
 		<motion.section
@@ -24,9 +27,9 @@ export function OriMessagesPricingSection() {
 		>
 			<div className="max-w-8xl lg:max-w-9xl mx-auto">
 				<SectionHeaderMessages
-					label="TARIFS"
-					title="Choisissez le canal adapté à votre restaurant"
-					subtitle="Commencez avec un canal ou combinez-les pour une gestion complète."
+					label={d.label}
+					title={d.title}
+					subtitle={d.subtitle}
 				/>
 
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-12">
@@ -68,7 +71,7 @@ export function OriMessagesPricingSection() {
 				</div>
 
 				<p className="font-display font-normal text-sm sm:text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-3xl mx-auto">
-					Un seul client perdu coûte plus cher qu&apos;un mois d&apos;Ori.
+					{d.footer}
 				</p>
 			</div>
 		</motion.section>

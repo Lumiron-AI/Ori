@@ -8,38 +8,13 @@ import Link from "next/link";
 import { SectionHeaderMessages } from "@/components/ui/section-header-messages";
 import { buttonClass } from "@/components/ui/button";
 import { useSectionFade } from "@/hooks/use-section-fade";
-
-const FAQS = [
-	{
-		question: "Dois-je changer mes comptes WhatsApp ou Instagram ?",
-		answer:
-			"Non. Ori se connecte directement à vos comptes existants (Business ou Pro). Vous gardez vos accès, votre historique et vous pouvez continuer à les utiliser normalement.",
-	},
-	{
-		question: "Est-ce qu'Ori peut vraiment gérer mes réservations ?",
-		answer:
-			"Oui. Ori est capable de comprendre une demande de table, de vérifier vos disponibilités et de confirmer la réservation en suivant vos règles spécifiques, comme le ferait un membre de votre équipe.",
-	},
-	{
-		question: "Puis-je reprendre la main sur une discussion à tout moment ?",
-		answer:
-			"Absolument. Vous gardez le contrôle total. Si vous souhaitez intervenir personnellement dans une conversation sur WhatsApp ou Instagram, vous pouvez le faire instantanément depuis votre application habituelle.",
-	},
-	{
-		question: "Est-ce que je peux utiliser Ori seulement quand je suis fermé ?",
-		answer:
-			"Oui. Vous pouvez programmer Ori pour qu'il ne s'active que pendant vos coupures, la nuit ou vos jours de fermeture. C'est vous qui déterminez ses plages d'activité selon vos besoins.",
-	},
-	{
-		question: "Combien de temps faut-il pour activer l'assistant ?",
-		answer:
-			"Moins de 5 minutes. La connexion est simplifiée au maximum : vous liez vos comptes, vous renseignez vos infos de base, et Ori commence à répondre à vos clients immédiatement.",
-	},
-];
+import { useLocale } from "@/context/locale-context";
 
 export function OriMessagesFAQSection() {
 	const [open, setOpen] = useState<number | null>(null);
 	const { ref, opacity } = useSectionFade();
+	const { t } = useLocale();
+	const d = t.messagesFaq;
 
 	return (
 		<motion.section
@@ -59,9 +34,9 @@ export function OriMessagesFAQSection() {
 						className="lg:w-[560px] shrink-0 flex flex-col"
 					>
 						<SectionHeaderMessages
-							label="FAQ"
-							title="Tout savoir sur Ori Message"
-							subtitle="Les réponses à vos questions pour automatiser vos réseaux en toute confiance."
+							label={d.label}
+							title={d.title}
+							subtitle={d.subtitle}
 							className="mb-0"
 						/>
 
@@ -74,13 +49,13 @@ export function OriMessagesFAQSection() {
 									"w-full sm:w-[292px] border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20 shadow-blue-btn-soft",
 							})}
 						>
-							Voir toutes les questions
+							{d.seeAll}
 						</Link>
 					</motion.div>
 
 					{/* Right: accordion */}
 					<div className="flex-1">
-						{FAQS.map((faq, i) => (
+						{d.items.map((faq, i) => (
 							<motion.div
 								key={i}
 								initial={{ opacity: 0, y: 24 }}

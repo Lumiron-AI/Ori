@@ -1,43 +1,23 @@
 "use client";
 
 import { RiPhoneLine } from "react-icons/ri";
+import { useLocale } from "@/context/locale-context";
 
 const AGENTS = [
-	{
-		name: "Ori 1",
-		restaurant: "Trattoria",
-		calls: 78,
-		status: "Toute la journée",
-		active: true,
-	},
-	{
-		name: "Ori 2",
-		restaurant: "Trattoria",
-		calls: 0,
-		status: "Indisponible",
-		active: false,
-	},
-	{
-		name: "Ori 3",
-		restaurant: "Trattoria",
-		calls: 45,
-		status: "12h00-15h00",
-		active: true,
-	},
-	{
-		name: "Ori 4",
-		restaurant: "Trattoria",
-		calls: 29,
-		status: "11h30-14h30",
-		active: true,
-	},
+	{ name: "Ori 1", restaurant: "Trattoria", calls: 78, statusKey: "statusAllDay" as const, active: true },
+	{ name: "Ori 2", restaurant: "Trattoria", calls: 0, statusKey: "statusUnavailable" as const, active: false },
+	{ name: "Ori 3", restaurant: "Trattoria", calls: 45, status: "12h00-15h00", active: true },
+	{ name: "Ori 4", restaurant: "Trattoria", calls: 29, status: "11h30-14h30", active: true },
 ];
 
 export function AutomationPanel() {
+	const { t } = useLocale();
+	const d = t.dashboardPhone;
+
 	return (
 		<>
 			<p className="font-display font-bold text-xl sm:text-2xl text-text-primary dark:text-text mb-4 sm:mb-5">
-				Agents IA
+				{d.aiAgents}
 			</p>
 			<div className="flex flex-col gap-3">
 				{AGENTS.map((a) => (
@@ -64,20 +44,20 @@ export function AutomationPanel() {
 							</div>
 						</div>
 
-						{/* Appels reçus — hidden on very small panels */}
+						{/* Appels reçus */}
 						<div className="hidden md:flex flex-col items-center text-center shrink-0 w-24">
 							<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary mb-0.5">
-								Appels reçus
+								{d.callsReceived}
 							</p>
 							<p className="font-display font-semibold text-sm text-text-primary dark:text-text">
 								{a.calls}
 							</p>
 						</div>
 
-						{/* Disponibilité — hidden on small, shown on sm+ */}
+						{/* Disponibilité */}
 						<div className="hidden sm:flex flex-col items-center text-center shrink-0 w-28">
 							<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary mb-0.5">
-								Disponibilité
+								{d.availability}
 							</p>
 							<div className="flex items-center gap-1">
 								<div
@@ -86,15 +66,15 @@ export function AutomationPanel() {
 									}`}
 								/>
 								<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
-									{a.status}
+									{"statusKey" in a ? d[a.statusKey] : a.status}
 								</p>
 							</div>
 						</div>
 
-						{/* Activité toggle — always visible */}
+						{/* Activité toggle */}
 						<div className="flex flex-col items-center shrink-0 text-center">
 							<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary mb-1 hidden sm:block">
-								Activité
+								{d.activity}
 							</p>
 							<div
 								className={`relative w-10 h-6 rounded-full transition-colors ${

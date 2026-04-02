@@ -6,37 +6,12 @@ import { AiOutlineMinusCircle } from "react-icons/ai";
 
 import { SectionHeaderMessages } from "@/components/ui/section-header-messages";
 import { useSectionFade } from "@/hooks/use-section-fade";
-
-const ROWS = [
-	{
-		topic: "Délai de réponse",
-		without: "Plusieurs heures d'attente selon votre disponibilité",
-		with: "Réponse immédiate en moins de 2 secondes",
-	},
-	{
-		topic: "Taux de conversion",
-		without: "Perte de clients faute de réactivité immédiate",
-		with: "Engagement maximal grâce à un traitement instantané",
-	},
-	{
-		topic: "Précision des infos",
-		without: "Risque d'erreurs ou d'informations incomplètes",
-		with: "Réponses fiables basées sur vos données réelles",
-	},
-	{
-		topic: "Gestion du flux",
-		without: "Interruption constante de vos tâches prioritaires",
-		with: "Autonomie complète pour une tranquilité totale",
-	},
-	{
-		topic: "Accessibilité",
-		without: "Dépend de la présence humaine sur chaque application",
-		with: "Disponibilité totale, 24h/24 sur tous vos canaux",
-	},
-];
+import { useLocale } from "@/context/locale-context";
 
 export function OriMessagesComparisonSection() {
 	const { ref, opacity } = useSectionFade();
+	const { t } = useLocale();
+	const d = t.messagesComparison;
 
 	return (
 		<motion.section
@@ -47,9 +22,9 @@ export function OriMessagesComparisonSection() {
 		>
 			<div className="max-w-8xl lg:max-w-9xl mx-auto">
 				<SectionHeaderMessages
-					label="COMPARATIF"
-					title="Pourquoi choisir Ori pour vos messageries ?"
-					subtitle="Comparez la gestion manuelle avec la puissance de l'automatisation intelligente et mesurez l'impact sur votre quotidien."
+					label={d.label}
+					title={d.title}
+					subtitle={d.subtitle}
 					subtitleClassName="max-w-6xl"
 				/>
 
@@ -61,19 +36,19 @@ export function OriMessagesComparisonSection() {
 								<th className="w-[22%]" />
 								<th className="w-[39%]">
 									<div className="bg-dark-overlay text-text font-display font-semibold text-lg rounded-tl-2xl rounded-tr-2xl px-5 py-3 text-center">
-										Gestion manuelle
+										{d.headerManual}
 									</div>
 								</th>
 								<th className="w-[39%] border-l-4 border-background dark:border-x-dark-bg p-0!">
 									<div className="bg-ori-message text-text font-display font-semibold text-lg rounded-tl-2xl rounded-tr-2xl px-5 py-3 text-center">
-										Avec Ori
+										{d.headerOri}
 									</div>
 								</th>
 							</tr>
 						</thead>
 
 						<tbody>
-							{ROWS.map((row, i) => (
+							{d.rows.map((row, i) => (
 								<motion.tr
 									key={i}
 									initial={{ opacity: 0, y: 24 }}
@@ -84,7 +59,7 @@ export function OriMessagesComparisonSection() {
 									<td className="bg-background-secondary dark:bg-dark-elevated border-r-4 border-background dark:border-x-dark-bg rounded-l-2xl">
 										<div
 											className={`px-5 py-4 font-display font-semibold text-lg text-text-primary dark:text-text ${
-												i === ROWS.length - 1 ? "rounded-bl-2xl" : ""
+												i === d.rows.length - 1 ? "rounded-bl-2xl" : ""
 											}`}
 										>
 											{row.topic}
@@ -107,7 +82,7 @@ export function OriMessagesComparisonSection() {
 									<td className="bg-background-secondary dark:bg-dark-elevated border-l-4 border-background dark:border-dark-bg">
 										<div
 											className={`px-5 py-4 flex items-start gap-3 rounded-r-2xl ${
-												i === ROWS.length - 1 ? "rounded-br-2xl" : ""
+												i === d.rows.length - 1 ? "rounded-br-2xl" : ""
 											}`}
 										>
 											<CheckCircle2
@@ -130,14 +105,14 @@ export function OriMessagesComparisonSection() {
 				<div className="flex flex-col gap-4 sm:hidden">
 					<div className="grid grid-cols-2 gap-2">
 						<div className="bg-dark-overlay text-text font-display font-semibold text-lg rounded-2xl px-4 py-2.5 text-center">
-							Gestion manuelle
+							{d.headerManual}
 						</div>
 						<div className="bg-ori-message text-text font-display font-semibold text-lg rounded-2xl px-4 py-2.5 text-center">
-							Avec Ori
+							{d.headerOri}
 						</div>
 					</div>
 
-					{ROWS.map((row, i) => (
+					{d.rows.map((row, i) => (
 						<motion.div
 							key={i}
 							initial={{ opacity: 0, y: 24 }}
@@ -178,8 +153,7 @@ export function OriMessagesComparisonSection() {
 				</div>
 
 				<p className="font-display font-normal text- sm:text-lg text-text-secondary dark:text-text-tertiary text-center mt-8 sm:mt-10 max-w-3xl mx-auto">
-					Ne laissez plus aucune opportunité vous échapper. Chaque message reçu
-					est une chance de convertir un prospect en client fidèle.
+					{d.footer}
 				</p>
 			</div>
 		</motion.section>

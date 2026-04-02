@@ -6,6 +6,7 @@ import Link from "next/link";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { useCountUp } from "@/hooks/use-count-up";
 import { useSectionFade } from "@/hooks/use-section-fade";
+import { useLocale } from "@/context/locale-context";
 
 const fadeUp = {
 	hidden: { opacity: 0, y: 24 },
@@ -22,12 +23,7 @@ interface Stat {
 	label: string;
 }
 
-const STATS: Stat[] = [
-	{ numeric: 100, suffix: "%", label: "Des messages traités" },
-	{ numeric: 3, suffix: "s", label: "Temps moyen de réponse" },
-	{ numeric: 24, suffix: "/7", label: "Disponibilité" },
-	{ numeric: 2, suffix: "", label: "Canaux gérés simultanément" },
-];
+const STAT_NUMERICS = [100, 3, 24, 2];
 
 function AnimatedStatValue({ stat }: { stat: Stat }) {
 	const { count, ref } = useCountUp({ target: stat.numeric, duration: 2800 });
@@ -45,6 +41,14 @@ function AnimatedStatValue({ stat }: { stat: Stat }) {
 
 export function OriMessagesHeroSection() {
 	const { ref, opacity } = useSectionFade();
+	const { t } = useLocale();
+	const d = t.messagesHero;
+
+	const stats: Stat[] = d.stats.map((s, i) => ({
+		numeric: STAT_NUMERICS[i],
+		suffix: s.suffix,
+		label: s.label,
+	}));
 
 	return (
 		<motion.section
@@ -69,16 +73,16 @@ export function OriMessagesHeroSection() {
 					animate="show"
 					className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text-primary dark:text-text leading-tight max-w-6xl text-center"
 				>
-					<span className="text-ori-message">Ori,</span>
+					<span className="text-ori-message">{d.titlePrefix}</span>
 					<br />
-					{`l'assistant automatique `}
-					<span className="text-ori-message">WhatsApp</span>
+					{d.titleAssistant}
+					<span className="text-ori-message">{d.titleWhatsApp}</span>
 					<br />
-					{` et `}
-					<span className="text-ori-message">Instagram</span>
-					{` pour votre `}
+					{d.titleAnd}
+					<span className="text-ori-message">{d.titleInstagram}</span>
+					{d.titleFor}
 					<span className="relative after:absolute after:bottom-[0px] after:left-0 after:w-full after:h-2 after:bg-ori-message after:opacity-60">
-						restaurant
+						{d.titleUnderline}
 					</span>
 					.
 				</motion.h1>
@@ -90,8 +94,7 @@ export function OriMessagesHeroSection() {
 					animate="show"
 					className="font-display font-semibold text-base sm:text-lg lg:text-2xl text-text-secondary dark:text-text-tertiary max-w-3xl py-4"
 				>
-					Ori répond instantanément aux messages de vos clients, prend vos
-					réservations et confirme chaque demande. 24h/24.
+					{d.subtitle}
 				</motion.p>
 
 				<motion.div
@@ -150,7 +153,7 @@ export function OriMessagesHeroSection() {
 					className="w-full mt-2 sm:mt-4"
 				>
 					<div className="flex flex-wrap justify-center gap-x-8 sm:gap-x-12 gap-y-4">
-						{STATS.map((stat, i) => (
+						{stats.map((stat, i) => (
 							<div key={i} className="flex flex-col items-center min-w-[10rem]">
 								<div className="flex items-center gap-4">
 									<div className="w-1 h-8 sm:h-10 bg-ori-message rounded-full shrink-0" />

@@ -1,46 +1,30 @@
 "use client";
 
 import { RiEyeLine, RiDownload2Line } from "react-icons/ri";
+import { useLocale } from "@/context/locale-context";
 
 const CALL_HISTORY = [
-	{
-		date: "23 janv. 2026",
-		time: "17:12:23",
-		number: "+33 6 15 24 77 14",
-		duration: "0:33",
-	},
-	{
-		date: "23 janv. 2026",
-		time: "13:39:27",
-		number: "+33 6 18 33 92 11",
-		duration: "0:30",
-	},
-	{
-		date: "23 janv. 2026",
-		time: "13:38:19",
-		number: "+33 6 47 43 23 52",
-		duration: "0:23",
-	},
-	{
-		date: "23 janv. 2026",
-		time: "10:12:24",
-		number: "+33 7 84 21 34 98",
-		duration: "0:48",
-	},
+	{ date: "23 janv. 2026", time: "17:12:23", number: "+33 6 15 24 77 14", duration: "0:33" },
+	{ date: "23 janv. 2026", time: "13:39:27", number: "+33 6 18 33 92 11", duration: "0:30" },
+	{ date: "23 janv. 2026", time: "13:38:19", number: "+33 6 47 43 23 52", duration: "0:23" },
+	{ date: "23 janv. 2026", time: "10:12:24", number: "+33 7 84 21 34 98", duration: "0:48" },
 ];
 
 export function TrackingPanel() {
+	const { t } = useLocale();
+	const d = t.dashboardPhone;
+
 	return (
 		<>
 			<p className="font-display font-bold text-xl sm:text-2xl text-text-primary dark:text-text mb-4 sm:mb-5">
-				Historique — Ori
+				{d.trackingTitle}
 			</p>
 
 			{/* Stat cards */}
 			<div className="grid grid-cols-2 gap-3 mb-4">
 				{[
-					{ label: "Total des appels passés", value: "12" },
-					{ label: "Durée moyenne par appel", value: "0:28" },
+					{ label: d.totalCalls, value: "12" },
+					{ label: d.avgDuration, value: "0:28" },
 				].map((s) => (
 					<div
 						key={s.label}
@@ -56,12 +40,12 @@ export function TrackingPanel() {
 				))}
 			</div>
 
-			{/* Call history table — scrollable on small screens */}
+			{/* Call history table */}
 			<div className="bg-background-secondary dark:bg-dark-elevated rounded-2xl overflow-hidden">
 				<div className="overflow-x-auto">
 					<div className="min-w-[340px]">
 						<div className="grid grid-cols-[1fr_1fr_48px_64px] bg-dark-elevated px-3 sm:px-4 py-3 gap-2 sm:gap-3">
-							{["Date & Heure", "De", "Durée", "Action"].map((h) => (
+							{d.tableHeaders.map((h) => (
 								<p
 									key={h}
 									className="font-display font-semibold text-xs sm:text-sm text-text"

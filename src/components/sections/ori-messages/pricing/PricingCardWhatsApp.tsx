@@ -3,14 +3,7 @@
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { Divider } from "../../ori-phone/pricing/Divider";
-
-const FEATURES = [
-	"Jusqu'à 500 discussions",
-	"Réponses automatiques 24/7",
-	"Prise de réservation intégrée",
-	"Zéro client ignoré",
-	"0,10€ par discussion supplémentaire",
-];
+import { useLocale } from "@/context/locale-context";
 
 export function PricingCardWhatsApp({
 	annual,
@@ -19,6 +12,10 @@ export function PricingCardWhatsApp({
 	annual: boolean;
 	setAnnual: (v: boolean) => void;
 }) {
+	const { t } = useLocale();
+	const p = t.messagesPricing;
+	const d = p.whatsapp;
+
 	const monthlyPrice = 59;
 	const annualPrice = Math.round(monthlyPrice * 12 * 0.9);
 
@@ -27,10 +24,10 @@ export function PricingCardWhatsApp({
 			{/* Title */}
 			<div>
 				<p className="font-display font-bold text-2xl text-text-heading dark:text-text">
-					ASSISTANT WHATSAPP
+					{d.title}
 				</p>
 				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-0.5">
-					Votre numéro en automatique
+					{d.tagline}
 				</p>
 			</div>
 
@@ -43,7 +40,7 @@ export function PricingCardWhatsApp({
 						{annual ? annualPrice : monthlyPrice}€
 					</span>
 					<span className="font-display font-semibold text-base text-text-secondary dark:text-text-tertiary">
-						{annual ? "/ an" : "/ mois"}
+						{annual ? p.perYear : p.perMonth}
 					</span>
 				</div>
 
@@ -57,7 +54,7 @@ export function PricingCardWhatsApp({
 						}`}
 						aria-checked={annual}
 						role="switch"
-						aria-label="Facturation annuelle"
+						aria-label={p.annual}
 					>
 						<span
 							className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${
@@ -66,10 +63,10 @@ export function PricingCardWhatsApp({
 						/>
 					</button>
 					<span className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
-						Annuel
+						{p.annual}
 					</span>
 					<span className="font-display font-bold text-sm text-ori-message">
-						-10%
+						{p.discount}
 					</span>
 				</div>
 			</div>
@@ -79,7 +76,7 @@ export function PricingCardWhatsApp({
 				href="#trial"
 				className="inline-flex items-center justify-center gap-2 font-display font-bold rounded-2xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ori-message focus-visible:ring-offset-2 w-full text-lg px-8 h-[46px] bg-ori-message text-text shadow-blue-btn hover:bg-ori-message/90 active:bg-ori-message/80"
 			>
-				Activer WhatsApp
+				{d.cta}
 			</Link>
 
 			<Divider />
@@ -87,7 +84,7 @@ export function PricingCardWhatsApp({
 			{/* Features */}
 			<div className="flex-1">
 				<ul className="flex flex-col gap-3">
-					{FEATURES.map((f, i) => (
+					{d.features.map((f, i) => (
 						<li key={i} className="flex items-start gap-3">
 							<Check
 								size={24}
@@ -105,9 +102,9 @@ export function PricingCardWhatsApp({
 			<Divider />
 
 			<p className="font-display font-semibold text-sm text-text-secondary dark:text-text-tertiary text-center">
-				Essai gratuit 7 jours — sans engagement
+				{p.trialNote}
 				<br />
-				Facturation uniquement après l&apos;essai
+				{p.billingNote}
 			</p>
 		</div>
 	);

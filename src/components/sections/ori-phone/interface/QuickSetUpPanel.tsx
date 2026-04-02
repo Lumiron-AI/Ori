@@ -8,53 +8,58 @@ import {
 	RiPhoneLine,
 } from "react-icons/ri";
 
+import { useLocale } from "@/context/locale-context";
 import { DashboardTabs } from "./DashboardTabs";
 import { FieldIconBox } from "./FieldIconBox";
 
 export function QuickSetUpPanel() {
-	const fields = [
+	const { t } = useLocale();
+	const { fields } = t.dashboardPhone;
+
+	const fieldDefs = [
 		{
-			label: "Nom de l'établissement",
+			label: fields.name,
 			value: "Trattoria Bellagio",
 			Icon: RiSettings3Line,
 			full: true,
 		},
 		{
-			label: "Site web",
+			label: fields.website,
 			value: "https://www.trattoria-bellagio.fr/",
 			Icon: RiGlobalLine,
 			full: true,
 		},
 		{
-			label: "Adresse",
+			label: fields.address,
 			value: "13 rue de Courtville, 75018 Paris, France",
 			Icon: RiMapPin2Line,
 			full: true,
 		},
 		{
-			label: "Email",
+			label: fields.email,
 			value: "trattoria@gmail.com",
 			Icon: RiMailLine,
 			full: false,
 		},
 		{
-			label: "Téléphone",
+			label: fields.phone,
 			value: "07 52 55 42 32",
 			Icon: RiPhoneLine,
 			full: false,
 		},
 	];
+
 	return (
 		<>
 			<p className="font-display font-medium text-2xl text-text-primary dark:text-text">
-				Bienvenue dans votre espace
+				{t.dashboardPhone.welcome}
 			</p>
 			<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-1 mb-5">
-				Je suis Ori, votre assistant vocal
+				{t.dashboardPhone.subtitle}
 			</p>
-			<DashboardTabs active="Informations" />
+			<DashboardTabs activeIndex={0} />
 			<div className="grid grid-cols-2 gap-3">
-				{fields.map((f) => (
+				{fieldDefs.map((f) => (
 					<div
 						key={f.label}
 						className={`bg-background-secondary dark:bg-dark-elevated rounded-xl p-3 flex items-center gap-3 ${

@@ -14,6 +14,8 @@ export const translations = {
 		footer: {
 			brandTagline:
 				"Le standard téléphonique IA pour restaurants. Ori gère vos réservations, commandes et questions clients, 24h/24.",
+			messagesBrandTagline:
+				"L'assistant messaging IA pour restaurants. Ori répond à vos messages WhatsApp et Instagram, 24h/24.",
 			navTitle: "Navigation",
 			legalTitle: "Légal",
 			socialTitle: "Réseaux sociaux",
@@ -27,6 +29,15 @@ export const translations = {
 				{ href: "/solutions/phone#sponsorship", label: "Parrainage" },
 				{ href: "/solutions/phone#faq", label: "FAQ" },
 				{ href: "/solutions/phone#pricing", label: "Tarifs" },
+				{ href: "/blog", label: "Ressources" },
+			],
+			messagesNavLinks: [
+				{ href: "/solutions/messages#use-case", label: "Cas d'usage" },
+				{ href: "/solutions/messages#interface", label: "Interface" },
+				{ href: "/solutions/messages#comparison", label: "Comparatif" },
+				{ href: "/solutions/messages#sponsorship", label: "Parrainage" },
+				{ href: "/solutions/messages#faq", label: "FAQ" },
+				{ href: "/solutions/messages#pricing", label: "Tarifs" },
 				{ href: "/blog", label: "Ressources" },
 			],
 			legalLinks: [
@@ -316,6 +327,301 @@ export const translations = {
 			subtitle: "Sans engagement. Configuration en 5 minutes.",
 			cta: "Démarrer l'essai",
 		},
+
+		// ── Dashboard Phone panels ────────────────────────────────────────────────
+		dashboardPhone: {
+			tabs: ["Informations", "Fonctionnement", "Récapitulatif"],
+			welcome: "Bienvenue dans votre espace",
+			subtitle: "Je suis Ori, votre assistant vocal",
+			fields: {
+				name: "Nom de l'établissement",
+				website: "Site web",
+				address: "Adresse",
+				email: "Email",
+				phone: "Téléphone",
+			},
+			voiceAgent: "Voix de l'agent",
+			voiceGender: "Genre :",
+			voiceMale: "Homme",
+			voiceFemale: "Femme",
+			greeting: "Phrase prononcée au début de l'appel",
+			transfer: "Transfert de l'appel à votre équipe",
+			transferSubtitle: "Choisissez les situations où l'agent doit vous passer l'appel",
+			transferChips: ["Annulation d'une réservation", "Demande urgente"],
+			aiAgents: "Agents IA",
+			callsReceived: "Appels reçus",
+			availability: "Disponibilité",
+			activity: "Activité",
+			statusAllDay: "Toute la journée",
+			statusUnavailable: "Indisponible",
+			trackingTitle: "Historique — Ori",
+			totalCalls: "Total des appels passés",
+			avgDuration: "Durée moyenne par appel",
+			tableHeaders: ["Date & Heure", "De", "Durée", "Action"],
+		},
+
+		// ── Dashboard Messages panels ─────────────────────────────────────────────
+		dashboardMessages: {
+			tabs: ["Informations", "Fonctionnement", "Récapitulatif"],
+			welcome: "Bienvenue dans votre espace",
+			subtitle: "Je suis Ori, votre assistant vocal",
+			fields: {
+				name: "Nom de l'établissement",
+				website: "Site web",
+				address: "Adresse",
+				email: "Email",
+				phone: "Téléphone",
+			},
+			toneChoice: "Choix du ton",
+			toneGender: "Genre :",
+			toneProfessional: "Professionnel",
+			toneCasual: "Décontracté",
+			activitySlots: "Plages d'activité de l'agent IA",
+			activitySlotsSubtitle: "Indiquez les heures pendant lesquelles votre agent IA doit être actif",
+			days: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+			closed: "Fermé",
+			aiAgents: "Agents IA",
+			messagesReceived: "Messages reçus",
+			availability: "Disponibilité",
+			activity: "Activité",
+			statusAllDay: "Toute la journée",
+			statusUnavailable: "Indisponible",
+			trackingTitle: "Historique - Ori",
+			totalCalls: "Total des appels passés",
+			avgDuration: "Durée moyenne par appel",
+			tableHeaders: ["Date & Heure", "De", "Durée", "Action"],
+		},
+
+		// ── Ori Messages — Hero ───────────────────────────────────────────────────
+		messagesHero: {
+			titlePrefix: "Ori,",
+			titleAssistant: "l'assistant automatique ",
+			titleWhatsApp: "WhatsApp",
+			titleAnd: " et ",
+			titleInstagram: "Instagram",
+			titleFor: " pour votre ",
+			titleUnderline: "restaurant",
+			subtitle:
+				"Ori répond instantanément aux messages de vos clients, prend vos réservations et confirme chaque demande. 24h/24.",
+			stats: [
+				{ suffix: "%", label: "Des messages traités" },
+				{ suffix: "s", label: "Temps moyen de réponse" },
+				{ suffix: "/7", label: "Disponibilité" },
+				{ suffix: "", label: "Canaux gérés simultanément" },
+			],
+		},
+
+		// ── Ori Messages — Use Case ───────────────────────────────────────────────
+		messagesUseCase: {
+			label: "CAS D'USAGE",
+			title: "Ne laissez plus aucun message sans réponse.",
+			subtitle:
+				"Ne perdez plus aucune opportunité : Ori prend le relais sur vos messageries pour répondre à chaque sollicitation, instantanément.",
+			cards: [
+				{
+					platform: "Instagram",
+					caption:
+						"Ori traite vos messages privés instantanément pour transformer l'intérêt de vos contacts en actions concrètes, sans aucun délai.",
+				},
+				{
+					platform: "WhatsApp",
+					caption:
+						"Questions sur la carte, réservations ou infos pratiques : Ori répond avec précision à toutes les demandes de vos clients, 24h/24",
+				},
+			],
+		},
+
+		// ── Ori Messages — Interface ──────────────────────────────────────────────
+		messagesInterface: {
+			label: "INTERFACE",
+			title: "Votre messagerie en pilote automatique.",
+			subtitle:
+				"Configurez Ori en quelques minutes et laissez-le gérer chaque message avec précision, selon vos règles.",
+			footer:
+				"Une gestion simplifiée pour vous concentrer sur l'essentiel : l'accueil de vos clients et la qualité de votre service.",
+			tabs: [
+				{
+					id: "setup",
+					label: "Connexion en un clic",
+					description:
+						"Liez vos comptes WhatsApp et Instagram instantanément. Ori est prêt à répondre à vos clients en moins de 5 minutes.",
+				},
+				{
+					id: "customize",
+					label: "Personnalisation métier",
+					description:
+						"Définissez le ton des réponses, vos horaires d'activité et les règles propres à votre établissement. Ori s'adapte à votre image.",
+				},
+				{
+					id: "automation",
+					label: "Gestion 100% autonome",
+					description:
+						"Ori prend en charge les réservations, les questions fréquentes et chaque sollicitation en temps réel. Votre équipe reste concentrée sur l'essentiel.",
+				},
+				{
+					id: "tracking",
+					label: "Historique complet",
+					description:
+						"Retrouvez l'historique de tous les échanges et mesurez l'impact d'Ori sur votre taux de conversion et vos réservations.",
+				},
+			],
+		},
+
+		// ── Ori Messages — Comparison ─────────────────────────────────────────────
+		messagesComparison: {
+			label: "COMPARATIF",
+			title: "Pourquoi choisir Ori pour vos messageries ?",
+			subtitle:
+				"Comparez la gestion manuelle avec la puissance de l'automatisation intelligente et mesurez l'impact sur votre quotidien.",
+			headerManual: "Gestion manuelle",
+			headerOri: "Avec Ori",
+			footer:
+				"Ne laissez plus aucune opportunité vous échapper. Chaque message reçu est une chance de convertir un prospect en client fidèle.",
+			rows: [
+				{
+					topic: "Délai de réponse",
+					without: "Plusieurs heures d'attente selon votre disponibilité",
+					with: "Réponse immédiate en moins de 2 secondes",
+				},
+				{
+					topic: "Taux de conversion",
+					without: "Perte de clients faute de réactivité immédiate",
+					with: "Engagement maximal grâce à un traitement instantané",
+				},
+				{
+					topic: "Précision des infos",
+					without: "Risque d'erreurs ou d'informations incomplètes",
+					with: "Réponses fiables basées sur vos données réelles",
+				},
+				{
+					topic: "Gestion du flux",
+					without: "Interruption constante de vos tâches prioritaires",
+					with: "Autonomie complète pour une tranquilité totale",
+				},
+				{
+					topic: "Accessibilité",
+					without: "Dépend de la présence humaine sur chaque application",
+					with: "Disponibilité totale, 24h/24 sur tous vos canaux",
+				},
+			],
+		},
+
+		// ── Ori Messages — FAQ ────────────────────────────────────────────────────
+		messagesFaq: {
+			label: "FAQ",
+			title: "Tout savoir sur Ori Message",
+			subtitle:
+				"Les réponses à vos questions pour automatiser vos réseaux en toute confiance.",
+			seeAll: "Voir toutes les questions",
+			items: [
+				{
+					question: "Dois-je changer mes comptes WhatsApp ou Instagram ?",
+					answer:
+						"Non. Ori se connecte directement à vos comptes existants (Business ou Pro). Vous gardez vos accès, votre historique et vous pouvez continuer à les utiliser normalement.",
+				},
+				{
+					question: "Est-ce qu'Ori peut vraiment gérer mes réservations ?",
+					answer:
+						"Oui. Ori est capable de comprendre une demande de table, de vérifier vos disponibilités et de confirmer la réservation en suivant vos règles spécifiques, comme le ferait un membre de votre équipe.",
+				},
+				{
+					question: "Puis-je reprendre la main sur une discussion à tout moment ?",
+					answer:
+						"Absolument. Vous gardez le contrôle total. Si vous souhaitez intervenir personnellement dans une conversation sur WhatsApp ou Instagram, vous pouvez le faire instantanément depuis votre application habituelle.",
+				},
+				{
+					question: "Est-ce que je peux utiliser Ori seulement quand je suis fermé ?",
+					answer:
+						"Oui. Vous pouvez programmer Ori pour qu'il ne s'active que pendant vos coupures, la nuit ou vos jours de fermeture. C'est vous qui déterminez ses plages d'activité selon vos besoins.",
+				},
+				{
+					question: "Combien de temps faut-il pour activer l'assistant ?",
+					answer:
+						"Moins de 5 minutes. La connexion est simplifiée au maximum : vous liez vos comptes, vous renseignez vos infos de base, et Ori commence à répondre à vos clients immédiatement.",
+				},
+			],
+		},
+
+		// ── Ori Messages — Sponsorship ────────────────────────────────────────────
+		messagesSponsorship: {
+			label: "PARRAINAGE",
+			title: "Parrainez vos confrères.",
+			subtitle:
+				"Recommandez Ori à vos confrères et profitez d'avantages exclusifs sur votre abonnement.",
+			seeConditions: "Voir les conditions",
+			cards: [
+				{
+					tag: "POUR LE RESTAURANT PARRAIN",
+					highlight: "200 discussions",
+					rest: " offertes",
+				},
+				{
+					tag: "POUR LE RESTAURANT RECOMMANDÉ",
+					highlight: "1 mois",
+					rest: " offert",
+				},
+			],
+		},
+
+		// ── Ori Messages — Trial CTA ──────────────────────────────────────────────
+		messagesTrialCta: {
+			titlePrefix: "ESSAYER ORI ",
+			titleHighlight: "7 JOURS",
+			titleSuffix: " GRATUITS",
+			subtitle: "Sans engagement. Configuration en 5 minutes.",
+			cta: "Démarrer l'essai",
+		},
+
+		// ── Ori Messages — Pricing ────────────────────────────────────────────────
+		messagesPricing: {
+			label: "TARIFS",
+			title: "Choisissez le canal adapté à votre restaurant",
+			subtitle: "Commencez avec un canal ou combinez-les pour une gestion complète.",
+			footer: "Un seul client perdu coûte plus cher qu'un mois d'Ori.",
+			perMonth: "/ mois",
+			perYear: "/ an",
+			annual: "Annuel",
+			discount: "-10%",
+			trialNote: "Essai gratuit 7 jours — sans engagement",
+			billingNote: "Facturation uniquement après l'essai",
+			instagram: {
+				title: "ASSISTANT INSTAGRAM",
+				tagline: "Boostez vos DMs",
+				cta: "Activer Instagram",
+				features: [
+					"Jusqu'à 500 discussions",
+					"Réponses automatiques 24/7",
+					"Prise de réservation intégrée",
+					"100% des messages traités",
+					"0,10€ par discussion supplémentaire",
+				],
+			},
+			whatsapp: {
+				title: "ASSISTANT WHATSAPP",
+				tagline: "Votre numéro en automatique",
+				cta: "Activer WhatsApp",
+				features: [
+					"Jusqu'à 500 discussions",
+					"Réponses automatiques 24/7",
+					"Prise de réservation intégrée",
+					"Zéro client ignoré",
+					"0,10€ par discussion supplémentaire",
+				],
+			},
+			duo: {
+				badge: "Le plus populaire",
+				title: "PACK DUO",
+				tagline: "Le combo complet.",
+				cta: "Activer le Pack Duo",
+				features: [
+					"Jusqu'à 500 discussions",
+					"Réponses automatiques 24/7",
+					"Prise de réservation intégrée",
+					"Centralisation complète",
+					"0,10€ par discussion supplémentaire",
+				],
+			},
+		},
 	},
 
 	en: {
@@ -333,6 +639,8 @@ export const translations = {
 		footer: {
 			brandTagline:
 				"The AI phone system for restaurants. Ori handles your reservations, orders and customer questions, 24/7.",
+			messagesBrandTagline:
+				"The AI messaging assistant for restaurants. Ori replies to your WhatsApp and Instagram messages, 24/7.",
 			navTitle: "Navigation",
 			legalTitle: "Legal",
 			socialTitle: "Social media",
@@ -346,6 +654,15 @@ export const translations = {
 				{ href: "/solutions/phone#sponsorship", label: "Referral" },
 				{ href: "/solutions/phone#faq", label: "FAQ" },
 				{ href: "/solutions/phone#pricing", label: "Pricing" },
+				{ href: "/blog", label: "Resources" },
+			],
+			messagesNavLinks: [
+				{ href: "/solutions/messages#use-case", label: "Use cases" },
+				{ href: "/solutions/messages#interface", label: "Interface" },
+				{ href: "/solutions/messages#comparison", label: "Comparison" },
+				{ href: "/solutions/messages#sponsorship", label: "Referral" },
+				{ href: "/solutions/messages#faq", label: "FAQ" },
+				{ href: "/solutions/messages#pricing", label: "Pricing" },
 				{ href: "/blog", label: "Resources" },
 			],
 			legalLinks: [
@@ -625,6 +942,301 @@ export const translations = {
 			title2: "FREE",
 			subtitle: "No commitment. Set up in 5 minutes.",
 			cta: "Start trial",
+		},
+
+		// ── Dashboard Phone panels ────────────────────────────────────────────────
+		dashboardPhone: {
+			tabs: ["Information", "Configuration", "Summary"],
+			welcome: "Welcome to your space",
+			subtitle: "I am Ori, your voice assistant",
+			fields: {
+				name: "Establishment name",
+				website: "Website",
+				address: "Address",
+				email: "Email",
+				phone: "Phone",
+			},
+			voiceAgent: "Agent voice",
+			voiceGender: "Gender:",
+			voiceMale: "Male",
+			voiceFemale: "Female",
+			greeting: "Phrase spoken at the start of the call",
+			transfer: "Transfer the call to your team",
+			transferSubtitle: "Choose the situations where the agent should forward the call",
+			transferChips: ["Reservation cancellation", "Urgent request"],
+			aiAgents: "AI Agents",
+			callsReceived: "Calls received",
+			availability: "Availability",
+			activity: "Activity",
+			statusAllDay: "All day",
+			statusUnavailable: "Unavailable",
+			trackingTitle: "History — Ori",
+			totalCalls: "Total calls made",
+			avgDuration: "Average call duration",
+			tableHeaders: ["Date & Time", "From", "Duration", "Action"],
+		},
+
+		// ── Dashboard Messages panels ─────────────────────────────────────────────
+		dashboardMessages: {
+			tabs: ["Information", "Configuration", "Summary"],
+			welcome: "Welcome to your space",
+			subtitle: "I am Ori, your voice assistant",
+			fields: {
+				name: "Establishment name",
+				website: "Website",
+				address: "Address",
+				email: "Email",
+				phone: "Phone",
+			},
+			toneChoice: "Tone choice",
+			toneGender: "Style:",
+			toneProfessional: "Professional",
+			toneCasual: "Casual",
+			activitySlots: "Agent activity hours",
+			activitySlotsSubtitle: "Set the hours during which your AI agent should be active",
+			days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			closed: "Closed",
+			aiAgents: "AI Agents",
+			messagesReceived: "Messages received",
+			availability: "Availability",
+			activity: "Activity",
+			statusAllDay: "All day",
+			statusUnavailable: "Unavailable",
+			trackingTitle: "History - Ori",
+			totalCalls: "Total calls made",
+			avgDuration: "Average call duration",
+			tableHeaders: ["Date & Time", "From", "Duration", "Action"],
+		},
+
+		// ── Ori Messages — Hero ───────────────────────────────────────────────────
+		messagesHero: {
+			titlePrefix: "Ori,",
+			titleAssistant: "the automatic ",
+			titleWhatsApp: "WhatsApp",
+			titleAnd: " and ",
+			titleInstagram: "Instagram",
+			titleFor: " assistant for your ",
+			titleUnderline: "restaurant",
+			subtitle:
+				"Ori instantly replies to your customers' messages, takes your reservations and confirms every request. 24/7.",
+			stats: [
+				{ suffix: "%", label: "Messages handled" },
+				{ suffix: "s", label: "Average response time" },
+				{ suffix: "/7", label: "Availability" },
+				{ suffix: "", label: "Channels managed simultaneously" },
+			],
+		},
+
+		// ── Ori Messages — Use Case ───────────────────────────────────────────────
+		messagesUseCase: {
+			label: "USE CASES",
+			title: "Never leave a message unanswered.",
+			subtitle:
+				"Don't miss another opportunity: Ori takes over your messaging to reply to every request, instantly.",
+			cards: [
+				{
+					platform: "Instagram",
+					caption:
+						"Ori handles your direct messages instantly to turn your contacts' interest into concrete actions, with no delay.",
+				},
+				{
+					platform: "WhatsApp",
+					caption:
+						"Menu questions, reservations or practical info: Ori answers all your customers' requests with precision, 24/7.",
+				},
+			],
+		},
+
+		// ── Ori Messages — Interface ──────────────────────────────────────────────
+		messagesInterface: {
+			label: "INTERFACE",
+			title: "Your messaging on autopilot.",
+			subtitle:
+				"Set up Ori in minutes and let it handle every message with precision, according to your rules.",
+			footer:
+				"Simplified management so you can focus on what matters: welcoming your customers and delivering quality service.",
+			tabs: [
+				{
+					id: "setup",
+					label: "One-click connection",
+					description:
+						"Link your WhatsApp and Instagram accounts instantly. Ori is ready to reply to your customers in under 5 minutes.",
+				},
+				{
+					id: "customize",
+					label: "Business customization",
+					description:
+						"Set the response tone, your activity hours and the rules specific to your establishment. Ori adapts to your image.",
+				},
+				{
+					id: "automation",
+					label: "100% autonomous management",
+					description:
+						"Ori handles reservations, frequently asked questions and every request in real time. Your team stays focused on what matters.",
+				},
+				{
+					id: "tracking",
+					label: "Full history",
+					description:
+						"Access the history of all exchanges and measure Ori's impact on your conversion rate and reservations.",
+				},
+			],
+		},
+
+		// ── Ori Messages — Comparison ─────────────────────────────────────────────
+		messagesComparison: {
+			label: "COMPARISON",
+			title: "Why choose Ori for your messaging?",
+			subtitle:
+				"Compare manual management with the power of intelligent automation and measure the impact on your daily workflow.",
+			headerManual: "Manual management",
+			headerOri: "With Ori",
+			footer:
+				"Don't let another opportunity slip away. Every message received is a chance to turn a prospect into a loyal customer.",
+			rows: [
+				{
+					topic: "Response time",
+					without: "Several hours of waiting depending on your availability",
+					with: "Immediate reply in under 2 seconds",
+				},
+				{
+					topic: "Conversion rate",
+					without: "Lost customers due to lack of immediate responsiveness",
+					with: "Maximum engagement through instant processing",
+				},
+				{
+					topic: "Information accuracy",
+					without: "Risk of errors or incomplete information",
+					with: "Reliable answers based on your actual data",
+				},
+				{
+					topic: "Flow management",
+					without: "Constant interruption of your priority tasks",
+					with: "Full autonomy for total peace of mind",
+				},
+				{
+					topic: "Accessibility",
+					without: "Depends on human presence on each application",
+					with: "Total availability, 24/7 across all your channels",
+				},
+			],
+		},
+
+		// ── Ori Messages — FAQ ────────────────────────────────────────────────────
+		messagesFaq: {
+			label: "FAQ",
+			title: "Everything about Ori Message",
+			subtitle:
+				"Answers to your questions so you can automate your channels with confidence.",
+			seeAll: "See all questions",
+			items: [
+				{
+					question: "Do I need to change my WhatsApp or Instagram accounts?",
+					answer:
+						"No. Ori connects directly to your existing accounts (Business or Pro). You keep your access, your history and can continue using them normally.",
+				},
+				{
+					question: "Can Ori really manage my reservations?",
+					answer:
+						"Yes. Ori can understand a table request, check your availability and confirm the reservation following your specific rules, just as a member of your team would.",
+				},
+				{
+					question: "Can I take over a conversation at any time?",
+					answer:
+						"Absolutely. You keep full control. If you want to step into a conversation on WhatsApp or Instagram personally, you can do so instantly from your usual app.",
+				},
+				{
+					question: "Can I use Ori only when I'm closed?",
+					answer:
+						"Yes. You can schedule Ori to activate only during your breaks, at night or on your closing days. You decide its activity hours based on your needs.",
+				},
+				{
+					question: "How long does it take to activate the assistant?",
+					answer:
+						"Less than 5 minutes. The connection process is as simple as it gets: link your accounts, fill in your basic info, and Ori starts replying to your customers immediately.",
+				},
+			],
+		},
+
+		// ── Ori Messages — Sponsorship ────────────────────────────────────────────
+		messagesSponsorship: {
+			label: "REFERRAL",
+			title: "Refer your peers.",
+			subtitle:
+				"Recommend Ori to your peers and enjoy exclusive benefits on your subscription.",
+			seeConditions: "See conditions",
+			cards: [
+				{
+					tag: "FOR THE REFERRING RESTAURANT",
+					highlight: "200 conversations",
+					rest: " offered",
+				},
+				{
+					tag: "FOR THE REFERRED RESTAURANT",
+					highlight: "1 month",
+					rest: " free",
+				},
+			],
+		},
+
+		// ── Ori Messages — Trial CTA ──────────────────────────────────────────────
+		messagesTrialCta: {
+			titlePrefix: "TRY ORI ",
+			titleHighlight: "7 DAYS",
+			titleSuffix: " FREE",
+			subtitle: "No commitment. Setup in 5 minutes.",
+			cta: "Start free trial",
+		},
+
+		// ── Ori Messages — Pricing ────────────────────────────────────────────────
+		messagesPricing: {
+			label: "PRICING",
+			title: "Choose the channel that fits your restaurant",
+			subtitle: "Start with one channel or combine them for complete management.",
+			footer: "One lost customer costs more than a month of Ori.",
+			perMonth: "/ mo",
+			perYear: "/ yr",
+			annual: "Annual",
+			discount: "-10%",
+			trialNote: "7-day free trial — no commitment",
+			billingNote: "Billing only after the trial",
+			instagram: {
+				title: "INSTAGRAM ASSISTANT",
+				tagline: "Boost your DMs",
+				cta: "Activate Instagram",
+				features: [
+					"Up to 500 conversations",
+					"Automatic replies 24/7",
+					"Integrated reservation booking",
+					"100% of messages handled",
+					"€0.10 per additional conversation",
+				],
+			},
+			whatsapp: {
+				title: "WHATSAPP ASSISTANT",
+				tagline: "Your number on autopilot",
+				cta: "Activate WhatsApp",
+				features: [
+					"Up to 500 conversations",
+					"Automatic replies 24/7",
+					"Integrated reservation booking",
+					"Zero customers ignored",
+					"€0.10 per additional conversation",
+				],
+			},
+			duo: {
+				badge: "Most popular",
+				title: "DUO PACK",
+				tagline: "The complete combo.",
+				cta: "Activate Duo Pack",
+				features: [
+					"Up to 500 conversations",
+					"Automatic replies 24/7",
+					"Integrated reservation booking",
+					"Complete centralization",
+					"€0.10 per additional conversation",
+				],
+			},
 		},
 	},
 } as const;

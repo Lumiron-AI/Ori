@@ -3,14 +3,7 @@
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { Divider } from "../../ori-phone/pricing/Divider";
-
-const FEATURES = [
-	"Jusqu'à 500 discussions",
-	"Réponses automatiques 24/7",
-	"Prise de réservation intégrée",
-	"100% des messages traités",
-	"0,10€ par discussion supplémentaire",
-];
+import { useLocale } from "@/context/locale-context";
 
 export function PricingCardInstagram({
 	annual,
@@ -19,6 +12,10 @@ export function PricingCardInstagram({
 	annual: boolean;
 	setAnnual: (v: boolean) => void;
 }) {
+	const { t } = useLocale();
+	const p = t.messagesPricing;
+	const d = p.instagram;
+
 	const monthlyPrice = 39;
 	const annualPrice = Math.round(monthlyPrice * 12 * 0.9);
 
@@ -27,10 +24,10 @@ export function PricingCardInstagram({
 			{/* Title */}
 			<div>
 				<p className="font-display font-bold text-2xl text-text-heading dark:text-text">
-					ASSISTANT INSTAGRAM
+					{d.title}
 				</p>
 				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-0.5">
-					Boostez vos DMs
+					{d.tagline}
 				</p>
 			</div>
 
@@ -43,7 +40,7 @@ export function PricingCardInstagram({
 						{annual ? annualPrice : monthlyPrice}€
 					</span>
 					<span className="font-display font-semibold text-base text-text-secondary dark:text-text-tertiary">
-						{annual ? "/ an" : "/ mois"}
+						{annual ? p.perYear : p.perMonth}
 					</span>
 				</div>
 
@@ -57,7 +54,7 @@ export function PricingCardInstagram({
 						}`}
 						aria-checked={annual}
 						role="switch"
-						aria-label="Facturation annuelle"
+						aria-label={p.annual}
 					>
 						<span
 							className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${
@@ -66,10 +63,10 @@ export function PricingCardInstagram({
 						/>
 					</button>
 					<span className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
-						Annuel
+						{p.annual}
 					</span>
 					<span className="font-display font-bold text-sm text-ori-message">
-						-10%
+						{p.discount}
 					</span>
 				</div>
 			</div>
@@ -79,7 +76,7 @@ export function PricingCardInstagram({
 				href="#trial"
 				className="inline-flex items-center justify-center gap-2 font-display font-bold rounded-2xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ori-message focus-visible:ring-offset-2 w-full text-lg px-8 h-[46px] bg-ori-message text-text shadow-blue-btn hover:bg-ori-message/90 active:bg-ori-message/80"
 			>
-				Activer Instagram
+				{d.cta}
 			</Link>
 
 			<Divider />
@@ -87,7 +84,7 @@ export function PricingCardInstagram({
 			{/* Features */}
 			<div className="flex-1">
 				<ul className="flex flex-col gap-3">
-					{FEATURES.map((f, i) => (
+					{d.features.map((f, i) => (
 						<li key={i} className="flex items-start gap-3">
 							<Check
 								size={24}
@@ -105,9 +102,9 @@ export function PricingCardInstagram({
 			<Divider />
 
 			<p className="font-display font-semibold text-sm text-text-secondary dark:text-text-tertiary text-center">
-				Essai gratuit 7 jours — sans engagement
+				{p.trialNote}
 				<br />
-				Facturation uniquement après l&apos;essai
+				{p.billingNote}
 			</p>
 		</div>
 	);

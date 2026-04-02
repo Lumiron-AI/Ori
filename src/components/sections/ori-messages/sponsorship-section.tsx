@@ -7,23 +7,13 @@ import { buttonClass } from "@/components/ui/button";
 import { SponsorshipModal } from "@/components/ui/sponsorship-modal";
 import { useSectionFade } from "@/hooks/use-section-fade";
 import { useSponsorshipModal } from "@/hooks/use-sponsorship-modal";
-
-const CARDS = [
-	{
-		tag: "POUR LE RESTAURANT PARRAIN",
-		highlight: "200 discussions",
-		rest: " offertes",
-	},
-	{
-		tag: "POUR LE RESTAURANT RECOMMANDÉ",
-		highlight: "1 mois",
-		rest: " offert",
-	},
-];
+import { useLocale } from "@/context/locale-context";
 
 export function OriMessagesSponsorshipSection() {
 	const { ref, opacity } = useSectionFade();
 	const modal = useSponsorshipModal();
+	const { t } = useLocale();
+	const d = t.messagesSponsorship;
 
 	return (
 		<>
@@ -35,14 +25,14 @@ export function OriMessagesSponsorshipSection() {
 			>
 				<div className="max-w-8xl lg:max-w-9xl mx-auto">
 					<SectionHeaderMessages
-						label="PARRAINAGE"
-						title="Parrainez vos confrères."
-						subtitle="Recommandez Ori à vos confrères et profitez d'avantages exclusifs sur votre abonnement."
+						label={d.label}
+						title={d.title}
+						subtitle={d.subtitle}
 						subtitleClassName="max-w-8xl"
 					/>
 
 					<div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8 mb-10 sm:mb-12">
-						{CARDS.map((card, i) => (
+						{d.cards.map((card, i) => (
 							<motion.div
 								key={i}
 								initial={{ opacity: 0, y: 24 }}
@@ -79,7 +69,7 @@ export function OriMessagesSponsorshipSection() {
 									"shadow-blue-btn-soft border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20 w-full sm:w-auto",
 							})}
 						>
-							Voir les conditions
+							{d.seeConditions}
 						</button>
 					</div>
 				</div>

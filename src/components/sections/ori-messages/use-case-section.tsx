@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { SectionHeaderMessages } from "@/components/ui/section-header-messages";
 import { useSectionFade } from "@/hooks/use-section-fade";
+import { useLocale } from "@/context/locale-context";
 
 function WhatsAppLogo() {
 	return (
@@ -67,23 +68,15 @@ function InstagramLogo() {
 	);
 }
 
-const CARDS = [
-	{
-		platform: "Instagram",
-		logo: <InstagramLogo />,
-		caption:
-			"Ori traite vos messages privés instantanément pour transformer l'intérêt de vos contacts en actions concrètes, sans aucun délai.",
-	},
-	{
-		platform: "WhatsApp",
-		logo: <WhatsAppLogo />,
-		caption:
-			"Questions sur la carte, réservations ou infos pratiques : Ori répond avec précision à toutes les demandes de vos clients, 24h/24",
-	},
-];
+const LOGOS: Record<string, React.ReactNode> = {
+	Instagram: <InstagramLogo />,
+	WhatsApp: <WhatsAppLogo />,
+};
 
 export function OriMessagesUseCaseSection() {
 	const { ref, opacity } = useSectionFade();
+	const { t } = useLocale();
+	const d = t.messagesUseCase;
 
 	return (
 		<motion.section
@@ -94,13 +87,13 @@ export function OriMessagesUseCaseSection() {
 		>
 			<div className="max-w-8xl lg:max-w-9xl mx-auto">
 				<SectionHeaderMessages
-					label="CAS D'USAGE"
-					title="Ne laissez plus aucun message sans réponse."
-					subtitle="Ne perdez plus aucune opportunité : Ori prend le relais sur vos messageries pour répondre à chaque sollicitation, instantanément."
+					label={d.label}
+					title={d.title}
+					subtitle={d.subtitle}
 				/>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-[70px] md:max-w-[1000px] mx-auto">
-					{CARDS.map((card, i) => (
+					{d.cards.map((card, i) => (
 						<motion.div
 							key={card.platform}
 							initial={{ opacity: 0, y: 24 }}
@@ -113,7 +106,7 @@ export function OriMessagesUseCaseSection() {
 							<div className="bg-background dark:bg-dark-elevated rounded-3xl shadow-card flex flex-col">
 								{/* Logo area */}
 								<div className="flex items-center justify-center pt-8 pb-5 px-5">
-									{card.logo}
+									{LOGOS[card.platform]}
 								</div>
 
 								{/* Video */}

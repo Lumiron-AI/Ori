@@ -1,56 +1,26 @@
 "use client";
 
 import { RiWhatsappLine, RiInstagramLine } from "react-icons/ri";
+import { useLocale } from "@/context/locale-context";
 
 type AvailabilityStatus = "active" | "inactive";
 
 interface Agent {
 	name: string;
 	restaurant: string;
-	platform: "whatsapp" | "instagram" | "whatsapp-inactive";
+	platform: "whatsapp" | "instagram";
 	messagesReceived: number;
-	availability: string;
+	statusKey?: "statusAllDay" | "statusUnavailable";
+	availability?: string;
 	availabilityStatus: AvailabilityStatus;
 	active: boolean;
 }
 
 const AGENTS: Agent[] = [
-	{
-		name: "Ori 1",
-		restaurant: "Trattoria",
-		platform: "whatsapp",
-		messagesReceived: 78,
-		availability: "Toute la journée",
-		availabilityStatus: "active",
-		active: true,
-	},
-	{
-		name: "Ori 2",
-		restaurant: "Trattoria",
-		platform: "instagram",
-		messagesReceived: 0,
-		availability: "Indisponible",
-		availabilityStatus: "inactive",
-		active: false,
-	},
-	{
-		name: "Ori 3",
-		restaurant: "Trattoria",
-		platform: "instagram",
-		messagesReceived: 45,
-		availability: "12h00-15h00",
-		availabilityStatus: "active",
-		active: true,
-	},
-	{
-		name: "Ori 4",
-		restaurant: "Trattoria",
-		platform: "whatsapp",
-		messagesReceived: 45,
-		availability: "12h00-15h00",
-		availabilityStatus: "active",
-		active: true,
-	},
+	{ name: "Ori 1", restaurant: "Trattoria", platform: "whatsapp", messagesReceived: 78, statusKey: "statusAllDay", availabilityStatus: "active", active: true },
+	{ name: "Ori 2", restaurant: "Trattoria", platform: "instagram", messagesReceived: 0, statusKey: "statusUnavailable", availabilityStatus: "inactive", active: false },
+	{ name: "Ori 3", restaurant: "Trattoria", platform: "instagram", messagesReceived: 45, availability: "12h00-15h00", availabilityStatus: "active", active: true },
+	{ name: "Ori 4", restaurant: "Trattoria", platform: "whatsapp", messagesReceived: 45, availability: "12h00-15h00", availabilityStatus: "active", active: true },
 ];
 
 const STATUS_DOT: Record<AvailabilityStatus, string> = {
@@ -74,10 +44,13 @@ function PlatformLogo({ platform }: { platform: Agent["platform"] }) {
 }
 
 export function AutomationPanel() {
+	const { t } = useLocale();
+	const d = t.dashboardMessages;
+
 	return (
 		<div className="flex flex-col gap-4">
 			<p className="font-display font-bold text-xl text-text-primary dark:text-text">
-				Agents IA
+				{d.aiAgents}
 			</p>
 
 			<div className="flex flex-col gap-3">
@@ -104,7 +77,7 @@ export function AutomationPanel() {
 						{/* Messages reçus */}
 						<div className="flex-1 text-center">
 							<p className="font-display font-medium text-sm text-text-primary dark:text-text">
-								Messages reçus
+								{d.messagesReceived}
 							</p>
 							<p className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
 								{agent.messagesReceived}
@@ -114,14 +87,12 @@ export function AutomationPanel() {
 						{/* Disponibilité */}
 						<div className="flex-1 text-center">
 							<p className="font-display font-medium text-sm text-text-primary dark:text-text">
-								Disponibilité
+								{d.availability}
 							</p>
 							<div className="flex items-center justify-center gap-1.5 mt-0.5">
-								<div
-									className={`w-2 h-2 rounded-full shrink-0 ${STATUS_DOT[agent.availabilityStatus]}`}
-								/>
+								<div className={`w-2 h-2 rounded-full shrink-0 ${STATUS_DOT[agent.availabilityStatus]}`} />
 								<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
-									{agent.availability}
+									{agent.statusKey ? d[agent.statusKey] : agent.availability}
 								</p>
 							</div>
 						</div>
@@ -129,7 +100,7 @@ export function AutomationPanel() {
 						{/* Toggle activité */}
 						<div className="shrink-0 text-center">
 							<p className="font-display font-medium text-sm text-text-primary dark:text-text mb-1">
-								Activité
+								{d.activity}
 							</p>
 							<div
 								className={`w-9 h-5 rounded-full flex items-center px-0.5 mx-auto ${

@@ -1,17 +1,20 @@
 "use client";
 
-export function DashboardTabs({ active }: { active: string }) {
-	const tabs = ["Informations", "Fonctionnement", "Récapitulatif"];
+import { useLocale } from "@/context/locale-context";
+
+export function DashboardTabs({ activeIndex }: { activeIndex: number }) {
+	const { t } = useLocale();
+	const tabs = t.dashboardPhone.tabs;
 	return (
 		<div className="flex gap-1 mb-5 flex-wrap">
-			{tabs.map((t) => (
+			{tabs.map((tab, i) => (
 				<div
-					key={t}
+					key={tab}
 					className={`px-4 py-2 rounded-xl font-display font-medium text-base whitespace-nowrap ${
-						t === active ? "bg-primary text-text" : "text-text-secondary dark:text-text-tertiary"
+						i === activeIndex ? "bg-primary text-text" : "text-text-secondary dark:text-text-tertiary"
 					}`}
 				>
-					{t}
+					{tab}
 				</div>
 			))}
 		</div>

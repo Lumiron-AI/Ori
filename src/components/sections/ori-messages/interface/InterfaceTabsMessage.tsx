@@ -10,6 +10,7 @@ import {
 	RiBarChart2Line,
 } from "react-icons/ri";
 
+import { useLocale } from "@/context/locale-context";
 import { QuickSetUpPanel } from "./QuickSetUpPanel";
 import { CustomizePanel } from "./CustomizePanel";
 import { AutomationPanel } from "./AutomationPanel";
@@ -17,40 +18,14 @@ import { TrackingPanel } from "./TrackingPanel";
 
 type TabId = "setup" | "customize" | "automation" | "tracking";
 
-const TABS = [
-	{
-		id: "setup" as TabId,
-		label: "Connexion en un clic",
-		Icon: RiSettings3Line,
-		description:
-			"Liez vos comptes WhatsApp et Instagram instantanément. Ori est prêt à répondre à vos clients en moins de 5 minutes.",
-	},
-	{
-		id: "customize" as TabId,
-		label: "Personnalisation métier",
-		Icon: RiUser3Line,
-		description:
-			"Définissez le ton des réponses, vos horaires d'activité et les règles propres à votre établissement. Ori s'adapte à votre image.",
-	},
-	{
-		id: "automation" as TabId,
-		label: "Gestion 100% autonome",
-		Icon: RiMessage2Line,
-		description:
-			"Ori prend en charge les réservations, les questions fréquentes et chaque sollicitation en temps réel. Votre équipe reste concentrée sur l'essentiel.",
-	},
-	{
-		id: "tracking" as TabId,
-		label: "Historique complet",
-		Icon: RiBarChart2Line,
-		description:
-			"Retrouvez l'historique de tous les échanges et mesurez l'impact d'Ori sur votre taux de conversion et vos réservations.",
-	},
-] as const;
+const TAB_IDS: TabId[] = ["setup", "customize", "automation", "tracking"];
+const TAB_ICONS = [RiSettings3Line, RiUser3Line, RiMessage2Line, RiBarChart2Line];
 
 export function InterfaceTabsMessage() {
 	const [active, setActive] = useState<TabId | null>("setup");
 	const lastActiveRef = useRef<TabId>("setup");
+	const { t } = useLocale();
+	const tabs = t.messagesInterface.tabs;
 
 	function handleTabClick(id: TabId) {
 		if (active === id) {
@@ -72,18 +47,20 @@ export function InterfaceTabsMessage() {
 		<div className="grid grid-cols-1 lg:grid-cols-[45%_1fr] gap-8 lg:gap-14 items-start lg:items-center px-12">
 			{/* ── Left: accordion ── */}
 			<div>
-				{TABS.map((tab, i) => {
-					const isActive = active === tab.id;
+				{TAB_IDS.map((id, i) => {
+					const isActive = active === id;
+					const Icon = TAB_ICONS[i];
+					const tab = tabs[i];
 					return (
-						<div key={tab.id}>
+						<div key={id}>
 							{i > 0 && (
 								<div className="h-px bg-background-secondary dark:bg-dark-overlay" />
 							)}
 							<button
-								onClick={() => handleTabClick(tab.id)}
+								onClick={() => handleTabClick(id)}
 								className="w-full flex items-center gap-2 sm:gap-3 py-4 sm:py-6 text-left min-h-[52px] sm:min-h-0"
 							>
-								<tab.Icon
+								<Icon
 									size={22}
 									className={`shrink-0 transition-colors ${
 										isActive
