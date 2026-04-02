@@ -48,16 +48,11 @@ export function Footer() {
 	}
 
 	return (
-		<footer className="relative mt-16 overflow-hidden bg-background dark:bg-gradient-to-t dark:from-dark-surface dark:to-dark-bg border-t border-text-secondary/20 dark:border-text-tertiary/50  max-w-[83rem] mx-auto px-2">
+		<footer className="relative mt-16 overflow-hidden bg-background dark:bg-dark-bg border-t border-text-secondary/20 dark:border-text-tertiary/50  max-w-[85%] mx-auto">
 			{/* Lights glow effect (dark mode only) */}
 			<div
 				aria-hidden
 				className="pointer-events-none absolute inset-x-0 top-0 h-[480px] dark:block hidden"
-				style={{
-					background: isMessages
-						? "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(62,103,181,0.13) 0%, transparent 70%)"
-						: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,79,56,0.13) 0%, transparent 70%)",
-				}}
 			/>
 
 			{/* Main content */}
@@ -67,23 +62,23 @@ export function Footer() {
 					<div className="w-full md:flex-[2] flex flex-col gap-4">
 						<Link href="/" className="flex items-center gap-3 w-fit">
 							<>
-							<Image
-								src="/img/LogoOriTextDark.svg"
-								alt="Ori"
-								width={64}
-								height={26}
-								className="h-6 w-auto dark:hidden"
-								priority
-							/>
-							<Image
-								src="/img/LogoOriTextLight.svg"
-								alt="Ori"
-								width={64}
-								height={26}
-								className="h-6 w-auto hidden dark:block"
-								priority
-							/>
-						</>
+								<Image
+									src="/img/LogoOriTextDark.svg"
+									alt="Ori"
+									width={64}
+									height={26}
+									className="h-6 w-auto dark:hidden"
+									priority
+								/>
+								<Image
+									src="/img/LogoOriTextLight.svg"
+									alt="Ori"
+									width={64}
+									height={26}
+									className="h-6 w-auto hidden dark:block"
+									priority
+								/>
+							</>
 						</Link>
 						<p className="font-display font-normal text-sm text-text-primary dark:text-text max-w-xs leading-relaxed">
 							{isMessages ? footer.messagesBrandTagline : footer.brandTagline}

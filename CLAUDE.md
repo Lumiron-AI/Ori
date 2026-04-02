@@ -447,5 +447,39 @@ Figma mockup > CLAUDE.md tokens > Inference from existing patterns
 
 ---
 
+## 🔒 Règles strictes de modification du code
+
+Lorsque tu modifies le code, tu dois impérativement respecter les règles suivantes :
+
+1. **Ne jamais modifier du code non demandé**
+   - Tu dois te limiter STRICTEMENT à la demande formulée.
+   - Aucune refactorisation, amélioration ou “optimisation” non explicitement demandée n’est autorisée.
+
+2. **Ne jamais supprimer ou altérer des fonctionnalités existantes**
+   - Toute feature déjà présente doit rester intacte, sauf si la demande indique explicitement de la modifier ou la supprimer.
+
+3. **Ne pas revert des changements précédents**
+   - Les modifications déjà validées (issues de prompts précédents) sont considérées comme intentionnelles.
+   - Tu ne dois JAMAIS revenir en arrière sans instruction explicite.
+
+4. **Respecter la structure et les choix techniques existants**
+   - Ne pas changer l’architecture, les conventions, ou les librairies utilisées sans demande explicite.
+   - Ne pas renommer variables, fonctions ou fichiers sans raison demandée.
+
+5. **Modifications minimales uniquement**
+   - Appliquer le plus petit changement possible pour répondre au besoin.
+   - Éviter les modifications larges ou globales.
+
+6. **En cas de doute : ne rien faire et demander**
+   - Si une partie du code semble incorrecte ou améliorable mais hors scope, poser une question au lieu de modifier.
+
+7. **Toujours expliquer les changements**
+   - Fournir un résumé clair de ce qui a été modifié.
+   - Justifier chaque modification.
+
+---
+
+⚠️ Toute violation de ces règles est considérée comme une erreur critique.
+
 _This file is the source of truth for all code generation on the Lumiron · Ori project._
 _Last updated: 2026-03-27_
