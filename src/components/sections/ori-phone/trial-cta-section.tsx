@@ -13,7 +13,7 @@ export function TrialCTASection() {
 	return (
 		<motion.section
 			id="trial"
-			className="relative bg-background-secondary dark:bg-dark-surface py-16 my-16 sm:py-24 px-5 text-center concave"
+			className="relative bg-background-secondary dark:bg-dark-surface py-16 my-16 sm:py-24 px-5 text-center"
 		>
 			{/* Ambient lights */}
 			<div

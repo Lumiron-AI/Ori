@@ -149,7 +149,7 @@ export function Footer() {
 										target="_blank"
 										rel="noopener noreferrer"
 										aria-label={label}
-										className={`w-10 h-10 rounded-full bg-background-secondary dark:bg-dark-chip flex items-center justify-center text-text-primary dark:text-text transition-colors ${isMessages ? "hover:bg-ori-message hover:text-text" : "hover:bg-primary hover:text-text"}`}
+										className={`w-10 h-10 rounded-full bg-background-secondary dark:bg-dark-chip flex items-center justify-center text-text-primary dark:text-text transition-colors ${isMessages ? "hover:bg-ori-message hover:text-text dark:hover:bg-ori-message" : "hover:bg-primary dark:hover:bg-primary hover:text-text"}`}
 									>
 										<Icon size={18} strokeWidth={1.75} />
 									</a>

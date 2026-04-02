@@ -20,7 +20,9 @@ export function Header() {
 	const isProduct = isMessages || isPhone;
 	const { t } = useLocale();
 	const { header } = t;
-	const hoverColor = isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary";
+	const hoverColor = isMessages
+		? "hover:text-ori-message dark:hover:text-ori-message"
+		: "hover:text-primary dark:hover:text-primary";
 
 	const NAV_LINKS = [
 		{ href: "/solutions/messages", label: header.navOriMessages },
@@ -104,7 +106,7 @@ export function Header() {
 						</button>
 
 						<Link
-							href="/compte"
+							href="https://app.lumiron.ai/connexion"
 							className={`hidden lg:block font-display font-bold text-sm lg:text-base text-text-primary dark:text-text ${hoverColor} transition-colors whitespace-nowrap`}
 						>
 							{header.myAccount}
