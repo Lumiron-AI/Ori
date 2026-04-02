@@ -346,7 +346,8 @@ export const translations = {
 			voiceFemale: "Femme",
 			greeting: "Phrase prononcée au début de l'appel",
 			transfer: "Transfert de l'appel à votre équipe",
-			transferSubtitle: "Choisissez les situations où l'agent doit vous passer l'appel",
+			transferSubtitle:
+				"Choisissez les situations où l'agent doit vous passer l'appel",
 			transferChips: ["Annulation d'une réservation", "Demande urgente"],
 			aiAgents: "Agents IA",
 			callsReceived: "Appels reçus",
@@ -377,8 +378,17 @@ export const translations = {
 			toneProfessional: "Professionnel",
 			toneCasual: "Décontracté",
 			activitySlots: "Plages d'activité de l'agent IA",
-			activitySlotsSubtitle: "Indiquez les heures pendant lesquelles votre agent IA doit être actif",
-			days: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+			activitySlotsSubtitle:
+				"Indiquez les heures pendant lesquelles votre agent IA doit être actif",
+			days: [
+				"Lundi",
+				"Mardi",
+				"Mercredi",
+				"Jeudi",
+				"Vendredi",
+				"Samedi",
+				"Dimanche",
+			],
 			closed: "Fermé",
 			aiAgents: "Agents IA",
 			messagesReceived: "Messages reçus",
@@ -525,12 +535,14 @@ export const translations = {
 						"Oui. Ori est capable de comprendre une demande de table, de vérifier vos disponibilités et de confirmer la réservation en suivant vos règles spécifiques, comme le ferait un membre de votre équipe.",
 				},
 				{
-					question: "Puis-je reprendre la main sur une discussion à tout moment ?",
+					question:
+						"Puis-je reprendre la main sur une discussion à tout moment ?",
 					answer:
 						"Absolument. Vous gardez le contrôle total. Si vous souhaitez intervenir personnellement dans une conversation sur WhatsApp ou Instagram, vous pouvez le faire instantanément depuis votre application habituelle.",
 				},
 				{
-					question: "Est-ce que je peux utiliser Ori seulement quand je suis fermé ?",
+					question:
+						"Est-ce que je peux utiliser Ori seulement quand je suis fermé ?",
 					answer:
 						"Oui. Vous pouvez programmer Ori pour qu'il ne s'active que pendant vos coupures, la nuit ou vos jours de fermeture. C'est vous qui déterminez ses plages d'activité selon vos besoins.",
 				},
@@ -576,7 +588,8 @@ export const translations = {
 		messagesPricing: {
 			label: "TARIFS",
 			title: "Choisissez le canal adapté à votre restaurant",
-			subtitle: "Commencez avec un canal ou combinez-les pour une gestion complète.",
+			subtitle:
+				"Commencez avec un canal ou combinez-les pour une gestion complète.",
 			footer: "Un seul client perdu coûte plus cher qu'un mois d'Ori.",
 			perMonth: "/ mois",
 			perYear: "/ an",
@@ -627,8 +640,8 @@ export const translations = {
 	en: {
 		// ── Header ────────────────────────────────────────────────────────────────
 		header: {
-			navOriMessages: "Ori messages",
-			navOriPhone: "Ori phone",
+			navOriMessages: "Ori Messages",
+			navOriPhone: "Ori Téléphone",
 			myAccount: "My account",
 			start: "Get started",
 			toggleTheme: "Toggle theme",
@@ -962,7 +975,8 @@ export const translations = {
 			voiceFemale: "Female",
 			greeting: "Phrase spoken at the start of the call",
 			transfer: "Transfer the call to your team",
-			transferSubtitle: "Choose the situations where the agent should forward the call",
+			transferSubtitle:
+				"Choose the situations where the agent should forward the call",
 			transferChips: ["Reservation cancellation", "Urgent request"],
 			aiAgents: "AI Agents",
 			callsReceived: "Calls received",
@@ -993,8 +1007,17 @@ export const translations = {
 			toneProfessional: "Professional",
 			toneCasual: "Casual",
 			activitySlots: "Agent activity hours",
-			activitySlotsSubtitle: "Set the hours during which your AI agent should be active",
-			days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			activitySlotsSubtitle:
+				"Set the hours during which your AI agent should be active",
+			days: [
+				"Monday",
+				"Tuesday",
+				"Wednesday",
+				"Thursday",
+				"Friday",
+				"Saturday",
+				"Sunday",
+			],
 			closed: "Closed",
 			aiAgents: "AI Agents",
 			messagesReceived: "Messages received",
@@ -1192,7 +1215,8 @@ export const translations = {
 		messagesPricing: {
 			label: "PRICING",
 			title: "Choose the channel that fits your restaurant",
-			subtitle: "Start with one channel or combine them for complete management.",
+			subtitle:
+				"Start with one channel or combine them for complete management.",
 			footer: "One lost customer costs more than a month of Ori.",
 			perMonth: "/ mo",
 			perYear: "/ yr",

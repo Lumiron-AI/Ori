@@ -47,35 +47,24 @@ export function Header() {
 				<div className="px-4 sm:px-5 md:px-8 lg:px-6 h-[44px] sm:h-[50px] grid grid-cols-3 items-center">
 					{/* Logo */}
 					<Link href="/" className="flex items-center gap-2 shrink-0 w-fit">
-						{isProduct ? (
-							<>
-								<Image
-									src="/img/LogoOriTextDark.svg"
-									alt="Ori"
-									width={80}
-									height={32}
-									className="h-7 w-auto dark:hidden"
-									priority
-								/>
-								<Image
-									src="/img/LogoOriTextLight.svg"
-									alt="Ori"
-									width={80}
-									height={32}
-									className="h-7 w-auto hidden dark:block"
-									priority
-								/>
-							</>
-						) : (
+						<>
 							<Image
-								src="/img/LogoOriText.svg"
+								src="/img/LogoOriTextDark.svg"
 								alt="Ori"
 								width={80}
 								height={32}
-								className="h-7 w-auto"
+								className="h-7 w-auto dark:hidden"
 								priority
 							/>
-						)}
+							<Image
+								src="/img/LogoOriTextLight.svg"
+								alt="Ori"
+								width={80}
+								height={32}
+								className="h-7 w-auto hidden dark:block"
+								priority
+							/>
+						</>
 					</Link>
 
 					{/* Desktop nav — centered */}
