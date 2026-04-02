@@ -49,7 +49,7 @@ export function Footer() {
 	}
 
 	return (
-		<footer className="relative mt-16 overflow-hidden bg-background dark:bg-gradient-to-t dark:from-dark-surface dark:to-dark-bg border-t border-text-secondary/20 dark:border-text-tertiary/50">
+		<footer className="relative mt-16 overflow-hidden bg-background dark:bg-gradient-to-t dark:from-dark-surface dark:to-dark-bg border-t border-text-secondary/20 dark:border-text-tertiary/50  max-w-[83rem] mx-auto px-2">
 			{/* Lights glow effect (dark mode only) */}
 			<div
 				aria-hidden
@@ -62,7 +62,7 @@ export function Footer() {
 			/>
 
 			{/* Main content */}
-			<div className="container-site py-8 sm:py-10 max-w-[83rem] px-5">
+			<div className="py-8 sm:py-10 max-w-[83rem]">
 				<div className="flex flex-col md:flex-row gap-8 md:gap-6 lg:gap-10 items-start">
 					{/* Brand */}
 					<div className="w-full md:flex-[2] flex flex-col gap-4">
@@ -109,15 +109,17 @@ export function Footer() {
 							<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
 								{footer.navTitle}
 							</p>
-							{(isMessages ? footer.messagesNavLinks : footer.navLinks).map((link) => (
-								<Link
-									key={link.href}
-									href={link.href}
-									className={`font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text transition-colors ${isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary"}`}
-								>
-									{link.label}
-								</Link>
-							))}
+							{(isMessages ? footer.messagesNavLinks : footer.navLinks).map(
+								(link) => (
+									<Link
+										key={link.href}
+										href={link.href}
+										className={`font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text transition-colors ${isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary"}`}
+									>
+										{link.label}
+									</Link>
+								),
+							)}
 						</div>
 
 						{/* Legal */}
@@ -194,8 +196,8 @@ export function Footer() {
 			</div>
 
 			{/* Bottom bar */}
-			<div className="border-t border-text-secondary/20 dark:border-text-tertiary/50 max-w-[83rem] container-site">
-				<div className="py-4 sm:py-8 pb-8 sm:pb-10 px-5 md:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
+			<div className="border-t border-text-secondary/20 dark:border-text-tertiary/50 max-w-[83rem]">
+				<div className="py-4 sm:py-8 pb-8 sm:pb-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
 					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
 						{footer.copyright}
 					</p>

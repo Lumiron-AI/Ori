@@ -29,7 +29,7 @@ export function OriMessagesComparisonSection() {
 				/>
 
 				{/* Desktop table */}
-				<div className="hidden sm:block overflow-x-auto">
+				<div className="hidden sm:block overflow-x-auto overflow-y-hidden">
 					<table className="w-full border-separate border-spacing-x-0 border-spacing-y-1.5 min-w-[560px]">
 						<thead>
 							<tr>
@@ -102,7 +102,7 @@ export function OriMessagesComparisonSection() {
 				</div>
 
 				{/* Mobile cards */}
-				<div className="flex flex-col gap-4 sm:hidden">
+				<div className="flex flex-col gap-4 sm:hidden overflow-hidden">
 					<div className="grid grid-cols-2 gap-2">
 						<div className="bg-dark-overlay text-text font-display font-semibold text-lg rounded-2xl px-4 py-2.5 text-center">
 							{d.headerManual}

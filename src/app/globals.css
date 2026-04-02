@@ -60,9 +60,4 @@
 	.section-padding {
 		@apply px-5 md:px-12 lg:px-24;
 	}
-
-	/* Centered content container — 1152px max (was 1280px) */
-	.container-site {
-		@apply w-full mx-auto;
-	}
 }

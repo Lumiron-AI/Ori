@@ -47,7 +47,7 @@ export function OriMessagesInterfaceSection() {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ delay: 0.24, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-					className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-4xl mx-auto"
+					className="font-display font-normal text-sm sm:text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-4xl mx-auto"
 				>
 					{d.footer}
 				</motion.p>

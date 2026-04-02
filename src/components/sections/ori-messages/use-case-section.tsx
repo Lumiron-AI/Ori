@@ -99,11 +99,15 @@ export function OriMessagesUseCaseSection() {
 							initial={{ opacity: 0, y: 24 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
-							transition={{ delay: i * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+							transition={{
+								delay: i * 0.12,
+								duration: 0.6,
+								ease: [0.22, 1, 0.36, 1],
+							}}
 							className="flex flex-col gap-5"
 						>
 							{/* Card */}
-							<div className="bg-background dark:bg-dark-elevated rounded-3xl shadow-card flex flex-col">
+							<div className="bg-white dark:bg-dark-elevated rounded-3xl shadow-card flex flex-col">
 								{/* Logo area */}
 								<div className="flex items-center justify-center pt-8 pb-5 px-5">
 									{LOGOS[card.platform]}
@@ -111,7 +115,7 @@ export function OriMessagesUseCaseSection() {
 
 								{/* Video */}
 								<video
-									className="mx-5 mb-6 rounded-2xl w-[calc(100%-2.5rem)] object-cover"
+									className="mx-5 mb-6 rounded-2xl w-[calc(100%-2.5rem)] object-cover border border-"
 									src={
 										card.platform === "WhatsApp"
 											? "/video/MessagesWhatsApp.mp4"

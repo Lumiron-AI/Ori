@@ -38,7 +38,7 @@ export function Header() {
 	return (
 		<header className="fixed top-0 inset-x-0 z-50 flex justify-center pt-4">
 			<div
-				className={`w-[94vw] sm:w-[88vw] md:w-[80vw] rounded-full border transition-all duration-300 py-1 ${
+				className={`w-[94vw] sm:w-[88vw] md:w-[83vw] rounded-full border transition-all duration-300 py-1 ${
 					scrolled
 						? "bg-white/75 dark:bg-dark-bg/80 backdrop-blur-md border-white dark:border-secondary shadow-[-1px_-1px_31px_-1px_rgba(0,0,0,0.12)]"
 						: "bg-transparent border-transparent shadow-none backdrop-blur-none"

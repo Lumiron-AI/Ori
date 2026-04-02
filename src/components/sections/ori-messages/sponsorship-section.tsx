@@ -38,7 +38,11 @@ export function OriMessagesSponsorshipSection() {
 								initial={{ opacity: 0, y: 24 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
-								transition={{ delay: i * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+								transition={{
+									delay: i * 0.12,
+									duration: 0.6,
+									ease: [0.22, 1, 0.36, 1],
+								}}
 								className="flex flex-col items-center gap-5 w-full sm:w-[40%]"
 							>
 								<div className="flex flex-col items-center gap-2">
@@ -50,7 +54,7 @@ export function OriMessagesSponsorshipSection() {
 
 								<div className="w-full bg-dark-elevated dark:bg-dark-surface border border-transparent dark:border-text-secondary/30 rounded-4xl flex items-center justify-center py-10 sm:py-12 px-6">
 									<p className="font-display font-bold text-2xl sm:text-3xl text-center">
-										<span className="text-ori-message">{card.highlight}</span>
+										<span className="text-[#89A3D7]">{card.highlight}</span>
 										<span className="text-text">{card.rest}</span>
 									</p>
 								</div>
