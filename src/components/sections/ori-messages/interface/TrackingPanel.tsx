@@ -4,10 +4,30 @@ import { Eye, Download } from "lucide-react";
 import { useLocale } from "@/context/locale-context";
 
 const HISTORY = [
-	{ date: "23 janv. 2026", time: "17:12:23", from: "+33615247714", duration: "0:33" },
-	{ date: "23 janv. 2026", time: "13:39:27", from: "+33618339211", duration: "0:30" },
-	{ date: "23 janv. 2026", time: "13:38:19", from: "+33647432352", duration: "0:23" },
-	{ date: "23 janv. 2026", time: "10:12:24", from: "+33784213498", duration: "0:48" },
+	{
+		date: "23 janv. 2026",
+		time: "17:12:23",
+		from: "+33615247714",
+		duration: "0:33",
+	},
+	{
+		date: "23 janv. 2026",
+		time: "13:39:27",
+		from: "+33618339211",
+		duration: "0:30",
+	},
+	{
+		date: "23 janv. 2026",
+		time: "13:38:19",
+		from: "+33647432352",
+		duration: "0:23",
+	},
+	{
+		date: "23 janv. 2026",
+		time: "10:12:24",
+		from: "+33784213498",
+		duration: "0:48",
+	},
 ];
 
 export function TrackingPanel() {
@@ -28,7 +48,7 @@ export function TrackingPanel() {
 				].map((stat) => (
 					<div
 						key={stat.label}
-						className="bg-background-secondary dark:bg-dark-overlay rounded-2xl p-4 flex flex-col gap-1"
+						className="bg-background-secondary dark:bg-dark-elevated rounded-2xl p-4 flex flex-col gap-1"
 					>
 						<span className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary leading-tight">
 							{stat.label}
@@ -79,13 +99,19 @@ export function TrackingPanel() {
 									aria-label="View"
 									className="w-7 h-7 rounded-full bg-background-secondary dark:bg-dark-overlay flex items-center justify-center"
 								>
-									<Eye size={13} className="text-text-secondary dark:text-text-tertiary" />
+									<Eye
+										size={13}
+										className="text-text-secondary dark:text-text-tertiary"
+									/>
 								</button>
 								<button
 									aria-label="Download"
 									className="w-7 h-7 rounded-full bg-background-secondary dark:bg-dark-overlay flex items-center justify-center"
 								>
-									<Download size={13} className="text-text-secondary dark:text-text-tertiary" />
+									<Download
+										size={13}
+										className="text-text-secondary dark:text-text-tertiary"
+									/>
 								</button>
 							</div>
 						</div>

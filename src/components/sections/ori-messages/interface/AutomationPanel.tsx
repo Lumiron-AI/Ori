@@ -17,10 +17,42 @@ interface Agent {
 }
 
 const AGENTS: Agent[] = [
-	{ name: "Ori 1", restaurant: "Trattoria", platform: "whatsapp", messagesReceived: 78, statusKey: "statusAllDay", availabilityStatus: "active", active: true },
-	{ name: "Ori 2", restaurant: "Trattoria", platform: "instagram", messagesReceived: 0, statusKey: "statusUnavailable", availabilityStatus: "inactive", active: false },
-	{ name: "Ori 3", restaurant: "Trattoria", platform: "instagram", messagesReceived: 45, availability: "12h00-15h00", availabilityStatus: "active", active: true },
-	{ name: "Ori 4", restaurant: "Trattoria", platform: "whatsapp", messagesReceived: 45, availability: "12h00-15h00", availabilityStatus: "active", active: true },
+	{
+		name: "Ori 1",
+		restaurant: "Trattoria",
+		platform: "whatsapp",
+		messagesReceived: 78,
+		statusKey: "statusAllDay",
+		availabilityStatus: "active",
+		active: true,
+	},
+	{
+		name: "Ori 2",
+		restaurant: "Trattoria",
+		platform: "instagram",
+		messagesReceived: 0,
+		statusKey: "statusUnavailable",
+		availabilityStatus: "inactive",
+		active: false,
+	},
+	{
+		name: "Ori 3",
+		restaurant: "Trattoria",
+		platform: "instagram",
+		messagesReceived: 45,
+		availability: "12h00-15h00",
+		availabilityStatus: "active",
+		active: true,
+	},
+	{
+		name: "Ori 4",
+		restaurant: "Trattoria",
+		platform: "whatsapp",
+		messagesReceived: 45,
+		availability: "12h00-15h00",
+		availabilityStatus: "active",
+		active: true,
+	},
 ];
 
 const STATUS_DOT: Record<AvailabilityStatus, string> = {
@@ -57,7 +89,7 @@ export function AutomationPanel() {
 				{AGENTS.map((agent) => (
 					<div
 						key={agent.name}
-						className="bg-background-secondary dark:bg-dark-overlay rounded-2xl px-4 py-6 flex items-center gap-3"
+						className="bg-background-secondary dark:bg-dark-elevated rounded-2xl px-4 py-6 flex items-center gap-3"
 					>
 						{/* Platform logo */}
 						<div className="shrink-0 w-10 h-10 rounded-xl overflow-hidden">
@@ -90,7 +122,9 @@ export function AutomationPanel() {
 								{d.availability}
 							</p>
 							<div className="flex items-center justify-center gap-1.5 mt-0.5">
-								<div className={`w-2 h-2 rounded-full shrink-0 ${STATUS_DOT[agent.availabilityStatus]}`} />
+								<div
+									className={`w-2 h-2 rounded-full shrink-0 ${STATUS_DOT[agent.availabilityStatus]}`}
+								/>
 								<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
 									{agent.statusKey ? d[agent.statusKey] : agent.availability}
 								</p>

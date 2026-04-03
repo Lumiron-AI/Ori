@@ -40,15 +40,26 @@ export function QuickSetUpPanel() {
 			<div className="flex flex-col gap-3 mt-1">
 				{[
 					{ label: fields.name, value: "La Table du Phocéen", Icon: Settings },
-					{ label: fields.website, value: "https://www.latableduphoceen.fr", Icon: Globe },
-					{ label: fields.address, value: "18 Rue de la Mer, 13001 Marseille, France", Icon: MapPin },
+					{
+						label: fields.website,
+						value: "https://www.latableduphoceen.fr",
+						Icon: Globe,
+					},
+					{
+						label: fields.address,
+						value: "18 Rue de la Mer, 13001 Marseille, France",
+						Icon: MapPin,
+					},
 				].map(({ label, value, Icon }) => (
 					<div
 						key={label}
-						className="bg-background-secondary dark:bg-dark-overlay rounded-xl p-3 flex items-center gap-3"
+						className="bg-background-secondary dark:bg-dark-elevated rounded-xl p-3 flex items-center gap-3"
 					>
 						<div className="bg-background-tertiary dark:bg-dark-elevated rounded-lg p-2 shrink-0">
-							<Icon size={18} className="text-text-secondary dark:text-text-tertiary" />
+							<Icon
+								size={18}
+								className="text-text-secondary dark:text-text-tertiary"
+							/>
 						</div>
 						<div className="flex flex-col min-w-0">
 							<span className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
@@ -63,15 +74,22 @@ export function QuickSetUpPanel() {
 
 				<div className="grid grid-cols-2 gap-3">
 					{[
-						{ label: fields.email, value: "latableduphoceen.fr@gmail.com", Icon: Mail },
+						{
+							label: fields.email,
+							value: "latableduphoceen.fr@gmail.com",
+							Icon: Mail,
+						},
 						{ label: fields.phone, value: "04 91 23 45 67", Icon: Phone },
 					].map(({ label, value, Icon }) => (
 						<div
 							key={label}
-							className="bg-background-secondary dark:bg-dark-overlay rounded-xl p-3 flex items-center gap-3"
+							className="bg-background-secondary dark:bg-dark-elevated rounded-xl p-3 flex items-center gap-3"
 						>
 							<div className="bg-background-tertiary dark:bg-dark-elevated rounded-lg p-2 shrink-0">
-								<Icon size={18} className="text-text-secondary dark:text-text-tertiary" />
+								<Icon
+									size={18}
+									className="text-text-secondary dark:text-text-tertiary"
+								/>
 							</div>
 							<div className="flex flex-col min-w-0">
 								<span className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">

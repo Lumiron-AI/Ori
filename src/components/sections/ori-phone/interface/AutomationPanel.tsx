@@ -66,7 +66,7 @@ export function AutomationPanel() {
 									}`}
 								/>
 								<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
-									{"statusKey" in a ? d[a.statusKey] : a.status}
+									{"statusKey" in a ? d[a.statusKey as "statusAllDay" | "statusUnavailable"] : (a as { status: string }).status}
 								</p>
 							</div>
 						</div>

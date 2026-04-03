@@ -43,7 +43,7 @@ export function CustomizePanel() {
 			</div>
 
 			{/* Card 1 — Choix du ton */}
-			<div className="bg-background-secondary dark:bg-dark-overlay rounded-2xl p-4 flex flex-col gap-3">
+			<div className="bg-background-secondary dark:bg-dark-elevated rounded-2xl p-4 flex flex-col gap-3">
 				<div className="flex items-center gap-3">
 					<div className="bg-background-tertiary dark:bg-dark-elevated rounded-lg p-2 shrink-0">
 						<Volume2
@@ -77,7 +77,7 @@ export function CustomizePanel() {
 			</div>
 
 			{/* Card 2 — Plages d'activité */}
-			<div className="bg-background-secondary dark:bg-dark-overlay rounded-2xl p-4 flex flex-col gap-3">
+			<div className="bg-background-secondary dark:bg-dark-elevated rounded-2xl p-4 flex flex-col gap-3">
 				<div className="flex items-center gap-3">
 					<div className="bg-background-tertiary dark:bg-dark-elevated rounded-lg p-2 shrink-0">
 						<Clock
