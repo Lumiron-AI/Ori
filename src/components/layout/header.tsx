@@ -44,7 +44,7 @@ export function Header() {
 						: "bg-transparent border-transparent shadow-none backdrop-blur-none"
 				}`}
 			>
-				<div className="px-3 xs:px-4 md:px-6 lg:px-8 h-[44px] md:h-[50px] grid grid-cols-3 items-center">
+				<div className="px-3 xs:px-4 md:px-6 lg:px-8 h-[44px] md:h-[50px] grid grid-cols-2 md:grid-cols-3 items-center">
 					{/* Logo */}
 					<Link href="/" className="flex items-center gap-2 shrink-0 w-fit">
 						<>

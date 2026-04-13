@@ -60,7 +60,7 @@ export function OriMessagesComparisonSection() {
 										ease: [0.22, 1, 0.36, 1],
 									}}
 								>
-									<td className="bg-background-secondary dark:bg-dark-elevated border-r-4 border-background dark:border-x-dark-bg rounded-l-2xl">
+									<td className={`${i % 2 === 0 ? "bg-background-secondary dark:bg-dark-surface" : "bg-background-tertiary dark:bg-dark-elevated"} border-r-4 border-background dark:border-x-dark-bg rounded-l-2xl`}>
 										<div
 											className={`px-5 py-4 font-display font-semibold text-lg text-text-primary dark:text-text ${
 												i === d.rows.length - 1 ? "rounded-bl-2xl" : ""
@@ -70,7 +70,7 @@ export function OriMessagesComparisonSection() {
 										</div>
 									</td>
 
-									<td className="bg-background-secondary dark:border-dark-bg dark:bg-dark-elevated">
+									<td className={`${i % 2 === 0 ? "bg-background-secondary dark:bg-dark-surface" : "bg-background-tertiary dark:bg-dark-elevated"} dark:border-dark-bg`}>
 										<div className="px-5 py-4 flex items-start gap-3">
 											<AiOutlineMinusCircle
 												size={20}
@@ -83,7 +83,7 @@ export function OriMessagesComparisonSection() {
 										</div>
 									</td>
 
-									<td className="bg-background-secondary dark:bg-dark-elevated border-l-4 border-background dark:border-dark-bg">
+									<td className={`${i % 2 === 0 ? "bg-background-secondary dark:bg-dark-surface" : "bg-background-tertiary dark:bg-dark-elevated"} border-l-4 border-background dark:border-dark-bg`}>
 										<div
 											className={`px-5 py-4 flex items-start gap-3 rounded-r-2xl ${
 												i === d.rows.length - 1 ? "rounded-br-2xl" : ""

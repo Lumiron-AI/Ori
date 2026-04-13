@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { SectionHeaderMessages } from "@/components/ui/section-header-messages";
 import { useSectionFade } from "@/hooks/use-section-fade";
 import { useLocale } from "@/context/locale-context";
+import { useTheme } from "@/context/theme-context";
 
 function WhatsAppLogo() {
 	return (
@@ -75,8 +76,28 @@ const LOGOS: Record<string, React.ReactNode> = {
 
 export function OriMessagesUseCaseSection() {
 	const { ref, opacity } = useSectionFade();
-	const { t } = useLocale();
+	const { t, locale } = useLocale();
+	const { theme } = useTheme();
 	const d = t.messagesUseCase;
+
+	const videoSrc: Record<string, string> = {
+		WhatsApp:
+			theme === "dark" && locale === "en"
+				? "/video/MessagesWhatsAppEnglishDark.mp4"
+				: theme === "dark"
+					? "/video/MessagesWhatsAppDark.mp4"
+					: locale === "en"
+						? "/video/MessagesWhatsAppEnglish.mp4"
+						: "/video/MessagesWhatsApp.mp4",
+		Instagram:
+			theme === "dark" && locale === "en"
+				? "/video/MessagesInstagramEnglishDark.mp4"
+				: theme === "dark"
+					? "/video/MessagesInstagramDark.mp4"
+					: locale === "en"
+						? "/video/MessagesInstagramEnglish.mp4"
+						: "/video/MessagesInstagram.mp4",
+	};
 
 	return (
 		<motion.section
@@ -107,7 +128,7 @@ export function OriMessagesUseCaseSection() {
 							className="flex flex-col gap-5"
 						>
 							{/* Card */}
-							<div className="bg-white dark:bg-dark-elevated rounded-3xl shadow-card flex flex-col">
+							<div className="bg-white dark:bg-dark-surface rounded-3xl shadow-card flex flex-col">
 								{/* Logo area */}
 								<div className="flex items-center justify-center pt-8 pb-5 px-5">
 									{LOGOS[card.platform]}
@@ -115,12 +136,8 @@ export function OriMessagesUseCaseSection() {
 
 								{/* Video */}
 								<video
-									className="mx-5 mb-6 rounded-2xl w-[calc(100%-2.5rem)] object-cover border border-"
-									src={
-										card.platform === "WhatsApp"
-											? "/video/MessagesWhatsApp.mp4"
-											: "/video/MessagesInstagram.mp4"
-									}
+									className="mx-5 mb-6 rounded-2xl w-[calc(100%-2.5rem)] object-cover border dark:border-text-secondary"
+									src={videoSrc[card.platform]}
 									autoPlay
 									loop
 									muted
