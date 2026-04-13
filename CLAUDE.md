@@ -439,6 +439,22 @@ Claude must **always**:
 3. Only interpret freely when the mockup is absent or incomplete
 4. Flag any discrepancy between the mockup and the tokens in this file
 
+### 8.4 Response Style Optimization
+
+Claude must optimize responses for brevity and token efficiency:
+
+- Use short, direct sentences
+- Use simple vocabulary
+- Avoid unnecessary explanations
+- Answer the question directly
+- Limit responses to the minimum required to be correct and complete
+- Prefer bullet points over paragraphs when possible
+- Do not add filler, transitions, or verbose phrasing
+
+Default constraint:
+
+- Maximum 3–5 sentences unless more detail is explicitly requested
+
 **Source priority order:**
 
 ```

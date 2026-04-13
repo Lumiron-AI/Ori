@@ -46,7 +46,7 @@ export function OriPhoneHeroSection() {
 		<motion.section
 			ref={ref}
 			style={{ opacity }}
-			className="relative flex flex-col items-center justify-center text-center px-5 pt-[100px] xs:pt-[110px] md:pt-[80px] 3xl:pt-[170px] 3xl:pb-32 pb-16 md:pb-20 overflow-hidden bg-background dark:bg-dark-bg"
+			className="relative flex flex-col items-center justify-center text-center px-5 pt-[100px] xs:pt-[80px] md:pt-[80px] 3xl:pt-[170px] 3xl:pb-32 pb-16 md:pb-20 overflow-hidden bg-background dark:bg-dark-bg"
 		>
 			<div
 				aria-hidden
@@ -69,7 +69,7 @@ export function OriPhoneHeroSection() {
 					<br /> {hero.title2}{" "}
 					<span className="text-primary">{hero.titleHighlight}</span> <br />
 					{hero.title3}{" "}
-					<span className="relative after:absolute after:bottom-[0px] after:left-0 after:w-full after:h-2 after:bg-primary after:opacity-60">
+					<span className="relative after:absolute after:bottom-[-8px] md:after:bottom-[0px] after:left-0 after:w-full after:h-2 after:bg-primary after:opacity-60">
 						{hero.titleUnderline}
 					</span>
 					.
@@ -123,7 +123,7 @@ export function OriPhoneHeroSection() {
 								className="flex flex-col items-center min-w-[7rem] xs:min-w-[8rem] md:min-w-[10rem]"
 							>
 								<div className="flex items-center gap-2 xs:gap-4">
-									<div className="w-1 h-7 xs:h-8 md:h-10 bg-primary rounded-full shrink-0" />
+									<div className="w-1 h-6 xs:h-7 md:h-10 bg-primary rounded-full shrink-0" />
 									<AnimatedStatValue
 										numeric={STAT_NUMERICS[i]}
 										suffix={stat.suffix}

@@ -5,7 +5,7 @@ export const translations = {
 			navOriMessages: "Ori Messages",
 			navOriPhone: "Ori Téléphone",
 			myAccount: "Mon compte",
-			start: "Commencer",
+			start: "Démarrer",
 			toggleTheme: "Basculer le thème",
 			toggleMenu: "Toggle menu",
 		},
@@ -182,6 +182,7 @@ export const translations = {
 				"Une interface pensée pour le terrain : définissez vos règles et suivez vos résultats en temps réel.",
 			footer:
 				"Une gestion simplifiée pour vous concentrer sur l'essentiel : l'accueil de vos clients et la qualité de votre service.",
+			back: "Retour",
 			tabs: [
 				{
 					label: "Mise en service immédiate",
@@ -811,6 +812,7 @@ export const translations = {
 				"An interface built for real-world use: define your rules and track your results in real time.",
 			footer:
 				"Simplified management so you can focus on what matters: welcoming your customers and delivering great service.",
+			back: "Back",
 			tabs: [
 				{
 					label: "Instant setup",

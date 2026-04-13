@@ -35,16 +35,24 @@ export function Header() {
 		return () => window.removeEventListener("scroll", onScroll);
 	}, []);
 
+	useEffect(() => {
+		const onResize = () => {
+			if (window.innerWidth >= 768) setOpen(false);
+		};
+		window.addEventListener("resize", onResize);
+		return () => window.removeEventListener("resize", onResize);
+	}, []);
+
 	return (
 		<header className="fixed top-0 inset-x-0 z-50 flex justify-center pt-4">
 			<div
-				className={`w-[94vw] xs:w-[92vw] md:w-[88vw] lg:w-[83vw] 3xl:w-[78vw] rounded-full border transition-all duration-300 py-1 ${
-					scrolled
+				className={`w-[94vw] xs:w-[92vw] md:w-[88vw] lg:w-[83vw] 3xl:w-[78vw] rounded-2xl md:rounded-full border transition-all duration-300 py-2 px-1 md:px-0 md:py-1 ${
+					scrolled || open
 						? "bg-white/75 dark:bg-dark-bg/80 backdrop-blur-md border-white dark:border-secondary shadow-[-1px_-1px_31px_-1px_rgba(0,0,0,0.12)]"
 						: "bg-transparent border-transparent shadow-none backdrop-blur-none"
 				}`}
 			>
-				<div className="px-3 xs:px-4 md:px-6 lg:px-8 h-[44px] md:h-[50px] grid grid-cols-2 md:grid-cols-3 items-center">
+				<div className="px-4 xs:px-4 md:px-6 lg:px-8 h-[44px] md:h-[50px] grid grid-cols-2 md:grid-cols-3 items-center">
 					{/* Logo */}
 					<Link href="/" className="flex items-center gap-2 shrink-0 w-fit">
 						<>
@@ -53,7 +61,7 @@ export function Header() {
 								alt="Ori"
 								width={80}
 								height={32}
-								className="h-7 w-auto dark:hidden"
+								className="h-5 md:h-7 w-auto dark:hidden"
 								priority
 							/>
 							<Image
@@ -61,7 +69,7 @@ export function Header() {
 								alt="Ori"
 								width={80}
 								height={32}
-								className="h-7 w-auto hidden dark:block"
+								className="h-5 md:h-7 w-auto hidden dark:block"
 								priority
 							/>
 						</>
@@ -116,7 +124,7 @@ export function Header() {
 
 					{/* Mobile toggle */}
 					<button
-						className="md:hidden p-2 text-text-primary dark:text-text justify-self-end min-w-[44px] min-h-[44px] flex items-center justify-center"
+						className="md:hidden text-text-primary dark:text-text justify-self-end min-w-[44px] min-h-[44px] flex items-center justify-center"
 						onClick={() => setOpen((v) => !v)}
 						aria-label={header.toggleMenu}
 					>
@@ -132,7 +140,6 @@ export function Header() {
 							animate={{ opacity: 1, y: 0 }}
 							exit={{ opacity: 0, y: -8 }}
 							transition={{ duration: 0.2 }}
-							className="md:hidden bg-background dark:bg-dark-bg border-t border-background-secondary dark:border-secondary px-5 py-6 flex flex-col gap-4 rounded-b-3xl"
 						>
 							{NAV_LINKS.filter((link) => link.href !== pathname).map(
 								(link) => (
@@ -140,24 +147,24 @@ export function Header() {
 										key={link.href}
 										href={link.href}
 										onClick={() => setOpen(false)}
-										className="font-display font-normal text-lg text-text-primary dark:text-text min-h-[44px] flex items-center"
+										className="font-display font-normal px-5 pt-4 text-sm text-text-primary dark:text-text min-h-[44px] flex items-center"
 									>
 										{link.label}
 									</Link>
 								),
 							)}
-							<div className="flex items-center justify-between pt-2">
+							<div className="flex items-center justify-between pt-4">
 								<Link
 									href="/compte"
 									onClick={() => setOpen(false)}
-									className={`font-display font-bold text-base text-text-primary dark:text-text ${hoverColor} transition-colors`}
+									className={`font-display font-bold text-sm px-5 text-text-primary dark:text-text ${hoverColor} transition-colors`}
 								>
 									{header.myAccount}
 								</Link>
 								<button
 									onClick={toggle}
 									aria-label={header.toggleTheme}
-									className="w-[44px] h-[44px] flex items-center justify-center text-text-secondary dark:text-text-tertiary"
+									className="w-[44px] h-[44px] mx-3 flex items-center justify-center text-text-secondary dark:text-text-tertiary"
 								>
 									{theme === "dark" ? (
 										<Sun size={20} strokeWidth={1.5} />
@@ -166,13 +173,15 @@ export function Header() {
 									)}
 								</button>
 							</div>
-							<Link
-								href={ctaHref}
-								onClick={() => setOpen(false)}
-								className={`inline-flex items-center justify-center gap-2 text-text font-display font-bold text-lg rounded-xl px-5 py-3 mt-1 w-full transition-colors ${isMessages ? "bg-ori-message hover:bg-ori-message/90" : "bg-primary hover:bg-primary/90"}`}
-							>
-								{header.start} <ArrowRight size={18} />
-							</Link>
+							<div className="flex justify-center my-4">
+								<Link
+									href={ctaHref}
+									onClick={() => setOpen(false)}
+									className={`inline-flex items-center justify-center gap-2 text-text font-display font-bold text-sm rounded-xl px-4 py-2 w-[90%] transition-colors ${isMessages ? "bg-ori-message hover:bg-ori-message/90" : "bg-primary hover:bg-primary/90"}`}
+								>
+									{header.start} <ArrowRight size={14} />
+								</Link>
+							</div>
 						</motion.div>
 					)}
 				</AnimatePresence>

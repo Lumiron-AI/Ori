@@ -37,7 +37,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>
+      <body className="overflow-x-hidden">
         <ThemeProvider>
           <LocaleProvider>
             <Header />
