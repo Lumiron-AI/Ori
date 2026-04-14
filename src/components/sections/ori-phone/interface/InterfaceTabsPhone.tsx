@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, ChevronRight, ChevronLeft } from "lucide-react";
 
@@ -15,7 +16,23 @@ export function InterfaceTabsPhone() {
 	const [active, setActive] = useState<TabId | null>("setup");
 	const lastActiveRef = useRef<TabId>("setup");
 	const [mobileActiveTab, setMobileActiveTab] = useState<TabId | null>(null);
+	const [mounted, setMounted] = useState(false);
 	const { t } = useLocale();
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	useEffect(() => {
+		if (mobileActiveTab !== null) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "";
+		}
+		return () => {
+			document.body.style.overflow = "";
+		};
+	}, [mobileActiveTab]);
 
 	function handleTabClick(id: TabId) {
 		if (active === id) {
@@ -42,94 +59,93 @@ export function InterfaceTabsPhone() {
 		tracking: <TrackingPanel />,
 	};
 
-	const mobileTab =
-		mobileActiveTab
-			? TABS.find((tab) => tab.id === mobileActiveTab) ?? null
-			: null;
+	const mobileTab = mobileActiveTab
+		? (TABS.find((tab) => tab.id === mobileActiveTab) ?? null)
+		: null;
 
 	return (
 		<>
-			{/* ── Mobile layout (< lg) ── */}
-			<div className="block lg:hidden overflow-hidden md:px-6">
-				<AnimatePresence initial={false} mode="wait">
-					{mobileActiveTab === null ? (
-						<motion.div
-							key="list"
-							initial={{ x: "-30%", opacity: 0 }}
-							animate={{ x: 0, opacity: 1 }}
-							exit={{ x: "-30%", opacity: 0 }}
-							transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+			{/* ── Mobile tab list (< lg) ── */}
+			<div className="block lg:hidden md:px-6">
+				{TABS.map((tab, i) => (
+					<div key={tab.id}>
+						{i > 0 && (
+							<div className="h-px bg-background-secondary dark:bg-dark-overlay" />
+						)}
+						<button
+							onClick={() => setMobileActiveTab(tab.id)}
+							className="w-full flex items-center gap-3 py-4 text-left min-h-[52px]"
 						>
-							{TABS.map((tab, i) => (
-								<div key={tab.id}>
-									{i > 0 && (
-										<div className="h-px bg-background-secondary dark:bg-dark-overlay" />
-									)}
-									<button
-										onClick={() => setMobileActiveTab(tab.id)}
-										className="w-full flex items-center gap-3 py-4 text-left min-h-[52px]"
-									>
-										<tab.Icon
-											size={22}
-											className="shrink-0 text-text-heading dark:text-text"
-										/>
-										<span className="flex-1 font-display font-semibold text-lg text-text-heading dark:text-text leading-snug">
-											{tab.label}
-										</span>
-										<ChevronRight
-											size={20}
-											strokeWidth={1.5}
-											className="shrink-0 text-text-secondary dark:text-text"
-										/>
-									</button>
-								</div>
-							))}
-						</motion.div>
-					) : (
-						<motion.div
-							key={mobileActiveTab}
-							initial={{ x: "30%", opacity: 0 }}
-							animate={{ x: 0, opacity: 1 }}
-							exit={{ x: "30%", opacity: 0 }}
-							transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-						>
-							{/* Back button */}
-							<button
-								onClick={() => setMobileActiveTab(null)}
-								className="flex items-center gap-1 text-text-heading dark:text-text font-display font-medium text-base mb-5"
-							>
-								<ChevronLeft size={20} />
-								<span>{t.interface.back}</span>
-							</button>
-
-							{/* Header: icon + label */}
-							{mobileTab && (
-								<div className="flex items-center gap-2 mb-4">
-									<mobileTab.Icon
-										size={22}
-										className="shrink-0 text-text-heading dark:text-text"
-									/>
-									<span className="font-display font-semibold text-lg text-text-heading dark:text-text">
-										{mobileTab.label}
-									</span>
-								</div>
-							)}
-
-							{/* Dashboard panel card */}
-							<div className="bg-background-element dark:bg-dark-surface rounded-3xl p-4 shadow-card overflow-hidden mb-4">
-								{panels[mobileActiveTab]}
-							</div>
-
-							{/* Description */}
-							{mobileTab && (
-								<p className="font-display font-normal text-sm text-text-heading dark:text-brand-accent">
-									{mobileTab.description}
-								</p>
-							)}
-						</motion.div>
-					)}
-				</AnimatePresence>
+							<tab.Icon
+								size={22}
+								className="shrink-0 text-text-heading dark:text-text"
+							/>
+							<span className="flex-1 font-display font-semibold text-lg text-text-heading dark:text-text leading-snug">
+								{tab.label}
+							</span>
+							<ChevronRight
+								size={20}
+								strokeWidth={1.5}
+								className="shrink-0 text-text-secondary dark:text-text"
+							/>
+						</button>
+					</div>
+				))}
 			</div>
+
+			{/* ── Mobile FAQTabs full-page overlay (portal) ── */}
+			{mounted &&
+				createPortal(
+					<AnimatePresence>
+						{mobileActiveTab !== null && (
+							<motion.div
+								key={mobileActiveTab}
+								className="fixed inset-0 z-[60] bg-background dark:bg-dark-bg overflow-hidden lg:hidden"
+								initial={{ x: "100%" }}
+								animate={{ x: 0 }}
+								exit={{ x: "100%" }}
+								transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+							>
+								<div className="px-5 md:px-10 pt-8 pb-12">
+									{/* Back button */}
+									<button
+										onClick={() => setMobileActiveTab(null)}
+										className="flex items-center gap-1 text-text-heading dark:text-text font-display font-medium text-base mb-5"
+									>
+										<ChevronLeft size={20} />
+										<span>{t.interface.back}</span>
+									</button>
+
+									{/* Header: icon + label */}
+									{mobileTab && (
+										<div className="flex items-center gap-2 mb-4">
+											<mobileTab.Icon
+												size={22}
+												className="shrink-0 text-text-heading dark:text-text"
+											/>
+											<span className="font-display font-semibold text-lg text-text-heading dark:text-text">
+												{mobileTab.label}
+											</span>
+										</div>
+									)}
+
+									{/* Dashboard panel card */}
+									<div className="bg-background-element dark:bg-dark-surface rounded-3xl p-5 shadow-card overflow-hidden mb-4">
+										{panels[mobileActiveTab]}
+									</div>
+
+									{/* Description */}
+									{mobileTab && (
+										<p className="font-display font-normal text-sm text-text-heading dark:text-brand-accent">
+											{mobileTab.description}
+										</p>
+									)}
+								</div>
+							</motion.div>
+						)}
+					</AnimatePresence>,
+					document.body,
+				)}
 
 			{/* ── Desktop layout (>= lg) ── */}
 			<div className="hidden lg:grid grid-cols-[45%_1fr] gap-11 items-center px-8 3xl:px-12">

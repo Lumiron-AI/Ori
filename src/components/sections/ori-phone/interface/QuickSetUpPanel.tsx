@@ -51,27 +51,27 @@ export function QuickSetUpPanel() {
 
 	return (
 		<>
-			<p className="font-display font-medium text-xl xs:text-2xl text-text-primary dark:text-text">
+			<p className="font-display font-medium text-base xs:text-lg lg:text-2xl text-text-primary dark:text-text">
 				{t.dashboardPhone.welcome}
 			</p>
-			<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-1 mb-5">
+			<p className="font-display font-normal text-xs lg:text-base text-text-secondary dark:text-text-tertiary mt-0.5 mb-3 lg:mb-5">
 				{t.dashboardPhone.subtitle}
 			</p>
 			<DashboardTabs activeIndex={0} />
-			<div className="grid grid-cols-2 gap-3">
+			<div className="grid grid-cols-2 gap-2 lg:gap-3">
 				{fieldDefs.map((f) => (
 					<div
 						key={f.label}
-						className={`bg-background-secondary dark:bg-dark-elevated rounded-xl p-3 flex items-center gap-3 ${
+						className={`bg-background-secondary dark:bg-dark-elevated rounded-xl p-2 lg:p-3 flex items-center gap-2 lg:gap-3 ${
 							f.full ? "col-span-2" : "col-span-1"
 						}`}
 					>
 						<FieldIconBox icon={f.Icon} />
 						<div className="min-w-0">
-							<p className="font-display font-normal text-sm text-text-primary dark:text-text-tertiary">
+							<p className="font-display font-normal text-xs lg:text-sm text-text-primary dark:text-text-tertiary">
 								{f.label}
 							</p>
-							<p className="font-display font-medium text-base text-text-primary dark:text-text truncate">
+							<p className="font-display font-medium text-xs lg:text-base text-text-primary dark:text-text truncate">
 								{f.value}
 							</p>
 						</div>

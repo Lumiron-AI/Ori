@@ -44,8 +44,9 @@ export function FAQSection() {
 							href="/contact"
 							className={buttonClass({
 								variant: "ghost-primary",
-								size: "lg",
-								className: "w-full sm:w-[292px] shadow-orange-btn-soft",
+								size: "md",
+								className:
+									"sm:px-8 sm:text-lg sm:h-[50px] w-full sm:w-[292px] shadow-orange-btn-soft mt-6",
 							})}
 						>
 							{faq.seeAll}
@@ -60,44 +61,46 @@ export function FAQSection() {
 								initial={{ opacity: 0, y: 24 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
-								transition={{ delay: i * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+								transition={{
+									delay: i * 0.12,
+									duration: 0.6,
+									ease: [0.22, 1, 0.36, 1],
+								}}
 							>
-							<div
-								className="border-b border-background-secondary dark:border-dark-elevated"
-							>
-								<button
-									onClick={() => setOpen(open === i ? null : i)}
-									className="w-full flex items-center gap-3 xs:gap-4 md:gap-6 text-left group min-h-[72px] xs:min-h-[80px] md:min-h-[82px]"
-								>
-									<div className="w-1.5 h-[24px] xs:h-[28px] md:h-[33px] rounded-sm shrink-0 transition-colors bg-primary" />
-									<span className="flex-1 font-display font-semibold text-sm xs:text-base md:text-xl lg:text-2xl text-text-primary dark:text-text">
-										{item.question}
-									</span>
-									<ChevronDown
-										size={22}
-										strokeWidth={2}
-										className={`shrink-0 text-text-secondary dark:text-text transition-transform ${
-											open === i ? "rotate-180" : ""
-										}`}
-									/>
-								</button>
+								<div className="border-b border-background-secondary dark:border-dark-elevated">
+									<button
+										onClick={() => setOpen(open === i ? null : i)}
+										className="w-full flex items-center gap-3 xs:gap-4 md:gap-6 text-left group min-h-[72px] xs:min-h-[80px] md:min-h-[82px]"
+									>
+										<div className="w-1.5 h-[24px] xs:h-[28px] md:h-[33px] rounded-sm shrink-0 transition-colors bg-primary" />
+										<span className="flex-1 font-display font-semibold text-sm xs:text-base md:text-xl lg:text-2xl text-text-primary dark:text-text">
+											{item.question}
+										</span>
+										<ChevronDown
+											size={22}
+											strokeWidth={2}
+											className={`shrink-0 text-text-secondary dark:text-text transition-transform ${
+												open === i ? "rotate-180" : ""
+											}`}
+										/>
+									</button>
 
-								<AnimatePresence initial={false}>
-									{open === i && (
-										<motion.div
-											initial={{ height: 0, opacity: 0 }}
-											animate={{ height: "auto", opacity: 1 }}
-											exit={{ height: 0, opacity: 0 }}
-											transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-											className="overflow-hidden"
-										>
-											<p className="font-display font-normal text-sm md:text-base text-text-primary dark:text-text-tertiary pb-5 md:pb-8 pl-4 md:pl-6 leading-relaxed">
-												{item.answer}
-											</p>
-										</motion.div>
-									)}
-								</AnimatePresence>
-							</div>
+									<AnimatePresence initial={false}>
+										{open === i && (
+											<motion.div
+												initial={{ height: 0, opacity: 0 }}
+												animate={{ height: "auto", opacity: 1 }}
+												exit={{ height: 0, opacity: 0 }}
+												transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+												className="overflow-hidden"
+											>
+												<p className="font-display font-normal text-sm md:text-base text-text-primary dark:text-text-tertiary pb-5 md:pb-8 pl-4 md:pl-6 leading-relaxed">
+													{item.answer}
+												</p>
+											</motion.div>
+										)}
+									</AnimatePresence>
+								</div>
 							</motion.div>
 						))}
 					</div>

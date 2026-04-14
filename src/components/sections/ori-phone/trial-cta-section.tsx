@@ -75,7 +75,7 @@ export function TrialCTASection() {
 						className={buttonClass({
 							variant: "primary",
 							size: "lg",
-							className: "w-full sm:w-[261px] text-sm sm:text-lg mt-2",
+							className: "w-full sm:w-[261px] text-base sm:text-lg mt-2",
 						})}
 					>
 						{trialCta.cta}

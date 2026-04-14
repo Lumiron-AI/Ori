@@ -74,7 +74,7 @@ export function PricingCardWhatsApp({
 			{/* CTA */}
 			<Link
 				href="#trial"
-				className="inline-flex items-center justify-center gap-2 font-display font-bold rounded-2xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ori-message focus-visible:ring-offset-2 w-full text-lg px-8 h-[46px] bg-ori-message text-text shadow-blue-btn hover:bg-ori-message/90 active:bg-ori-message/80"
+				className="inline-flex items-center justify-center gap-2 font-display font-bold rounded-2xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ori-message focus-visible:ring-offset-2 w-full text-base px-6 h-11 sm:text-lg sm:px-8 sm:h-[50px] bg-ori-message text-text shadow-blue-btn hover:bg-ori-message/90 active:bg-ori-message/80"
 			>
 				{d.cta}
 			</Link>

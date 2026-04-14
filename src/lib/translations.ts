@@ -143,6 +143,7 @@ export const translations = {
 				"Comparez l'impact d'Ori sur votre quotidien face à une gestion classique.",
 			withoutHeader: "Standard classique",
 			withHeader: "Avec Ori",
+			ctaLabel: "Voir avec Ori",
 			footer:
 				"Maximisez votre chiffre d'affaires en ne laissant plus aucun appel sans réponse. Chaque appel décroché est une opportunité préservée.",
 			rows: [
@@ -486,6 +487,7 @@ export const translations = {
 				"Comparez la gestion manuelle avec la puissance de l'automatisation intelligente et mesurez l'impact sur votre quotidien.",
 			headerManual: "Gestion manuelle",
 			headerOri: "Avec Ori",
+			ctaLabel: "Voir avec Ori",
 			footer:
 				"Ne laissez plus aucune opportunité vous échapper. Chaque message reçu est une chance de convertir un prospect en client fidèle.",
 			rows: [
@@ -773,6 +775,7 @@ export const translations = {
 				"Compare Ori's impact on your daily operations against traditional management.",
 			withoutHeader: "Traditional system",
 			withHeader: "With Ori",
+			ctaLabel: "See with Ori",
 			footer:
 				"Maximize your revenue by never missing another call. Every answered call is an opportunity preserved.",
 			rows: [
@@ -1116,6 +1119,7 @@ export const translations = {
 				"Compare manual management with the power of intelligent automation and measure the impact on your daily workflow.",
 			headerManual: "Manual management",
 			headerOri: "With Ori",
+			ctaLabel: "See with Ori",
 			footer:
 				"Don't let another opportunity slip away. Every message received is a chance to turn a prospect into a loyal customer.",
 			rows: [

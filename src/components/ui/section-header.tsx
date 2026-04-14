@@ -21,7 +21,7 @@ export function SectionHeader({
 	titleClassName,
 }: SectionHeaderProps) {
 	return (
-		<div className={cn("mb-8 sm:mb-12", className)}>
+		<div className={cn("mb-4 sm:mb-10", className)}>
 			<div className="flex items-center gap-1 mb-3 sm:mb-4">
 				<span className="font-display font-bold text-base sm:text-xl text-primary">
 					{label}

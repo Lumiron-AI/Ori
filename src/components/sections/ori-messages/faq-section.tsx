@@ -44,9 +44,9 @@ export function OriMessagesFAQSection() {
 							href="/contact"
 							className={buttonClass({
 								variant: "ghost-primary",
-								size: "lg",
+								size: "md",
 								className:
-									"w-full sm:w-[292px] border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20 shadow-blue-btn-soft",
+									"sm:px-8 sm:text-lg sm:h-[50px] w-full sm:w-[292px] border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20 shadow-blue-btn-soft",
 							})}
 						>
 							{d.seeAll}

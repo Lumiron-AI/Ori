@@ -40,8 +40,8 @@ export function AdvancedCard() {
 				href="/contact"
 				className={buttonClass({
 					variant: "primary",
-					size: "lg",
-					className: "w-full",
+					size: "md",
+					className: "sm:px-8 sm:text-lg sm:h-[50px] w-full",
 				})}
 			>
 				{advanced.cta}

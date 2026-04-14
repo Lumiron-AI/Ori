@@ -68,9 +68,9 @@ export function OriMessagesSponsorshipSection() {
 							onClick={modal.open}
 							className={buttonClass({
 								variant: "ghost-primary",
-								size: "lg",
+								size: "md",
 								className:
-									"shadow-blue-btn-soft border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20 w-full sm:w-auto",
+									"sm:px-8 sm:text-lg sm:h-[50px] shadow-blue-btn-soft border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20 w-full sm:w-auto",
 							})}
 						>
 							{d.seeConditions}
