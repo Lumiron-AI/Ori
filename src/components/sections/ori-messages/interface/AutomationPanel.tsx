@@ -80,52 +80,52 @@ export function AutomationPanel() {
 	const d = t.dashboardMessages;
 
 	return (
-		<div className="flex flex-col gap-4">
-			<p className="font-display font-bold text-xl text-text-primary dark:text-text">
+		<div className="flex flex-col gap-3">
+			<p className="font-display font-bold text-base lg:text-xl text-text-primary dark:text-text">
 				{d.aiAgents}
 			</p>
 
-			<div className="flex flex-col gap-3">
+			<div className="flex flex-col gap-2">
 				{AGENTS.map((agent) => (
 					<div
 						key={agent.name}
-						className="bg-background-secondary dark:bg-dark-elevated rounded-2xl px-4 py-6 flex items-center gap-3"
+						className="bg-background-secondary dark:bg-dark-elevated rounded-2xl px-3 py-4 flex items-center gap-2"
 					>
 						{/* Platform logo */}
-						<div className="shrink-0 w-10 h-10 rounded-xl overflow-hidden">
+						<div className="shrink-0 w-8 h-8 rounded-lg overflow-hidden">
 							<PlatformLogo platform={agent.platform} />
 						</div>
 
 						{/* Name + restaurant */}
-						<div className="w-16 shrink-0">
-							<p className="font-display font-semibold text-sm text-text-primary dark:text-text">
+						<div className="w-12 shrink-0">
+							<p className="font-display font-semibold text-xs text-text-primary dark:text-text">
 								{agent.name}
 							</p>
-							<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
+							<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary truncate">
 								{agent.restaurant}
 							</p>
 						</div>
 
 						{/* Messages reçus */}
 						<div className="flex-1 text-center">
-							<p className="font-display font-medium text-sm text-text-primary dark:text-text">
+							<p className="font-display font-medium text-xs text-text-primary dark:text-text leading-tight">
 								{d.messagesReceived}
 							</p>
-							<p className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
+							<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
 								{agent.messagesReceived}
 							</p>
 						</div>
 
 						{/* Disponibilité */}
 						<div className="flex-1 text-center">
-							<p className="font-display font-medium text-sm text-text-primary dark:text-text">
+							<p className="font-display font-medium text-xs text-text-primary dark:text-text leading-tight">
 								{d.availability}
 							</p>
-							<div className="flex items-center justify-center gap-1.5 mt-0.5">
+							<div className="flex items-center justify-center gap-1 mt-0.5">
 								<div
-									className={`w-2 h-2 rounded-full shrink-0 ${STATUS_DOT[agent.availabilityStatus]}`}
+									className={`w-1.5 h-1.5 rounded-full shrink-0 ${STATUS_DOT[agent.availabilityStatus]}`}
 								/>
-								<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
+								<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary leading-tight">
 									{agent.statusKey ? d[agent.statusKey] : agent.availability}
 								</p>
 							</div>
@@ -133,18 +133,18 @@ export function AutomationPanel() {
 
 						{/* Toggle activité */}
 						<div className="shrink-0 text-center">
-							<p className="font-display font-medium text-sm text-text-primary dark:text-text mb-1">
+							<p className="font-display font-medium text-xs text-text-primary dark:text-text mb-1 leading-tight">
 								{d.activity}
 							</p>
 							<div
-								className={`w-9 h-5 rounded-full flex items-center px-0.5 mx-auto ${
+								className={`w-8 h-4 rounded-full flex items-center px-0.5 mx-auto ${
 									agent.active
 										? "bg-ori-message"
 										: "bg-background-tertiary dark:bg-dark-elevated"
 								}`}
 							>
 								<div
-									className={`w-3.5 h-3.5 rounded-full bg-text transition-transform ${
+									className={`w-3 h-3 rounded-full bg-text transition-transform ${
 										agent.active ? "translate-x-4" : "translate-x-0"
 									}`}
 								/>

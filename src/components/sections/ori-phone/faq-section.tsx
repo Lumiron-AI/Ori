@@ -46,7 +46,7 @@ export function FAQSection() {
 								variant: "ghost-primary",
 								size: "md",
 								className:
-									"sm:px-8 sm:text-lg sm:h-[50px] w-full sm:w-[292px] shadow-orange-btn-soft mt-6",
+									"sm:px-8 sm:text-lg sm:h-[50px] w-full sm:w-[292px] shadow-orange-btn-soft mt-6 sm:mt-0",
 							})}
 						>
 							{faq.seeAll}

@@ -20,7 +20,7 @@ export function PricingCardWhatsApp({
 	const annualPrice = Math.round(monthlyPrice * 12 * 0.9);
 
 	return (
-		<div className="bg-background-element dark:bg-dark-surface rounded-3xl px-7 py-6 flex flex-col gap-3.5 shadow-card h-full border border-transparent hover:border-ori-message transition-colors">
+		<div className="bg-background-element dark:bg-dark-surface rounded-3xl px-5 xs:px-7 py-5 xs:py-6 flex flex-col gap-3 xs:gap-3.5 shadow-card h-full border border-transparent hover:border-ori-message transition-colors">
 			{/* Title */}
 			<div>
 				<p className="font-display font-bold text-2xl text-text-heading dark:text-text">

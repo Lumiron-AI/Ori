@@ -54,7 +54,7 @@ export function OriMessagesHeroSection() {
 		<motion.section
 			ref={ref}
 			style={{ opacity }}
-			className="relative flex flex-col items-center justify-center text-center px-5 pt-[110px] sm:pt-[130px] md:pt-[90px] 3xl:pt-[170px] 3xl:pb-32 pb-16 sm:pb-20  overflow-hidden bg-background dark:bg-dark-bg"
+			className="relative flex flex-col items-center justify-center text-center px-5 pt-[80px] sm:pt-[130px] md:pt-[90px] 3xl:pt-[170px] 3xl:pb-32 pb-16 sm:pb-20 overflow-hidden bg-background dark:bg-dark-bg"
 		>
 			<div
 				aria-hidden
@@ -81,7 +81,7 @@ export function OriMessagesHeroSection() {
 					{d.titleAnd}
 					<span className="text-ori-message">{d.titleInstagram}</span>
 					{d.titleFor}
-					<span className="relative after:absolute after:bottom-[0px] after:left-0 after:w-full after:h-2 after:bg-ori-message after:opacity-60">
+					<span className="relative after:absolute after:bottom-[-8px] md:after:bottom-[0px] after:left-0 after:w-full after:h-2 after:bg-ori-message after:opacity-60">
 						{d.titleUnderline}
 					</span>
 					.
@@ -92,7 +92,7 @@ export function OriMessagesHeroSection() {
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="font-display font-semibold text-base sm:text-lg lg:text-2xl text-text-secondary dark:text-text-tertiary max-w-3xl py-4"
+					className="font-display font-semibold text-base sm:text-lg lg:text-2xl text-text-secondary dark:text-text-tertiary max-w-3xl pt-4 sm:py-4"
 				>
 					{d.subtitle}
 				</motion.p>
@@ -102,12 +102,12 @@ export function OriMessagesHeroSection() {
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="flex flex-col sm:flex-row gap-6 mt-2"
+					className="flex flex-col xs:flex-row gap-4 sm:gap-6 mt-2 flex-wrap justify-center"
 				>
 					{/* Instagram CTA */}
 					<Link
 						href="#use-case"
-						className="relative overflow-visible inline-flex items-center justify-center gap-3 h-[50px] px-8 rounded-2xl font-display font-bold text-lg text-text opacity-95 transition-[filter] hover:brightness-90 active:brightness-80"
+						className="relative overflow-visible inline-flex items-center justify-center gap-2 sm:gap-3 h-[46px] sm:h-[50px] px-6 sm:px-8 rounded-2xl font-display font-bold text-base sm:text-lg text-text opacity-95 transition-[filter] hover:brightness-90 active:brightness-80"
 						style={{
 							background:
 								"linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)",
@@ -129,7 +129,7 @@ export function OriMessagesHeroSection() {
 					{/* WhatsApp CTA */}
 					<Link
 						href="#use-case"
-						className="relative overflow-visible inline-flex items-center justify-center gap-3 h-[50px] px-8 rounded-2xl font-display font-bold text-lg text-text opacity-95 transition-[filter] hover:brightness-90 active:brightness-80"
+						className="relative overflow-visible inline-flex items-center justify-center gap-2 sm:gap-3 h-[46px] sm:h-[50px] px-6 sm:px-8 rounded-2xl font-display font-bold text-base sm:text-lg text-text opacity-95 transition-[filter] hover:brightness-90 active:brightness-80"
 						style={{ background: "linear-gradient(115deg, #2bad3d, #108821)" }}
 					>
 						<span
@@ -152,14 +152,14 @@ export function OriMessagesHeroSection() {
 					animate="show"
 					className="w-full mt-2 sm:mt-4"
 				>
-					<div className="flex flex-wrap justify-center gap-x-8 sm:gap-x-12 gap-y-4">
+					<div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 sm:gap-x-12 gap-y-4 justify-items-center mt-2">
 						{stats.map((stat, i) => (
-							<div key={i} className="flex flex-col items-center min-w-[10rem]">
+							<div key={i} className="flex flex-col items-center">
 								<div className="flex items-center gap-4">
 									<div className="w-1 h-8 sm:h-10 bg-ori-message rounded-full shrink-0" />
 									<AnimatedStatValue stat={stat} />
 								</div>
-								<span className="font-display font-normal text-xs sm:text-sm lg:text-base text-text-secondary dark:text-text-tertiary pl-3">
+								<span className="font-display font-normal text-xs sm:text-sm lg:text-base text-text-secondary dark:text-text-tertiary pl-3 max-w-[7rem] sm:max-w-none text-center">
 									{stat.label}
 								</span>
 							</div>

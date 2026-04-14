@@ -45,7 +45,7 @@ export function TrialCTASection() {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-					className="font-display font-bold text-xl xs:text-2xl md:text-3xl lg:text-4xl text-text-primary dark:text-text leading-tight 3xl:text-5xl"
+					className="font-display font-bold text-3xl sm:text-4xl lg:text-4xl text-text-primary dark:text-text leading-tight 3xl:text-5xl"
 				>
 					{trialCta.title1}{" "}
 					<span className="text-primary">{trialCta.titleHighlight}</span>{" "}
@@ -58,7 +58,7 @@ export function TrialCTASection() {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ delay: 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-					className="font-display font-semibold text-sm xs:text-base md:text-lg lg:text-2xl text-text-primary dark:text-text max-w-2xl"
+					className="font-display font-semibold text-base xs:text-lg md:text-lg lg:text-2xl text-text-primary dark:text-text max-w-2xl"
 				>
 					{trialCta.subtitle}
 				</motion.p>

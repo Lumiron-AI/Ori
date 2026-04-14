@@ -113,7 +113,7 @@ export function OriMessagesUseCaseSection() {
 					subtitle={d.subtitle}
 				/>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-[70px] md:max-w-[1000px] mx-auto">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-[70px] md:max-w-[1000px] mx-auto">
 					{d.cards.map((card, i) => (
 						<motion.div
 							key={card.platform}

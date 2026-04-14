@@ -451,6 +451,7 @@ export const translations = {
 				"Configurez Ori en quelques minutes et laissez-le gérer chaque message avec précision, selon vos règles.",
 			footer:
 				"Une gestion simplifiée pour vous concentrer sur l'essentiel : l'accueil de vos clients et la qualité de votre service.",
+			back: "Retour",
 			tabs: [
 				{
 					id: "setup",
@@ -1083,6 +1084,7 @@ export const translations = {
 				"Set up Ori in minutes and let it handle every message with precision, according to your rules.",
 			footer:
 				"Simplified management so you can focus on what matters: welcoming your customers and delivering quality service.",
+			back: "Back",
 			tabs: [
 				{
 					id: "setup",

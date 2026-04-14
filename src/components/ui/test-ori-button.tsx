@@ -48,7 +48,7 @@ export function TestOriButton() {
 			{/* Main button */}
 			<button
 				onClick={handleMain}
-				className="inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-primary text-text font-display font-bold text-base sm:text-lg rounded-2xl h-[46px] sm:h-[52px] w-full sm:w-auto px-5 sm:px-7 shadow-orange-btn hover:bg-primary/90 active:bg-primary/80 transition-colors"
+				className="inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-primary text-text font-display font-bold text-base sm:text-lg rounded-2xl h-[46px] sm:h-[52px] sm:w-auto px-8 sm:px-10 shadow-orange-btn hover:bg-primary/90 active:bg-primary/80 transition-colors"
 			>
 				<Phone size={18} strokeWidth={2.5} className="shrink-0" />
 				{isActive ? testOriButton.stop : testOriButton.start}

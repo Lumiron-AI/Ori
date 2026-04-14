@@ -56,7 +56,7 @@ export function Footer() {
 			/>
 
 			{/* Main content */}
-			<div className="py-8 md:py-10 lg:py-12 px-5 md:px-0">
+			<div className="py-8 md:py-10 lg:py-12 px-8 md:px-0">
 				<div className="flex flex-col md:flex-row gap-8 md:gap-6 lg:gap-10 items-start">
 					{/* Brand */}
 					<div className="w-full md:flex-[2] flex flex-col gap-4">
@@ -86,9 +86,9 @@ export function Footer() {
 					</div>
 
 					{/* Nav + Legal + Social — responsive grid on mobile */}
-					<div className="w-full grid grid-cols-1 sm:grid-cols-3 md:contents gap-6 md:gap-0">
+					<div className="w-full grid grid-cols-1 sm:grid-cols-3 md:contents gap-12 md:gap-0">
 						{/* Navigation */}
-						<div className="flex flex-col gap-3 sm:gap-4 md:flex-1">
+						<div className="flex flex-col gap-5 sm:gap-4 md:flex-1">
 							<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
 								{footer.navTitle}
 							</p>
@@ -106,7 +106,7 @@ export function Footer() {
 						</div>
 
 						{/* Legal */}
-						<div className="flex flex-col gap-3 sm:gap-4 md:flex-1">
+						<div className="flex flex-col gap-5 sm:gap-4 md:flex-1">
 							<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
 								{footer.legalTitle}
 							</p>
@@ -180,7 +180,7 @@ export function Footer() {
 
 			{/* Bottom bar */}
 			<div className="border-t border-text-secondary/20 dark:border-text-tertiary/50">
-				<div className="py-6 md:py-8 px-5 md:px-0 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
+				<div className="py-6 md:py-8 px-8 md:px-0 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
 					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
 						{footer.copyright}
 					</p>

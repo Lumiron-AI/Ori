@@ -43,7 +43,7 @@ export function OriMessagesTrialCTASection() {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-					className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-text-primary dark:text-text leading-tight"
+					className="font-display font-bold text-3xl sm:text-4xl lg:text-4xl text-text-primary dark:text-text leading-tight"
 				>
 					{d.titlePrefix}
 					<span className="text-ori-message">{d.titleHighlight}</span>
@@ -55,7 +55,7 @@ export function OriMessagesTrialCTASection() {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ delay: 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-					className="font-display font-semibold text-sm sm:text-lg lg:text-xl text-text-primary dark:text-text max-w-2xl"
+					className="font-display font-semibold text-base sm:text-lg lg:text-xl text-text-primary dark:text-text max-w-2xl"
 				>
 					{d.subtitle}
 				</motion.p>

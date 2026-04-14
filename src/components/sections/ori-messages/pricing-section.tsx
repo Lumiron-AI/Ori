@@ -23,7 +23,7 @@ export function OriMessagesPricingSection() {
 			id="pricing"
 			ref={ref}
 			style={{ opacity }}
-			className="bg-background dark:bg-dark-bg py-16 sm:py-20 px-5"
+			className="bg-background dark:bg-dark-bg py-16 md:py-20 lg:py-24 px-5 md:px-10 3xl:px-16"
 		>
 			<div className="max-w-8xl lg:max-w-9xl mx-auto">
 				<SectionHeaderMessages
@@ -32,7 +32,7 @@ export function OriMessagesPricingSection() {
 					subtitle={d.subtitle}
 				/>
 
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-12">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
 					<motion.div
 						initial={{ opacity: 0, y: 24 }}
 						whileInView={{ opacity: 1, y: 0 }}

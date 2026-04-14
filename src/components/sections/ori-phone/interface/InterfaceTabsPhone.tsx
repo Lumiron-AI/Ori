@@ -100,7 +100,7 @@ export function InterfaceTabsPhone() {
 						{mobileActiveTab !== null && (
 							<motion.div
 								key={mobileActiveTab}
-								className="fixed inset-0 z-[60] bg-background dark:bg-dark-bg overflow-hidden lg:hidden"
+								className="fixed inset-0 z-[60] bg-background dark:bg-dark-bg overflow-y-auto lg:hidden"
 								initial={{ x: "100%" }}
 								animate={{ x: 0 }}
 								exit={{ x: "100%" }}

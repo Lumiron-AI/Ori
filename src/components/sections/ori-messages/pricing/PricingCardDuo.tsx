@@ -20,7 +20,7 @@ export function PricingCardDuo({
 	const annualPrice = Math.round(monthlyPrice * 12 * 0.9);
 
 	return (
-		<div className="relative bg-background-element dark:bg-dark-surface rounded-3xl px-7 py-6 flex flex-col gap-3.5 shadow-card h-full border border-transparent hover:border-ori-message transition-colors">
+		<div className="relative bg-background-element dark:bg-dark-surface rounded-3xl px-5 xs:px-7 py-5 xs:py-6 flex flex-col gap-3 xs:gap-3.5 shadow-card h-full border border-transparent hover:border-ori-message transition-colors">
 			{/* Badge */}
 			<div className="absolute -top-4 left-1/2 -translate-x-1/2">
 				<div className="bg-[#E2E5FF] dark:bg-dark-bg -z-10 border-2 border-ori-message rounded-xl px-5 py-1">

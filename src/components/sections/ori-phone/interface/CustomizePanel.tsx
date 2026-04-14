@@ -27,14 +27,14 @@ export function CustomizePanel() {
 			<DashboardTabs activeIndex={1} />
 			<div className="flex flex-col gap-2 lg:gap-3">
 				{/* Voix de l'agent */}
-				<div className="bg-background-secondary dark:bg-dark-elevated rounded-2xl flex flex-col xs:flex-row xs:items-center xs:justify-between p-2 xs:p-3 lg:p-4 gap-2 xs:gap-0">
+				<div className="bg-background-secondary dark:bg-dark-elevated rounded-2xl flex flex-col lg:flex-row lg:items-center lg:justify-between p-3 lg:p-4 gap-2 lg:gap-0">
 					<div className="flex items-center gap-2 lg:gap-3">
 						<FieldIconBox icon={RiVolumeUpLine} />
-						<p className="font-display font-medium text-xs xs:text-sm lg:text-base text-text-primary dark:text-text">
+						<p className="font-display font-medium text-xs lg:text-base text-text-primary dark:text-text">
 							{d.voiceAgent}
 						</p>
 					</div>
-					<div className="flex flex-wrap gap-3 xs:gap-5 items-center mt-1 xs:mt-0">
+					<div className="flex flex-wrap gap-3 items-center">
 						<p className="font-display font-normal text-xs lg:text-sm text-text-secondary dark:text-text-tertiary">
 							{d.voiceGender}
 						</p>
@@ -64,14 +64,14 @@ export function CustomizePanel() {
 				</div>
 
 				{/* Phrase d'accueil */}
-				<div className="bg-background-secondary dark:bg-dark-elevated rounded-2xl p-2 lg:p-4">
+				<div className="bg-background-secondary dark:bg-dark-elevated rounded-2xl p-3 lg:p-4">
 					<div className="flex items-center gap-2 lg:gap-3 mb-2 lg:mb-3">
 						<FieldIconBox icon={RiMessage3Line} />
 						<p className="font-display font-medium text-xs lg:text-base text-text-primary dark:text-text">
 							{d.greeting}
 						</p>
 					</div>
-					<div className="border border-text-secondary/30 dark:border-dark-overlay rounded bg-background-element dark:bg-dark-overlay px-3 py-2">
+					<div className="border border-text-secondary/30 dark:border-dark-overlay rounded-xl bg-background-element dark:bg-dark-overlay px-3 py-2">
 						<p className="font-display font-normal text-sm lg:text-base text-text-secondary dark:text-text-tertiary">
 							Bonjour, je suis Ori, comment puis-je vous aider&nbsp;?
 						</p>
@@ -79,7 +79,7 @@ export function CustomizePanel() {
 				</div>
 
 				{/* Transfert */}
-				<div className="bg-background-secondary dark:bg-dark-elevated rounded-2xl p-2 lg:p-4 gap-6">
+				<div className="bg-background-secondary dark:bg-dark-elevated rounded-2xl p-3 lg:p-4 gap-6">
 					<div className="flex items-center gap-2 lg:gap-3 mb-2 lg:mb-3">
 						<FieldIconBox icon={RiVolumeUpLine} />
 						<p className="font-display font-medium text-xs lg:text-base text-text-primary dark:text-text">

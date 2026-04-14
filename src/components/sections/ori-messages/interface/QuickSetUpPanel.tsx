@@ -1,7 +1,10 @@
 "use client";
 
 import { Settings, Globe, MapPin, Mail, Phone } from "lucide-react";
+import { FiInfo, FiSettings, FiList } from "react-icons/fi";
 import { useLocale } from "@/context/locale-context";
+
+const TAB_ICONS = [FiInfo, FiSettings, FiList];
 
 export function QuickSetUpPanel() {
 	const { t } = useLocale();
@@ -9,35 +12,41 @@ export function QuickSetUpPanel() {
 	const { fields } = d;
 
 	return (
-		<div className="flex flex-col gap-4">
+		<div className="flex flex-col gap-3">
 			{/* Header */}
-			<div className="mb-1">
-				<p className="font-display font-medium text-xl text-text-primary dark:text-text">
+			<div className="mb-0.5">
+				<p className="font-display font-medium text-base lg:text-xl text-text-primary dark:text-text">
 					{d.welcome}
 				</p>
-				<p className="font-display font-normal text-base text-text-secondary dark:text-text-tertiary mt-0.5">
+				<p className="font-display font-normal text-xs lg:text-sm text-text-secondary dark:text-text-tertiary mt-0.5">
 					{d.subtitle}
 				</p>
 			</div>
 
 			{/* Tabs */}
-			<div className="flex items-center gap-2">
-				{d.tabs.map((tab, i) => (
-					<button
-						key={tab}
-						className={`px-4 py-2 rounded-xl font-display font-medium text-sm cursor-default ${
-							i === 0
-								? "bg-ori-message text-text"
-								: "text-text-secondary dark:text-text-tertiary"
-						}`}
-					>
-						{tab}
-					</button>
-				))}
+			<div className="flex gap-1 mb-1">
+				{d.tabs.map((tab, i) => {
+					const Icon = TAB_ICONS[i];
+					return (
+						<div
+							key={tab}
+							className={`px-2.5 xs:px-3 lg:px-4 py-2.5 xs:py-1.5 lg:py-2 rounded-xl font-display font-medium text-xs lg:text-sm whitespace-nowrap cursor-default ${
+								i === 0
+									? "bg-ori-message text-text"
+									: "text-text-secondary dark:text-text-tertiary"
+							}`}
+						>
+							<span className="xs:hidden flex items-center justify-center">
+								<Icon size={14} />
+							</span>
+							<span className="hidden xs:inline">{tab}</span>
+						</div>
+					);
+				})}
 			</div>
 
 			{/* Fields */}
-			<div className="flex flex-col gap-3 mt-1">
+			<div className="flex flex-col gap-2">
 				{[
 					{ label: fields.name, value: "La Table du Phocéen", Icon: Settings },
 					{
@@ -53,26 +62,26 @@ export function QuickSetUpPanel() {
 				].map(({ label, value, Icon }) => (
 					<div
 						key={label}
-						className="bg-background-secondary dark:bg-dark-elevated rounded-xl p-3 flex items-center gap-3"
+						className="bg-background-secondary dark:bg-dark-elevated rounded-xl p-2 lg:p-3 flex items-center gap-2 lg:gap-3"
 					>
-						<div className="bg-background-tertiary dark:bg-dark-elevated rounded-lg p-2 shrink-0">
+						<div className="bg-background-tertiary dark:bg-dark-elevated rounded-lg p-1.5 lg:p-2 shrink-0">
 							<Icon
-								size={18}
+								size={14}
 								className="text-text-secondary dark:text-text-tertiary"
 							/>
 						</div>
 						<div className="flex flex-col min-w-0">
-							<span className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
+							<span className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
 								{label}
 							</span>
-							<span className="font-display font-medium text-base text-text-primary dark:text-text truncate">
+							<span className="font-display font-medium text-xs lg:text-sm text-text-primary dark:text-text truncate">
 								{value}
 							</span>
 						</div>
 					</div>
 				))}
 
-				<div className="grid grid-cols-2 gap-3">
+				<div className="grid grid-cols-2 gap-2">
 					{[
 						{
 							label: fields.email,
@@ -83,19 +92,19 @@ export function QuickSetUpPanel() {
 					].map(({ label, value, Icon }) => (
 						<div
 							key={label}
-							className="bg-background-secondary dark:bg-dark-elevated rounded-xl p-3 flex items-center gap-3"
+							className="bg-background-secondary dark:bg-dark-elevated rounded-xl p-2 lg:p-3 flex items-center gap-2 lg:gap-3"
 						>
-							<div className="bg-background-tertiary dark:bg-dark-elevated rounded-lg p-2 shrink-0">
+							<div className="bg-background-tertiary dark:bg-dark-elevated rounded-lg p-1.5 lg:p-2 shrink-0">
 								<Icon
-									size={18}
+									size={14}
 									className="text-text-secondary dark:text-text-tertiary"
 								/>
 							</div>
 							<div className="flex flex-col min-w-0">
-								<span className="font-display font-normal text-sm text-text-secondary dark:text-text-tertiary">
+								<span className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
 									{label}
 								</span>
-								<span className="font-display font-medium text-base text-text-primary dark:text-text truncate">
+								<span className="font-display font-medium text-xs lg:text-sm text-text-primary dark:text-text truncate">
 									{value}
 								</span>
 							</div>
