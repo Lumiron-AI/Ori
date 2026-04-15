@@ -54,7 +54,7 @@ export function OriMessagesHeroSection() {
 		<motion.section
 			ref={ref}
 			style={{ opacity }}
-			className="relative flex flex-col items-center justify-center text-center px-5 pt-[80px] sm:pt-[130px] md:pt-[90px] 3xl:pt-[170px] 3xl:pb-32 pb-16 sm:pb-20 overflow-hidden bg-background dark:bg-dark-bg"
+			className="relative flex flex-col items-center justify-center text-center px-5 pt-[80px] sm:pt-[130px] md:pt-[90px] 3xl:pt-[170px] 3xl:pb-32 pb-12 sm:pb-20 overflow-hidden bg-background dark:bg-dark-bg"
 		>
 			<div
 				aria-hidden

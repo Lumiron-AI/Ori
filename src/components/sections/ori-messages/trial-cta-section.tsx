@@ -12,7 +12,7 @@ export function OriMessagesTrialCTASection() {
 	return (
 		<motion.section
 			id="trial"
-			className="relative overflow-hidden bg-background-secondary dark:bg-dark-surface py-16 my-16 sm:py-24 px-5 text-center"
+			className="relative overflow-hidden bg-background-secondary dark:bg-dark-surface py-12 my-12 sm:py-24 px-5 text-center"
 		>
 			{/* Ambient lights */}
 			<div

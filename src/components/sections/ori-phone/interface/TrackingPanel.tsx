@@ -1,6 +1,6 @@
 "use client";
 
-import { RiEyeLine, RiDownload2Line } from "react-icons/ri";
+import { Eye, Download } from "lucide-react";
 import { useLocale } from "@/context/locale-context";
 
 const CALL_HISTORY = [
@@ -35,86 +35,94 @@ export function TrackingPanel() {
 	const d = t.dashboardPhone;
 
 	return (
-		<>
-			<p className="font-display font-bold text-base lg:text-2xl text-text-primary dark:text-text mb-3 lg:mb-5">
+		<div className="flex flex-col gap-3">
+			<p className="font-display font-bold text-base lg:text-xl text-text-primary dark:text-text">
 				{d.trackingTitle}
 			</p>
 
 			{/* Stat cards */}
-			<div className="grid grid-cols-2 gap-2 lg:gap-3 mb-3 lg:mb-4">
+			<div className="grid grid-cols-2 gap-2 lg:gap-3">
 				{[
 					{ label: d.totalCalls, value: "12" },
 					{ label: d.avgDuration, value: "0:28" },
-				].map((s) => (
+				].map((stat) => (
 					<div
-						key={s.label}
-						className="bg-background-secondary dark:bg-dark-elevated rounded-2xl p-2 lg:p-4"
+						key={stat.label}
+						className="bg-background-secondary dark:bg-dark-elevated rounded-2xl p-3 lg:p-4 flex flex-col gap-1"
 					>
-						<p className="font-display font-normal text-xs lg:text-sm text-text-secondary dark:text-text-tertiary mb-0.5">
-							{s.label}
-						</p>
-						<p className="font-display font-semibold text-base lg:text-2xl text-text-primary dark:text-text">
-							{s.value}
-						</p>
+						<span className="font-display font-normal text-xs lg:text-sm text-text-secondary dark:text-text-tertiary leading-tight">
+							{stat.label}
+						</span>
+						<span className="font-display font-semibold text-xl lg:text-2xl text-text-primary dark:text-text">
+							{stat.value}
+						</span>
 					</div>
 				))}
 			</div>
 
-			{/* Call history table */}
-			<div className="bg-background-secondary dark:bg-dark-elevated rounded-2xl overflow-hidden">
-				<div className="overflow-x-auto">
-					<div className="min-w-[260px] xs:min-w-[300px] p-2">
-						<div className="grid grid-cols-[1fr_1fr_40px_56px] bg-dark-elevated px-2 lg:px-4 py-2 lg:py-3 gap-1 lg:gap-3">
-							{d.tableHeaders.map((h) => (
-								<p
-									key={h}
-									className="font-display font-semibold text-xs lg:text-sm text-text"
+			{/* History table */}
+			<div className="rounded-2xl overflow-hidden">
+				<table className="w-full">
+					<thead className="bg-text-secondary">
+						<tr>
+							{d.tableHeaders.map((col, i) => (
+								<th
+									key={col}
+									className={`font-display font-semibold text-xs text-text px-3 py-2 ${i === 0 ? "text-left" : "text-center"}`}
 								>
-									{h}
-								</p>
+									{col}
+								</th>
 							))}
-						</div>
+						</tr>
+					</thead>
+					<tbody className="bg-background-secondary dark:bg-dark-elevated divide-y divide-background-tertiary dark:divide-dark-overlay">
 						{CALL_HISTORY.map((row, i) => (
-							<div
-								key={i}
-								className={`grid grid-cols-[1fr_1fr_40px_56px] px-2 lg:px-4 py-1.5 lg:py-3 gap-1 lg:gap-3 items-center ${
-									i < CALL_HISTORY.length - 1
-										? "border-b border-background-tertiary dark:border-dark-overlay"
-										: ""
-								}`}
-							>
-								<div>
-									<p className="font-display font-normal text-xs lg:text-sm text-text-primary dark:text-text">
+							<tr key={i}>
+								<td className="px-3 py-2">
+									<p className="font-display font-normal text-xs text-text-primary dark:text-text">
 										{row.date}
 									</p>
 									<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
 										{row.time}
 									</p>
-								</div>
-								<p className="font-display font-normal text-xs lg:text-sm text-text-primary dark:text-text truncate">
-									{row.number}
-								</p>
-								<p className="font-display font-normal text-xs lg:text-sm text-text-primary dark:text-text">
-									{row.duration}
-								</p>
-								<div className="flex gap-1">
-									{[RiEyeLine, RiDownload2Line].map((Icon, j) => (
+								</td>
+								<td className="px-3 py-2 text-center">
+									<p className="font-display font-normal text-xs text-text-primary dark:text-text truncate">
+										{row.number}
+									</p>
+								</td>
+								<td className="px-3 py-2 text-center">
+									<p className="font-display font-normal text-xs text-text-primary dark:text-text">
+										{row.duration}
+									</p>
+								</td>
+								<td className="px-3 py-2 text-center">
+									<div className="flex items-center justify-center gap-1">
 										<button
-											key={j}
-											className="w-6 h-6 lg:w-8 lg:h-8 rounded-full bg-background-tertiary dark:bg-dark-overlay flex items-center justify-center hover:bg-background-secondary dark:hover:bg-dark-elevated transition-colors"
+											aria-label="View"
+											className="w-6 h-6 rounded-full bg-background-tertiary dark:bg-dark-overlay flex items-center justify-center"
 										>
-											<Icon
-												size={12}
-												className="text-text-primary dark:text-text"
+											<Eye
+												size={11}
+												className="text-text-secondary dark:text-text-tertiary"
 											/>
 										</button>
-									))}
-								</div>
-							</div>
+										<button
+											aria-label="Download"
+											className="w-6 h-6 rounded-full bg-background-tertiary dark:bg-dark-overlay flex items-center justify-center"
+										>
+											<Download
+												size={11}
+												className="text-text-secondary dark:text-text-tertiary"
+											/>
+										</button>
+									</div>
+								</td>
+							</tr>
 						))}
-					</div>
-				</div>
+					</tbody>
+				</table>
 			</div>
-		</>
+		</div>
 	);
 }

@@ -117,8 +117,8 @@ export function AutomationPanel() {
 						</div>
 
 						{/* Disponibilité */}
-						<div className="flex-1 text-center">
-							<p className="font-display font-medium text-xs text-text-primary dark:text-text leading-tight">
+						<div className="flex-1 text-center hidden sm:block">
+							<p className="font-display font-medium text-xs text-text-primary dark:text-text leading-tight mb-0.5">
 								{d.availability}
 							</p>
 							<div className="flex items-center justify-center gap-1 mt-0.5">

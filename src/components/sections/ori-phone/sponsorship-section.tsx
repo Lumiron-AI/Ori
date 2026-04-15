@@ -21,7 +21,7 @@ export function SponsorshipSection() {
 				id="sponsorship"
 				ref={ref}
 				style={{ opacity }}
-				className="bg-background dark:bg-dark-bg py-16 md:py-20 lg:py-24 px-5 md:px-10 3xl:px-16"
+				className="bg-background dark:bg-dark-bg py-12 md:py-20 lg:py-24 px-5 md:px-10 3xl:px-16"
 			>
 				<div className="max-w-8xl lg:max-w-9xl mx-auto">
 					<SectionHeader
@@ -52,7 +52,7 @@ export function SponsorshipSection() {
 									<div className="w-24 h-0.5 bg-primary" />
 								</div>
 
-								<div className="w-full bg-dark-elevated dark:bg-dark-surface border border-transparent dark:border-text-secondary/30 rounded-4xl flex items-center justify-center !py-8 !xs:py-10 md:py-12 px-4 xs:px-6">
+								<div className="w-full bg-dark-elevated dark:bg-dark-surface border border-transparent dark:border-text-secondary/30 rounded-4xl flex items-center justify-center py-8 sm:py-12 px-4 xs:px-6">
 									<p className="font-display font-bold text-xl xs:text-2xl md:text-3xl text-center">
 										<span className="text-primary">{card.highlight}</span>
 										<span className="text-text">{card.rest}</span>

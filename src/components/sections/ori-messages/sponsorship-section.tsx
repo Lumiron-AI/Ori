@@ -21,7 +21,7 @@ export function OriMessagesSponsorshipSection() {
 				id="sponsorship"
 				ref={ref}
 				style={{ opacity }}
-				className="bg-background dark:bg-dark-bg py-16 sm:py-20 px-5"
+				className="bg-background dark:bg-dark-bg py-12 sm:py-20 px-5"
 			>
 				<div className="max-w-8xl lg:max-w-9xl mx-auto">
 					<SectionHeaderMessages

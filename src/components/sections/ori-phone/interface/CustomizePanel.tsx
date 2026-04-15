@@ -72,7 +72,7 @@ export function CustomizePanel() {
 						</p>
 					</div>
 					<div className="border border-text-secondary/30 dark:border-dark-overlay rounded-xl bg-background-element dark:bg-dark-overlay px-3 py-2">
-						<p className="font-display font-normal text-sm lg:text-base text-text-secondary dark:text-text-tertiary">
+						<p className="font-display font-normal text-xs lg:text-sm text-text-secondary dark:text-text-tertiary">
 							Bonjour, je suis Ori, comment puis-je vous aider&nbsp;?
 						</p>
 					</div>

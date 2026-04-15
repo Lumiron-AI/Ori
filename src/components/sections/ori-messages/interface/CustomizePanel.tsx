@@ -111,7 +111,7 @@ export function CustomizePanel() {
 									className={`w-8 h-4 rounded-full flex items-center px-0.5 shrink-0 ${
 										on
 											? "bg-ori-message"
-											: "bg-background-tertiary dark:bg-dark-surface"
+											: "bg-background-tertiary dark:bg-text-secondary"
 									}`}
 								>
 									<div

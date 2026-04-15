@@ -45,6 +45,16 @@ export function InterfaceTabsMessage() {
 		};
 	}, [mobileActiveTab]);
 
+	useEffect(() => {
+		function handleResize() {
+			if (window.innerWidth >= 1024) {
+				document.body.style.overflow = "";
+			}
+		}
+		window.addEventListener("resize", handleResize, { passive: true });
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
 	function handleTabClick(id: TabId) {
 		if (active === id) {
 			setActive(null);

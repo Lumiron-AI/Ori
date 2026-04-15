@@ -48,7 +48,7 @@ export function Footer() {
 	}
 
 	return (
-		<footer className="relative mt-16 overflow-hidden bg-background dark:bg-dark-bg border-t border-text-secondary/20 dark:border-text-tertiary/50 md:mx-24 3xl:mx-32">
+		<footer className="relative mt-12 overflow-hidden bg-background dark:bg-dark-bg border-t border-text-secondary/20 dark:border-text-tertiary/50 md:mx-24 3xl:mx-32">
 			{/* Lights glow effect (dark mode only) */}
 			<div
 				aria-hidden

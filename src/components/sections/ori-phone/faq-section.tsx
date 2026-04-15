@@ -21,7 +21,7 @@ export function FAQSection() {
 			id="faq"
 			ref={ref}
 			style={{ opacity }}
-			className="bg-background dark:bg-dark-bg py-16 md:py-20 lg:py-24 px-5 md:px-10 3xl:px-16"
+			className="bg-background dark:bg-dark-bg py-12 md:py-20 lg:py-24 px-5 md:px-10 3xl:px-16"
 		>
 			<div className="max-w-8xl lg:max-w-9xl mx-auto">
 				<div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
