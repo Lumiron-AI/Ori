@@ -120,7 +120,7 @@ export function OriPhoneHeroSection() {
 						{hero.stats.map((stat, i) => (
 							<div
 								key={i}
-								className="flex flex-col items-center min-w-[7rem] xs:min-w-[8rem] md:min-w-[10rem]"
+								className="flex flex-col items-center w-[7rem] xs:w-[8rem] md:w-[10rem]"
 							>
 								<div className="flex items-center gap-2 xs:gap-4">
 									<div className="w-1 h-6 xs:h-7 md:h-10 bg-primary rounded-full shrink-0" />

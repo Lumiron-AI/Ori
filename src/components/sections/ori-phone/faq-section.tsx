@@ -40,13 +40,14 @@ export function FAQSection() {
 							className="mb-0"
 						/>
 
+						{/* Button visible only on lg+ (left column) */}
 						<Link
 							href="/contact"
 							className={buttonClass({
 								variant: "ghost-primary",
 								size: "md",
 								className:
-									"sm:px-8 sm:text-lg sm:h-[50px] w-full sm:w-[292px] shadow-orange-btn-soft mt-6 sm:mt-0",
+									"hidden lg:inline-flex sm:px-8 sm:text-lg sm:h-[50px] w-fit sm:w-[292px] dark:shadow-orange-btn-soft mt-6",
 							})}
 						>
 							{faq.seeAll}
@@ -103,6 +104,21 @@ export function FAQSection() {
 								</div>
 							</motion.div>
 						))}
+
+						{/* Button visible only on mobile/tablet (below accordion) */}
+						<div className="lg:hidden flex justify-center mt-6">
+							<Link
+								href="/contact"
+								className={buttonClass({
+									variant: "ghost-primary",
+									size: "md",
+									className:
+										"sm:px-8 sm:text-lg sm:h-[50px] w-fit sm:w-[292px] dark:shadow-orange-btn-soft",
+								})}
+							>
+								{faq.seeAll}
+							</Link>
+						</div>
 					</div>
 				</div>
 			</div>

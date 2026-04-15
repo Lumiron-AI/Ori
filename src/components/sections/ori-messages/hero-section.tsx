@@ -154,7 +154,7 @@ export function OriMessagesHeroSection() {
 				>
 					<div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 sm:gap-x-12 gap-y-4 justify-items-center mt-2">
 						{stats.map((stat, i) => (
-							<div key={i} className="flex flex-col items-center">
+							<div key={i} className="flex flex-col items-center w-[7rem] sm:w-[10rem]">
 								<div className="flex items-center gap-4">
 									<div className="w-1 h-8 sm:h-10 bg-ori-message rounded-full shrink-0" />
 									<AnimatedStatValue stat={stat} />

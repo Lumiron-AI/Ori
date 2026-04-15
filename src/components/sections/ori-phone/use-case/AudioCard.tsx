@@ -102,7 +102,7 @@ export function AudioCard({
 	const { audioCard } = t;
 
 	// Index of the currently displayed tag group (-1 = none yet)
-	const groupIdx = playing ? activeGroupIndex(tagGroups, currentTime) : -1;
+	const groupIdx = currentTime > 0 || playing ? activeGroupIndex(tagGroups, currentTime) : -1;
 
 	function stopTicker() {
 		if (tickerRef.current !== null) {
@@ -162,7 +162,10 @@ export function AudioCard({
 		if (!el) return;
 
 		if (playing) {
-			reset();
+			// Pause — conserve la position
+			stopTicker();
+			el.pause();
+			setPlaying(false);
 			return;
 		}
 
@@ -175,7 +178,7 @@ export function AudioCard({
 			})
 			.catch(() => {
 				setPlaying(true);
-				startSimulatedTicker(loadedDurationRef.current > 0 ? loadedDurationRef.current : simulatedDuration);
+				startSimulatedTicker(loadedDurationRef.current > 0 ? loadedDurationRef.current : simulatedDuration, simTimeRef.current);
 			});
 	}
 
@@ -235,6 +238,34 @@ export function AudioCard({
 		};
 		window.addEventListener("mousemove", onMouseMove);
 		window.addEventListener("mouseup", onMouseUp);
+	}
+
+	function handleProgressTouchStart(e: React.TouchEvent) {
+		e.preventDefault();
+		isDraggingRef.current = true;
+		stopTicker();
+		seekToRatio(getRatioFromPointer(e.touches[0].clientX));
+
+		const onTouchMove = (ev: TouchEvent) => {
+			if (!isDraggingRef.current) return;
+			seekToRatio(getRatioFromPointer(ev.touches[0].clientX));
+		};
+		const onTouchEnd = () => {
+			isDraggingRef.current = false;
+			window.removeEventListener("touchmove", onTouchMove);
+			window.removeEventListener("touchend", onTouchEnd);
+
+			if (playing) {
+				const el = audioRef.current;
+				if (el && duration > 0) {
+					startRealTicker();
+				} else {
+					startSimulatedTicker(activeDuration, simTimeRef.current);
+				}
+			}
+		};
+		window.addEventListener("touchmove", onTouchMove, { passive: false });
+		window.addEventListener("touchend", onTouchEnd);
 	}
 	const progress =
 		activeDuration > 0
@@ -306,6 +337,7 @@ export function AudioCard({
 				<div
 					className="flex-1 relative flex items-center cursor-pointer py-2 -my-2"
 					onMouseDown={handleProgressMouseDown}
+					onTouchStart={handleProgressTouchStart}
 				>
 					<div
 						ref={progressBarRef}
@@ -320,6 +352,11 @@ export function AudioCard({
 							style={{ width: `${progress}%` }}
 						/>
 					</div>
+					{/* Thumb — rond orange style YouTube */}
+					<div
+						className="absolute w-3.5 h-3.5 rounded-full bg-primary shadow-orange-btn -translate-x-1/2 pointer-events-none"
+						style={{ left: `${progress}%` }}
+					/>
 				</div>
 
 				<span

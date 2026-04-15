@@ -123,13 +123,26 @@ export function Header() {
 					</div>
 
 					{/* Mobile toggle */}
-					<button
-						className="md:hidden text-text-primary dark:text-text justify-self-end min-w-[44px] min-h-[44px] flex items-center justify-center"
-						onClick={() => setOpen((v) => !v)}
-						aria-label={header.toggleMenu}
-					>
-						{open ? <X size={22} /> : <Menu size={22} />}
-					</button>
+					<div className="md:hidden flex items-center justify-end gap-1">
+						<button
+							onClick={toggle}
+							aria-label={header.toggleTheme}
+							className="min-w-[44px] min-h-[44px] flex items-center justify-center text-text-secondary dark:text-text-tertiary hover:text-text-primary dark:hover:text-text transition-colors"
+						>
+							{theme === "dark" ? (
+								<Sun size={18} strokeWidth={1.5} />
+							) : (
+								<Moon size={18} strokeWidth={1.5} />
+							)}
+						</button>
+						<button
+							className="text-text-primary dark:text-text min-w-[44px] min-h-[44px] flex items-center justify-center"
+							onClick={() => setOpen((v) => !v)}
+							aria-label={header.toggleMenu}
+						>
+							{open ? <X size={22} /> : <Menu size={22} />}
+						</button>
+					</div>
 				</div>
 
 				{/* Mobile menu */}
@@ -161,17 +174,6 @@ export function Header() {
 								>
 									{header.myAccount}
 								</Link>
-								<button
-									onClick={toggle}
-									aria-label={header.toggleTheme}
-									className="w-[44px] h-[44px] mx-3 flex items-center justify-center text-text-secondary dark:text-text-tertiary"
-								>
-									{theme === "dark" ? (
-										<Sun size={20} strokeWidth={1.5} />
-									) : (
-										<Moon size={20} strokeWidth={1.5} />
-									)}
-								</button>
 							</div>
 							<div className="flex justify-center my-4">
 								<Link

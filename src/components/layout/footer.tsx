@@ -122,56 +122,60 @@ export function Footer() {
 						</div>
 
 						{/* Social */}
-						<div className="flex flex-col items-start sm:items-end gap-3 sm:gap-4 md:flex-1">
+						<div className="flex flex-col items-start sm:items-end gap-4 sm:gap-4 md:flex-1">
 							<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
 								{footer.socialTitle}
 							</p>
-							<div className="flex gap-2">
-								{SOCIAL.map(({ label, href, icon: Icon }) => (
-									<a
-										key={label}
-										href={href}
-										target="_blank"
-										rel="noopener noreferrer"
-										aria-label={label}
-										className={`w-10 h-10 rounded-full bg-background-secondary dark:bg-dark-chip flex items-center justify-center text-text-primary dark:text-text transition-colors ${isMessages ? "hover:bg-ori-message hover:text-text dark:hover:bg-ori-message" : "hover:bg-primary dark:hover:bg-primary hover:text-text"}`}
+							<div className="flex w-full justify-between">
+								<div className="flex gap-2">
+									{SOCIAL.map(({ label, href, icon: Icon }) => (
+										<a
+											key={label}
+											href={href}
+											target="_blank"
+											rel="noopener noreferrer"
+											aria-label={label}
+											className={`w-10 h-10 rounded-full bg-background-secondary dark:bg-dark-chip flex items-center justify-center text-text-primary dark:text-text transition-colors ${isMessages ? "hover:bg-ori-message hover:text-text dark:hover:bg-ori-message" : "hover:bg-primary dark:hover:bg-primary hover:text-text"}`}
+										>
+											<Icon size={18} strokeWidth={1.75} />
+										</a>
+									))}
+								</div>
+								{/* Language toggle */}
+								<div
+									className="w-fit font-display font-semibold text-sm flex gap-2 items-center"
+									aria-label={footer.changeLang}
+								>
+									<button
+										type="button"
+										onClick={() => toggle("fr")}
+										className={`transition-colors ${
+											locale === "fr"
+												? isMessages
+													? "text-ori-message"
+													: "text-primary"
+												: "text-text-secondary dark:text-text/50 hover:text-text-primary dark:hover:text-text"
+										}`}
 									>
-										<Icon size={18} strokeWidth={1.75} />
-									</a>
-								))}
-							</div>
-							{/* Language toggle */}
-							<div
-								className="w-fit font-display font-semibold text-sm flex gap-2 items-center"
-								aria-label={footer.changeLang}
-							>
-								<button
-									type="button"
-									onClick={() => toggle("fr")}
-									className={`transition-colors ${
-										locale === "fr"
-											? isMessages
-												? "text-ori-message"
-												: "text-primary"
-											: "text-text-secondary dark:text-text/50 hover:text-text-primary dark:hover:text-text"
-									}`}
-								>
-									FR
-								</button>
-								<span className="text-text-secondary dark:text-text/50">|</span>
-								<button
-									type="button"
-									onClick={() => toggle("en")}
-									className={`transition-colors ${
-										locale === "en"
-											? isMessages
-												? "text-ori-message"
-												: "text-primary"
-											: "text-text-secondary dark:text-text/50 hover:text-text-primary dark:hover:text-text"
-									}`}
-								>
-									EN
-								</button>
+										FR
+									</button>
+									<span className="text-text-secondary dark:text-text/50">
+										|
+									</span>
+									<button
+										type="button"
+										onClick={() => toggle("en")}
+										className={`transition-colors ${
+											locale === "en"
+												? isMessages
+													? "text-ori-message"
+													: "text-primary"
+												: "text-text-secondary dark:text-text/50 hover:text-text-primary dark:hover:text-text"
+										}`}
+									>
+										EN
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>

@@ -70,7 +70,7 @@ export function SponsorshipSection() {
 								variant: "ghost-primary",
 								size: "md",
 								className:
-									"sm:px-8 sm:text-lg sm:h-[50px] shadow-orange-btn-soft w-full sm:w-auto",
+									"sm:px-8 sm:text-lg sm:h-[50px] dark:shadow-orange-btn-soft w-fit sm:w-auto",
 							})}
 						>
 							{sponsorship.seeCta}
