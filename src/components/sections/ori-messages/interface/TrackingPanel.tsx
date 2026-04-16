@@ -1,33 +1,42 @@
 "use client";
 
-import { Eye, Download } from "lucide-react";
 import { useLocale } from "@/context/locale-context";
 
-const HISTORY = [
+const CONVERSATIONS = [
 	{
-		date: "23 janv. 2026",
-		time: "17:12:23",
-		from: "+33615247714",
-		duration: "0:33",
+		name: "Sophia",
+		preview: "Bonjour, est-ce que vous proposez des plats végétariens...",
+		active: true,
 	},
 	{
-		date: "23 janv. 2026",
-		time: "13:39:27",
-		from: "+33618339211",
-		duration: "0:30",
+		name: "Clément",
+		preview: "Vous autorisez les animaux ? ...",
 	},
 	{
-		date: "23 janv. 2026",
-		time: "13:38:19",
-		from: "+33647432352",
-		duration: "0:23",
+		name: "Martin",
+		preview: "Et pour anniversaire de quinze personnes, c'est possible ? ...",
+	},
+];
+
+const MESSAGES = [
+	{
+		sender: "Sophia",
+		time: "18:03",
+		text: "Bonjour, avez vous des créneaux pour 20h ?",
 	},
 	{
-		date: "23 janv. 2026",
-		time: "10:12:24",
-		from: "+33784213498",
-		duration: "0:48",
+		sender: "Ori",
+		time: "18:03",
+		text: "20h est complet ce soir, mais nous avons des disponibilités après 20h30.",
 	},
+	{ sender: "Sophia", time: "18:03", text: "Ok pour 20h30 !" },
+	{ sender: "Ori", time: "18:03", text: "Avez vous d'autres questions ?" },
+	{
+		sender: "Sophia",
+		time: "18:03",
+		text: "C'est tout pour moi, bonne journée.",
+	},
+	{ sender: "Ori", time: "18:03", text: "Avez vous d'autres questions ?" },
 ];
 
 export function TrackingPanel() {
@@ -40,82 +49,56 @@ export function TrackingPanel() {
 				{d.trackingTitle}
 			</p>
 
-			{/* Stat cards */}
-			<div className="grid grid-cols-2 gap-2 lg:gap-3">
-				{[
-					{ label: d.totalCalls, value: "12" },
-					{ label: d.avgDuration, value: "0:28" },
-				].map((stat) => (
-					<div
-						key={stat.label}
-						className="bg-background-secondary dark:bg-dark-elevated rounded-2xl p-3 lg:p-4 flex flex-col gap-1"
-					>
-						<span className="font-display font-normal text-xs lg:text-sm text-text-secondary dark:text-text-tertiary leading-tight">
-							{stat.label}
-						</span>
-						<span className="font-display font-semibold text-xl lg:text-2xl text-text-primary dark:text-text">
-							{stat.value}
-						</span>
-					</div>
-				))}
-			</div>
-
-			{/* History table */}
-			<div className="rounded-2xl overflow-hidden">
-				{/* Header */}
-				<div className="bg-text-secondary grid grid-cols-[2fr_2fr_1fr_auto] gap-1 px-3 py-2">
-					{d.tableHeaders.map((col) => (
-						<span
-							key={col}
-							className="font-display font-semibold text-xs text-text text-center first:text-left"
-						>
-							{col}
-						</span>
-					))}
-				</div>
-				{/* Rows */}
-				<div className="bg-background-secondary dark:bg-dark-elevated divide-y divide-background-secondary dark:divide-dark-overlay">
-					{HISTORY.map((row, i) => (
+			<div className="flex gap-3">
+				{/* Conversation list */}
+				<div className="flex flex-col gap-2 w-2/5">
+					{CONVERSATIONS.map((conv) => (
 						<div
-							key={i}
-							className="grid grid-cols-[2fr_2fr_1fr_auto] gap-1 items-center px-3 py-2"
+							key={conv.name}
+							className={`bg-background-secondary dark:bg-dark-elevated rounded-2xl p-3 ${
+								conv.active
+									? "border border-text-primary dark:border-text"
+									: ""
+							}`}
 						>
-							<div>
-								<p className="font-display font-normal text-xs text-text-primary dark:text-text">
-									{row.date}
-								</p>
-								<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
-									{row.time}
-								</p>
-							</div>
-							<p className="font-display font-normal text-xs text-text-primary dark:text-text truncate">
-								{row.from}
+							<p className="font-display font-semibold text-sm text-text-primary dark:text-text truncate">
+								{conv.name}
 							</p>
-							<p className="font-display font-normal text-xs text-text-primary dark:text-text text-center">
-								{row.duration}
+							<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary mt-1 leading-tight line-clamp-2">
+								{conv.preview}
 							</p>
-							<div className="flex items-center gap-1">
-								<button
-									aria-label="View"
-									className="w-6 h-6 rounded-full bg-background-secondary dark:bg-dark-overlay flex items-center justify-center"
-								>
-									<Eye
-										size={11}
-										className="text-text-secondary dark:text-text-tertiary"
-									/>
-								</button>
-								<button
-									aria-label="Download"
-									className="w-6 h-6 rounded-full bg-background-secondary dark:bg-dark-overlay flex items-center justify-center"
-								>
-									<Download
-										size={11}
-										className="text-text-secondary dark:text-text-tertiary"
-									/>
-								</button>
-							</div>
 						</div>
 					))}
+				</div>
+
+				{/* Message thread */}
+				<div className="flex-1 bg-background-secondary dark:bg-dark-elevated rounded-2xl overflow-hidden relative">
+					<div className="px-4 py-3 border-b border-background-tertiary dark:border-dark-overlay">
+						<p className="font-display font-semibold text-sm text-text-primary dark:text-text">
+							Messages de Sophia
+						</p>
+					</div>
+					<div className="flex flex-col gap-2 p-3">
+						{MESSAGES.map((msg, i) => (
+							<div
+								key={i}
+								className={`bg-background-tertiary dark:bg-dark-overlay rounded-xl p-2${i >= 3 ? " hidden lg:block" : ""}`}
+							>
+								<div className="flex items-center gap-2 mb-0.5">
+									<span className="font-display font-semibold text-xs text-text-primary dark:text-text">
+										{msg.sender}
+									</span>
+									<span className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
+										{msg.time}
+									</span>
+								</div>
+								<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary leading-tight">
+									{msg.text}
+								</p>
+							</div>
+						))}
+					</div>
+					<div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-background-secondary dark:from-dark-elevated to-transparent" />
 				</div>
 			</div>
 		</div>

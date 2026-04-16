@@ -4,34 +4,14 @@ import { Eye, Download } from "lucide-react";
 import { useLocale } from "@/context/locale-context";
 
 const CALL_HISTORY = [
-	{
-		date: "23 janv. 2026",
-		time: "17:12:23",
-		number: "+33 6 15 24 77 14",
-		duration: "0:33",
-	},
-	{
-		date: "23 janv. 2026",
-		time: "13:39:27",
-		number: "+33 6 18 33 92 11",
-		duration: "0:30",
-	},
-	{
-		date: "23 janv. 2026",
-		time: "13:38:19",
-		number: "+33 6 47 43 23 52",
-		duration: "0:23",
-	},
-	{
-		date: "23 janv. 2026",
-		time: "10:12:24",
-		number: "+33 7 84 21 34 98",
-		duration: "0:48",
-	},
+	{ iso: "2026-01-23T17:12:23", number: "+33 6 15 24 77 14", duration: "0:33" },
+	{ iso: "2026-01-23T13:39:27", number: "+33 6 18 33 92 11", duration: "0:30" },
+	{ iso: "2026-01-23T13:38:19", number: "+33 6 47 43 23 52", duration: "0:23" },
+	{ iso: "2026-01-23T10:12:24", number: "+33 7 84 21 34 98", duration: "0:48" },
 ];
 
 export function TrackingPanel() {
-	const { t } = useLocale();
+	const { t, locale } = useLocale();
 	const d = t.dashboardPhone;
 
 	return (
@@ -68,7 +48,7 @@ export function TrackingPanel() {
 							{d.tableHeaders.map((col, i) => (
 								<th
 									key={col}
-									className={`font-display font-semibold text-xs text-text px-3 py-2 ${i === 0 ? "text-left" : "text-center"}`}
+									className={`font-display font-semibold text-xs text-text px-3 py-2 ${i === 0 ? "text-left" : "text-center"} ${i === 1 ? "hidden sm:table-cell" : ""}`}
 								>
 									{col}
 								</th>
@@ -80,13 +60,13 @@ export function TrackingPanel() {
 							<tr key={i}>
 								<td className="px-3 py-2">
 									<p className="font-display font-normal text-xs text-text-primary dark:text-text">
-										{row.date}
+										{new Date(row.iso).toLocaleDateString(locale === "en" ? "en-US" : "fr-FR", { day: "numeric", month: "short", year: "numeric" })}
 									</p>
 									<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
-										{row.time}
+										{new Date(row.iso).toLocaleTimeString(locale === "en" ? "en-US" : "fr-FR", { hour: "2-digit", minute: "2-digit", second: "2-digit" })}
 									</p>
 								</td>
-								<td className="px-3 py-2 text-center">
+								<td className="hidden sm:table-cell px-3 py-2 text-center">
 									<p className="font-display font-normal text-xs text-text-primary dark:text-text truncate">
 										{row.number}
 									</p>

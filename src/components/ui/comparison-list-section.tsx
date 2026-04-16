@@ -12,7 +12,7 @@ interface ComparisonRow {
 }
 
 interface ComparisonListSectionProps {
-	rows: ComparisonRow[];
+	rows: readonly ComparisonRow[];
 	withoutLabel: string;
 	withLabel: string;
 	ctaLabel: string;

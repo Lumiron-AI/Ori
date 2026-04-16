@@ -29,7 +29,7 @@ export const translations = {
 				{ href: "/solutions/phone#sponsorship", label: "Parrainage" },
 				{ href: "/solutions/phone#faq", label: "FAQ" },
 				{ href: "/solutions/phone#pricing", label: "Tarifs" },
-				{ href: "/blog", label: "Ressources" },
+				{ href: "/ressources", label: "Ressources" },
 			],
 			messagesNavLinks: [
 				{ href: "/solutions/messages#use-case", label: "Cas d'usage" },
@@ -38,7 +38,7 @@ export const translations = {
 				{ href: "/solutions/messages#sponsorship", label: "Parrainage" },
 				{ href: "/solutions/messages#faq", label: "FAQ" },
 				{ href: "/solutions/messages#pricing", label: "Tarifs" },
-				{ href: "/blog", label: "Ressources" },
+				{ href: "/ressources", label: "Ressources" },
 			],
 			legalLinks: [
 				{ href: "/legal/mentions", label: "Mentions légales" },
@@ -671,7 +671,7 @@ export const translations = {
 				{ href: "/solutions/phone#sponsorship", label: "Referral" },
 				{ href: "/solutions/phone#faq", label: "FAQ" },
 				{ href: "/solutions/phone#pricing", label: "Pricing" },
-				{ href: "/blog", label: "Resources" },
+				{ href: "/ressources", label: "Resources" },
 			],
 			messagesNavLinks: [
 				{ href: "/solutions/messages#use-case", label: "Use cases" },
@@ -680,7 +680,7 @@ export const translations = {
 				{ href: "/solutions/messages#sponsorship", label: "Referral" },
 				{ href: "/solutions/messages#faq", label: "FAQ" },
 				{ href: "/solutions/messages#pricing", label: "Pricing" },
-				{ href: "/blog", label: "Resources" },
+				{ href: "/ressources", label: "Resources" },
 			],
 			legalLinks: [
 				{ href: "/legal/mentions", label: "Legal notice" },

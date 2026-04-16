@@ -88,7 +88,7 @@ export function AutomationPanel() {
 								{d.availability}
 							</p>
 							<p className="font-display font-semibold text-sm text-text-primary dark:text-text whitespace-nowrap">
-								{"statusKey" in a ? d[a.statusKey] : (a.status ?? "")}
+								{"statusKey" in a ? (d as unknown as Record<string, string>)[a.statusKey as string] : (a.status ?? "")}
 							</p>
 						</div>
 
