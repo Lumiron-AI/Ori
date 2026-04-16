@@ -18,6 +18,7 @@ module.exports = {
 				// ── Brand (shared across both modes) ────────────────────────────────
 				primary: {
 					DEFAULT: "#FF4F38", // Primaire — CTA buttons, active states, highlights
+					tags: "#FAE8E4",
 				},
 				"ori-message": {
 					DEFAULT: "#3E67B5", // Ori Messages branding (blue, not in charte graphique)

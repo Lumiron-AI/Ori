@@ -97,7 +97,7 @@ export function Footer() {
 									<Link
 										key={link.href}
 										href={link.href}
-										className={`font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text transition-colors ${isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary"}`}
+										className={`font-display font-normal text-sm text-text-primary dark:text-text transition-colors ${isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary"}`}
 									>
 										{link.label}
 									</Link>
@@ -114,7 +114,7 @@ export function Footer() {
 								<Link
 									key={link.href}
 									href={link.href}
-									className={`font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text transition-colors ${isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary"}`}
+									className={`font-display font-normal text-sm text-text-primary dark:text-text transition-colors ${isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary"}`}
 								>
 									{link.label}
 								</Link>

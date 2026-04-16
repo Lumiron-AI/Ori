@@ -24,19 +24,19 @@ export default function RessourcesPage() {
 
 	return (
 		<main className="bg-background dark:bg-dark-bg min-h-screen">
-			<div className="max-w-9xl mx-auto px-5 md:px-10 lg:pt-24 pb-20 lg:pb-24">
+			<div className="max-w-9xl mx-auto px-5 md:px-10 pt-20 lg:pt-32 pb-12 lg:pb-24">
 				{/* Page heading */}
-				<h1 className="font-display font-bold text-6xl text-text-heading dark:text-text leading-[80px]">
+				<h1 className="font-display font-bold text-5xl text-text-heading dark:text-text">
 					Ressources
 				</h1>
 
 				{/* Filter tabs */}
-				<div className="flex flex-wrap gap-2 mt-7 mb-8">
+				<div className="flex flex-wrap gap-2 mt-4 mb-8">
 					{CATEGORIES.map((cat) => (
 						<button
 							key={cat}
 							onClick={() => setActiveCategory(cat)}
-							className={`font-display font-bold text-lg rounded-full px-6 py-3 transition-colors ${
+							className={`font-display font-bold text-sm rounded-full px-4 py-2 transition-colors ${
 								activeCategory === cat
 									? "bg-primary/10 text-primary"
 									: "text-text-heading dark:text-text hover:bg-background-secondary dark:hover:bg-dark-elevated"

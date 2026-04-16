@@ -32,7 +32,7 @@ export function Hero() {
 				className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-[-100px] w-[600px] sm:w-[1000px] h-[400px] sm:h-[600px] blur-3xl opacity-15 dark:opacity-30 rounded-full bg-primary-glow"
 			/>
 
-			<div className="relative w-full max-w-5xl mx-auto flex flex-col items-center gap-4 sm:gap-6 my-12">
+			<div className="relative w-full max-w-5xl mx-auto flex flex-col items-center gap-6 sm:gap-6 my-8">
 				<motion.h1
 					custom={0}
 					variants={fadeUp}
@@ -63,7 +63,7 @@ export function Hero() {
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="w-full flex flex-col sm:flex-row gap-3 sm:gap-6 items-stretch sm:items-center justify-center"
+					className="w-fit flex flex-col sm:flex-row gap-3 sm:gap-6 items-stretch sm:items-center justify-center"
 				>
 					<Link
 						href="/solutions/phone"
@@ -92,7 +92,7 @@ export function Hero() {
 						{STATS.map((stat, i) => (
 							<div
 								key={`${stat.value}-${i}`}
-								className="flex flex-col items-center text-center py-3 sm:py-4 relative"
+								className="flex flex-col items-center text-center py-1 sm:py-4 relative"
 							>
 								<span
 									className={`font-display font-bold text-3xl sm:text-4xl lg:text-5xl ${stat.color}`}

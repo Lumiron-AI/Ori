@@ -26,7 +26,7 @@ export function Cta() {
 				</p>
 
 				{/* CTA buttons */}
-				<div className="flex flex-col sm:flex-row gap-3 sm:gap-5 mt-4 w-full sm:w-auto">
+				<div className="flex flex-col sm:flex-row gap-3 sm:gap-5 mt-4 w-fit sm:w-auto">
 					<Link
 						href="/solutions/phone"
 						className="inline-flex items-center justify-center gap-2.5 bg-primary shadow-orange-btn text-text font-display font-bold text-base sm:text-lg rounded-xl h-[46px] sm:h-[52px] px-5 sm:px-7 hover:bg-primary/90 active:bg-primary/80 transition-colors whitespace-nowrap"

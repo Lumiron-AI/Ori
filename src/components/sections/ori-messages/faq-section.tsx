@@ -39,22 +39,10 @@ export function OriMessagesFAQSection() {
 							subtitle={d.subtitle}
 							className="mb-0"
 						/>
-
-						<Link
-							href="/contact"
-							className={buttonClass({
-								variant: "ghost-primary",
-								size: "md",
-								className:
-									"sm:px-8 sm:text-lg sm:h-[50px] w-fit sm:w-[292px] border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20 dark:shadow-blue-btn-soft mt-6 sm:mt-0",
-							})}
-						>
-							{d.seeAll}
-						</Link>
 					</motion.div>
 
 					{/* Right: accordion */}
-					<div className="flex-1">
+					<div className="flex-1 flex flex-col">
 						{d.items.map((faq, i) => (
 							<motion.div
 								key={i}
@@ -103,6 +91,20 @@ export function OriMessagesFAQSection() {
 								</div>
 							</motion.div>
 						))}
+
+						<div className="flex justify-center mt-8">
+							<Link
+								href="/contact"
+								className={buttonClass({
+									variant: "ghost-primary",
+									size: "md",
+									className:
+										"sm:px-8 sm:text-lg sm:h-[50px] w-fit sm:w-[292px] border-ori-message text-ori-message bg-ori-message/10 hover:bg-ori-message/20 dark:shadow-blue-btn-soft",
+								})}
+							>
+								{d.seeAll}
+							</Link>
+						</div>
 					</div>
 				</div>
 			</div>

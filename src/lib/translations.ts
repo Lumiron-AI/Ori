@@ -319,6 +319,7 @@ export const translations = {
 			offerNote: "Offre valable pour tout nouveau compte activé.",
 			submit: "Envoyer la demande",
 			close: "Fermer",
+			back: "Retour",
 		},
 
 		// ── Trial CTA ─────────────────────────────────────────────────────────────
@@ -952,6 +953,7 @@ export const translations = {
 			offerNote: "Offer valid for any new activated account.",
 			submit: "Send request",
 			close: "Close",
+			back: "Back",
 		},
 
 		// ── Trial CTA ─────────────────────────────────────────────────────────────

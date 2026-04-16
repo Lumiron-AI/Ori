@@ -24,7 +24,7 @@ export function BigArticleCard({ article }: BigArticleCardProps) {
 					className="object-cover"
 				/>
 				{/* Category badge */}
-				<span className="absolute top-3 right-4 bg-primary/10 text-primary font-display font-bold text-lg rounded-full px-3 py-1">
+				<span className="absolute top-3 right-4 bg-primary-tags text-primary font-display font-bold text-base rounded-full px-4 py-1">
 					{article.category}
 				</span>
 			</div>

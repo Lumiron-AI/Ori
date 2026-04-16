@@ -24,7 +24,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
 					className="object-cover"
 				/>
 				{/* Category badge */}
-				<span className="absolute top-3 right-4 bg-primary/10 text-primary font-display font-bold text-lg rounded-full px-3 py-1">
+				<span className="absolute top-3 right-4 bg-primary-tags text-primary font-display font-bold text-base rounded-full px-4 py-1">
 					{article.category}
 				</span>
 			</div>
@@ -48,6 +48,8 @@ export function ArticleCard({ article }: ArticleCardProps) {
 				</div>
 			</div>
 
+			{/* Hover: dark overlay */}
+			<div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-4xl pointer-events-none" />
 			{/* Hover slide-up CTA */}
 			<div className="absolute bottom-0 left-0 right-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-primary rounded-b-4xl py-4 flex items-center justify-center gap-2">
 				<span className="font-display font-bold text-lg text-text">
