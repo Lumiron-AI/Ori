@@ -11,7 +11,7 @@ import {
 import { ArticleCard } from "@/components/ui/article-card";
 
 interface PageProps {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
@@ -76,11 +76,12 @@ function ContentBlockRenderer({
 	}
 }
 
-export default function ArticlePage({ params }: PageProps) {
-	const article = getArticleBySlug(params.slug);
+export default async function ArticlePage({ params }: PageProps) {
+	const { slug } = await params;
+	const article = getArticleBySlug(slug);
 	if (!article) notFound();
 
-	const related = getRelatedArticles(params.slug).slice(0, 3);
+	const related = getRelatedArticles(slug).slice(0, 3);
 
 	return (
 		<main className="bg-background dark:bg-dark-bg min-h-screen">
