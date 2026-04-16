@@ -60,7 +60,18 @@ const STATUS_DOT: Record<AvailabilityStatus, string> = {
 	inactive: "bg-red-500",
 };
 
-function PlatformLogo({ platform }: { platform: Agent["platform"] }) {
+function PlatformLogo({ platform, active }: { platform: Agent["platform"]; active: boolean }) {
+	if (!active) {
+		return (
+			<div className="w-full h-full bg-text-secondary flex items-center justify-center">
+				{platform === "whatsapp" ? (
+					<RiWhatsappLine size={22} className="text-white" />
+				) : (
+					<RiInstagramLine size={22} className="text-white" />
+				)}
+			</div>
+		);
+	}
 	if (platform === "whatsapp") {
 		return (
 			<div className="w-full h-full bg-green-500 flex items-center justify-center">
@@ -93,7 +104,7 @@ export function AutomationPanel() {
 					>
 						{/* Platform logo */}
 						<div className="shrink-0 w-8 h-8 rounded-lg overflow-hidden">
-							<PlatformLogo platform={agent.platform} />
+							<PlatformLogo platform={agent.platform} active={agent.active} />
 						</div>
 
 						{/* Name + restaurant */}
@@ -140,7 +151,7 @@ export function AutomationPanel() {
 								className={`w-8 h-4 rounded-full flex items-center px-0.5 mx-auto ${
 									agent.active
 										? "bg-ori-message"
-										: "bg-background-tertiary dark:bg-dark-elevated"
+										: "bg-text-secondary dark:bg-dark-elevated"
 								}`}
 							>
 								<div

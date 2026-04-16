@@ -9,7 +9,7 @@ const DESKTOP_INPUT: number[] = [0, 0.3, 0.8, 1];
 const DESKTOP_OUTPUT: number[] = [0, 1, 1, 0];
 
 // Mobile: modify these values to adjust the fade on small screens
-const MOBILE_INPUT: number[] = [0, 0.2, 0.8, 1];
+const MOBILE_INPUT: number[] = [0, 0.1, 0.9, 1];
 const MOBILE_OUTPUT: number[] = [0, 1, 1, 0];
 // ─────────────────────────────────────────────────────────────────────────────
 

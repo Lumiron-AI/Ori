@@ -122,7 +122,7 @@ export function ComparisonListSection({
 					>
 						<button
 							onClick={() => setActiveTab("with")}
-							className={`h-11 px-8 w-fit rounded-2xl border ${accent.border} ${accent.bgLight} ${accent.text} font-display font-bold text-base inline-flex items-center justify-center ${accentColor === "ori-message" ? "shadow-blue-btn-soft" : "dark:shadow-orange-btn-soft"}`}
+							className={`h-11 px-8 w-fit rounded-2xl border ${accent.border} ${accent.bgLight} ${accent.text} font-display font-bold text-base inline-flex items-center justify-center ${accentColor === "ori-message" ? "dark:shadow-blue-btn-soft" : "dark:shadow-orange-btn-soft"}`}
 						>
 							{ctaLabel}
 						</button>
