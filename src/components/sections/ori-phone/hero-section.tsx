@@ -29,7 +29,7 @@ function AnimatedStatValue({
 	return (
 		<span
 			ref={ref as React.RefObject<HTMLSpanElement>}
-			className="font-display font-bold text-2xl xs:text-3xl md:text-4xl lg:text-5xl text-text-primary dark:text-text leading-none"
+			className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-text-primary dark:text-text leading-none"
 		>
 			{count}
 			{suffix}
@@ -57,13 +57,13 @@ export function OriPhoneHeroSection() {
 				className="pointer-events-none absolute left-1/4 -translate-x-1/2 top-[-80px] w-[400px] sm:w-[700px] h-[300px] sm:h-[500px] blur-3xl opacity-20 rounded-full bg-primary-glow"
 			/>
 
-			<div className="relative w-full max-w-6xl lg:max-w-7xl mx-auto flex flex-col items-center my-6 sm:my-12 gap-3">
+			<div className="relative w-full max-w-6xl lg:max-w-7xl mx-auto flex flex-col items-center my-4 sm:my-12 gap-3">
 				<motion.h1
 					custom={0}
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="font-display font-bold text-3xl xs:text-4xl md:text-5xl lg:text-6xl text-text-primary dark:text-text leading-tight max-w-6xl"
+					className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-text-primary dark:text-text leading-tight max-w-6xl"
 				>
 					{hero.title1}
 					<br /> {hero.title2}{" "}
@@ -80,7 +80,7 @@ export function OriPhoneHeroSection() {
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="font-display font-semibold text-sm xs:text-base md:text-lg lg:text-2xl text-text-secondary dark:text-text-tertiary max-w-5xl gap-4 py-4"
+					className="font-display font-semibold text-base md:text-lg lg:text-2xl text-text-secondary dark:text-text-tertiary max-w-5xl gap-4 py-4"
 				>
 					{hero.subtitle}{" "}
 					<span className="hidden sm:inline">

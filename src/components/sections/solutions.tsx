@@ -44,7 +44,7 @@ export function Solutions() {
 					<h2 className="font-display font-bold text-3xl sm:text-4xl text-text-primary dark:text-text mb-3">
 						Deux assistants, un même objectif
 					</h2>
-					<p className="font-display font-semibold text-base sm:text-xl lg:text-2xl/8 text-text-primary dark:text-text-tertiary max-w-3xl mx-auto">
+					<p className="font-display font-semibold text-base sm:text-xl lg:text-2xl/8 text-text-secondary dark:text-text-tertiary max-w-3xl mx-auto">
 						Ne manquez plus jamais un client. Ori gère vos communications
 						pendant que vous vous concentrez sur l&apos;essentiel.
 					</p>

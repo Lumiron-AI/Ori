@@ -41,7 +41,7 @@ module.exports = {
 					DEFAULT: "#FFFFFF", // White — text on dark/primary backgrounds
 					primary: "#131923", // Texte — dark body text (Figma charte graphique)
 					heading: "#243447", // Heading variant — used in cards/pricing (components)
-					secondary: "#6F7C8C", // Texte secondaire — muted labels, placeholders
+					secondary: "#616C7A", // Texte secondaire — muted labels, placeholders
 					tertiary: "#9EAEC2", // Texte tertiaire  — hints, disabled states, captions
 				},
 
@@ -112,7 +112,7 @@ module.exports = {
 				"2xl": ["20px", { lineHeight: "1.3", letterSpacing: "0" }],
 				"3xl": ["26px", { lineHeight: "1.2", letterSpacing: "0" }],
 				"4xl": ["32px", { lineHeight: "1.15", letterSpacing: "0" }],
-				"5xl": ["36px", { lineHeight: "56px", letterSpacing: "0" }],
+				"5xl": ["36px", { lineHeight: "1.3", letterSpacing: "0" }],
 				"6xl": ["52px", { lineHeight: "64px", letterSpacing: "0" }],
 			},
 

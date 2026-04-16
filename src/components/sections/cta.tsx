@@ -20,7 +20,7 @@ export function Cta() {
 				</h2>
 
 				{/* Subtitle */}
-				<p className="font-display font-semibold text-base sm:text-xl lg:text-2xl/8 text-text-primary dark:text-text-tertiary max-w-3xl">
+				<p className="font-display font-semibold text-base sm:text-xl lg:text-2xl/8 text-text-secondary dark:text-text-tertiary max-w-3xl">
 					Sans engagement. Configuration en 5 minutes. Un seul client perdu
 					coûte plus cher qu&apos;un mois d&apos;Ori.
 				</p>

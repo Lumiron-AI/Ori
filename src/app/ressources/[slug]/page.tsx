@@ -119,7 +119,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
 					{/* Hero metadata */}
 					<div className="flex flex-col gap-4 justify-start">
-						<h1 className="font-display font-bold text-3xl leading-[1.2] text-text-heading dark:text-text">
+						<h1 className="font-display font-bold text-3xl sm:text-5xl text-text-heading dark:text-text">
 							{article.title}
 						</h1>
 						<div className="flex flex-wrap items-center gap-4 sm:mt-2">
@@ -160,7 +160,7 @@ export default async function ArticlePage({ params }: PageProps) {
 				<div className="flex flex-col gap-10">
 					{article.sections.map((section, si) => (
 						<div key={si} className="flex flex-col gap-4">
-							<h2 className="font-display font-bold text-2xl text-text-primary dark:text-text">
+							<h2 className="font-display font-bold text-3xl text-text-primary dark:text-text">
 								{section.heading}
 							</h2>
 							<div className="flex flex-col gap-3">
@@ -174,7 +174,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
 				{/* Conclusion */}
 				<div className="mt-12 bg-background-secondary dark:bg-dark-elevated rounded-4xl p-8 md:p-10 flex flex-col gap-4">
-					<h2 className="font-display font-bold text-2xl text-text-primary dark:text-text">
+					<h2 className="font-display font-bold text-3xl text-text-primary dark:text-text">
 						{article.conclusion.heading}
 					</h2>
 					<div className="flex flex-col gap-3">
