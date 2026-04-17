@@ -73,7 +73,7 @@ export function Hero() {
 						<ArrowRight size={18} strokeWidth={2.5} className="shrink-0" />
 					</Link>
 					<Link
-						href="/solutions/message"
+						href="/solutions/messages"
 						className="inline-flex items-center justify-center shadow-blue-btn gap-2 sm:gap-2.5 bg-ori-message text-text font-display font-bold text-base sm:text-lg rounded-xl h-[46px] sm:h-[52px] px-5 sm:px-7 hover:bg-ori-message/90 active:bg-ori-message/80 transition-colors"
 					>
 						Découvrir Ori messages

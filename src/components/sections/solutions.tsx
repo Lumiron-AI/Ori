@@ -26,7 +26,7 @@ const SOLUTIONS = [
 		description:
 			"Ori décroche instantanément, répond aux questions de vos clients et enregistre vos réservations, sans interrompre l'équipe.",
 		features: ["Appels 24/7", "Réservations auto", "Transfert intelligent"],
-		href: "/solutions/message",
+		href: "/solutions/messages",
 		iconBg: "bg-ori-message",
 		ctaBg: "bg-ori-message",
 		ctaShadow: "shadow-blue-btn",

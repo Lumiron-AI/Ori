@@ -29,7 +29,7 @@ export function OriPhonePricingSection() {
 					subtitle={pricing.subtitle}
 				/>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-[55rem] mx-auto">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 lg:gap-12 max-w-[55rem] mx-auto">
 					<motion.div
 						initial={{ opacity: 0, y: 24 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +44,11 @@ export function OriPhonePricingSection() {
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						transition={{ delay: 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+						transition={{
+							delay: 0.12,
+							duration: 0.6,
+							ease: [0.22, 1, 0.36, 1],
+						}}
 						className="h-full"
 					>
 						<AdvancedCard />
