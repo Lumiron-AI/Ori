@@ -23,10 +23,10 @@ export function SectionHeader({
 	return (
 		<div className={cn("mb-4 sm:mb-10", className)}>
 			<div className="flex items-center gap-1 mb-3 sm:mb-4">
-				<span className="font-display font-bold text-sm sm:text-xl text-primary">
+				<span className="font-display font-bold text-sm sm:text-lg text-primary">
 					{label}
 				</span>
-				<ChevronRight size={18} className="text-primary" strokeWidth={2.5} />
+				{/* <ChevronRight size={18} className="text-primary" strokeWidth={2.5} /> */}
 			</div>
 
 			<h2

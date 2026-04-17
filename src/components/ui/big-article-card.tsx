@@ -13,7 +13,7 @@ export function BigArticleCard({ article }: BigArticleCardProps) {
 	return (
 		<Link
 			href={`/ressources/${article.slug}`}
-			className="group relative flex flex-col bg-background-element dark:bg-dark-surface rounded-4xl shadow-card overflow-hidden cursor-pointer"
+			className="group relative flex flex-col bg-background-element dark:bg-dark-surface dark:border dark:border-text-secondary dark:shadow-[0_4px_30px_0_rgba(255,255,255,0.10)] shadow-card rounded-4xl overflow-hidden cursor-pointer"
 		>
 			{/* Cover image */}
 			<div className="relative h-[124px] overflow-hidden rounded-t-4xl shrink-0">
@@ -24,7 +24,7 @@ export function BigArticleCard({ article }: BigArticleCardProps) {
 					className="object-cover"
 				/>
 				{/* Category badge */}
-				<span className="absolute top-3 right-4 bg-primary-tags text-primary font-display font-bold text-sm sm:text-base rounded-full px-4 py-1">
+				<span className="absolute top-3 right-4 bg-primary-tags text-primary font-display font-bold text-xs sm:text-sm rounded-full px-4 py-1">
 					{article.category}
 				</span>
 			</div>

@@ -14,8 +14,8 @@ export function Header() {
 	const { theme, toggle } = useTheme();
 	const [scrolled, setScrolled] = useState(false);
 	const pathname = usePathname();
-	const ctaHref = pathname === "/solutions/phone" ? "#pricing" : "/pricing";
-	const isMessages = pathname === "/solutions/messages";
+	const isMessages = pathname === "/solutions/messages" || pathname === "/solutions/messages/faq";
+	const ctaHref = isMessages ? "/solutions/messages#pricing" : pathname === "/solutions/phone" ? "#pricing" : "/solutions/phone#pricing";
 	const isPhone = pathname === "/solutions/phone";
 	const isProduct = isMessages || isPhone;
 	const { t } = useLocale();
@@ -168,7 +168,7 @@ export function Header() {
 							)}
 							<div className="flex items-center justify-between pt-4">
 								<Link
-									href="/https://ori.lumiron.ai/login"
+									href="https://ori.lumiron.ai/login"
 									onClick={() => setOpen(false)}
 									className={`font-display font-bold text-sm px-5 text-text-primary dark:text-text ${hoverColor} transition-colors`}
 								>

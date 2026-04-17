@@ -34,7 +34,6 @@ const AGENTS = [
 	},
 ];
 
-
 export function AutomationPanel() {
 	const { t } = useLocale();
 	const d = t.dashboardPhone;
@@ -88,7 +87,11 @@ export function AutomationPanel() {
 								{d.availability}
 							</p>
 							<p className="font-display font-semibold text-sm text-text-primary dark:text-text whitespace-nowrap">
-								{"statusKey" in a ? (d as unknown as Record<string, string>)[a.statusKey as string] : (a.status ?? "")}
+								{"statusKey" in a
+									? (d as unknown as Record<string, string>)[
+											a.statusKey as string
+										]
+									: (a.status ?? "")}
 							</p>
 						</div>
 
@@ -103,10 +106,10 @@ export function AutomationPanel() {
 								}`}
 							>
 								<div
-									className={`absolute top-0.5 w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${
+									className={`absolute top-[0.17rem] sm:top-1 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-white shadow-sm transition-transform ${
 										a.active
 											? "translate-x-3.5 lg:translate-x-5"
-											: "translate-x-0.5 lg:translate-x-1"
+											: "translate-x-1 lg:translate-x-1"
 									}`}
 								/>
 							</div>

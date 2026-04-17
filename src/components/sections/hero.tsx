@@ -14,10 +14,14 @@ const fadeUp = {
 };
 
 const STATS = [
-	{ value: "500+", label: "Disponible", color: "text-primary" },
-	{ value: "2M+", label: "Conversations gérées", color: "text-ori-message" },
-	{ value: "98%", label: "Satisfaction client", color: "text-primary" },
-	{ value: "24/7", label: "Disponibilité", color: "text-ori-message" },
+	{ value: "+30%", label: "De demandes traitées", color: "text-primary" },
+	{ value: "0", label: "Intervention humaine", color: "text-ori-message" },
+	{ value: "20+", label: "Langues en temps réel", color: "text-primary" },
+	{
+		value: "Illimitée",
+		label: "Conversations simultanées",
+		color: "text-ori-message",
+	},
 ];
 
 export function Hero() {

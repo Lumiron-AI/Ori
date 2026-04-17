@@ -42,12 +42,12 @@ export function FAQSection() {
 
 						{/* Button visible only on lg+ (left column) */}
 						<Link
-							href="/contact"
+							href="/solutions/phone/faq"
 							className={buttonClass({
 								variant: "ghost-primary",
 								size: "md",
 								className:
-									"hidden lg:inline-flex sm:px-8 sm:text-lg sm:h-[50px] w-fit sm:w-[292px] dark:shadow-orange-btn-soft mt-6",
+									"hidden lg:inline-flex sm:px-8 sm:text-lg sm:h-[50px] w-fit sm:w-[292px] dark:shadow-orange-btn-soft mt-6 sm:mt-0",
 							})}
 						>
 							{faq.seeAll}
@@ -108,7 +108,7 @@ export function FAQSection() {
 						{/* Button visible only on mobile/tablet (below accordion) */}
 						<div className="lg:hidden flex justify-center mt-6">
 							<Link
-								href="/contact"
+								href="/solutions/phone/faq"
 								className={buttonClass({
 									variant: "ghost-primary",
 									size: "md",

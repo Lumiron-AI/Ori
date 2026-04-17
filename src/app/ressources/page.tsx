@@ -4,13 +4,7 @@ import { useState } from "react";
 import { BigArticleCard } from "@/components/ui/big-article-card";
 import { getAllArticles } from "@/lib/articles";
 
-const CATEGORIES = [
-	"Tout voir",
-	"Tech",
-	"Réformes légales",
-	"Entrepreneuriat",
-	"Podcast",
-];
+const CATEGORIES = ["Tout voir", "Tech"];
 
 const ALL_ARTICLES = getAllArticles();
 

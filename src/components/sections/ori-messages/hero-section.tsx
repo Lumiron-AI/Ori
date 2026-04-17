@@ -129,14 +129,14 @@ export function OriMessagesHeroSection() {
 					{/* WhatsApp CTA */}
 					<Link
 						href="#use-case"
-						className="relative overflow-visible inline-flex items-center justify-center gap-2 sm:gap-3 h-[46px] sm:h-[50px] px-6 sm:px-8 rounded-2xl font-display font-bold text-base sm:text-lg text-text opacity-95 transition-[filter] hover:brightness-90 active:brightness-80"
-						style={{ background: "linear-gradient(115deg, #2bad3d, #108821)" }}
+						className="relative overflow-visible inline-flex bg-[#2bad3d] items-center justify-center gap-2 sm:gap-3 h-[46px] sm:h-[50px] px-6 sm:px-8 rounded-2xl font-display font-bold text-base sm:text-lg text-text opacity-95 transition-[filter] hover:brightness-90 active:brightness-80"
+						style={{ background: "#2bad3d" }}
 					>
 						<span
 							aria-hidden
 							className="absolute inset-0 -z-10 rounded-2xl opacity-30 dark:opacity-40 blur-xl"
 							style={{
-								background: "linear-gradient(135deg, #2bad3d, #108821)",
+								background: "#2bad3d",
 							}}
 						/>
 						<FaWhatsapp className="w-6 h-6" aria-hidden />

@@ -84,24 +84,14 @@ export default async function ArticlePage({ params }: PageProps) {
 			{/* Article content */}
 			<div className="max-w-8xl mx-auto px-5 md:px-10 pt-24 pb-12">
 				{/* Breadcrumb + back */}
-				<div className="flex items-center gap-6 mb-8">
+				<div className="flex items-center gap-6 mb-6">
 					<Link
 						href="/ressources"
-						className="flex items-center gap-2 font-display font-bold text-lg text-text-heading dark:text-text hover:text-primary dark:hover:text-primary transition-colors"
+						className="flex items-center gap-2 font-display font-normal text-lg text-text-heading dark:text-text hover:text-primary dark:hover:text-primary transition-colors"
 					>
 						<ArrowLeft size={20} />
 						Retour
 					</Link>
-					<p className="font-sans font-normal text-base text-text-secondary dark:text-text-tertiary">
-						<Link
-							href="/ressources"
-							className="hover:text-text-primary dark:hover:text-text transition-colors"
-						>
-							Ressources
-						</Link>
-						{" / "}
-						Article
-					</p>
 				</div>
 
 				{/* Hero */}
@@ -122,21 +112,21 @@ export default async function ArticlePage({ params }: PageProps) {
 						<h1 className="font-display font-bold text-3xl sm:text-5xl text-text-heading dark:text-text">
 							{article.title}
 						</h1>
-						<div className="flex flex-wrap items-center gap-4 sm:mt-2">
-							<div className="flex items-center gap-2 text-text-heading dark:text-text-tertiary">
+						<div className="flex flex-wrap items-center gap-3 sm:mt-2">
+							<div className="flex items-center gap-2 text-text-secondary dark:text-text-tertiary">
 								<Calendar size={18} className="shrink-0" />
 								<span className="font-display font-semibold text-base">
 									Publié le {article.date}
 								</span>
 							</div>
-							<div className="flex items-center gap-2 text-text-heading dark:text-text-tertiary">
+							<div className="flex items-center gap-2 text-text-secondary dark:text-text-tertiary">
 								<Clock size={18} className="shrink-0" />
 								<span className="font-display font-semibold text-base">
 									Temps de lecture : {article.readingTime}
 								</span>
 							</div>
 						</div>
-						<span className="inline-flex w-fit bg-primary/10 text-primary font-display font-bold text-xs rounded-full px-3 py-0.5">
+						<span className="inline-flex w-fit bg-primary/10 text-primary font-display font-bold text-sm sm:text-base rounded-full px-3 py-0.5">
 							{article.category}
 						</span>
 					</div>

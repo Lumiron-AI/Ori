@@ -13,7 +13,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
 	return (
 		<Link
 			href={`/ressources/${article.slug}`}
-			className="group relative flex flex-col bg-background-element dark:bg-dark-surface rounded-4xl shadow-card overflow-hidden cursor-pointer"
+			className="group relative flex flex-col bg-background-element dark:bg-dark-surface border dark:border-text-secondary dark:shadow-[0_4px_30px_0_rgba(255,255,255,0.10)] rounded-4xl shadow-card overflow-hidden cursor-pointer"
 		>
 			{/* Cover image */}
 			<div className="relative h-[110px] overflow-hidden rounded-t-4xl shrink-0">
@@ -51,7 +51,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
 			{/* Hover: dark overlay */}
 			<div className="absolute inset-0 bg-black/20 opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 rounded-4xl pointer-events-none" />
 			{/* Hover slide-up CTA */}
-			<div className="absolute bottom-0 left-0 right-0 translate-y-full sm:group-hover:translate-y-0 transition-transform duration-300 bg-primary rounded-b-4xl py-4 flex items-center justify-center gap-2">
+			<div className="absolute -bottom-px left-0 right-0 translate-y-full sm:group-hover:translate-y-0 transition-transform duration-300 bg-primary rounded-b-4xl py-4 flex items-center justify-center gap-2">
 				<span className="font-display font-bold text-lg text-text">
 					Consulter
 				</span>
