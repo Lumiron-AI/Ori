@@ -48,7 +48,7 @@ export function Footer() {
 	}
 
 	return (
-		<footer className="relative mt-12 overflow-hidden bg-background dark:bg-dark-bg border-t border-text-secondary/20 dark:border-text-tertiary/50 md:mx-24 3xl:mx-32">
+		<footer className="relative mt-12 overflow-hidden bg-background dark:bg-dark-bg md:mx-24 3xl:mx-32">
 			{/* Lights glow effect (dark mode only) */}
 			<div
 				aria-hidden
@@ -56,7 +56,8 @@ export function Footer() {
 			/>
 
 			{/* Main content */}
-			<div className="py-8 md:py-10 lg:py-12 px-8 md:px-0">
+			<div className="mx-8 md:mx-0 border-t border-text-secondary/20 dark:border-text-tertiary/50">
+			<div className="py-8 md:py-10 lg:py-12">
 				<div className="flex flex-col md:flex-row gap-8 md:gap-6 lg:gap-10 items-start">
 					{/* Brand */}
 					<div className="w-full md:flex-[2] flex flex-col gap-4">
@@ -181,10 +182,11 @@ export function Footer() {
 					</div>
 				</div>
 			</div>
+			</div>
 
 			{/* Bottom bar */}
-			<div className="border-t border-text-secondary/20 dark:border-text-tertiary/50">
-				<div className="py-6 md:py-8 px-8 md:px-0 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
+			<div className="mx-8 md:mx-0 border-t border-text-secondary/20 dark:border-text-tertiary/50">
+				<div className="py-6 md:py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
 					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
 						{footer.copyright}
 					</p>
