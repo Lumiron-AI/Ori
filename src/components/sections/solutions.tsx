@@ -50,7 +50,7 @@ export function Solutions() {
 					</p>
 				</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-6">
 					{SOLUTIONS.map((sol, i) => {
 						const Icon = sol.icon;
 						return (
