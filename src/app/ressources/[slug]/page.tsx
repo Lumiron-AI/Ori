@@ -82,7 +82,7 @@ export default async function ArticlePage({ params }: PageProps) {
 	return (
 		<main className="bg-background dark:bg-dark-bg min-h-screen">
 			{/* Article content */}
-			<div className="max-w-8xl mx-auto px-5 md:px-10 pt-24 pb-20">
+			<div className="max-w-8xl mx-auto px-5 md:px-10 pt-24 pb-12">
 				{/* Breadcrumb + back */}
 				<div className="flex items-center gap-6 mb-8">
 					<Link
@@ -187,12 +187,12 @@ export default async function ArticlePage({ params }: PageProps) {
 
 			{/* Related articles */}
 			{related.length > 0 && (
-				<section className="bg-background dark:bg-dark-bg py-16 px-5 md:px-10">
+				<section className="bg-background dark:bg-dark-bg py-8 px-5 md:px-10">
 					<div className="max-w-8xl mx-auto">
 						<h2 className="font-display font-bold text-3xl text-text-primary dark:text-text mb-8">
 							À lire également
 						</h2>
-						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 							{related.map((a) => (
 								<ArticleCard key={a.slug} article={a} />
 							))}

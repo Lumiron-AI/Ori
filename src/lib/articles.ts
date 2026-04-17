@@ -38,8 +38,8 @@ const ARTICLES: Article[] = [
 		title:
 			"Pourquoi le téléphone est devenu un vrai problème dans les restaurants (et comment l'IA vocale change la donne)",
 		category: "Tech",
-		date: "17 février 2026",
-		dateIso: "2026-02-17",
+		date: "15 avril 2026",
+		dateIso: "2026-04-15",
 		readingTime: "8 minutes",
 		image:
 			"https://www.figma.com/api/mcp/asset/efd96450-66b4-4dc3-8c16-9bf20c3a090a",
@@ -108,7 +108,11 @@ const ARTICLES: Article[] = [
 					},
 					{
 						type: "ul",
-						items: ["ne rappelle pas", "réserve ailleurs", "passe à autre chose"],
+						items: [
+							"ne rappelle pas",
+							"réserve ailleurs",
+							"passe à autre chose",
+						],
 					},
 					{
 						type: "p",
@@ -125,7 +129,8 @@ const ARTICLES: Article[] = [
 				],
 			},
 			{
-				heading: "3. Les appels hors horaires : la partie invisible du problème",
+				heading:
+					"3. Les appels hors horaires : la partie invisible du problème",
 				blocks: [
 					{
 						type: "p",
@@ -391,8 +396,8 @@ const ARTICLES: Article[] = [
 		slug: "les-appels-hors-horaires",
 		title: "Les appels hors horaires : le manque à gagner invisible",
 		category: "Tech",
-		date: "17 février 2026",
-		dateIso: "2026-02-17",
+		date: "15 avril 2026",
+		dateIso: "2026-04-15",
 		readingTime: "8 minutes",
 		image:
 			"https://www.figma.com/api/mcp/asset/1fddc083-09cd-4bce-b618-aa633b6f1c44",
@@ -492,11 +497,10 @@ const ARTICLES: Article[] = [
 	},
 	{
 		slug: "questions-frequentes",
-		title:
-			"Questions fréquentes : comment les absorber sans équipe dédiée",
+		title: "Questions fréquentes : comment les absorber sans équipe dédiée",
 		category: "Tech",
-		date: "17 février 2026",
-		dateIso: "2026-02-17",
+		date: "15 avril 2026",
+		dateIso: "2026-04-15",
 		readingTime: "8 minutes",
 		image:
 			"https://www.figma.com/api/mcp/asset/617d2ac5-ac77-4602-b958-bc4613fb817e",

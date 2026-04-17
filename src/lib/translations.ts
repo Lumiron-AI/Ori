@@ -4,7 +4,7 @@ export const translations = {
 		header: {
 			navOriMessages: "Ori Messages",
 			navOriPhone: "Ori Téléphone",
-			myAccount: "Mon compte",
+			myAccount: "Connexion",
 			start: "Démarrer",
 			toggleTheme: "Basculer le thème",
 			toggleMenu: "Toggle menu",
@@ -227,7 +227,7 @@ export const translations = {
 				trialNote: "Essai gratuit 7 jours — sans engagement",
 				billingNote: "Facturation uniquement après l'essai",
 				features: [
-					"Jusqu'à 400 minutes d'appels entrants",
+					"Jusqu'à 350 minutes d'appels entrants",
 					"Réservations, annulations et réponses aux questions fréquentes prises en charge",
 					"Transfert vers l'équipe si nécessaire",
 					"Statistiques en temps réel",

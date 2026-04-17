@@ -24,9 +24,9 @@ export default function RessourcesPage() {
 
 	return (
 		<main className="bg-background dark:bg-dark-bg min-h-screen">
-			<div className="max-w-9xl mx-auto px-5 md:px-10 pt-20 lg:pt-32 pb-12 lg:pb-24">
+			<div className="max-w-9xl mx-auto px-5 md:px-10 pt-24 lg:pt-32 pb-12 lg:pb-24">
 				{/* Page heading */}
-				<h1 className="font-display font-bold text-5xl text-text-heading dark:text-text">
+				<h1 className="font-display font-bold text-4xl text-text-heading dark:text-text">
 					Ressources
 				</h1>
 
@@ -48,7 +48,7 @@ export default function RessourcesPage() {
 				</div>
 
 				{/* Card grid */}
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 					{filtered.map((article) => (
 						<BigArticleCard key={article.slug} article={article} />
 					))}

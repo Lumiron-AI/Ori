@@ -25,8 +25,8 @@ export function Header() {
 		: "hover:text-primary dark:hover:text-primary";
 
 	const NAV_LINKS = [
-		{ href: "/solutions/messages", label: header.navOriMessages },
 		{ href: "/solutions/phone", label: header.navOriPhone },
+		{ href: "/solutions/messages", label: header.navOriMessages },
 	];
 
 	useEffect(() => {
@@ -103,7 +103,7 @@ export function Header() {
 						</button>
 
 						<Link
-							href="https://app.lumiron.ai/connexion"
+							href="https://ori.lumiron.ai/connexion"
 							className={`hidden lg:block font-display font-bold text-sm lg:text-base text-text-primary dark:text-text ${hoverColor} transition-colors whitespace-nowrap`}
 						>
 							{header.myAccount}
@@ -168,7 +168,7 @@ export function Header() {
 							)}
 							<div className="flex items-center justify-between pt-4">
 								<Link
-									href="/compte"
+									href="/https://ori.lumiron.ai/login"
 									onClick={() => setOpen(false)}
 									className={`font-display font-bold text-sm px-5 text-text-primary dark:text-text ${hoverColor} transition-colors`}
 								>

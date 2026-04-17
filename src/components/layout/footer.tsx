@@ -88,7 +88,7 @@ export function Footer() {
 					{/* Nav + Legal + Social — responsive grid on mobile */}
 					<div className="w-full grid grid-cols-1 sm:grid-cols-3 md:contents gap-12 md:gap-0">
 						{/* Navigation */}
-						<div className="flex flex-col gap-5 sm:gap-4 md:flex-1">
+						<div className="flex flex-col gap-4 md:flex-1">
 							<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
 								{footer.navTitle}
 							</p>
@@ -106,7 +106,7 @@ export function Footer() {
 						</div>
 
 						{/* Legal */}
-						<div className="flex flex-col gap-5 sm:gap-4 md:flex-1">
+						<div className="flex flex-col gap-4 md:flex-1">
 							<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
 								{footer.legalTitle}
 							</p>

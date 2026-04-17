@@ -46,7 +46,7 @@ function EmailField({ id, label, value, onChange, product }: InputFieldProps) {
 				onChange={(e) => onChange(e.target.value)}
 				required
 				className={cn(
-					"w-full h-[36px] sm:h-[42px] px-3 rounded-xl border-2",
+					"w-full h-[36px] sm:h-[42px] px-3 rounded-xl border",
 					"bg-background dark:bg-dark-bg",
 					"border-text-heading/60 dark:border-text-tertiary",
 					"text-text-heading dark:text-text font-display font-normal text-base",

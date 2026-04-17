@@ -13,10 +13,10 @@ export function ArticleCard({ article }: ArticleCardProps) {
 	return (
 		<Link
 			href={`/ressources/${article.slug}`}
-			className="group relative flex flex-col bg-background-element dark:bg-dark-elevated rounded-4xl shadow-card overflow-hidden cursor-pointer"
+			className="group relative flex flex-col bg-background-element dark:bg-dark-surface rounded-4xl shadow-card overflow-hidden cursor-pointer"
 		>
 			{/* Cover image */}
-			<div className="relative h-[158px] overflow-hidden rounded-t-4xl shrink-0">
+			<div className="relative h-[110px] overflow-hidden rounded-t-4xl shrink-0">
 				<Image
 					src={article.image}
 					alt={article.title}
@@ -31,27 +31,27 @@ export function ArticleCard({ article }: ArticleCardProps) {
 
 			{/* Content */}
 			<div className="flex flex-col gap-3 p-5 flex-1">
-				<h3 className="font-display font-bold text-2xl leading-snug text-text-heading dark:text-text line-clamp-3">
+				<h3 className="font-display font-bold text-lg sm:text-xl leading-snug text-text-heading dark:text-text line-clamp-3">
 					{article.title}
 				</h3>
 				<div className="flex items-center gap-2 text-text-heading dark:text-text-tertiary">
 					<Calendar size={16} className="shrink-0" />
-					<span className="font-display font-normal text-lg">
+					<span className="font-display font-normal text-sm sm:text-base">
 						Publié le {article.date}
 					</span>
 				</div>
 				<div className="flex items-center gap-2 text-text-heading dark:text-text-tertiary">
 					<Clock size={16} className="shrink-0" />
-					<span className="font-display font-normal text-lg">
+					<span className="font-display font-normal text-sm sm:text-base">
 						Temps de lecture : {article.readingTime}
 					</span>
 				</div>
 			</div>
 
 			{/* Hover: dark overlay */}
-			<div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-4xl pointer-events-none" />
+			<div className="absolute inset-0 bg-black/20 opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 rounded-4xl pointer-events-none" />
 			{/* Hover slide-up CTA */}
-			<div className="absolute bottom-0 left-0 right-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-primary rounded-b-4xl py-4 flex items-center justify-center gap-2">
+			<div className="absolute bottom-0 left-0 right-0 translate-y-full sm:group-hover:translate-y-0 transition-transform duration-300 bg-primary rounded-b-4xl py-4 flex items-center justify-center gap-2">
 				<span className="font-display font-bold text-lg text-text">
 					Consulter
 				</span>

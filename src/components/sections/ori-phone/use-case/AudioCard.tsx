@@ -94,6 +94,7 @@ export function AudioCard({
 	const loadedDurationRef = useRef(0);
 
 	const [playing, setPlaying] = useState(false);
+	const [hasStarted, setHasStarted] = useState(false);
 	const [currentTime, setCurrentTime] = useState(0);
 	const [duration, setDuration] = useState(0);
 	const [speed, setSpeed] = useState(1);
@@ -102,7 +103,7 @@ export function AudioCard({
 	const { audioCard } = t;
 
 	// Index of the currently displayed tag group (-1 = none yet)
-	const groupIdx = currentTime > 0 || playing ? activeGroupIndex(tagGroups, currentTime) : -1;
+	const groupIdx = playing ? activeGroupIndex(tagGroups, currentTime) : -1;
 
 	function stopTicker() {
 		if (tickerRef.current !== null) {
@@ -150,6 +151,7 @@ export function AudioCard({
 		stopTicker();
 		simTimeRef.current = 0;
 		setPlaying(false);
+		setHasStarted(false);
 		setCurrentTime(0);
 		if (audioRef.current) {
 			audioRef.current.pause();
@@ -174,10 +176,12 @@ export function AudioCard({
 		el.play()
 			.then(() => {
 				setPlaying(true);
+				setHasStarted(true);
 				startRealTicker();
 			})
 			.catch(() => {
 				setPlaying(true);
+				setHasStarted(true);
 				startSimulatedTicker(loadedDurationRef.current > 0 ? loadedDurationRef.current : simulatedDuration, simTimeRef.current);
 			});
 	}
@@ -277,7 +281,7 @@ export function AudioCard({
 	return (
 		<div
 			className={`w-full rounded-4xl p-4 xs:p-5 md:p-6 flex flex-col gap-3 xs:gap-4 shadow-card transition-colors duration-300 border border-transparent dark:border-text-secondary/30 ${
-				playing
+				hasStarted
 					? "bg-dark-elevated"
 					: "bg-background-element dark:bg-dark-surface"
 			}`}
@@ -288,13 +292,13 @@ export function AudioCard({
 					<Icon
 						size={22}
 						className={`shrink-0 transition-colors duration-300 ${
-							playing ? "text-primary" : "text-text-heading dark:text-text"
+							hasStarted ? "text-primary" : "text-text-heading dark:text-text"
 						}`}
 					/>
 				)}
 				<p
 					className={`font-display font-semibold text-xl xs:text-2xl transition-colors duration-300 ${
-						playing ? "text-text" : "text-text-heading dark:text-text"
+						hasStarted ? "text-text" : "text-text-heading dark:text-text"
 					}`}
 				>
 					{title}
@@ -304,7 +308,7 @@ export function AudioCard({
 			{/* "Écouter la conversation" label */}
 			<p
 				className={`font-display font-normal text-base transition-colors duration-300 ${
-					playing
+					hasStarted
 						? "text-text/60"
 						: "text-text-secondary dark:text-text-tertiary"
 				}`}
@@ -342,7 +346,7 @@ export function AudioCard({
 					<div
 						ref={progressBarRef}
 						className={`w-full relative h-1.5 rounded-full overflow-hidden transition-colors duration-300 ${
-							playing
+							hasStarted
 								? "bg-dark-overlay"
 								: "bg-background-tertiary dark:bg-dark-overlay"
 						}`}
@@ -361,13 +365,13 @@ export function AudioCard({
 
 				<span
 					className={`shrink-0 font-display font-normal text-sm xs:text-base tabular-nums transition-colors duration-300 ${
-						playing
+						hasStarted
 							? "text-text/70"
 							: "text-text-secondary dark:text-text-tertiary"
 					}`}
 				>
 					{fmt(currentTime)}
-					<span className={playing ? "text-text/40" : "text-text-tertiary"}>
+					<span className={hasStarted ? "text-text/40" : "text-text-tertiary"}>
 						{" "}
 						/ {fmt(activeDuration)}
 					</span>
@@ -384,9 +388,7 @@ export function AudioCard({
 							className={`font-display font-semibold text-sm px-2.5 py-1 rounded-full transition-colors ${
 								speed === s.value
 									? "bg-primary/10 text-primary"
-									: playing
-										? "text-text/40 hover:text-text/70"
-										: "text-text-secondary dark:text-text-tertiary hover:text-text-primary dark:hover:text-text"
+									: "text-text/40 hover:text-text/70"
 							}`}
 						>
 							{s.label}

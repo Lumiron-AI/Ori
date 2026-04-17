@@ -115,7 +115,7 @@ export function OriMessagesHeroSection() {
 					>
 						<span
 							aria-hidden
-							className="absolute inset-0 -z-10 rounded-2xl opacity-50 blur-xl"
+							className="absolute inset-0 -z-10 rounded-2xl opacity-30 dark:opacity-40 blur-xl"
 							style={{
 								background:
 									"linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)",
@@ -134,7 +134,7 @@ export function OriMessagesHeroSection() {
 					>
 						<span
 							aria-hidden
-							className="absolute inset-0 -z-10 rounded-2xl opacity-50 blur-xl"
+							className="absolute inset-0 -z-10 rounded-2xl opacity-30 dark:opacity-40 blur-xl"
 							style={{
 								background: "linear-gradient(135deg, #2bad3d, #108821)",
 							}}
@@ -152,14 +152,17 @@ export function OriMessagesHeroSection() {
 					animate="show"
 					className="w-full mt-2 sm:mt-4"
 				>
-					<div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 sm:gap-x-12 gap-y-4 justify-items-center mt-2">
+					<div className="flex flex-wrap justify-center gap-x-5 xs:gap-x-8 md:gap-x-12 gap-y-4 mt-2">
 						{stats.map((stat, i) => (
-							<div key={i} className="flex flex-col items-center w-[7rem] sm:w-[10rem]">
-								<div className="flex items-center gap-4">
-									<div className="w-1 h-8 sm:h-10 bg-ori-message rounded-full shrink-0" />
+							<div
+								key={i}
+								className="flex flex-col items-center w-[7rem] xs:w-[8rem] md:w-[10rem]"
+							>
+								<div className="flex items-center gap-2 xs:gap-4">
+									<div className="w-1 h-6 xs:h-7 md:h-10 bg-ori-message rounded-full shrink-0" />
 									<AnimatedStatValue stat={stat} />
 								</div>
-								<span className="font-display font-normal text-xs sm:text-sm lg:text-base text-text-secondary dark:text-text-tertiary pl-3 max-w-[7rem] sm:max-w-none text-center">
+								<span className="font-display font-normal text-xs md:text-sm lg:text-base text-text-secondary dark:text-text-tertiary pl-3 text-center">
 									{stat.label}
 								</span>
 							</div>

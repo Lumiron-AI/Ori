@@ -43,9 +43,9 @@ export function SponsorshipSection() {
 									duration: 0.6,
 									ease: [0.22, 1, 0.36, 1],
 								}}
-								className="flex flex-col items-center mt-4 sm:mt-2 gap-5 w-full sm:w-[40%]"
+								className="flex flex-col items-center mt-4 sm:mt-2 gap-2 sm:gap-5 w-full sm:w-[40%]"
 							>
-								<div className="flex flex-col items-center gap-2">
+								<div className="flex flex-col items-center gap-1 sm:gap-2">
 									<p className="font-display font-semibold text-base xs:text-lg md:text-2xl text-text-primary dark:text-text text-center">
 										{card.tag}
 									</p>
