@@ -32,7 +32,7 @@ export function OriMessagesPricingSection() {
 					subtitle={d.subtitle}
 				/>
 
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
 					<motion.div
 						initial={{ opacity: 0, y: 24 }}
 						whileInView={{ opacity: 1, y: 0 }}
