@@ -115,7 +115,7 @@ export function AudioCard({
 	useEffect(() => () => stopTicker(), []);
 
 	useEffect(() => {
-		if (!active && playing) {
+		if (!active) {
 			reset();
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
