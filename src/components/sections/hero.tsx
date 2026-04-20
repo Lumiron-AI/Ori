@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useLocale } from "@/context/locale-context";
 
 const fadeUp = {
 	hidden: { opacity: 0, y: 24 },
@@ -13,18 +14,10 @@ const fadeUp = {
 	}),
 };
 
-const STATS = [
-	{ value: "+30%", label: "De demandes traitées", color: "text-primary" },
-	{ value: "0", label: "Intervention humaine", color: "text-ori-message" },
-	{ value: "20+", label: "Langues en temps réel", color: "text-primary" },
-	{
-		value: "Illimitée",
-		label: "Conversations simultanées",
-		color: "text-ori-message",
-	},
-];
-
 export function Hero() {
+	const { t } = useLocale();
+	const { homeHero } = t;
+
 	return (
 		<section className="relative flex flex-col items-center justify-center text-center section-padding pt-[80px] sm:pt-[96px] md:pt-[130px] pb-10 sm:pb-14 overflow-hidden">
 			<div
@@ -44,9 +37,9 @@ export function Hero() {
 					animate="show"
 					className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-primary"
 				>
-					<span>Ori, </span>
+					<span>Meet Ori, </span>
 					<span className="text-text-primary dark:text-text">
-						l&apos;assistant IA qui répond à vos appels et messages.
+						{homeHero.title}
 					</span>
 				</motion.h1>
 
@@ -57,9 +50,8 @@ export function Hero() {
 					animate="show"
 					className="font-display font-semibold text-base sm:text-lg lg:text-2xl/6 text-text-secondary dark:text-text-tertiary max-w-3xl"
 				>
-					Automatisez vos conversations clients par téléphone, WhatsApp et
-					Instagram. Ori décroche, répond et prend les réservations ahah —{" "}
-					<span className="font-bold">24h/24, 7j/7.</span>
+					{homeHero.subtitle}
+					<span className="font-bold">{homeHero.subtitleBold}</span>
 				</motion.p>
 
 				<motion.div
@@ -73,14 +65,14 @@ export function Hero() {
 						href="/solutions/phone"
 						className="inline-flex items-center justify-center shadow-orange-btn gap-2 sm:gap-2.5 bg-primary text-text font-display font-bold text-base sm:text-lg rounded-xl h-[46px] sm:h-[52px] px-5 sm:px-7 hover:bg-primary/90 active:bg-primary/80 transition-colors"
 					>
-						Découvrir Ori téléphone
+						{homeHero.ctaPhone}
 						<ArrowRight size={18} strokeWidth={2.5} className="shrink-0" />
 					</Link>
 					<Link
 						href="/solutions/messages"
 						className="inline-flex items-center justify-center shadow-blue-btn gap-2 sm:gap-2.5 bg-ori-message text-text font-display font-bold text-base sm:text-lg rounded-xl h-[46px] sm:h-[52px] px-5 sm:px-7 hover:bg-ori-message/90 active:bg-ori-message/80 transition-colors"
 					>
-						Découvrir Ori messages
+						{homeHero.ctaMessages}
 						<ArrowRight size={18} strokeWidth={2.5} className="shrink-0" />
 					</Link>
 				</motion.div>
@@ -93,7 +85,7 @@ export function Hero() {
 					className="w-full max-w-4xl"
 				>
 					<div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-10 md:grid-cols-4">
-						{STATS.map((stat, i) => (
+						{homeHero.stats.map((stat, i) => (
 							<div
 								key={`${stat.value}-${i}`}
 								className="flex flex-col items-center text-center py-1 sm:py-4 relative"

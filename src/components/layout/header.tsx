@@ -4,15 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, Sun, Moon, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "@/context/theme-context";
 import { useLocale } from "@/context/locale-context";
 
 export function Header() {
 	const [open, setOpen] = useState(false);
-	const { theme, toggle } = useTheme();
-	const [scrolled, setScrolled] = useState(false);
+const [scrolled, setScrolled] = useState(false);
 	const pathname = usePathname();
 	const isMessages = pathname === "/solutions/messages" || pathname === "/solutions/messages/faq";
 	const ctaHref = isMessages ? "/solutions/messages#pricing" : pathname === "/solutions/phone" ? "#pricing" : "/solutions/phone#pricing";
@@ -88,20 +86,8 @@ export function Header() {
 						))}
 					</nav>
 
-					{/* Desktop right — dark mode toggle + account + CTA */}
+					{/* Desktop right — account + CTA */}
 					<div className="hidden md:flex items-center gap-3 lg:gap-8 justify-end">
-						<button
-							onClick={toggle}
-							aria-label={header.toggleTheme}
-							className="w-[28px] h-[28px] flex items-center justify-center text-text-secondary dark:text-text-tertiary hover:text-text-primary dark:hover:text-text transition-colors"
-						>
-							{theme === "dark" ? (
-								<Sun size={16} strokeWidth={1.5} />
-							) : (
-								<Moon size={16} strokeWidth={1.5} />
-							)}
-						</button>
-
 						<Link
 							href="https://ori.lumiron.ai/connexion"
 							className={`hidden lg:block font-display font-bold text-sm lg:text-base text-text-primary dark:text-text ${hoverColor} transition-colors whitespace-nowrap`}
@@ -124,17 +110,6 @@ export function Header() {
 
 					{/* Mobile toggle */}
 					<div className="md:hidden flex items-center justify-end gap-1">
-						<button
-							onClick={toggle}
-							aria-label={header.toggleTheme}
-							className="min-w-[44px] min-h-[44px] flex items-center justify-center text-text-secondary dark:text-text-tertiary hover:text-text-primary dark:hover:text-text transition-colors"
-						>
-							{theme === "dark" ? (
-								<Sun size={18} strokeWidth={1.5} />
-							) : (
-								<Moon size={18} strokeWidth={1.5} />
-							)}
-						</button>
 						<button
 							className="text-text-primary dark:text-text min-w-[44px] min-h-[44px] flex items-center justify-center"
 							onClick={() => setOpen((v) => !v)}

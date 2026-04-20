@@ -23,14 +23,14 @@ export function SectionHeaderMessages({
 	return (
 		<div className={cn("mb-8 sm:mb-12", className)}>
 			<div className="flex items-center gap-1 mb-3 sm:mb-4">
-				<span className="font-display font-bold text-sm sm:text-xl text-ori-message">
+				<span className="font-display font-bold text-sm sm:text-lg text-ori-message">
 					{label}
 				</span>
-				<ChevronRight
+				{/* <ChevronRight
 					size={18}
 					className="text-ori-message"
 					strokeWidth={2.5}
-				/>
+				/> */}
 			</div>
 
 			<h2

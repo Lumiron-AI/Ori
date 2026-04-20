@@ -3,9 +3,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Linkedin, Instagram } from "lucide-react";
+import { Linkedin, Instagram, Sun, Moon } from "lucide-react";
 import { useLocale } from "@/context/locale-context";
 import type { Locale } from "@/context/locale-context";
+import { useTheme } from "@/context/theme-context";
 
 const XIcon = () => (
 	<svg
@@ -40,8 +41,10 @@ const SOCIAL = [
 export function Footer() {
 	const pathname = usePathname();
 	const isMessages = pathname === "/solutions/messages";
+	const isIndex = pathname === "/";
 	const { locale, setLocale, t } = useLocale();
 	const { footer } = t;
+	const { theme, toggle: toggleTheme } = useTheme();
 
 	function toggle(next: Locale) {
 		if (next !== locale) setLocale(next);
@@ -58,9 +61,9 @@ export function Footer() {
 			{/* Main content */}
 			<div className="mx-8 md:mx-0 border-t border-text-secondary/20 dark:border-text-tertiary/50">
 				<div className="py-8 md:py-10 lg:py-12">
-					<div className="flex flex-col md:flex-row gap-8 md:gap-6 lg:gap-10 items-start">
+					<div className="flex flex-col md:flex-row gap-8 md:gap-6 lg:gap-10 items-start md:items-stretch">
 						{/* Brand */}
-						<div className="w-full md:flex-[2] flex flex-col gap-4">
+						<div className="w-full md:flex-[2] flex flex-col gap-4 md:justify-between">
 							<Link href="/" className="flex items-center gap-3 w-fit">
 								<>
 									<Image
@@ -82,8 +85,23 @@ export function Footer() {
 								</>
 							</Link>
 							<p className="font-display font-normal text-sm text-text-primary dark:text-text max-w-xs leading-relaxed">
-								{isMessages ? footer.messagesBrandTagline : footer.brandTagline}
+								{isMessages
+									? footer.messagesBrandTagline
+									: isIndex
+										? footer.indexBrandTagline
+										: footer.brandTagline}
 							</p>
+							<button
+								onClick={toggleTheme}
+								aria-label="Toggle theme"
+								className="mt-auto w-9 h-9 flex items-center justify-center text-text-secondary dark:text-text-tertiary hover:text-text-primary dark:hover:text-text transition-colors"
+							>
+								{theme === "dark" ? (
+									<Sun size={16} strokeWidth={1.5} />
+								) : (
+									<Moon size={16} strokeWidth={1.5} />
+								)}
+							</button>
 						</div>
 
 						{/* Nav + Legal + Social — responsive grid on mobile */}
@@ -123,7 +141,7 @@ export function Footer() {
 							</div>
 
 							{/* Social */}
-							<div className="flex flex-col items-start sm:items-end gap-4 sm:gap-4 md:flex-1">
+							<div className="flex flex-col items-start sm:items-start gap-4 sm:gap-4 md:flex-1">
 								<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
 									{footer.socialTitle}
 								</p>

@@ -14,6 +14,8 @@ export const translations = {
 		footer: {
 			brandTagline:
 				"Le standard téléphonique IA pour restaurants. Ori gère vos réservations, commandes et questions clients, 24h/24.",
+			indexBrandTagline:
+				"Ori, l'assistant IA qui répond à vos appels et messages pour la restauration.",
 			messagesBrandTagline:
 				"L'assistant messaging IA pour restaurants. Ori répond à vos messages WhatsApp et Instagram, 24h/24.",
 			navTitle: "Navigation",
@@ -255,19 +257,20 @@ export const translations = {
 		faq: {
 			label: "FAQ",
 			title: "Vos questions sur Ori",
-			subtitle: "Tout savoir sur l'assistant conçu pour les restaurants.",
+			subtitlePart1: "Tout savoir sur l'assistant",
+			subtitlePart2: "conçu pour les restaurants.",
 			seeAll: "Voir toutes les questions",
 			items: [
 				{
 					question: "Dois-je changer de numéro ou de matériel ?",
 					answer:
-						"Non. Ori se connecte à votre numéro existant via un simple renvoi d'appel. Aucun matériel à acheter, aucune installation technique — tout fonctionne avec votre ligne actuelle.",
+						"Non. Ori se connecte à votre numéro existant via un simple renvoi d'appel. Aucun matériel à acheter, aucune installation technique, tout fonctionne avec votre ligne actuelle.",
 				},
 				{
 					question:
 						"Ori peut-il vraiment prendre des réservations automatiquement ?",
 					answer:
-						"Oui. Ori dispose de votre planning en temps réel et peut confirmer, modifier ou annuler une réservation directement dans votre logiciel. Le client reçoit une confirmation par SMS.",
+						"Oui. Ori dispose de votre planning en temps réel et peut confirmer, modifier ou annuler une réservation directement dans votre logiciel. Le client reçoit une confirmation immédiate par SMS ou email.",
 				},
 				{
 					question: "Que se passe t-il en cas de demande urgente ?",
@@ -277,12 +280,12 @@ export const translations = {
 				{
 					question: "Est-ce rentable pour un petit restaurant ?",
 					answer:
-						"Absolument. Un seul client perdu à cause d'un appel manqué peut coûter plus qu'un mois d'abonnement à Ori. Et les heures économisées par votre équipe sur la gestion des appels représentent un gain immédiat.",
+						"Oui. Chaque appel manqué est une réservation potentiellement perdue. Ori les capte tous, sans mobiliser votre équipe.",
 				},
 				{
 					question: "Comment fonctionne l'essai de 7 jours ?",
 					answer:
-						"Vous activez Ori en 5 minutes, sans carte bancaire requise. Pendant 7 jours, Ori gère vos appels réels. À la fin de l'essai, vous choisissez si vous continuez — sans aucun engagement.",
+						"L’essai dure 7 jours. Vous configurez votre agent, ajoutez votre carte bancaire sans être débité, puis Ori peut commencer à répondre à vos appels entrants. À la fin de l’essai, vous décidez simplement si vous souhaitez continuer.",
 				},
 			],
 		},
@@ -408,6 +411,7 @@ export const translations = {
 		// ── Ori Messages — Hero ───────────────────────────────────────────────────
 		messagesHero: {
 			titlePrefix: "Ori,",
+			titleOri: "",
 			titleAssistant: "l'assistant automatique ",
 			titleWhatsApp: "WhatsApp",
 			titleAnd: " et ",
@@ -447,9 +451,9 @@ export const translations = {
 		// ── Ori Messages — Interface ──────────────────────────────────────────────
 		messagesInterface: {
 			label: "INTERFACE",
-			title: "Votre messagerie en pilote automatique.",
+			title: "Votre messagerie, sous contrôle.",
 			subtitle:
-				"Configurez Ori en quelques minutes et laissez-le gérer chaque message avec précision, selon vos règles.",
+				"Configurez Ori en quelques minutes et gérez chaque message depuis une interface claire, selon vos règles.",
 			footer:
 				"Une gestion simplifiée pour vous concentrer sur l'essentiel : l'accueil de vos clients et la qualité de votre service.",
 			back: "Retour",
@@ -530,7 +534,7 @@ export const translations = {
 			seeAll: "Voir toutes les questions",
 			items: [
 				{
-					question: "Dois-je changer mes comptes WhatsApp ou Instagram ?",
+					question: "Dois-je changer mes comptes Instagram ou WhatsApp?",
 					answer:
 						"Non. Ori se connecte directement à vos comptes existants (Business ou Pro). Vous gardez vos accès, votre historique et vous pouvez continuer à les utiliser normalement.",
 				},
@@ -543,7 +547,7 @@ export const translations = {
 					question:
 						"Puis-je reprendre la main sur une discussion à tout moment ?",
 					answer:
-						"Absolument. Vous gardez le contrôle total. Si vous souhaitez intervenir personnellement dans une conversation sur WhatsApp ou Instagram, vous pouvez le faire instantanément depuis votre application habituelle.",
+						"Absolument. Vous gardez le contrôle total. Si vous souhaitez intervenir personnellement dans une conversation sur Instagram ou WhatsApp, vous pouvez le faire instantanément depuis votre application habituelle.",
 				},
 				{
 					question:
@@ -587,6 +591,105 @@ export const translations = {
 			titleSuffix: " GRATUITS",
 			subtitle: "Sans engagement. Configuration en 5 minutes.",
 			cta: "Démarrer l'essai",
+		},
+
+		// ── Home index ───────────────────────────────────────────────────────────
+		homeHero: {
+			stats: [
+				{ value: "+30%", label: "De demandes traitées", color: "text-primary" },
+				{
+					value: "0",
+					label: "Intervention humaine",
+					color: "text-ori-message",
+				},
+				{ value: "20+", label: "Langues en temps réel", color: "text-primary" },
+				{
+					value: "Illimitée",
+					label: "Conversations simultanées",
+					color: "text-ori-message",
+				},
+			],
+			title: "l\u2019assistant IA qui répond à vos appels et messages.",
+			subtitle:
+				"Automatisez vos conversations clients par téléphone, WhatsApp et Instagram. Ori décroche, répond et prend les réservations \u2014\u00a0",
+			subtitleBold: "24h/24, 7j/7.",
+			ctaPhone: "Découvrir Ori téléphone",
+			ctaMessages: "Découvrir Ori messages",
+		},
+
+		homeSolutions: {
+			label: "NOS SOLUTIONS",
+			title: "Deux assistants, un même objectif",
+			subtitle:
+				"Ne manquez plus jamais un client. Ori gère vos communications pendant que vous vous concentrez sur l\u2019essentiel.",
+			solutions: [
+				{
+					label: "Ori Téléphone",
+					title: "Assistant téléphone",
+					description:
+						"Ori décroche instantanément, répond aux questions de vos clients et enregistre vos réservations, sans interrompre l\u2019équipe.",
+					features: [
+						"Appels 24/7",
+						"Réservations auto",
+						"Transfert intelligent",
+					],
+					cta: "Découvrir",
+				},
+				{
+					label: "Ori Message",
+					title: "Assistant Message",
+					description:
+						"Ori décroche instantanément, répond aux questions de vos clients et enregistre vos réservations, sans interrompre l\u2019équipe.",
+					features: [
+						"Appels 24/7",
+						"Réservations auto",
+						"Transfert intelligent",
+					],
+					cta: "Découvrir",
+				},
+			],
+		},
+
+		homeHowItWorks: {
+			label: "Fonctionnement",
+			title: "Comment ça marche ?",
+			subtitle:
+				"Lancez Ori en quelques minutes. Aucune compétence technique requise.",
+			steps: [
+				{
+					number: "01",
+					title: "Configuration",
+					description:
+						"Renseignez les informations de votre restaurant en 5 minutes.",
+				},
+				{
+					number: "02",
+					title: "Activation",
+					description:
+						"Ori se connecte à vos canaux (téléphone, WhatsApp, Instagram).",
+				},
+				{
+					number: "03",
+					title: "Conversations",
+					description: "Ori répond automatiquement à vos clients, 24h/24.",
+				},
+				{
+					number: "04",
+					title: "Suivi",
+					description:
+						"Suivez vos statistiques et conversations en temps réel.",
+				},
+			],
+		},
+
+		homeCta: {
+			title: "Essayer Ori",
+			titleHighlight: "7 jours",
+			title2: "gratuits",
+			subtitle:
+				"Sans engagement. Configuration en 5 minutes. Un seul client perdu coûte plus cher qu\u2019un mois d\u2019Ori.",
+			ctaPhone: "Essayer Ori Téléphone",
+			ctaMessages: "Essayer Ori Message",
 		},
 
 		// ── Ori Messages — Pricing ────────────────────────────────────────────────
@@ -657,6 +760,8 @@ export const translations = {
 		footer: {
 			brandTagline:
 				"The AI phone system for restaurants. Ori handles your reservations, orders and customer questions, 24/7.",
+			indexBrandTagline:
+				"Ori, the AI assistant that answers your restaurant's calls and messages.",
 			messagesBrandTagline:
 				"The AI messaging assistant for restaurants. Ori replies to your WhatsApp and Instagram messages, 24/7.",
 			navTitle: "Navigation",
@@ -771,15 +876,15 @@ export const translations = {
 
 		// ── Comparison ────────────────────────────────────────────────────────────
 		comparison: {
-			label: "COMPARISON",
-			title: "More than a phone system — an asset for your team.",
+			label: "COMPARE",
+			title: "More than a phone system, an asset for your team.",
 			subtitle:
 				"Compare Ori's impact on your daily operations against traditional management.",
 			withoutHeader: "Traditional system",
 			withHeader: "With Ori",
 			ctaLabel: "See with Ori",
 			footer:
-				"Maximize your revenue by never missing another call. Every answered call is an opportunity preserved.",
+				"Maximize your revenue by never missing a call. Every answered call is a captured opportunity.",
 			rows: [
 				{
 					topic: "Availability",
@@ -804,14 +909,14 @@ export const translations = {
 				{
 					topic: "Peace of mind",
 					without: "Stress from a phone ringing unanswered",
-					with: "Every call handled — mind at ease",
+					with: "No missed calls. No stress.",
 				},
 			],
 		},
 
 		// ── Interface ─────────────────────────────────────────────────────────────
 		interface: {
-			label: "INTERFACE",
+			label: "DASHBOARD",
 			title: "Your assistant, your rules.",
 			subtitle:
 				"An interface built for real-world use: define your rules and track your results in real time.",
@@ -822,10 +927,10 @@ export const translations = {
 				{
 					label: "Instant setup",
 					description:
-						"Enter your restaurant's information, opening hours and rules. Ori is ready to answer calls — no complex installation required.",
+						"Enter your restaurant's information, opening hours and rules. Ori is ready to answer calls, no complex installation required.",
 				},
 				{
-					label: "Custom personalisation",
+					label: "Fully-custom solution",
 					description:
 						"Set the welcome message, tone, and transfer rules. Ori adapts precisely to your establishment's identity.",
 				},
@@ -845,42 +950,42 @@ export const translations = {
 		// ── Pricing ───────────────────────────────────────────────────────────────
 		pricing: {
 			label: "PRICING",
-			title: "Never chase the phone again.",
-			subtitle: "Ori takes over. You keep peace of mind.",
+			title: "Never miss a call again.",
+			subtitle: "Ori takes over. You stay in control.",
 			footer: "One lost customer costs more than a month of Ori.",
 			standard: {
 				name: "STANDARD",
-				tagline: "1 establishment",
+				tagline: "1 location",
 				perMonth: "/ month",
 				perYear: "/ year",
 				annual: "Annual",
 				discount: "-10%",
-				cta: "Start free trial",
+				cta: "Start your free trial",
 				annualLabel: "Annual billing",
 				extraMinutes: "Additional minutes: €0.20 / minute",
-				trialNote: "7-day free trial — no commitment",
-				billingNote: "Billing only after the trial",
+				trialNote: "7-day free trial. No commitment.",
+				billingNote: "You’re only charged after the trial.",
 				features: [
-					"Up to 400 minutes of inbound calls",
+					"Up to 350 minutes of inbound calls",
 					"Reservations, cancellations and FAQ handled",
-					"Transfer to your team if needed",
-					"Real-time statistics",
-					"Full management interface",
+					"Seamless transfer to your team",
+					"Real-time analytics",
+					"Full management dashboard",
 				],
 			},
 			advanced: {
 				name: "ADVANCED",
-				tagline: "Multi-site and custom options",
-				price: "Custom",
-				priceNote: "Tailored configuration",
+				tagline: "Multi-location & custom setup",
+				price: "Custom pricing",
+				priceNote: "Built for your operations",
 				cta: "Schedule a call",
-				note: "Custom solution and pricing tailored to your organisation.",
+				note: "Custom solution and pricing tailored to your organization.",
 				features: [
-					"Multi-establishment",
+					"Multi-location support",
 					"Add-on modules",
-					"Custom rules",
+					"Custom workflows",
 					"Technical integrations",
-					"Centralised tracking",
+					"Centralised dashboard",
 				],
 			},
 		},
@@ -889,19 +994,19 @@ export const translations = {
 		faq: {
 			label: "FAQ",
 			title: "Your questions about Ori",
-			subtitle:
-				"Everything you need to know about the assistant built for restaurants.",
+			subtitlePart1: "Everything you need to know about the assistant",
+			subtitlePart2: "built for restaurants.",
 			seeAll: "See all questions",
 			items: [
 				{
 					question: "Do I need to change my number or equipment?",
 					answer:
-						"No. Ori connects to your existing number via a simple call forwarding setup. No hardware to buy, no technical installation — everything works with your current line.",
+						"No. Ori connects to your existing number via a simple call forwarding setup. No hardware to buy, no technical installation, everything works with your current line.",
 				},
 				{
 					question: "Can Ori really take reservations automatically?",
 					answer:
-						"Yes. Ori has access to your schedule in real time and can confirm, modify, or cancel a reservation directly in your software. The customer receives an SMS confirmation.",
+						"Yes. Ori has real-time access to your schedule and can confirm, modify, or cancel reservations directly in your system. Guests receive instant confirmation via SMS or email.",
 				},
 				{
 					question: "What happens in case of an urgent request?",
@@ -911,12 +1016,12 @@ export const translations = {
 				{
 					question: "Is it worth it for a small restaurant?",
 					answer:
-						"Absolutely. Just one lost customer due to a missed call can cost more than a month of Ori. And the hours your team saves on call management represent an immediate gain.",
+						"Yes. Every missed call is a lost reservation. Ori captures them all, without pulling your team away from service.",
 				},
 				{
 					question: "How does the 7-day trial work?",
 					answer:
-						"You activate Ori in 5 minutes, no credit card required. For 7 days, Ori handles your real calls. At the end of the trial, you decide whether to continue — with no commitment.",
+						"The trial lasts 7 days. You set up your agent, add your card without being charged, and Ori can start handling your incoming calls. At the end of the trial, you simply decide whether to continue.",
 				},
 			],
 		},
@@ -1041,10 +1146,11 @@ export const translations = {
 
 		// ── Ori Messages — Hero ───────────────────────────────────────────────────
 		messagesHero: {
-			titlePrefix: "Ori,",
-			titleAssistant: "the automatic ",
+			titlePrefix: "Meet",
+			titleOri: "Ori,",
+			titleAssistant: "your",
 			titleWhatsApp: "WhatsApp",
-			titleAnd: " and ",
+			titleAnd: "and",
 			titleInstagram: "Instagram",
 			titleFor: " assistant for your ",
 			titleUnderline: "restaurant",
@@ -1073,17 +1179,17 @@ export const translations = {
 				{
 					platform: "WhatsApp",
 					caption:
-						"Menu questions, reservations or practical info: Ori answers all your customers' requests with precision, 24/7.",
+						"Menu, reservations, and general questions. Ori responds to your customers 24/7, accurately.",
 				},
 			],
 		},
 
 		// ── Ori Messages — Interface ──────────────────────────────────────────────
 		messagesInterface: {
-			label: "INTERFACE",
-			title: "Your messaging on autopilot.",
+			label: "DASHBOARD",
+			title: "Your messaging, under control.",
 			subtitle:
-				"Set up Ori in minutes and let it handle every message with precision, according to your rules.",
+				"Set up Ori in minutes and manage every message from a clear dashboard, based on your rules.",
 			footer:
 				"Simplified management so you can focus on what matters: welcoming your customers and delivering quality service.",
 			back: "Back",
@@ -1098,7 +1204,7 @@ export const translations = {
 					id: "customize",
 					label: "Business customization",
 					description:
-						"Set the response tone, your activity hours and the rules specific to your establishment. Ori adapts to your image.",
+						"Set the response tone, your activity hours and the rules specific to your location. Ori adapts to your image.",
 				},
 				{
 					id: "automation",
@@ -1117,7 +1223,7 @@ export const translations = {
 
 		// ── Ori Messages — Comparison ─────────────────────────────────────────────
 		messagesComparison: {
-			label: "COMPARISON",
+			label: "COMPARE",
 			title: "Why choose Ori for your messaging?",
 			subtitle:
 				"Compare manual management with the power of intelligent automation and measure the impact on your daily workflow.",
@@ -1218,7 +1324,98 @@ export const translations = {
 			titleHighlight: "7 DAYS",
 			titleSuffix: " FREE",
 			subtitle: "No commitment. Setup in 5 minutes.",
-			cta: "Start free trial",
+			cta: "Start your free trial",
+		},
+
+		// ── Home index ───────────────────────────────────────────────────────────
+		homeHero: {
+			stats: [
+				{ value: "+30%", label: "Requests handled", color: "text-primary" },
+				{ value: "0", label: "Human intervention", color: "text-ori-message" },
+				{
+					value: "20+",
+					label: "Languages in real time",
+					color: "text-primary",
+				},
+				{
+					value: "Unlimited",
+					label: "Simultaneous conversations",
+					color: "text-ori-message",
+				},
+			],
+			title:
+				"the AI agent that answers your restaurant\u2019s calls and messages.",
+			subtitle:
+				"Automate your customer conversations by phone, WhatsApp and Instagram. Ori answers, responds and takes reservations\u00a0\u2014\u00a0",
+			subtitleBold: "24/7.",
+			ctaPhone: "Discover Ori Phone",
+			ctaMessages: "Discover Ori Messages",
+		},
+
+		homeSolutions: {
+			label: "OUR SOLUTIONS",
+			title: "Two assistants, one goal",
+			subtitle:
+				"Never miss a customer again. Ori handles your communications while you focus on what matters.",
+			solutions: [
+				{
+					label: "Ori Phone",
+					title: "Phone assistant",
+					description:
+						"Ori answers instantly, responds to your customers\u2019 questions and records reservations, without interrupting your team.",
+					features: ["24/7 calls", "Auto reservations", "Smart transfer"],
+					cta: "Discover",
+				},
+				{
+					label: "Ori Messages",
+					title: "Messaging assistant",
+					description:
+						"Ori answers instantly, responds to your customers\u2019 questions and records reservations, without interrupting your team.",
+					features: ["24/7 calls", "Auto reservations", "Smart transfer"],
+					cta: "Discover",
+				},
+			],
+		},
+
+		homeHowItWorks: {
+			label: "How it works",
+			title: "Up and running in minutes.",
+			subtitle:
+				"Launch Ori in just a few minutes. No technical skills required.",
+			steps: [
+				{
+					number: "01",
+					title: "Setup",
+					description: "Enter your restaurant\u2019s information in 5 minutes.",
+				},
+				{
+					number: "02",
+					title: "Activation",
+					description:
+						"Ori connects to your channels (phone, WhatsApp, Instagram).",
+				},
+				{
+					number: "03",
+					title: "Conversations",
+					description: "Ori automatically responds to your customers, 24/7.",
+				},
+				{
+					number: "04",
+					title: "Tracking",
+					description:
+						"Monitor your statistics and conversations in real time.",
+				},
+			],
+		},
+
+		homeCta: {
+			title: "Try Ori",
+			titleHighlight: "7 days",
+			title2: "free",
+			subtitle:
+				"No commitment. Setup in 5 minutes. One lost customer costs more than a month of Ori.",
+			ctaPhone: "Try Ori Phone",
+			ctaMessages: "Try Ori Messages",
 		},
 
 		// ── Ori Messages — Pricing ────────────────────────────────────────────────
@@ -1232,43 +1429,43 @@ export const translations = {
 			perYear: "/ yr",
 			annual: "Annual",
 			discount: "-10%",
-			trialNote: "7-day free trial — no commitment",
-			billingNote: "Billing only after the trial",
+			trialNote: "7-day free trial. No commitment.",
+			billingNote: "You’re only charged after the trial.",
 			instagram: {
 				title: "INSTAGRAM ASSISTANT",
-				tagline: "Boost your DMs",
-				cta: "Activate Instagram",
+				tagline: "Instagram only",
+				cta: "Start with Instagram",
 				features: [
 					"Up to 500 conversations",
-					"Automatic replies 24/7",
-					"Integrated reservation booking",
-					"100% of messages handled",
-					"€0.10 per additional conversation",
+					"Replies 24/7",
+					"Reservation booking included",
+					"Every message handled",
+					"€0.05 per additional conversation",
 				],
 			},
 			whatsapp: {
 				title: "WHATSAPP ASSISTANT",
-				tagline: "Your number on autopilot",
-				cta: "Activate WhatsApp",
+				tagline: "WhatsApp only",
+				cta: "Start with WhatsApp",
 				features: [
 					"Up to 500 conversations",
-					"Automatic replies 24/7",
-					"Integrated reservation booking",
-					"Zero customers ignored",
-					"€0.10 per additional conversation",
+					"Replies 24/7",
+					"Reservation booking included",
+					"No message left unanswered",
+					"€0.05 per additional conversation",
 				],
 			},
 			duo: {
 				badge: "Most popular",
 				title: "DUO PACK",
-				tagline: "The complete combo.",
-				cta: "Activate Duo Pack",
+				tagline: "WhatsApp + Instagram.",
+				cta: "Start Duo Pack",
 				features: [
 					"Up to 500 conversations",
-					"Automatic replies 24/7",
-					"Integrated reservation booking",
-					"Complete centralization",
-					"€0.10 per additional conversation",
+					"Replies 24/7",
+					"Reservation booking included",
+					"Centralised dashboard",
+					"€0.05 per additional conversation",
 				],
 			},
 		},

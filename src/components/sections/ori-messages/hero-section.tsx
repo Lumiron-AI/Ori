@@ -73,18 +73,38 @@ export function OriMessagesHeroSection() {
 					animate="show"
 					className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text-primary dark:text-text leading-tight max-w-6xl text-center"
 				>
-					<span className="text-ori-message">{d.titlePrefix}</span>
-					<br />
-					{d.titleAssistant}
-					<span className="text-ori-message">{d.titleWhatsApp}</span>
-					<br />
-					{d.titleAnd}
-					<span className="text-ori-message">{d.titleInstagram}</span>
-					{d.titleFor}
-					<span className="relative after:absolute after:bottom-[-8px] md:after:bottom-[0px] after:left-0 after:w-full after:h-2 after:bg-ori-message after:opacity-60">
-						{d.titleUnderline}
-					</span>
-					.
+					{d.titleOri ? (
+						<>
+							{d.titlePrefix}{" "}
+							<span className="text-ori-message">{d.titleOri}</span>
+							<br />
+							{d.titleAssistant}{" "}
+							<span className="text-ori-message">{d.titleInstagram}</span>
+							{" "}{d.titleAnd}{" "}
+							<span className="text-ori-message">{d.titleWhatsApp}</span>
+							<br />
+							{d.titleFor}
+							<span className="relative after:absolute after:bottom-[-8px] md:after:bottom-[0px] after:left-0 after:w-full after:h-2 after:bg-ori-message after:opacity-60">
+								{d.titleUnderline}
+							</span>
+							.
+						</>
+					) : (
+						<>
+							<span className="text-ori-message">{d.titlePrefix}</span>
+							<br />
+							{d.titleAssistant}
+							<span className="text-ori-message">{d.titleWhatsApp}</span>
+							<br />
+							{d.titleAnd}
+							<span className="text-ori-message">{d.titleInstagram}</span>
+							{d.titleFor}
+							<span className="relative after:absolute after:bottom-[-8px] md:after:bottom-[0px] after:left-0 after:w-full after:h-2 after:bg-ori-message after:opacity-60">
+								{d.titleUnderline}
+							</span>
+							.
+						</>
+					)}
 				</motion.h1>
 
 				<motion.p

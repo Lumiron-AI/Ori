@@ -3,16 +3,12 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, Check, ChevronRight } from "lucide-react";
+import { useLocale } from "@/context/locale-context";
 
-const SOLUTIONS = [
+const SOLUTION_META = [
 	{
 		id: "phone",
 		icon: Phone,
-		label: "Ori Téléphone",
-		title: "Assistant téléphone",
-		description:
-			"Ori décroche instantanément, répond aux questions de vos clients et enregistre vos réservations, sans interrompre l'équipe.",
-		features: ["Appels 24/7", "Réservations auto", "Transfert intelligent"],
 		href: "/solutions/phone",
 		iconBg: "bg-primary",
 		ctaBg: "bg-primary",
@@ -21,11 +17,6 @@ const SOLUTIONS = [
 	{
 		id: "message",
 		icon: MessageCircle,
-		label: "Ori Message",
-		title: "Assistant Message",
-		description:
-			"Ori décroche instantanément, répond aux questions de vos clients et enregistre vos réservations, sans interrompre l'équipe.",
-		features: ["Appels 24/7", "Réservations auto", "Transfert intelligent"],
 		href: "/solutions/messages",
 		iconBg: "bg-ori-message",
 		ctaBg: "bg-ori-message",
@@ -34,38 +25,40 @@ const SOLUTIONS = [
 ];
 
 export function Solutions() {
+	const { t } = useLocale();
+	const { homeSolutions } = t;
+
 	return (
 		<section id="solutions" className="section-padding py-12 md:py-16 lg:py-20">
 			<div className="max-w-8xl mx-auto">
 				<div className="text-center mb-8 md:mb-10">
 					<p className="font-display font-semibold text-lg sm:text-2xl text-primary uppercase tracking-wide mb-2">
-						NOS SOLUTIONS
+						{homeSolutions.label}
 					</p>
 					<h2 className="font-display font-bold text-3xl sm:text-4xl text-text-primary dark:text-text mb-3">
-						Deux assistants, un même objectif
+						{homeSolutions.title}
 					</h2>
 					<p className="font-display font-semibold text-base sm:text-xl lg:text-2xl/8 text-text-secondary dark:text-text-tertiary max-w-3xl mx-auto">
-						Ne manquez plus jamais un client. Ori gère vos communications
-						pendant que vous vous concentrez sur l&apos;essentiel.
+						{homeSolutions.subtitle}
 					</p>
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-6">
-					{SOLUTIONS.map((sol, i) => {
-						const Icon = sol.icon;
+					{SOLUTION_META.map((meta, i) => {
+						const sol = homeSolutions.solutions[i];
+						const Icon = meta.icon;
 						return (
 							<motion.div
-								key={sol.id}
+								key={meta.id}
 								initial={{ opacity: 0, y: 28 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ delay: i * 0.12, duration: 0.55 }}
 								className="bg-background-element dark:bg-dark-elevated rounded-4xl shadow-card dark:shadow-none dark:border dark:border-dark-overlay p-5 md:p-7 flex flex-col gap-4 md:gap-5"
 							>
-								{/* Icon + title row */}
 								<div className="flex items-start gap-4 sm:gap-5">
 									<div
-										className={`${sol.iconBg} w-12 h-12 sm:w-14 sm:h-14 rounded-xl shrink-0 flex items-center justify-center`}
+										className={`${meta.iconBg} w-12 h-12 sm:w-14 sm:h-14 rounded-xl shrink-0 flex items-center justify-center`}
 									>
 										<Icon size={28} className="text-text" strokeWidth={1.5} />
 									</div>
@@ -101,10 +94,10 @@ export function Solutions() {
 
 								<div className="flex justify-end mt-1">
 									<Link
-										href={sol.href}
-										className={`inline-flex items-center justify-center gap-2 ${sol.ctaBg} ${sol.ctaShadow} text-text font-display font-bold text-base rounded-xl h-[40px] sm:h-[44px] px-4 sm:px-6 hover:opacity-90 active:opacity-80 transition-opacity`}
+										href={meta.href}
+										className={`inline-flex items-center justify-center gap-2 ${meta.ctaBg} ${meta.ctaShadow} text-text font-display font-bold text-base rounded-xl h-[40px] sm:h-[44px] px-4 sm:px-6 hover:opacity-90 active:opacity-80 transition-opacity`}
 									>
-										Découvrir
+										{sol.cta}
 										<ChevronRight size={18} strokeWidth={2.5} />
 									</Link>
 								</div>

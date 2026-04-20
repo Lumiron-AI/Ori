@@ -36,7 +36,13 @@ export function FAQSection() {
 						<SectionHeader
 							label={faq.label}
 							title={faq.title}
-							subtitle={faq.subtitle}
+							subtitle={
+								<>
+									{faq.subtitlePart1}
+									<br className="hidden lg:block" />
+									{faq.subtitlePart2}
+								</>
+							}
 							className="mb-0"
 						/>
 

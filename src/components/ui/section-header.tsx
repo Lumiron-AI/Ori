@@ -1,12 +1,13 @@
 "use client";
 
+import React from "react";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface SectionHeaderProps {
 	label: string;
 	title: string;
-	subtitle?: string;
+	subtitle?: React.ReactNode;
 	className?: string;
 	subtitleClassName?: string;
 	titleClassName?: string;

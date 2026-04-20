@@ -37,7 +37,7 @@ const FAQ_GROUPS: FAQGroup[] = [
 		icon: <Rocket size={15} />,
 		items: [
 			{
-				question: "Dois-je changer mes comptes WhatsApp ou Instagram ?",
+				question: "Dois-je changer mes comptes Instagram ou WhatsApp ?",
 				answer:
 					"Non. Ori se connecte directement à vos comptes existants (WhatsApp Business ou Instagram). Vous gardez vos accès, votre historique et votre fonctionnement habituel. Rien n'est recréé, rien n'est perdu.",
 			},
@@ -75,7 +75,7 @@ const FAQ_GROUPS: FAQGroup[] = [
 			{
 				question: "Puis-je reprendre la main sur une conversation ?",
 				answer:
-					"Oui, à tout moment. Vous pouvez intervenir directement depuis WhatsApp ou Instagram. Ori s'efface dès que vous reprenez la conversation.",
+					"Oui, à tout moment. Vous pouvez intervenir directement depuis Instagram ou WhatsApp. Ori s'efface dès que vous reprenez la conversation.",
 			},
 			{
 				question:
@@ -263,7 +263,13 @@ export default function MessagesFAQPage() {
 				<div className="mt-8">
 					{/* Mobile dropdown */}
 					<div className="md:hidden">
-						<Select value={activeTheme} onValueChange={(v) => { setActiveTheme(v); setOpen(null); }}>
+						<Select
+							value={activeTheme}
+							onValueChange={(v) => {
+								setActiveTheme(v);
+								setOpen(null);
+							}}
+						>
 							<SelectTrigger className="w-full focus:ring-ori-message">
 								<SelectValue />
 							</SelectTrigger>
@@ -273,7 +279,11 @@ export default function MessagesFAQPage() {
 									return (
 										<SelectItem key={tab} value={tab}>
 											<span className="flex items-center gap-2">
-												{group && <span className="text-text-secondary dark:text-text-tertiary">{group.icon}</span>}
+												{group && (
+													<span className="text-text-secondary dark:text-text-tertiary">
+														{group.icon}
+													</span>
+												)}
 												{tab}
 											</span>
 										</SelectItem>
