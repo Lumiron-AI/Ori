@@ -293,7 +293,7 @@ export const translations = {
 			title: "Partagez Ori, gagnez ensemble.",
 			subtitle:
 				"Invitez un restaurant et profitez d’avantages exclusifs sur votre abonnement.",
-			seeCta: "Voir les conditions",
+			seeCta: "Se connecter pour parrainer",
 			cards: [
 				{
 					tag: "POUR LE RESTAURANT PARRAIN",
@@ -565,7 +565,7 @@ export const translations = {
 			title: "Parrainez vos confrères.",
 			subtitle:
 				"Invitez un restaurant et profitez d’avantages exclusifs sur votre abonnement.",
-			seeConditions: "Voir les conditions",
+			seeConditions: "Se connecter pour parrainer",
 			cards: [
 				{
 					tag: "POUR LE RESTAURANT PARRAIN",
