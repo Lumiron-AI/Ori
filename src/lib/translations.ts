@@ -292,7 +292,7 @@ export const translations = {
 			label: "PARRAINAGE",
 			title: "Partagez Ori, gagnez ensemble.",
 			subtitle:
-				"Recommandez Ori à vos confrères et profitez d'avantages exclusifs sur votre abonnement.",
+				"Invitez un restaurant et profitez d’avantages exclusifs sur votre abonnement.",
 			seeCta: "Voir les conditions",
 			cards: [
 				{
@@ -564,7 +564,7 @@ export const translations = {
 			label: "PARRAINAGE",
 			title: "Parrainez vos confrères.",
 			subtitle:
-				"Recommandez Ori à vos confrères et profitez d'avantages exclusifs sur votre abonnement.",
+				"Invitez un restaurant et profitez d’avantages exclusifs sur votre abonnement.",
 			seeConditions: "Voir les conditions",
 			cards: [
 				{

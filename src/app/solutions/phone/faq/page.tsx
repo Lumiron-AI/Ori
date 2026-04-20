@@ -4,6 +4,13 @@ import { useState } from "react";
 import type React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select";
+import {
 	ChevronDown,
 	Rocket,
 	Cpu,
@@ -237,7 +244,7 @@ export default function PhoneFAQPage() {
 					<span className="font-display font-semibold text-sm text-primary tracking-widest">
 						FAQ
 					</span>
-					<h1 className="font-display font-bold text-5xl text-text-primary dark:text-text leading-[80px]">
+					<h1 className="font-display font-bold text-3xl sm:text-5xl my-2 text-text-primary dark:text-text">
 						Toutes vos questions sur Ori
 					</h1>
 					<p className="font-sans font-normal text-lg text-text-secondary dark:text-text-tertiary">
@@ -245,39 +252,74 @@ export default function PhoneFAQPage() {
 					</p>
 				</motion.div>
 
-				{/* Filter tabs */}
-				<div className="flex flex-wrap gap-2 my-8">
-					{tabs.map((tab) => {
-						const group = FAQ_GROUPS.find((g) => g.theme === tab);
-						const isActive = activeTheme === tab;
-						return (
-							<button
-								key={tab}
-								onClick={() => {
-									setActiveTheme(tab);
-									setOpen(null);
-								}}
-								className={`flex items-center gap-1.5 font-display font-bold text-sm rounded-full px-4 py-2 transition-colors ${
-									isActive
-										? "bg-primary/10 text-primary"
-										: "text-text-heading dark:text-text hover:bg-background-secondary dark:hover:bg-dark-elevated"
-								}`}
-							>
-								{group && (
-									<span
-										className={
-											isActive
-												? "text-primary"
-												: "text-text-secondary dark:text-text-tertiary"
-										}
-									>
-										{group.icon}
-									</span>
-								)}
-								{tab}
-							</button>
-						);
-					})}
+				{/* Filter — select on mobile, tabs on desktop */}
+				<div className="my-4">
+					{/* Mobile dropdown */}
+					<div className="md:hidden">
+						<Select
+							value={activeTheme}
+							onValueChange={(v) => {
+								setActiveTheme(v);
+								setOpen(null);
+							}}
+						>
+							<SelectTrigger className="w-full">
+								<SelectValue />
+							</SelectTrigger>
+							<SelectContent>
+								{tabs.map((tab) => {
+									const group = FAQ_GROUPS.find((g) => g.theme === tab);
+									return (
+										<SelectItem key={tab} value={tab}>
+											<span className="flex items-center gap-2">
+												{group && (
+													<span className="text-text-secondary dark:text-text-tertiary">
+														{group.icon}
+													</span>
+												)}
+												{tab}
+											</span>
+										</SelectItem>
+									);
+								})}
+							</SelectContent>
+						</Select>
+					</div>
+
+					{/* Desktop tabs */}
+					<div className="hidden md:flex flex-wrap gap-2">
+						{tabs.map((tab) => {
+							const group = FAQ_GROUPS.find((g) => g.theme === tab);
+							const isActive = activeTheme === tab;
+							return (
+								<button
+									key={tab}
+									onClick={() => {
+										setActiveTheme(tab);
+										setOpen(null);
+									}}
+									className={`flex items-center gap-1.5 font-display font-bold text-sm rounded-full px-4 py-2 transition-colors ${
+										isActive
+											? "bg-primary/10 text-primary"
+											: "text-text-heading dark:text-text hover:bg-background-secondary dark:hover:bg-dark-elevated"
+									}`}
+								>
+									{group && (
+										<span
+											className={
+												isActive
+													? "text-primary"
+													: "text-text-secondary dark:text-text-tertiary"
+											}
+										>
+											{group.icon}
+										</span>
+									)}
+									{tab}
+								</button>
+							);
+						})}
+					</div>
 				</div>
 
 				<div className="mt-10 flex flex-col gap-12">

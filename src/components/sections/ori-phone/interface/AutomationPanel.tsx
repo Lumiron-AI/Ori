@@ -53,7 +53,7 @@ export function AutomationPanel() {
 						<div className="flex items-center gap-2 lg:gap-3 min-w-0">
 							<div
 								className={`w-7 h-7 lg:w-10 lg:h-10 rounded-lg lg:rounded-xl shrink-0 flex items-center justify-center ${
-									a.active ? "bg-agent-active" : "bg-text-secondary"
+									a.active ? "bg-agent-active" : "bg-text-tertiary"
 								}`}
 							>
 								<RiPhoneLine

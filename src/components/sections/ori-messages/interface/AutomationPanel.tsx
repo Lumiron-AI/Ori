@@ -59,7 +59,7 @@ function PlatformLogo({
 }) {
 	const Icon = platform === "whatsapp" ? RiWhatsappLine : RiInstagramLine;
 	const bg = !active
-		? "bg-text-secondary"
+		? "bg-text-tertiary"
 		: platform === "whatsapp"
 			? "bg-green-500"
 			: "bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600";
