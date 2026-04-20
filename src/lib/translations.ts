@@ -75,6 +75,13 @@ export const translations = {
 			stop: "Arrêter la démo",
 			mute: "Mettre en sourdine",
 			unmute: "Réactiver le son",
+			connecting: "Connexion…",
+			listening: "Parlez à Ori",
+			timeLeftSuffix: "s restantes",
+			timeUp: "Démo terminée",
+			micDenied:
+				"Accès micro refusé. Autorisez le micro dans votre navigateur pour tester.",
+			connectionError: "Connexion impossible. Réessayez dans un instant.",
 		},
 
 		// ── Use Case ──────────────────────────────────────────────────────────────
@@ -715,6 +722,13 @@ export const translations = {
 			stop: "Stop demo",
 			mute: "Mute",
 			unmute: "Unmute",
+			connecting: "Connecting…",
+			listening: "Speak to Ori",
+			timeLeftSuffix: "s left",
+			timeUp: "Demo ended",
+			micDenied:
+				"Microphone blocked. Allow microphone access in your browser to try Ori.",
+			connectionError: "Connection failed. Please try again shortly.",
 		},
 
 		// ── Use Case ──────────────────────────────────────────────────────────────
