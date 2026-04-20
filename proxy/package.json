@@ -1,0 +1,17 @@
+{
+  "name": "ori-realtime-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "WebSocket proxy relaying browser <-> Azure OpenAI Realtime for the Ori phone demo.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
