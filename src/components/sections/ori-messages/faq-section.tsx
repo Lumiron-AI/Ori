@@ -42,7 +42,7 @@ export function OriMessagesFAQSection() {
 
 						{/* Button visible only on lg+ (left column) */}
 						<Link
-							href="/solutions/messages/faq"
+							href="/messages/faq"
 							className={buttonClass({
 								variant: "ghost-primary",
 								size: "md",
@@ -108,7 +108,7 @@ export function OriMessagesFAQSection() {
 						{/* Button visible only on mobile/tablet (below accordion) */}
 						<div className="lg:hidden flex justify-center mt-8">
 							<Link
-								href="/solutions/messages/faq"
+								href="/messages/faq"
 								className={buttonClass({
 									variant: "ghost-primary",
 									size: "md",

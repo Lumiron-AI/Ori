@@ -12,9 +12,9 @@ export function Header() {
 	const [open, setOpen] = useState(false);
 const [scrolled, setScrolled] = useState(false);
 	const pathname = usePathname();
-	const isMessages = pathname === "/solutions/messages" || pathname === "/solutions/messages/faq";
-	const ctaHref = isMessages ? "/solutions/messages#pricing" : pathname === "/solutions/phone" ? "#pricing" : "/solutions/phone#pricing";
-	const isPhone = pathname === "/solutions/phone";
+	const isMessages = pathname === "/messages" || pathname === "/messages/faq";
+	const ctaHref = isMessages ? "/messages#pricing" : pathname === "/phone" ? "#pricing" : "/phone#pricing";
+	const isPhone = pathname === "/phone";
 	const isProduct = isMessages || isPhone;
 	const { t } = useLocale();
 	const { header } = t;
@@ -23,8 +23,8 @@ const [scrolled, setScrolled] = useState(false);
 		: "hover:text-primary dark:hover:text-primary";
 
 	const NAV_LINKS = [
-		{ href: "/solutions/phone", label: header.navOriPhone },
-		{ href: "/solutions/messages", label: header.navOriMessages },
+		{ href: "/phone", label: header.navOriPhone },
+		{ href: "/messages", label: header.navOriMessages },
 	];
 
 	useEffect(() => {

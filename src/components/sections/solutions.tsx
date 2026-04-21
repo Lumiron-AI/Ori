@@ -9,7 +9,7 @@ const SOLUTION_META = [
 	{
 		id: "phone",
 		icon: Phone,
-		href: "/solutions/phone",
+		href: "/phone",
 		iconBg: "bg-primary",
 		ctaBg: "bg-primary",
 		ctaShadow: "shadow-orange-btn",
@@ -17,7 +17,7 @@ const SOLUTION_META = [
 	{
 		id: "message",
 		icon: MessageCircle,
-		href: "/solutions/messages",
+		href: "/messages",
 		iconBg: "bg-ori-message",
 		ctaBg: "bg-ori-message",
 		ctaShadow: "shadow-blue-btn",

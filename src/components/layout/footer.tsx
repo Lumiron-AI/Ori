@@ -41,7 +41,7 @@ const SOCIAL = [
 
 export function Footer() {
 	const pathname = usePathname();
-	const isMessages = pathname === "/solutions/messages";
+	const isMessages = pathname === "/messages";
 	const isIndex = pathname === "/";
 	const { locale, setLocale, t } = useLocale();
 	const { footer } = t;
