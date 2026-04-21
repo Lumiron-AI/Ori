@@ -82,6 +82,8 @@ export function SponsorshipSection() {
 			<SponsorshipModal
 				isOpen={modal.isOpen}
 				form={modal.form}
+				status={modal.status}
+				errorMessage={modal.errorMessage}
 				onClose={modal.close}
 				onSetField={modal.setField}
 				onSubmit={modal.handleSubmit}

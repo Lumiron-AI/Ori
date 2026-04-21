@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { ReferralCapture } from '@/components/layout/referral-capture';
 import { ThemeProvider } from '@/context/theme-context';
 import { LocaleProvider } from '@/context/locale-context';
 
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body className="overflow-x-hidden">
         <ThemeProvider>
           <LocaleProvider>
+            <ReferralCapture />
             <Header />
             <main>{children}</main>
             <Footer />
