@@ -6,7 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, ChevronLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonClass } from "@/components/ui/button";
-import type { SponsorshipFormValues } from "@/hooks/use-sponsorship-modal";
+import type {
+	SponsorshipFormValues,
+	SponsorshipSubmitStatus,
+} from "@/hooks/use-sponsorship-modal";
 import { useLocale } from "@/context/locale-context";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -14,6 +17,8 @@ import { useLocale } from "@/context/locale-context";
 interface SponsorshipModalProps {
 	isOpen: boolean;
 	form: SponsorshipFormValues;
+	status?: SponsorshipSubmitStatus;
+	errorMessage?: string | null;
 	onClose: () => void;
 	onSetField: (field: keyof SponsorshipFormValues, value: string) => void;
 	onSubmit: (e: FormEvent<HTMLFormElement>) => void;
@@ -66,6 +71,8 @@ function EmailField({ id, label, value, onChange, product }: InputFieldProps) {
 export function SponsorshipModal({
 	isOpen,
 	form,
+	status = "idle",
+	errorMessage = null,
 	onClose,
 	onSetField,
 	onSubmit,
@@ -123,6 +130,7 @@ export function SponsorshipModal({
 
 				<button
 					type="submit"
+					disabled={status === "loading" || status === "success"}
 					className={buttonClass({
 						variant: "primary",
 						size: "md",
@@ -130,12 +138,26 @@ export function SponsorshipModal({
 							"w-full gap-3",
 							product === "ori-messages" &&
 								"bg-ori-message shadow-blue-btn hover:bg-ori-message/90 active:bg-ori-message/80",
+							(status === "loading" || status === "success") &&
+								"opacity-70 cursor-not-allowed",
 						),
 					})}
 				>
-					{sponsorshipModal.submit}
-					<Send size={16} strokeWidth={2} className="rotate-12" />
+					{status === "loading"
+						? "Envoi…"
+						: status === "success"
+							? "Invitation envoyée ✓"
+							: sponsorshipModal.submit}
+					{status !== "loading" && status !== "success" && (
+						<Send size={16} strokeWidth={2} className="rotate-12" />
+					)}
 				</button>
+
+				{status === "error" && errorMessage && (
+					<p className="font-display font-normal text-xs sm:text-sm text-red-500 text-center">
+						{errorMessage}
+					</p>
+				)}
 			</form>
 		</>
 	);

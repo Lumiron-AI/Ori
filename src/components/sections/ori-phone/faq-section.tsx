@@ -48,7 +48,7 @@ export function FAQSection() {
 
 						{/* Button visible only on lg+ (left column) */}
 						<Link
-							href="/solutions/phone/faq"
+							href="/phone/faq"
 							className={buttonClass({
 								variant: "ghost-primary",
 								size: "md",
@@ -114,7 +114,7 @@ export function FAQSection() {
 						{/* Button visible only on mobile/tablet (below accordion) */}
 						<div className="lg:hidden flex justify-center mt-6">
 							<Link
-								href="/solutions/phone/faq"
+								href="/phone/faq"
 								className={buttonClass({
 									variant: "ghost-primary",
 									size: "md",
