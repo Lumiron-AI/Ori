@@ -89,7 +89,7 @@ const [scrolled, setScrolled] = useState(false);
 					{/* Desktop right — account + CTA */}
 					<div className="hidden md:flex items-center gap-3 lg:gap-8 justify-end">
 						<Link
-							href="https://ori.lumiron.ai/connexion"
+							href="https://app.lumiron.ai/login"
 							className={`hidden lg:block font-display font-bold text-sm lg:text-base text-text-primary dark:text-text ${hoverColor} transition-colors whitespace-nowrap`}
 						>
 							{header.myAccount}
@@ -143,7 +143,7 @@ const [scrolled, setScrolled] = useState(false);
 							)}
 							<div className="flex items-center justify-between pt-4">
 								<Link
-									href="https://ori.lumiron.ai/login"
+									href="https://app.lumiron.ai/login"
 									onClick={() => setOpen(false)}
 									className={`font-display font-bold text-sm px-5 text-text-primary dark:text-text ${hoverColor} transition-colors`}
 								>
