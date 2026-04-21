@@ -54,7 +54,7 @@ export function OriMessagesHeroSection() {
 		<motion.section
 			ref={ref}
 			style={{ opacity }}
-			className="relative flex flex-col items-center justify-center text-center px-5 pt-[80px] sm:pt-[130px] md:pt-[90px] 3xl:pt-[170px] 3xl:pb-32 pb-12 sm:pb-20 overflow-hidden bg-background dark:bg-dark-bg"
+			className="relative flex flex-col items-center justify-center text-center px-5 pt-[80px] xs:pt-[80px] md:pt-[80px] 3xl:pt-[170px] pb-6 3xl:pb-12 overflow-hidden bg-background dark:bg-dark-bg"
 		>
 			<div
 				aria-hidden
@@ -65,7 +65,7 @@ export function OriMessagesHeroSection() {
 				className="pointer-events-none absolute left-1/4 -translate-x-1/2 top-[-80px] w-[400px] sm:w-[700px] h-[300px] sm:h-[500px] blur-3xl opacity-15 rounded-full bg-ori-message"
 			/>
 
-			<div className="relative w-full max-w-6xl lg:max-w-7xl mx-auto flex flex-col items-center my-6 sm:my-12 gap-3">
+			<div className="relative w-full max-w-6xl lg:max-w-7xl mx-auto flex flex-col items-center my-4 sm:my-12 gap-3">
 				<motion.h1
 					custom={0}
 					variants={fadeUp}
@@ -79,8 +79,8 @@ export function OriMessagesHeroSection() {
 							<span className="text-ori-message">{d.titleOri}</span>
 							<br />
 							{d.titleAssistant}{" "}
-							<span className="text-ori-message">{d.titleInstagram}</span>
-							{" "}{d.titleAnd}{" "}
+							<span className="text-ori-message">{d.titleInstagram}</span>{" "}
+							{d.titleAnd}{" "}
 							<span className="text-ori-message">{d.titleWhatsApp}</span>
 							<br />
 							{d.titleFor}

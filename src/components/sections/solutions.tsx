@@ -80,7 +80,7 @@ export function Solutions() {
 									{sol.features.map((f) => (
 										<span
 											key={f}
-											className="inline-flex items-center gap-2 bg-background-secondary dark:bg-dark-overlay rounded-full h-9 sm:h-10 px-3 font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text-tertiary whitespace-nowrap"
+											className="inline-flex items-center gap-2 bg-background-secondary dark:bg-dark-overlay rounded-full h-9 sm:h-8 px-3 font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text-tertiary whitespace-nowrap"
 										>
 											<Check
 												size={14}
@@ -92,7 +92,7 @@ export function Solutions() {
 									))}
 								</div>
 
-								<div className="flex justify-end mt-1">
+								<div className="flex justify-end mt-auto">
 									<Link
 										href={meta.href}
 										className={`inline-flex items-center justify-center gap-2 ${meta.ctaBg} ${meta.ctaShadow} text-text font-display font-bold text-base rounded-xl h-[40px] sm:h-[44px] px-4 sm:px-6 hover:opacity-90 active:opacity-80 transition-opacity`}

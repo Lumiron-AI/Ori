@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Linkedin, Instagram, Sun, Moon } from "lucide-react";
+
 import { useLocale } from "@/context/locale-context";
 import type { Locale } from "@/context/locale-context";
 import { useTheme } from "@/context/theme-context";
@@ -63,7 +64,7 @@ export function Footer() {
 				<div className="py-8 md:py-10 lg:py-12">
 					<div className="flex flex-col md:flex-row gap-8 md:gap-6 lg:gap-10 items-start md:items-stretch">
 						{/* Brand */}
-						<div className="w-full md:flex-[2] flex flex-col gap-4 md:justify-between">
+						<div className="w-full md:flex-[2] flex flex-col gap-4">
 							<Link href="/" className="flex items-center gap-3 w-fit">
 								<>
 									<Image
@@ -91,17 +92,6 @@ export function Footer() {
 										? footer.indexBrandTagline
 										: footer.brandTagline}
 							</p>
-							<button
-								onClick={toggleTheme}
-								aria-label="Toggle theme"
-								className="mt-auto w-9 h-9 flex items-center justify-center text-text-secondary dark:text-text-tertiary hover:text-text-primary dark:hover:text-text transition-colors"
-							>
-								{theme === "dark" ? (
-									<Sun size={16} strokeWidth={1.5} />
-								) : (
-									<Moon size={16} strokeWidth={1.5} />
-								)}
-							</button>
 						</div>
 
 						{/* Nav + Legal + Social — responsive grid on mobile */}
@@ -145,7 +135,7 @@ export function Footer() {
 								<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
 									{footer.socialTitle}
 								</p>
-								<div className="w-full sm:w-fit flex sm:flex-col justify-between sm:gap-4">
+								<div className="w-full sm:w-fit flex sm:flex-col justify-between sm:gap-8">
 									<div className="flex gap-2">
 										{SOCIAL.map(({ label, href, icon: Icon }) => (
 											<a
@@ -160,40 +150,60 @@ export function Footer() {
 											</a>
 										))}
 									</div>
-									{/* Language toggle */}
-									<div
-										className="w-fit font-display font-semibold text-sm flex gap-2 items-center"
-										aria-label={footer.changeLang}
-									>
-										<button
-											type="button"
-											onClick={() => toggle("fr")}
-											className={`transition-colors ${
-												locale === "fr"
-													? isMessages
-														? "text-ori-message"
-														: "text-primary"
-													: "text-text-secondary dark:text-text/50 hover:text-text-primary dark:hover:text-text"
-											}`}
-										>
-											FR
-										</button>
-										<span className="text-text-secondary dark:text-text/50">
-											|
-										</span>
-										<button
-											type="button"
-											onClick={() => toggle("en")}
-											className={`transition-colors ${
-												locale === "en"
-													? isMessages
-														? "text-ori-message"
-														: "text-primary"
-													: "text-text-secondary dark:text-text/50 hover:text-text-primary dark:hover:text-text"
-											}`}
-										>
-											EN
-										</button>
+									{/* Préférences */}
+									<div className="flex flex-col gap-3">
+										<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
+											{footer.preferences}
+										</p>
+										<div className="flex items-center gap-4">
+											{/* Language toggle */}
+											<div
+												className="font-display font-semibold text-sm flex gap-2 items-center"
+												aria-label={footer.changeLang}
+											>
+												<button
+													type="button"
+													onClick={() => toggle("fr")}
+													className={`transition-colors ${
+														locale === "fr"
+															? isMessages
+																? "text-ori-message"
+																: "text-primary"
+															: "text-text-secondary dark:text-text/50 hover:text-text-primary dark:hover:text-text"
+													}`}
+												>
+													FR
+												</button>
+												<span className="text-text-secondary dark:text-text/50">
+													|
+												</span>
+												<button
+													type="button"
+													onClick={() => toggle("en")}
+													className={`transition-colors ${
+														locale === "en"
+															? isMessages
+																? "text-ori-message"
+																: "text-primary"
+															: "text-text-secondary dark:text-text/50 hover:text-text-primary dark:hover:text-text"
+													}`}
+												>
+													EN
+												</button>
+											</div>
+											{/* Theme toggle */}
+											<button
+												onClick={toggleTheme}
+												aria-label="Toggle theme"
+												className="w-9 h-9 flex items-center justify-center text-text-secondary dark:text-text-tertiary hover:text-text-primary dark:hover:text-text transition-colors"
+											>
+												{theme === "dark" ? (
+													<Sun size={16} strokeWidth={1.5} />
+												) : (
+													<Moon size={16} strokeWidth={1.5} />
+												)}
+											</button>
+										</div>
 									</div>
 								</div>
 							</div>

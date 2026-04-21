@@ -22,6 +22,7 @@ export const translations = {
 			legalTitle: "Légal",
 			socialTitle: "Réseaux sociaux",
 			changeLang: "Changer de langue",
+			preferences: "Préférences",
 			copyright: "© 2026 ORI. Tous droits réservés.",
 			madeBy: "Un produit de",
 			navLinks: [
@@ -264,8 +265,8 @@ export const translations = {
 		faq: {
 			label: "FAQ",
 			title: "Vos questions sur Ori",
-			subtitlePart1: "Tout savoir sur l'assistant",
-			subtitlePart2: "conçu pour les restaurants.",
+			subtitlePart1: "Tout savoir sur l'assistant conçu",
+			subtitlePart2: "pour les restaurants.",
 			seeAll: "Voir toutes les questions",
 			items: [
 				{
@@ -413,6 +414,29 @@ export const translations = {
 			totalCalls: "Total des appels passés",
 			avgDuration: "Durée moyenne par appel",
 			tableHeaders: ["Date & Heure", "De", "Durée", "Action"],
+			sophiaThreadTitle: "Messages de Sophia",
+			conversations: [
+				{
+					name: "Sophia",
+					preview: "Bonjour, est-ce que vous proposez des plats végétariens...",
+				},
+				{
+					name: "Clément",
+					preview: "Vous autorisez les animaux ? ...",
+				},
+				{
+					name: "Martin",
+					preview: "Et pour anniversaire de quinze personnes, c'est possible ? ...",
+				},
+			],
+			messages: [
+				{ sender: "Sophia", time: "18:03", text: "Bonjour, avez vous des créneaux pour 20h ?" },
+				{ sender: "Ori", time: "18:03", text: "20h est complet ce soir, mais nous avons des disponibilités après 20h30." },
+				{ sender: "Sophia", time: "18:03", text: "Ok pour 20h30 !" },
+				{ sender: "Ori", time: "18:03", text: "Avez vous d'autres questions ?" },
+				{ sender: "Sophia", time: "18:03", text: "C'est tout pour moi, bonne journée." },
+				{ sender: "Ori", time: "18:03", text: "Avez vous d'autres questions ?" },
+			],
 		},
 
 		// ── Ori Messages — Hero ───────────────────────────────────────────────────
@@ -618,8 +642,8 @@ export const translations = {
 			],
 			title: "l\u2019assistant IA qui répond à vos appels et messages.",
 			subtitle:
-				"Automatisez vos conversations clients par téléphone, WhatsApp et Instagram. Ori décroche, répond et prend les réservations \u2014\u00a0",
-			subtitleBold: "24h/24, 7j/7.",
+				"Maximisez vos revenus en automatisant vos échanges. Sur Instagram, WhatsApp ou par téléphone, Ori gère chaque demande et enregistre vos réservations en temps réel, 24h/24 et 7j/7.",
+			subtitleBold: "",
 			ctaPhone: "Découvrir Ori téléphone",
 			ctaMessages: "Découvrir Ori messages",
 		},
@@ -628,29 +652,29 @@ export const translations = {
 			label: "NOS SOLUTIONS",
 			title: "Deux assistants, un même objectif",
 			subtitle:
-				"Ne manquez plus jamais un client. Ori gère vos communications pendant que vous vous concentrez sur l\u2019essentiel.",
+				"Ne laissez plus aucun client sans réponse. Ori prend en charge vos échanges pour vous permettre de vous concentrer sur l\u2019essentiel.",
 			solutions: [
 				{
 					label: "Ori Téléphone",
-					title: "Assistant téléphone",
+					title: "Assistant IA",
 					description:
-						"Ori décroche instantanément, répond aux questions de vos clients et enregistre vos réservations, sans interrompre l\u2019équipe.",
+						"Ori décroche à votre place, répond aux questions de vos clients et prend vos réservations en temps réel, sans jamais interrompre votre équipe.",
 					features: [
 						"Appels 24/7",
-						"Réservations auto",
-						"Transfert intelligent",
+						"Prise de réservation",
+						"Transfert d'appel",
 					],
 					cta: "Découvrir",
 				},
 				{
 					label: "Ori Message",
-					title: "Assistant Message",
+					title: "Assistant IA",
 					description:
-						"Ori décroche instantanément, répond aux questions de vos clients et enregistre vos réservations, sans interrompre l\u2019équipe.",
+						"Ori gère vos conversations sur WhatsApp et Instagram. Il répond aux demandes et enregistre vos réservations en toute autonomie, sans aucune intervention de votre part.",
 					features: [
-						"Appels 24/7",
-						"Réservations auto",
-						"Transfert intelligent",
+						"Multiplateforme",
+						"Réservation par écrit",
+						"Planning synchronisé",
 					],
 					cta: "Découvrir",
 				},
@@ -661,7 +685,7 @@ export const translations = {
 			label: "Fonctionnement",
 			title: "Comment ça marche ?",
 			subtitle:
-				"Lancez Ori en quelques minutes. Aucune compétence technique requise.",
+				"Déployez Ori en quelques minutes. Aucune compétence technique n'est nécessaire.",
 			steps: [
 				{
 					number: "01",
@@ -757,7 +781,7 @@ export const translations = {
 		header: {
 			navOriMessages: "Ori Messages",
 			navOriPhone: "Ori Téléphone",
-			myAccount: "My account",
+			myAccount: "Log in",
 			start: "Get started",
 			toggleTheme: "Toggle theme",
 			toggleMenu: "Toggle menu",
@@ -775,6 +799,7 @@ export const translations = {
 			legalTitle: "Legal",
 			socialTitle: "Social media",
 			changeLang: "Change language",
+			preferences: "Preferences",
 			copyright: "© 2026 ORI. All rights reserved.",
 			madeBy: "A product by",
 			navLinks: [
@@ -1156,6 +1181,29 @@ export const translations = {
 			totalCalls: "Total calls made",
 			avgDuration: "Average call duration",
 			tableHeaders: ["Date & Time", "From", "Duration", "Action"],
+			sophiaThreadTitle: "Sophia's messages",
+			conversations: [
+				{
+					name: "Sophia",
+					preview: "Hi, do you offer vegetarian dishes...",
+				},
+				{
+					name: "Clément",
+					preview: "Do you allow pets? ...",
+				},
+				{
+					name: "Martin",
+					preview: "What about a birthday party for fifteen people? ...",
+				},
+			],
+			messages: [
+				{ sender: "Sophia", time: "6:03 PM", text: "Hi, do you have any slots available at 8 PM?" },
+				{ sender: "Ori", time: "6:03 PM", text: "8 PM is fully booked tonight, but we have availability from 8:30 PM." },
+				{ sender: "Sophia", time: "6:03 PM", text: "8:30 PM works for me!" },
+				{ sender: "Ori", time: "6:03 PM", text: "Is there anything else I can help you with?" },
+				{ sender: "Sophia", time: "6:03 PM", text: "That's all, have a great day." },
+				{ sender: "Ori", time: "6:03 PM", text: "Is there anything else I can help you with?" },
+			],
 		},
 
 		// ── Ori Messages — Hero ───────────────────────────────────────────────────
@@ -1360,8 +1408,8 @@ export const translations = {
 			title:
 				"the AI agent that answers your restaurant\u2019s calls and messages.",
 			subtitle:
-				"Automate your customer conversations by phone, WhatsApp and Instagram. Ori answers, responds and takes reservations\u00a0\u2014\u00a0",
-			subtitleBold: "24/7.",
+				"Drive more revenue with automated conversations. Across Instagram, WhatsApp, and phone, Ori handles every request and logs your bookings in real-time, 24/7.",
+			subtitleBold: "",
 			ctaPhone: "Discover Ori Phone",
 			ctaMessages: "Discover Ori Messages",
 		},
@@ -1370,22 +1418,22 @@ export const translations = {
 			label: "OUR SOLUTIONS",
 			title: "Two assistants, one goal",
 			subtitle:
-				"Never miss a customer again. Ori handles your communications while you focus on what matters.",
+				"Ensure no customer is left behind. Ori manages your conversations while you concentrate on your core business.",
 			solutions: [
 				{
 					label: "Ori Phone",
-					title: "Phone assistant",
+					title: "AI Assistant",
 					description:
-						"Ori answers instantly, responds to your customers\u2019 questions and records reservations, without interrupting your team.",
-					features: ["24/7 calls", "Auto reservations", "Smart transfer"],
+						"Ori answers for you, handles customer inquiries, and takes bookings in real-time\u2014without ever interrupting your team.",
+					features: ["24/7 Availability", "Appointment Booking", "Smart Call Transfer"],
 					cta: "Discover",
 				},
 				{
 					label: "Ori Messages",
-					title: "Messaging assistant",
+					title: "AI Assistant",
 					description:
-						"Ori answers instantly, responds to your customers\u2019 questions and records reservations, without interrupting your team.",
-					features: ["24/7 calls", "Auto reservations", "Smart transfer"],
+						"Ori manages your conversations on WhatsApp and Instagram. It handles inquiries and records bookings autonomously, with zero intervention required.",
+					features: ["Multi-platform", "Chat-based Booking", "Calendar Sync"],
 					cta: "Discover",
 				},
 			],
@@ -1395,7 +1443,7 @@ export const translations = {
 			label: "How it works",
 			title: "Up and running in minutes.",
 			subtitle:
-				"Launch Ori in just a few minutes. No technical skills required.",
+				"Set up Ori in minutes. No technical skills required.",
 			steps: [
 				{
 					number: "01",

@@ -37,7 +37,7 @@ export function Hero() {
 					animate="show"
 					className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-primary"
 				>
-					<span>Meet Ori, </span>
+					<span>Ori, </span>
 					<span className="text-text-primary dark:text-text">
 						{homeHero.title}
 					</span>
