@@ -101,17 +101,20 @@ export function Footer() {
 								<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
 									{footer.navTitle}
 								</p>
-								{(isMessages ? footer.messagesNavLinks : isIndex ? footer.indexNavLinks : footer.navLinks).map(
-									(link) => (
-										<Link
-											key={link.href}
-											href={link.href}
-											className={`font-display font-normal text-sm text-text-primary dark:text-text transition-colors ${isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary"}`}
-										>
-											{link.label}
-										</Link>
-									),
-								)}
+								{(isMessages
+									? footer.messagesNavLinks
+									: isIndex
+										? footer.indexNavLinks
+										: footer.navLinks
+								).map((link) => (
+									<Link
+										key={link.href}
+										href={link.href}
+										className={`font-display font-normal text-sm text-text-primary dark:text-text transition-colors ${isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary"}`}
+									>
+										{link.label}
+									</Link>
+								))}
 							</div>
 
 							{/* Legal */}
@@ -220,9 +223,9 @@ export function Footer() {
 					</p>
 					<a
 						href="mailto:contact@lumiron.ai"
-						className={`mx-auto px-6 py-2 rounded-full font-display font-bold text-sm text-text bg-primary hover:bg-primary/90 active:bg-primary/80 shadow-orange-btn transition-colors`}
+						className={`mx-auto px-6 py-2 rounded-full font-display font-bold text-sm text-text transition-colors ${isMessages ? "bg-ori-message hover:bg-ori-message/90 active:bg-ori-message/80 shadow-blue-btn" : "bg-primary hover:bg-primary/90 active:bg-primary/80 shadow-orange-btn"}`}
 					>
-						contact@lumiron.ai
+						Contact
 					</a>
 					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
 						{footer.madeBy}{" "}

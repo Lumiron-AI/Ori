@@ -28,11 +28,11 @@ export interface Article {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// ARTICLES
+// ARTICLES — FR
 // Images: Figma asset URLs (expire in 7 days — replace with local /public/ paths)
 // ─────────────────────────────────────────────────────────────────────────────
 
-const ARTICLES: Article[] = [
+const ARTICLES_FR: Article[] = [
 	{
 		slug: "pourquoi-le-telephone",
 		title:
@@ -603,14 +603,592 @@ const ARTICLES: Article[] = [
 	},
 ];
 
-export function getAllArticles(): Article[] {
-	return ARTICLES;
+// ─────────────────────────────────────────────────────────────────────────────
+// ARTICLES — EN
+// ─────────────────────────────────────────────────────────────────────────────
+
+const ARTICLES_EN: Article[] = [
+	{
+		slug: "pourquoi-le-telephone",
+		title:
+			"Why the phone has become a real problem in restaurants (and how voice AI is changing the game)",
+		category: "Tech",
+		date: "April 15, 2026",
+		dateIso: "2026-04-15",
+		readingTime: "8 min",
+		image:
+			"https://www.figma.com/api/mcp/asset/efd96450-66b4-4dc3-8c16-9bf20c3a090a",
+		intro:
+			"In the restaurant industry, the phone is no longer just a communication tool. It has become a source of interruptions, operational stress, and invisible losses. During service, every call disrupts the floor, the kitchen, or the manager.\n\nAnd yet, a significant portion of reservations are concentrated precisely in these critical time slots.\n\nAccording to Zenchef, phone reservation demand peaks heavily around service hours — notably 12pm–2pm and 7pm–9pm.\n\nIn other words: customers call exactly when the team cannot answer without disrupting service.\n\nThe problem is not technological. It is organisational.",
+		sections: [
+			{
+				heading:
+					"1. Phone overload in restaurants: a measurable phenomenon",
+				blocks: [
+					{
+						type: "p",
+						text: "In most establishments, inbound calls concern:",
+					},
+					{
+						type: "ul",
+						items: [
+							"Last-minute reservations",
+							"Frequently asked questions (hours, menu, terrace, parking)",
+							"Takeaway orders",
+							"Deliveries",
+							"Private events or group bookings",
+						],
+					},
+					{
+						type: "p",
+						text: "These requests are entirely legitimate from the customer's perspective. But they arrive at the worst possible moment for the team. According to Food Hotel Tech 2025, 3 out of 4 restaurateurs now consider AI essential for optimising repetitive tasks and reducing operational pressure.",
+					},
+					{
+						type: "source",
+						text: "https://resto.zepros.fr/actus-metiers/ia-est-devenue-incontournable-3-restaurateurs-hoteliers-4",
+					},
+					{
+						type: "p",
+						text: "This is no longer a question of innovation. It is a question of efficiency.",
+					},
+				],
+			},
+			{
+				heading: "2. The real cost of poorly managed calls",
+				blocks: [
+					{
+						type: "p",
+						text: "A poorly managed call generates three types of impact:",
+					},
+					{ type: "bold", text: "Operational disruption" },
+					{
+						type: "p",
+						text: "Answering during a rush fragments attention. The floor slows down. The kitchen waits. The manager arbitrates.",
+					},
+					{ type: "bold", text: "Human error" },
+					{ type: "p", text: "Under pressure:" },
+					{
+						type: "ul",
+						items: [
+							"Reservation noted incorrectly",
+							"Name misspelled",
+							"Wrong time slot",
+							"Incomplete order",
+						],
+					},
+					{ type: "bold", text: "Lost opportunities" },
+					{
+						type: "p",
+						text: "If the call is not answered immediately, the customer:",
+					},
+					{
+						type: "ul",
+						items: [
+							"doesn't call back",
+							"books elsewhere",
+							"moves on",
+						],
+					},
+					{
+						type: "p",
+						text: "Overfull reports that a significant share of phone reservations are lost due to lack of immediate response.",
+					},
+					{
+						type: "source",
+						text: "https://blog.overfull.fr/linconvenient-des-reservations-par-telephone-pour-votre-restaurant/",
+					},
+					{
+						type: "p",
+						text: "A missed call appears on no dashboard. But it exists.",
+					},
+				],
+			},
+			{
+				heading: "3. After-hours calls: the invisible part of the problem",
+				blocks: [
+					{
+						type: "p",
+						text: "Contrary to popular belief, calls are not concentrated only during quiet opening hours.",
+					},
+					{ type: "p", text: "According to Tala Assistant:" },
+					{
+						type: "ul",
+						items: [
+							"82% of phone reservations come in outside 'quiet' hours",
+							"32% of calls occur between midnight and 8am",
+						],
+					},
+					{
+						type: "source",
+						text: "https://www.tala-assistant.com/blog/reservation-restaurant-automatique-par-telephone-ia",
+					},
+					{
+						type: "p",
+						text: "The customer calls when they think of booking. Not when the restaurant is ready to answer.",
+					},
+				],
+			},
+			{
+				heading: "4. Customer acceptance of voice AI",
+				blocks: [
+					{
+						type: "p",
+						text: "One of the historic barriers was cultural: 'Customers won't want to talk to an AI.'",
+					},
+					{ type: "p", text: "The data shows the opposite." },
+					{
+						type: "p",
+						text: "Médiamétrie reports that in September 2025, 38.1% of French people had already used a conversational agent (voice or text).",
+					},
+					{
+						type: "source",
+						text: "https://www.mediametrie.fr/fr/les-jeunes-aux-avant-postes-de-la-revolution-de-lia-conversationnelle",
+					},
+					{
+						type: "p",
+						text: "Interacting with an AI becomes normal when:",
+					},
+					{
+						type: "ul",
+						items: [
+							"the response is immediate",
+							"the conversation is fluid",
+							"the confirmation is clear",
+						],
+					},
+					{
+						type: "p",
+						text: "In a restaurant context, that is exactly what the customer is looking for.",
+					},
+				],
+			},
+			{
+				heading: "5. What a voice AI agent concretely changes",
+				blocks: [
+					{
+						type: "p",
+						text: "A voice agent specialised for restaurants can:",
+					},
+					{
+						type: "ul",
+						items: [
+							"automatically answer every call",
+							"understand the intent (reservation, order, question)",
+							"structure the information",
+							"send a confirmation by SMS",
+							"transfer to a human when necessary",
+						],
+					},
+					{
+						type: "p",
+						text: "It acts as an intelligent operational buffer. The benefit is not 'tech'. The benefit is organisational.",
+					},
+				],
+			},
+			{
+				heading: "6. The key point: staying in control",
+				blocks: [
+					{
+						type: "p",
+						text: "A useful AI does not replace the restaurateur.",
+					},
+					{ type: "p", text: "It applies defined rules:" },
+					{
+						type: "ul",
+						items: [
+							"opening hours",
+							"maximum capacity",
+							"cancellation policy",
+							"group management",
+							"private event conditions",
+						],
+					},
+					{ type: "p", text: "The restaurant stays in control. The AI executes." },
+				],
+			},
+			{
+				heading: "7. A concrete example: Ori",
+				blocks: [
+					{ type: "p", text: "A voice agent like Ori enables you to:" },
+					{
+						type: "ul",
+						items: [
+							"handle inbound calls (reservations, orders, FAQ)",
+							"configure rules specific to your restaurant",
+							"send automatic confirmations",
+							"review each call with a transcript",
+							"monitor phone activity in real time",
+						],
+					},
+					{
+						type: "p",
+						text: "The goal is not to add a tool. The goal is to remove friction.",
+					},
+				],
+			},
+			{
+				heading: "8. Simple indicators to assess your situation",
+				blocks: [
+					{ type: "p", text: "Ask yourself 5 questions:" },
+					{
+						type: "ol",
+						items: [
+							"Does the phone ring during the rush?",
+							"Do you actually call back missed calls?",
+							"Have you ever had incorrectly noted reservations?",
+							"Do you answer the same questions every day?",
+							"Do you know how many calls you actually receive?",
+						],
+					},
+					{
+						type: "p",
+						text: "If the answer is yes to several of these, the phone is already costing you time and peace of mind.",
+					},
+				],
+			},
+		],
+		conclusion: {
+			heading: "Conclusion",
+			blocks: [
+				{
+					type: "p",
+					text: "The phone is not the problem. Its impact on organisation is.",
+				},
+				{ type: "p", text: "The data shows that:" },
+				{
+					type: "ul",
+					items: [
+						"calls are concentrated during service hours",
+						"a portion of requests are lost",
+						"AI acceptance is growing rapidly",
+					],
+				},
+				{
+					type: "p",
+					text: "In this context, voice AI is progressively becoming an operational standard. Not to replace the human. But to protect the service.",
+				},
+			],
+		},
+	},
+	{
+		slug: "reservations-par-telephone",
+		title: "Phone reservations: why missed calls are costly",
+		category: "Tech",
+		date: "February 19, 2026",
+		dateIso: "2026-02-19",
+		readingTime: "5 min",
+		image:
+			"https://www.figma.com/api/mcp/asset/bc35c627-ed8d-46e2-b651-2f461418dfe6",
+		intro:
+			"Every unanswered call is a lost opportunity. In a restaurant, this is especially visible: a customer who gets no response books elsewhere in seconds. Understanding this mechanism is the first step to solving it.",
+		sections: [
+			{
+				heading: "1. Phone reservations remain a major channel",
+				blocks: [
+					{
+						type: "p",
+						text: "Despite the rise of online platforms, the phone remains the primary reservation channel for a significant proportion of restaurants — particularly those without an integrated online booking system.",
+					},
+					{
+						type: "p",
+						text: "For these establishments, every missed call directly means an empty table.",
+					},
+				],
+			},
+			{
+				heading: "2. When are calls missed?",
+				blocks: [
+					{
+						type: "p",
+						text: "Calls are heavily concentrated in critical time slots:",
+					},
+					{
+						type: "ul",
+						items: [
+							"During the lunch service (12pm–2pm)",
+							"During the dinner service (7pm–9pm)",
+							"On weekends and public holidays",
+						],
+					},
+					{
+						type: "p",
+						text: "These moments correspond exactly to peak activity on the floor. The team is busy, the phone rings unanswered.",
+					},
+				],
+			},
+			{
+				heading: "3. The real cost of a missed call",
+				blocks: [
+					{
+						type: "p",
+						text: "A missed call does not just mean a lost reservation. It also produces:",
+					},
+					{
+						type: "ul",
+						items: [
+							"A negative impression on the customer",
+							"A callback that rarely happens",
+							"A reservation made at a competitor",
+						],
+					},
+					{
+						type: "p",
+						text: "Accumulated over a week, the losses become substantial — without ever appearing on any dashboard.",
+					},
+				],
+			},
+			{
+				heading: "4. How automation reduces losses",
+				blocks: [
+					{
+						type: "p",
+						text: "A voice AI agent like Ori answers every call, even during service. It takes the reservation, handles common questions and sends a confirmation.",
+					},
+					{
+						type: "p",
+						text: "Result: zero missed calls, zero lost reservations due to no response.",
+					},
+				],
+			},
+		],
+		conclusion: {
+			heading: "Conclusion",
+			blocks: [
+				{
+					type: "p",
+					text: "Missed calls are not inevitable. They are the symptom of an organisation that has not yet adapted its tools to the real pace of service.",
+				},
+				{
+					type: "p",
+					text: "Automating call handling is not a loss of human contact. It is ensuring that every customer gets a response — immediately.",
+				},
+			],
+		},
+	},
+	{
+		slug: "les-appels-hors-horaires",
+		title: "After-hours calls: the invisible revenue loss",
+		category: "Tech",
+		date: "April 15, 2026",
+		dateIso: "2026-04-15",
+		readingTime: "8 min",
+		image:
+			"https://www.figma.com/api/mcp/asset/1fddc083-09cd-4bce-b618-aa633b6f1c44",
+		intro:
+			"A restaurant never truly closes. Customers, on the other hand, have no schedule. They search for information, want to book or ask questions — at 11pm, on a Sunday morning, or during closed days. These after-hours calls represent a structural revenue loss that few establishments have measured.",
+		sections: [
+			{
+				heading: "1. Demand does not respect opening hours",
+				blocks: [
+					{
+						type: "p",
+						text: "According to several industry studies, a significant share of inbound calls arrive outside the team's active hours:",
+					},
+					{
+						type: "ul",
+						items: [
+							"Before opening (before 10am)",
+							"After closing (after 10pm)",
+							"On days off and weekly closing days",
+						],
+					},
+					{
+						type: "p",
+						text: "The customer calls when they think of booking. Not when the restaurant is open.",
+					},
+				],
+			},
+			{
+				heading: "2. Why these calls are lost",
+				blocks: [
+					{
+						type: "p",
+						text: "Outside opening hours, several scenarios repeat themselves:",
+					},
+					{
+						type: "ul",
+						items: [
+							"The phone rings unanswered",
+							"A generic voicemail discourages the customer",
+							"No system captures the request",
+						],
+					},
+					{
+						type: "p",
+						text: "The next morning, the team has no idea how many opportunities were missed.",
+					},
+				],
+			},
+			{
+				heading: "3. The revenue loss: a simple calculation",
+				blocks: [
+					{
+						type: "p",
+						text: "If a restaurant misses an average of 3 calls per day outside hours, and each reservation represents a value of €40 per cover for a table of 2:",
+					},
+					{
+						type: "ul",
+						items: [
+							"3 calls × €80 = €240 lost per day",
+							"Around €7,200 per month",
+							"More than €86,000 per year",
+						],
+					},
+					{
+						type: "p",
+						text: "This calculation is conservative. And these losses appear in no accounting line.",
+					},
+				],
+			},
+			{
+				heading: "4. The solution: 24/7 availability",
+				blocks: [
+					{
+						type: "p",
+						text: "A voice AI agent never sleeps. It answers calls at midnight just as at 8am, on public holidays just as on Monday closing days.",
+					},
+					{
+						type: "p",
+						text: "Every after-hours call becomes a captured opportunity rather than a lost one.",
+					},
+				],
+			},
+		],
+		conclusion: {
+			heading: "Conclusion",
+			blocks: [
+				{
+					type: "p",
+					text: "The revenue loss from after-hours calls is invisible but real. It accumulates silently, week after week.",
+				},
+				{
+					type: "p",
+					text: "Making a restaurant available 24/7 is no longer reserved for large chains. It is now accessible to any establishment that chooses to automate intelligently.",
+				},
+			],
+		},
+	},
+	{
+		slug: "questions-frequentes",
+		title: "Frequently asked questions: how to handle them without a dedicated team",
+		category: "Tech",
+		date: "April 15, 2026",
+		dateIso: "2026-04-15",
+		readingTime: "8 min",
+		image:
+			"https://www.figma.com/api/mcp/asset/617d2ac5-ac77-4602-b958-bc4613fb817e",
+		intro:
+			"In a restaurant, the same questions come up every day. Hours, menu, allergens, directions, parking, terrace, groups... These requests are legitimate but time-consuming. Answering each one manually takes human time that could be spent on service. How do you absorb this volume without hiring a dedicated person?",
+		sections: [
+			{
+				heading: "1. Frequently asked questions: an underestimated volume",
+				blocks: [
+					{
+						type: "p",
+						text: "In an average-sized restaurant, recurring questions often represent more than 60% of inbound calls. The most common topics:",
+					},
+					{
+						type: "ul",
+						items: [
+							"Opening hours and closing days",
+							"Availability for a specific date",
+							"Menu and allergen information",
+							"Directions, parking, public transport",
+							"Conditions for groups and private events",
+						],
+					},
+					{
+						type: "p",
+						text: "These questions require no human decision. They require a precise, immediate answer.",
+					},
+				],
+			},
+			{
+				heading: "2. The human cost of repetition",
+				blocks: [
+					{
+						type: "p",
+						text: "Each repeated question takes a team member 1 to 3 minutes. Multiplied by 20 or 30 calls per day, that is one to two hours of work consumed solely by answering the same information.",
+					},
+					{
+						type: "p",
+						text: "This time cannot be recovered. And it generates progressive frustration within teams.",
+					},
+				],
+			},
+			{
+				heading: "3. The knowledge base: the key to delegation",
+				blocks: [
+					{
+						type: "p",
+						text: "For an AI agent to answer frequently asked questions correctly, it needs a structured knowledge base:",
+					},
+					{
+						type: "ul",
+						items: [
+							"Establishment information (name, address, hours)",
+							"Menu and dietary information",
+							"Reservation and cancellation policy",
+							"Special conditions (groups, events, private hire)",
+						],
+					},
+					{
+						type: "p",
+						text: "Once configured, this base allows the agent to respond instantly and accurately — without human intervention.",
+					},
+				],
+			},
+			{
+				heading: "4. What the team gains",
+				blocks: [
+					{
+						type: "p",
+						text: "By delegating frequently asked questions to an AI agent, the team reclaims time for:",
+					},
+					{
+						type: "ul",
+						items: [
+							"Quality of service on the floor",
+							"Complex requests that require human judgement",
+							"Welcome and direct customer relationship",
+						],
+					},
+					{
+						type: "p",
+						text: "Human added value concentrates where it is irreplaceable.",
+					},
+				],
+			},
+		],
+		conclusion: {
+			heading: "Conclusion",
+			blocks: [
+				{
+					type: "p",
+					text: "Handling frequently asked questions without a dedicated team is not a question of budget. It is a question of organisation.",
+				},
+				{
+					type: "p",
+					text: "A well-configured AI agent handles 80% of incoming requests autonomously. The team focuses on the 20% that truly deserve its attention.",
+				},
+			],
+		},
+	},
+];
+
+const ARTICLES_BY_LOCALE: Record<string, Article[]> = {
+	fr: ARTICLES_FR,
+	en: ARTICLES_EN,
+};
+
+export function getAllArticles(locale = "fr"): Article[] {
+	return ARTICLES_BY_LOCALE[locale] ?? ARTICLES_FR;
 }
 
-export function getArticleBySlug(slug: string): Article | undefined {
-	return ARTICLES.find((a) => a.slug === slug);
+export function getArticleBySlug(slug: string, locale = "fr"): Article | undefined {
+	return getAllArticles(locale).find((a) => a.slug === slug);
 }
 
-export function getRelatedArticles(currentSlug: string): Article[] {
-	return ARTICLES.filter((a) => a.slug !== currentSlug);
+export function getRelatedArticles(currentSlug: string, locale = "fr"): Article[] {
+	return getAllArticles(locale).filter((a) => a.slug !== currentSlug);
 }

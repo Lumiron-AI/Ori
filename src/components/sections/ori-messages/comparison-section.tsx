@@ -123,7 +123,7 @@ export function OriMessagesComparisonSection() {
 					/>
 				</div>
 
-				<p className="font-display font-semibold text-sm sm:text-base text-text-secondary dark:text-text-tertiary text-center mt-8 sm:mt-10 max-w-5xl mx-auto">
+				<p className="font-display font-normal text-sm sm:text-base text-text-secondary dark:text-text-tertiary text-center mt-8 sm:mt-10 max-w-5xl mx-auto">
 					{d.footer}
 				</p>
 			</div>

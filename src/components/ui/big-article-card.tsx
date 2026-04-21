@@ -7,9 +7,11 @@ import type { Article } from "@/lib/articles";
 
 interface BigArticleCardProps {
 	article: Article;
+	publishedOn: string;
+	readingTime: string;
 }
 
-export function BigArticleCard({ article }: BigArticleCardProps) {
+export function BigArticleCard({ article, publishedOn, readingTime }: BigArticleCardProps) {
 	return (
 		<Link
 			href={`/ressources/${article.slug}`}
@@ -37,13 +39,13 @@ export function BigArticleCard({ article }: BigArticleCardProps) {
 				<div className="flex items-center gap-2 text-text-heading dark:text-text-tertiary">
 					<Calendar size={16} className="shrink-0" />
 					<span className="font-display font-normal text-sm sm:text-base">
-						Publié le {article.date}
+						{publishedOn} {article.date}
 					</span>
 				</div>
 				<div className="flex items-center gap-2 text-text-heading dark:text-text-tertiary">
 					<Clock size={16} className="shrink-0" />
 					<span className="font-display font-normal text-sm sm:text-base">
-						Temps de lecture : {article.readingTime}
+						{readingTime} : {article.readingTime}
 					</span>
 				</div>
 			</div>

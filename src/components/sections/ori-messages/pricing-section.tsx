@@ -78,7 +78,7 @@ export function OriMessagesPricingSection() {
 					</motion.div>
 				</div>
 
-				<p className="font-display font-semibold text-sm sm:text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-3xl mx-auto">
+				<p className="font-display font-normal text-sm sm:text-base text-text-secondary dark:text-text-tertiary text-center mt-8 max-w-3xl mx-auto">
 					{d.footer}
 				</p>
 			</div>

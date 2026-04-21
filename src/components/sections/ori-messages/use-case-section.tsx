@@ -146,7 +146,7 @@ export function OriMessagesUseCaseSection() {
 							</div>
 
 							{/* Caption */}
-							<p className="font-display font-semibold text-sm sm:text-base text-text-secondary dark:text-text-tertiary text-center px-2">
+							<p className="font-display font-normal text-sm sm:text-base text-text-secondary dark:text-text-tertiary text-center px-2">
 								{card.caption}
 							</p>
 						</motion.div>

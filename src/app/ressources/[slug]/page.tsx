@@ -1,21 +1,20 @@
+"use client";
+
+import { use } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import {
-	getAllArticles,
 	getArticleBySlug,
 	getRelatedArticles,
 	type ContentBlock,
 } from "@/lib/articles";
 import { ArticleCard } from "@/components/ui/article-card";
+import { useLocale } from "@/context/locale-context";
 
 interface PageProps {
 	params: Promise<{ slug: string }>;
-}
-
-export function generateStaticParams() {
-	return getAllArticles().map((a) => ({ slug: a.slug }));
 }
 
 function ContentBlockRenderer({ block }: { block: ContentBlock }) {
@@ -72,25 +71,28 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
 	}
 }
 
-export default async function ArticlePage({ params }: PageProps) {
-	const { slug } = await params;
-	const article = getArticleBySlug(slug);
+export default function ArticlePage({ params }: PageProps) {
+	const { slug } = use(params);
+	const { t, locale } = useLocale();
+	const r = t.ressources;
+
+	const article = getArticleBySlug(slug, locale);
 	if (!article) notFound();
 
-	const related = getRelatedArticles(slug).slice(0, 3);
+	const related = getRelatedArticles(slug, locale).slice(0, 3);
 
 	return (
 		<main className="bg-background dark:bg-dark-bg min-h-screen">
 			{/* Article content */}
 			<div className="max-w-8xl mx-auto px-5 md:px-10 pt-24 pb-12">
-				{/* Breadcrumb + back */}
+				{/* Back */}
 				<div className="flex items-center gap-6 mb-6">
 					<Link
 						href="/ressources"
 						className="flex items-center gap-2 font-display font-normal text-lg text-text-heading dark:text-text hover:text-primary dark:hover:text-primary transition-colors"
 					>
 						<ArrowLeft size={20} />
-						Retour
+						{r.back}
 					</Link>
 				</div>
 
@@ -116,13 +118,13 @@ export default async function ArticlePage({ params }: PageProps) {
 							<div className="flex items-center gap-2 text-text-secondary dark:text-text-tertiary">
 								<Calendar size={18} className="shrink-0" />
 								<span className="font-display font-semibold text-base">
-									Publié le {article.date}
+									{r.publishedOn} {article.date}
 								</span>
 							</div>
 							<div className="flex items-center gap-2 text-text-secondary dark:text-text-tertiary">
 								<Clock size={18} className="shrink-0" />
 								<span className="font-display font-semibold text-base">
-									Temps de lecture : {article.readingTime}
+									{r.readingTime} : {article.readingTime}
 								</span>
 							</div>
 						</div>
@@ -180,11 +182,17 @@ export default async function ArticlePage({ params }: PageProps) {
 				<section className="bg-background dark:bg-dark-bg py-8 px-5 md:px-10">
 					<div className="max-w-8xl mx-auto">
 						<h2 className="font-display font-bold text-3xl text-text-primary dark:text-text mb-8">
-							À lire également
+							{r.relatedTitle}
 						</h2>
 						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 							{related.map((a) => (
-								<ArticleCard key={a.slug} article={a} />
+								<ArticleCard
+									key={a.slug}
+									article={a}
+									publishedOn={r.publishedOn}
+									readingTime={r.readingTime}
+									readMore={r.readMore}
+								/>
 							))}
 						</div>
 					</div>

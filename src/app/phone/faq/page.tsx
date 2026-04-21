@@ -20,6 +20,7 @@ import {
 	SlidersHorizontal,
 	ShieldCheck,
 } from "lucide-react";
+import { useLocale } from "@/context/locale-context";
 
 interface FAQItem {
 	question: string;
@@ -32,132 +33,12 @@ interface FAQGroup {
 	items: FAQItem[];
 }
 
-const FAQ_GROUPS: FAQGroup[] = [
-	{
-		theme: "Démarrage & installation",
-		icon: <Rocket size={15} />,
-		items: [
-			{
-				question: "Comment fonctionne l'essai gratuit de 7 jours ?",
-				answer:
-					"Vous créez votre compte, vous suivez les étapes de configuration et vous activez votre agent. Une carte bancaire peut être demandée à l'inscription, mais elle n'est pas débitée pendant les 7 jours d'essai. Une fois l'agent configuré, Ori peut répondre à vos appels entrants pendant 7 jours en conditions réelles. Vous pouvez utiliser soit votre numéro habituel, soit un numéro vers lequel vous redirigez vos appels. À la fin de l'essai, vous choisissez simplement si vous continuez ou non.",
-			},
-			{
-				question: "L'installation d'Ori est-elle compliquée ?",
-				answer:
-					"Non. L'activation est simple et guidée étape par étape. Vous créez votre agent, vous renseignez les informations utiles sur votre restaurant, puis vous choisissez comment faire arriver les appels vers Ori. Tout est pensé pour que vous puissiez démarrer rapidement, sans installation technique complexe. En quelques minutes, votre agent peut être prêt à répondre.",
-			},
-			{
-				question: "Dois-je changer de numéro ou de matériel ?",
-				answer:
-					"Non. Vous pouvez garder votre numéro actuel et votre matériel actuel. Ori peut fonctionner avec votre ligne existante. Et si vous préférez, vous pouvez aussi rediriger vos appels vers un autre numéro relié à Ori. Vous choisissez l'option la plus simple pour vous.",
-			},
-			{
-				question: "Comment les appels arrivent-ils chez Ori ?",
-				answer:
-					"Deux possibilités : soit Ori répond directement via votre numéro habituel, soit vous mettez en place une redirection d'appels vers un numéro connecté à Ori. Dans les deux cas, le but est le même : ne plus laisser d'appels sans réponse.",
-			},
-		],
-	},
-	{
-		theme: "Fonctionnement",
-		icon: <Cpu size={15} />,
-		items: [
-			{
-				question: "Est-ce qu'Ori répond vraiment comme un humain ?",
-				answer:
-					"Ori parle de façon naturelle, sans menus du type « tapez 1, tapez 2 ». Le client s'exprime normalement, et Ori répond en temps réel, sans latence gênante. L'expérience est fluide et bien plus naturelle qu'un répondeur classique. La voix peut rester légèrement synthétique, mais la conversation est claire, rapide et efficace.",
-			},
-			{
-				question:
-					"Que se passe-t-il si Ori ne peut pas répondre à une question ?",
-				answer:
-					"Si une demande sort du cadre prévu, Ori ne bloque pas l'appel. Il peut transférer immédiatement vers votre équipe si vous l'avez prévu. Il peut aussi prendre les coordonnées du client et le motif de l'appel pour que vous rappeliez ensuite. Vous définissez les règles, Ori les applique.",
-			},
-			{
-				question: "Est-ce qu'Ori fonctionne 24h/24 ?",
-				answer:
-					"Oui. Ori peut répondre à n'importe quelle heure, y compris pendant les services, le soir, le week-end ou les jours fériés. Vous pouvez aussi choisir de l'activer uniquement sur certains créneaux. C'est vous qui décidez quand il prend le relais.",
-			},
-			{
-				question: "Que se passe-t-il en cas de demande urgente ?",
-				answer:
-					"Ori peut détecter certains cas prioritaires et transférer l'appel à votre équipe selon les règles que vous avez définies. Par exemple : grosse réservation, client mécontent, demande sensible ou besoin de parler à quelqu'un immédiatement. L'objectif n'est pas de bloquer les situations importantes, mais de les faire remonter au bon moment.",
-			},
-		],
-	},
-	{
-		theme: "Réservations & commandes",
-		icon: <CalendarCheck size={15} />,
-		items: [
-			{
-				question:
-					"Est-ce qu'Ori peut prendre des réservations automatiquement ?",
-				answer:
-					"Oui. Ori peut prendre une réservation par téléphone en demandant la date, l'heure, le nombre de personnes et le nom du client. Il enregistre les informations et confirme la demande selon le fonctionnement prévu. Le client est pris en charge immédiatement, sans faire attendre votre équipe au téléphone.",
-			},
-			{
-				question: "Ori peut-il modifier ou annuler une réservation ?",
-				answer:
-					"Oui, si ce fonctionnement est activé dans votre configuration. Le client peut rappeler pour modifier ou annuler sa réservation, et Ori suit les règles que vous avez définies. Cela évite à votre équipe de gérer manuellement chaque changement simple.",
-			},
-			{
-				question:
-					"Ori peut-il prendre des commandes à emporter ou en livraison ?",
-				answer:
-					"Oui. Ori peut prendre une commande par téléphone, enregistrer les articles demandés et guider le client tout au long de l'échange. Selon votre configuration, il peut aussi suggérer des produits complémentaires et transmettre les informations utiles pour la suite. Le but est simple : traiter plus d'appels sans surcharger votre équipe.",
-			},
-		],
-	},
-	{
-		theme: "Contrôle & suivi",
-		icon: <SlidersHorizontal size={15} />,
-		items: [
-			{
-				question: "Puis-je décider quand un appel est transféré à mon équipe ?",
-				answer:
-					"Oui. Vous choisissez précisément dans quels cas Ori doit passer la main. Par exemple : demande complexe, gros panier, réclamation, urgence ou demande spéciale. Vous gardez le contrôle sur les règles de transfert.",
-			},
-			{
-				question: "Est-ce que je peux voir ce qu'Ori a traité ?",
-				answer:
-					"Oui. Vous disposez d'un espace de suivi pour voir les appels reçus, les réservations prises, les demandes traitées et les actions réalisées. Vous savez exactement ce qu'Ori a géré pour vous.",
-			},
-			{
-				question: "Est-ce que je peux réécouter les appels ?",
-				answer:
-					"Oui. Vous pouvez réécouter les appels et consulter l'historique des échanges. Cela vous permet de vérifier ce qui a été dit, de suivre la qualité des conversations et de garder une vraie visibilité sur le service rendu.",
-			},
-			{
-				question: "Puis-je modifier ce qu'Ori dit aux clients ?",
-				answer:
-					"Oui. Vous pouvez ajuster les informations utiles : horaires, messages, consignes, réponses fréquentes, règles de transfert ou fonctionnement général. Ori s'adapte à votre restaurant. Vous gardez la main sur l'expérience client.",
-			},
-		],
-	},
-	{
-		theme: "Multi-sites, sécurité & abonnement",
-		icon: <ShieldCheck size={15} />,
-		items: [
-			{
-				question:
-					"J'ai plusieurs restaurants. Est-ce qu'Ori peut tous les gérer ?",
-				answer:
-					"Oui. Ori peut être utilisé sur plusieurs établissements. Chaque restaurant peut avoir ses propres horaires, ses propres consignes et son propre fonctionnement. Vous gardez une gestion claire, même à plusieurs sites.",
-			},
-			{
-				question:
-					"Les données de mon restaurant et de mes clients sont-elles protégées ?",
-				answer:
-					"Oui. Les données sont sécurisées et utilisées uniquement pour faire fonctionner le service. L'objectif est de garantir un traitement fiable, confidentiel et conforme aux exigences de protection des données.",
-			},
-			{
-				question: "Puis-je arrêter quand je veux ?",
-				answer:
-					"Oui. À la fin de l'essai, vous choisissez librement si vous souhaitez continuer. Et si vous êtes abonné, vous pouvez arrêter selon les conditions prévues, sans mauvaise surprise. Le but est que vous restiez parce que le service vous est utile, pas parce que vous êtes bloqué.",
-			},
-		],
-	},
+const ICONS = [
+	<Rocket key="rocket" size={15} />,
+	<Cpu key="cpu" size={15} />,
+	<CalendarCheck key="calendar" size={15} />,
+	<SlidersHorizontal key="sliders" size={15} />,
+	<ShieldCheck key="shield" size={15} />,
 ];
 
 function AccordionItem({
@@ -221,17 +102,25 @@ function AccordionItem({
 	);
 }
 
-const ALL_THEMES = "Tout voir";
-
 export default function PhoneFAQPage() {
-	const [open, setOpen] = useState<number | null>(null);
-	const [activeTheme, setActiveTheme] = useState(ALL_THEMES);
+	const { t } = useLocale();
+	const page = t.phoneFaqPage;
 
-	const tabs = [ALL_THEMES, ...FAQ_GROUPS.map((g) => g.theme)];
+	const faqGroups: FAQGroup[] = page.groups.map((g, i) => ({
+		theme: g.theme,
+		icon: ICONS[i] ?? <Rocket size={15} />,
+		items: (g.items as unknown) as FAQItem[],
+	}));
+
+	const ALL_THEMES = page.seeAll;
+	const [open, setOpen] = useState<number | null>(null);
+	const [activeTheme, setActiveTheme] = useState<string>(ALL_THEMES);
+
+	const tabs = [ALL_THEMES, ...faqGroups.map((g) => g.theme)];
 	const visibleGroups =
 		activeTheme === ALL_THEMES
-			? FAQ_GROUPS
-			: FAQ_GROUPS.filter((g) => g.theme === activeTheme);
+			? faqGroups
+			: faqGroups.filter((g) => g.theme === activeTheme);
 
 	let globalIndex = 0;
 
@@ -244,20 +133,17 @@ export default function PhoneFAQPage() {
 					transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
 				>
 					<Link
-						href="/solutions/phone"
+						href="/phone"
 						className="flex items-center gap-2 font-display font-normal text-lg text-text-heading dark:text-text hover:text-primary dark:hover:text-primary transition-colors mb-6"
 					>
 						<ArrowLeft size={20} />
-						Retour
+						{page.back}
 					</Link>
-					<span className="font-display font-semibold text-sm text-primary tracking-widest">
-						FAQ
-					</span>
 					<h1 className="font-display font-bold text-3xl sm:text-5xl my-2 text-text-primary dark:text-text">
-						Tout savoir sur Ori phone.
+						{page.title}
 					</h1>
 					<p className="font-sans font-normal text-lg text-text-secondary dark:text-text-tertiary">
-						Tout savoir sur l'assistant conçu pour les restaurants.
+						{page.subtitle}
 					</p>
 				</motion.div>
 
@@ -277,7 +163,7 @@ export default function PhoneFAQPage() {
 							</SelectTrigger>
 							<SelectContent>
 								{tabs.map((tab) => {
-									const group = FAQ_GROUPS.find((g) => g.theme === tab);
+									const group = faqGroups.find((g) => g.theme === tab);
 									return (
 										<SelectItem key={tab} value={tab}>
 											<span className="flex items-center gap-2">
@@ -298,7 +184,7 @@ export default function PhoneFAQPage() {
 					{/* Desktop tabs */}
 					<div className="hidden md:flex flex-wrap gap-2 mt-10">
 						{tabs.map((tab) => {
-							const group = FAQ_GROUPS.find((g) => g.theme === tab);
+							const group = faqGroups.find((g) => g.theme === tab);
 							const isActive = activeTheme === tab;
 							return (
 								<button

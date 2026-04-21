@@ -60,10 +60,16 @@ export function TrackingPanel() {
 							<tr key={i}>
 								<td className="px-3 py-2">
 									<p className="font-display font-normal text-xs text-text-primary dark:text-text">
-										{new Date(row.iso).toLocaleDateString(locale === "en" ? "en-US" : "fr-FR", { day: "numeric", month: "short", year: "numeric" })}
+										{new Date(row.iso).toLocaleDateString(
+											locale === "en" ? "en-US" : "fr-FR",
+											{ day: "numeric", month: "short", year: "numeric" },
+										)}
 									</p>
 									<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
-										{new Date(row.iso).toLocaleTimeString(locale === "en" ? "en-US" : "fr-FR", { hour: "2-digit", minute: "2-digit", second: "2-digit" })}
+										{new Date(row.iso).toLocaleTimeString(
+											locale === "en" ? "en-US" : "fr-FR",
+											{ hour: "2-digit", minute: "2-digit", second: "2-digit" },
+										)}
 									</p>
 								</td>
 								<td className="hidden sm:table-cell px-3 py-2 text-center">
@@ -76,7 +82,7 @@ export function TrackingPanel() {
 										{row.duration}
 									</p>
 								</td>
-								<td className="px-3 py-2 text-center">
+								<td className="pl-3 pr-1 py-2 text-center">
 									<div className="flex items-center justify-center gap-1">
 										<button
 											aria-label="View"

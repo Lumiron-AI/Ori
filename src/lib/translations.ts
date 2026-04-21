@@ -750,6 +750,274 @@ export const translations = {
 			ctaMessages: "Essayer Ori Message",
 		},
 
+		// ── Ressources ────────────────────────────────────────────────────────────
+		ressources: {
+			title: "Ressources",
+			seeAll: "Tout voir",
+			empty: "Aucun article dans cette catégorie pour le moment.",
+			publishedOn: "Publié le",
+			readingTime: "Temps de lecture",
+			back: "Retour",
+			readMore: "Consulter",
+			relatedTitle: "À lire également",
+		},
+
+		// ── Phone FAQ page ────────────────────────────────────────────────────────
+		phoneFaqPage: {
+			back: "Retour",
+			title: "Tout savoir sur Ori phone.",
+			subtitle: "Tout savoir sur l'assistant conçu pour les restaurants.",
+			seeAll: "Tout voir",
+			groups: [
+				{
+					theme: "Démarrage & installation",
+					items: [
+						{
+							question: "Comment fonctionne l'essai gratuit de 7 jours ?",
+							answer:
+								"Vous créez votre compte, vous suivez les étapes de configuration et vous activez votre agent. Une carte bancaire peut être demandée à l'inscription, mais elle n'est pas débitée pendant les 7 jours d'essai. Une fois l'agent configuré, Ori peut répondre à vos appels entrants pendant 7 jours en conditions réelles. Vous pouvez utiliser soit votre numéro habituel, soit un numéro vers lequel vous redirigez vos appels. À la fin de l'essai, vous choisissez simplement si vous continuez ou non.",
+						},
+						{
+							question: "L'installation d'Ori est-elle compliquée ?",
+							answer:
+								"Non. L'activation est simple et guidée étape par étape. Vous créez votre agent, vous renseignez les informations utiles sur votre restaurant, puis vous choisissez comment faire arriver les appels vers Ori. Tout est pensé pour que vous puissiez démarrer rapidement, sans installation technique complexe. En quelques minutes, votre agent peut être prêt à répondre.",
+						},
+						{
+							question: "Dois-je changer de numéro ou de matériel ?",
+							answer:
+								"Non. Vous pouvez garder votre numéro actuel et votre matériel actuel. Ori peut fonctionner avec votre ligne existante. Et si vous préférez, vous pouvez aussi rediriger vos appels vers un autre numéro relié à Ori. Vous choisissez l'option la plus simple pour vous.",
+						},
+						{
+							question: "Comment les appels arrivent-ils chez Ori ?",
+							answer:
+								"Deux possibilités : soit Ori répond directement via votre numéro habituel, soit vous mettez en place une redirection d'appels vers un numéro connecté à Ori. Dans les deux cas, le but est le même : ne plus laisser d'appels sans réponse.",
+						},
+					],
+				},
+				{
+					theme: "Fonctionnement",
+					items: [
+						{
+							question: "Est-ce qu'Ori répond vraiment comme un humain ?",
+							answer:
+								"Ori parle de façon naturelle, sans menus du type « tapez 1, tapez 2 ». Le client s'exprime normalement, et Ori répond en temps réel, sans latence gênante. L'expérience est fluide et bien plus naturelle qu'un répondeur classique. La voix peut rester légèrement synthétique, mais la conversation est claire, rapide et efficace.",
+						},
+						{
+							question: "Que se passe-t-il si Ori ne peut pas répondre à une question ?",
+							answer:
+								"Si une demande sort du cadre prévu, Ori ne bloque pas l'appel. Il peut transférer immédiatement vers votre équipe si vous l'avez prévu. Il peut aussi prendre les coordonnées du client et le motif de l'appel pour que vous rappeliez ensuite. Vous définissez les règles, Ori les applique.",
+						},
+						{
+							question: "Est-ce qu'Ori fonctionne 24h/24 ?",
+							answer:
+								"Oui. Ori peut répondre à n'importe quelle heure, y compris pendant les services, le soir, le week-end ou les jours fériés. Vous pouvez aussi choisir de l'activer uniquement sur certains créneaux. C'est vous qui décidez quand il prend le relais.",
+						},
+						{
+							question: "Que se passe-t-il en cas de demande urgente ?",
+							answer:
+								"Ori peut détecter certains cas prioritaires et transférer l'appel à votre équipe selon les règles que vous avez définies. Par exemple : grosse réservation, client mécontent, demande sensible ou besoin de parler à quelqu'un immédiatement. L'objectif n'est pas de bloquer les situations importantes, mais de les faire remonter au bon moment.",
+						},
+					],
+				},
+				{
+					theme: "Réservations & commandes",
+					items: [
+						{
+							question: "Est-ce qu'Ori peut prendre des réservations automatiquement ?",
+							answer:
+								"Oui. Ori peut prendre une réservation par téléphone en demandant la date, l'heure, le nombre de personnes et le nom du client. Il enregistre les informations et confirme la demande selon le fonctionnement prévu. Le client est pris en charge immédiatement, sans faire attendre votre équipe au téléphone.",
+						},
+						{
+							question: "Ori peut-il modifier ou annuler une réservation ?",
+							answer:
+								"Oui, si ce fonctionnement est activé dans votre configuration. Le client peut rappeler pour modifier ou annuler sa réservation, et Ori suit les règles que vous avez définies. Cela évite à votre équipe de gérer manuellement chaque changement simple.",
+						},
+						{
+							question: "Ori peut-il prendre des commandes à emporter ou en livraison ?",
+							answer:
+								"Oui. Ori peut prendre une commande par téléphone, enregistrer les articles demandés et guider le client tout au long de l'échange. Selon votre configuration, il peut aussi suggérer des produits complémentaires et transmettre les informations utiles pour la suite. Le but est simple : traiter plus d'appels sans surcharger votre équipe.",
+						},
+					],
+				},
+				{
+					theme: "Contrôle & suivi",
+					items: [
+						{
+							question: "Puis-je décider quand un appel est transféré à mon équipe ?",
+							answer:
+								"Oui. Vous choisissez précisément dans quels cas Ori doit passer la main. Par exemple : demande complexe, gros panier, réclamation, urgence ou demande spéciale. Vous gardez le contrôle sur les règles de transfert.",
+						},
+						{
+							question: "Est-ce que je peux voir ce qu'Ori a traité ?",
+							answer:
+								"Oui. Vous disposez d'un espace de suivi pour voir les appels reçus, les réservations prises, les demandes traitées et les actions réalisées. Vous savez exactement ce qu'Ori a géré pour vous.",
+						},
+						{
+							question: "Est-ce que je peux réécouter les appels ?",
+							answer:
+								"Oui. Vous pouvez réécouter les appels et consulter l'historique des échanges. Cela vous permet de vérifier ce qui a été dit, de suivre la qualité des conversations et de garder une vraie visibilité sur le service rendu.",
+						},
+						{
+							question: "Puis-je modifier ce qu'Ori dit aux clients ?",
+							answer:
+								"Oui. Vous pouvez ajuster les informations utiles : horaires, messages, consignes, réponses fréquentes, règles de transfert ou fonctionnement général. Ori s'adapte à votre restaurant. Vous gardez la main sur l'expérience client.",
+						},
+					],
+				},
+				{
+					theme: "Multi-sites, sécurité & abonnement",
+					items: [
+						{
+							question: "J'ai plusieurs restaurants. Est-ce qu'Ori peut tous les gérer ?",
+							answer:
+								"Oui. Ori peut être utilisé sur plusieurs établissements. Chaque restaurant peut avoir ses propres horaires, ses propres consignes et son propre fonctionnement. Vous gardez une gestion claire, même à plusieurs sites.",
+						},
+						{
+							question: "Les données de mon restaurant et de mes clients sont-elles protégées ?",
+							answer:
+								"Oui. Les données sont sécurisées et utilisées uniquement pour faire fonctionner le service. L'objectif est de garantir un traitement fiable, confidentiel et conforme aux exigences de protection des données.",
+						},
+						{
+							question: "Puis-je arrêter quand je veux ?",
+							answer:
+								"Oui. À la fin de l'essai, vous choisissez librement si vous souhaitez continuer. Et si vous êtes abonné, vous pouvez arrêter selon les conditions prévues, sans mauvaise surprise. Le but est que vous restiez parce que le service vous est utile, pas parce que vous êtes bloqué.",
+						},
+					],
+				},
+			],
+		},
+
+		// ── Messages FAQ page ──────────────────────────────────────────────────────
+		messagesFaqPage: {
+			back: "Retour",
+			title: "Tout savoir sur Ori Message",
+			subtitle:
+				"Les réponses à vos questions pour automatiser vos réseaux en toute confiance.",
+			seeAll: "Tout voir",
+			groups: [
+				{
+					theme: "Démarrage & connexion",
+					items: [
+						{
+							question: "Dois-je changer mes comptes Instagram ou WhatsApp ?",
+							answer:
+								"Non. Ori se connecte directement à vos comptes existants (WhatsApp Business ou Instagram). Vous gardez vos accès, votre historique et votre fonctionnement habituel. Rien n'est recréé, rien n'est perdu.",
+						},
+						{
+							question: "Combien de temps faut-il pour activer Ori Messages ?",
+							answer:
+								"Moins de 5 minutes. Vous connectez vos comptes, vous renseignez les informations de base, et Ori est prêt. Il peut commencer à répondre immédiatement à vos messages.",
+						},
+						{
+							question: "L'installation est-elle technique ?",
+							answer:
+								"Non. Tout est guidé étape par étape. Aucune compétence technique n'est nécessaire. Vous suivez les étapes, et votre assistant est opérationnel rapidement.",
+						},
+					],
+				},
+				{
+					theme: "Fonctionnement des messages",
+					items: [
+						{
+							question: "Est-ce qu'Ori répond automatiquement aux messages ?",
+							answer:
+								"Oui. Ori répond automatiquement aux messages reçus sur WhatsApp et Instagram. Il comprend les demandes et répond de manière claire et immédiate. Vous ne laissez plus aucun message sans réponse.",
+						},
+						{
+							question: "Est-ce qu'Ori répond comme un humain ?",
+							answer:
+								"Ori comprend le langage naturel et répond de façon fluide. Le ton est conversationnel, simple et direct. L'objectif est que l'échange soit rapide, naturel et utile pour le client.",
+						},
+						{
+							question: "Que se passe-t-il si Ori ne comprend pas un message ?",
+							answer:
+								"Ori ne bloque pas la conversation. Il peut reformuler, poser une question ou transférer à votre équipe si nécessaire. Vous définissez les limites et les règles de passage à un humain.",
+						},
+						{
+							question: "Puis-je reprendre la main sur une conversation ?",
+							answer:
+								"Oui, à tout moment. Vous pouvez intervenir directement depuis Instagram ou WhatsApp. Ori s'efface dès que vous reprenez la conversation.",
+						},
+						{
+							question: "Puis-je choisir quand Ori répond et quand je réponds moi-même ?",
+							answer:
+								"Oui. Vous pouvez décider que Ori répond en continu, uniquement en dehors des horaires, ou sur certains types de messages. Vous gardez le contrôle total.",
+						},
+					],
+				},
+				{
+					theme: "Réservations & conversion",
+					items: [
+						{
+							question: "Est-ce qu'Ori peut gérer les réservations via message ?",
+							answer:
+								"Oui. Ori peut comprendre une demande de réservation, poser les bonnes questions et enregistrer les informations. Le client est pris en charge immédiatement, sans attente.",
+						},
+						{
+							question: "Ori peut-il générer plus de ventes via messages ?",
+							answer:
+								"Oui. Ori peut répondre rapidement, relancer, suggérer des options et guider le client. Résultat : plus de conversions et moins d'opportunités perdues.",
+						},
+						{
+							question: "Peut-il envoyer des liens (paiement, menu, réservation) ?",
+							answer:
+								"Oui. Ori peut partager des liens utiles : menu, réservation, paiement ou autre. Il guide le client jusqu'à l'action finale.",
+						},
+					],
+				},
+				{
+					theme: "Contrôle & suivi",
+					items: [
+						{
+							question: "Est-ce que je peux voir les conversations ?",
+							answer:
+								"Oui. Vous avez accès à l'historique complet des échanges. Vous pouvez lire, suivre et comprendre ce qui a été dit à chaque client.",
+						},
+						{
+							question: "Puis-je modifier les réponses d'Ori ?",
+							answer:
+								"Oui. Vous pouvez ajuster les messages, les informations, les réponses fréquentes et le ton utilisé. Ori s'adapte à votre restaurant.",
+						},
+						{
+							question: "Est-ce que je peux voir les performances ?",
+							answer:
+								"Oui. Vous pouvez suivre le nombre de messages reçus, traités et les actions réalisées. Vous voyez concrètement l'impact sur votre activité.",
+						},
+					],
+				},
+				{
+					theme: "Utilisation avancée",
+					items: [
+						{
+							question: "Puis-je utiliser Ori uniquement quand je suis fermé ?",
+							answer:
+								"Oui. Vous pouvez activer Ori uniquement pendant vos heures de fermeture ou en dehors des services. Cela permet de répondre aux clients sans mobiliser votre équipe.",
+						},
+						{
+							question: "Est-ce qu'Ori peut gérer plusieurs comptes ou établissements ?",
+							answer:
+								"Oui. Vous pouvez connecter plusieurs comptes et gérer plusieurs établissements. Chaque compte peut avoir ses propres règles et son propre fonctionnement.",
+						},
+					],
+				},
+				{
+					theme: "Sécurité & engagement",
+					items: [
+						{
+							question: "Mes données sont-elles sécurisées ?",
+							answer:
+								"Oui. Les données sont protégées et utilisées uniquement pour faire fonctionner le service. Vous gardez le contrôle de vos comptes et de vos échanges.",
+						},
+						{
+							question: "Puis-je arrêter quand je veux ?",
+							answer:
+								"Oui. Vous restez libre d'arrêter à tout moment selon les conditions prévues. L'objectif est simple : que vous restiez parce que ça vous apporte de la valeur.",
+						},
+					],
+				},
+			],
+		},
+
 		// ── Ori Messages — Pricing ────────────────────────────────────────────────
 		messagesPricing: {
 			label: "TARIFS",
@@ -789,9 +1057,9 @@ export const translations = {
 			},
 			duo: {
 				badge: "Le plus populaire",
-				title: "PACK DUO",
-				tagline: "Le combo complet.",
-				cta: "Activer le Pack Duo",
+				title: "DUO",
+				tagline: "Instagram + WhatsApp",
+				cta: "Activer le Duo",
 				features: [
 					"Jusqu'à 500 discussions",
 					"Réponses 24h/24",
@@ -1530,10 +1798,277 @@ export const translations = {
 			titleHighlight: "7 days",
 			title2: "free",
 			subtitle: "No commitment. Setup in 5 minutes.",
-			subtitleFooter:
-				"One lost customer costs more than a month of Ori.",
+			subtitleFooter: "One lost customer costs more than a month of Ori.",
 			ctaPhone: "Try Ori Phone",
 			ctaMessages: "Try Ori Messages",
+		},
+
+		// ── Ressources ────────────────────────────────────────────────────────────
+		ressources: {
+			title: "Resources",
+			seeAll: "View all",
+			empty: "No articles in this category yet.",
+			publishedOn: "Published on",
+			readingTime: "Reading time",
+			back: "Back",
+			readMore: "Read more",
+			relatedTitle: "Read also",
+		},
+
+		// ── Phone FAQ page ────────────────────────────────────────────────────────
+		phoneFaqPage: {
+			back: "Back",
+			title: "Everything about Ori Phone.",
+			subtitle: "All you need to know about the assistant built for restaurants.",
+			seeAll: "View all",
+			groups: [
+				{
+					theme: "Getting started",
+					items: [
+						{
+							question: "How does the 7-day free trial work?",
+							answer:
+								"You create your account, follow the setup steps and activate your agent. A payment card may be required at sign-up, but you won't be charged during the 7-day trial. Once your agent is configured, Ori can answer your incoming calls for 7 days under real conditions. You can use either your regular number or a number to which you forward your calls. At the end of the trial, you simply choose whether to continue or not.",
+						},
+						{
+							question: "Is setting up Ori complicated?",
+							answer:
+								"Not at all. Activation is simple and guided step by step. You create your agent, enter relevant information about your restaurant, then choose how to route calls to Ori. Everything is designed so you can get started quickly, with no complex technical setup. In just a few minutes, your agent can be ready to answer.",
+						},
+						{
+							question: "Do I need to change my number or equipment?",
+							answer:
+								"No. You can keep your current number and current equipment. Ori works with your existing line. And if you prefer, you can also forward your calls to another number connected to Ori. You choose the simplest option for you.",
+						},
+						{
+							question: "How do calls reach Ori?",
+							answer:
+								"Two options: either Ori answers directly via your regular number, or you set up call forwarding to a number connected to Ori. In both cases, the goal is the same: no more missed calls.",
+						},
+					],
+				},
+				{
+					theme: "How it works",
+					items: [
+						{
+							question: "Does Ori really respond like a human?",
+							answer:
+								"Ori speaks naturally, with no menus like 'press 1, press 2'. The customer speaks normally, and Ori responds in real time with no noticeable delay. The experience is smooth and far more natural than a traditional answering machine. The voice may sound slightly synthetic, but the conversation is clear, quick and effective.",
+						},
+						{
+							question: "What happens if Ori can't answer a question?",
+							answer:
+								"If a request falls outside the defined scope, Ori doesn't block the call. It can immediately transfer to your team if you've set that up. It can also take the customer's contact details and the reason for the call so you can follow up. You define the rules, Ori follows them.",
+						},
+						{
+							question: "Does Ori work 24/7?",
+							answer:
+								"Yes. Ori can answer at any time, including during service, in the evening, on weekends or on public holidays. You can also choose to activate it only during certain time slots. You decide when it takes over.",
+						},
+						{
+							question: "What happens in case of an urgent request?",
+							answer:
+								"Ori can detect certain priority situations and transfer the call to your team according to the rules you've defined. For example: a large reservation, a dissatisfied customer, a sensitive request or someone who needs to speak to a person immediately. The goal isn't to block important situations, but to escalate them at the right moment.",
+						},
+					],
+				},
+				{
+					theme: "Reservations & orders",
+					items: [
+						{
+							question: "Can Ori take reservations automatically?",
+							answer:
+								"Yes. Ori can take a reservation over the phone by asking for the date, time, number of guests and customer name. It records the information and confirms the request according to your configured workflow. The customer is taken care of immediately, without keeping your team on the phone.",
+						},
+						{
+							question: "Can Ori modify or cancel a reservation?",
+							answer:
+								"Yes, if this feature is enabled in your configuration. The customer can call back to modify or cancel their reservation, and Ori follows the rules you've defined. This saves your team from manually handling every simple change.",
+						},
+						{
+							question: "Can Ori take takeaway or delivery orders?",
+							answer:
+								"Yes. Ori can take an order over the phone, record the requested items and guide the customer throughout the exchange. Depending on your configuration, it can also suggest complementary products and pass on the relevant information for the next steps. The goal is simple: handle more calls without overloading your team.",
+						},
+					],
+				},
+				{
+					theme: "Control & monitoring",
+					items: [
+						{
+							question: "Can I decide when a call is transferred to my team?",
+							answer:
+								"Yes. You choose precisely in which cases Ori should hand over. For example: a complex request, a large order, a complaint, an emergency or a special request. You stay in control of the transfer rules.",
+						},
+						{
+							question: "Can I see what Ori has handled?",
+							answer:
+								"Yes. You have a tracking space to view received calls, reservations taken, requests handled and actions completed. You know exactly what Ori has managed for you.",
+						},
+						{
+							question: "Can I replay calls?",
+							answer:
+								"Yes. You can replay calls and consult the history of exchanges. This lets you verify what was said, monitor conversation quality and keep full visibility over the service provided.",
+						},
+						{
+							question: "Can I change what Ori says to customers?",
+							answer:
+								"Yes. You can adjust useful information: opening hours, messages, instructions, common answers, transfer rules or general operation. Ori adapts to your restaurant. You stay in control of the customer experience.",
+						},
+					],
+				},
+				{
+					theme: "Multi-site, security & subscription",
+					items: [
+						{
+							question: "I have several restaurants. Can Ori manage all of them?",
+							answer:
+								"Yes. Ori can be used across multiple locations. Each restaurant can have its own hours, its own instructions and its own workflow. You keep a clear overview, even across multiple sites.",
+						},
+						{
+							question: "Is my restaurant and customer data protected?",
+							answer:
+								"Yes. Data is secured and used solely to operate the service. The goal is to ensure reliable, confidential processing that meets data protection requirements.",
+						},
+						{
+							question: "Can I cancel at any time?",
+							answer:
+								"Yes. At the end of the trial, you freely choose whether to continue. And if you're a subscriber, you can cancel under the terms provided, with no nasty surprises. The goal is for you to stay because the service is useful to you, not because you're locked in.",
+						},
+					],
+				},
+			],
+		},
+
+		// ── Messages FAQ page ──────────────────────────────────────────────────────
+		messagesFaqPage: {
+			back: "Back",
+			title: "Everything about Ori Message",
+			subtitle:
+				"Answers to your questions so you can automate your channels with confidence.",
+			seeAll: "View all",
+			groups: [
+				{
+					theme: "Getting started",
+					items: [
+						{
+							question: "Do I need to change my Instagram or WhatsApp accounts?",
+							answer:
+								"No. Ori connects directly to your existing accounts (WhatsApp Business or Instagram). You keep your access, your history and your usual workflow. Nothing is recreated, nothing is lost.",
+						},
+						{
+							question: "How long does it take to activate Ori Messages?",
+							answer:
+								"Less than 5 minutes. You connect your accounts, enter the basic information, and Ori is ready. It can start replying to your messages immediately.",
+						},
+						{
+							question: "Is the setup technical?",
+							answer:
+								"No. Everything is guided step by step. No technical skills required. Follow the steps and your assistant will be up and running quickly.",
+						},
+					],
+				},
+				{
+					theme: "How messaging works",
+					items: [
+						{
+							question: "Does Ori reply to messages automatically?",
+							answer:
+								"Yes. Ori automatically replies to messages received on WhatsApp and Instagram. It understands requests and responds clearly and immediately. No message goes unanswered.",
+						},
+						{
+							question: "Does Ori respond like a human?",
+							answer:
+								"Ori understands natural language and responds in a fluid way. The tone is conversational, simple and direct. The goal is for the exchange to be fast, natural and useful for the customer.",
+						},
+						{
+							question: "What happens if Ori doesn't understand a message?",
+							answer:
+								"Ori doesn't block the conversation. It can rephrase, ask a clarifying question or transfer to your team if needed. You define the limits and the rules for handing over to a human.",
+						},
+						{
+							question: "Can I take over a conversation?",
+							answer:
+								"Yes, at any time. You can step in directly from Instagram or WhatsApp. Ori steps back as soon as you take over the conversation.",
+						},
+						{
+							question: "Can I choose when Ori replies and when I reply myself?",
+							answer:
+								"Yes. You can set Ori to reply continuously, only outside opening hours, or only for certain types of messages. You keep full control.",
+						},
+					],
+				},
+				{
+					theme: "Reservations & conversion",
+					items: [
+						{
+							question: "Can Ori handle reservations via message?",
+							answer:
+								"Yes. Ori can understand a reservation request, ask the right questions and record the information. The customer is taken care of immediately, with no wait.",
+						},
+						{
+							question: "Can Ori generate more sales via messages?",
+							answer:
+								"Yes. Ori can respond quickly, follow up, suggest options and guide the customer. The result: more conversions and fewer missed opportunities.",
+						},
+						{
+							question: "Can it send links (payment, menu, reservation)?",
+							answer:
+								"Yes. Ori can share useful links: menu, reservation, payment or anything else. It guides the customer all the way to the final action.",
+						},
+					],
+				},
+				{
+					theme: "Control & monitoring",
+					items: [
+						{
+							question: "Can I view conversations?",
+							answer:
+								"Yes. You have access to the full history of exchanges. You can read, follow and understand what was said to each customer.",
+						},
+						{
+							question: "Can I edit Ori's replies?",
+							answer:
+								"Yes. You can adjust messages, information, common answers and the tone used. Ori adapts to your restaurant.",
+						},
+						{
+							question: "Can I track performance?",
+							answer:
+								"Yes. You can monitor the number of messages received, handled and the actions taken. You see the concrete impact on your business.",
+						},
+					],
+				},
+				{
+					theme: "Advanced use",
+					items: [
+						{
+							question: "Can I use Ori only when I'm closed?",
+							answer:
+								"Yes. You can activate Ori only during your closed hours or outside service times. This allows you to respond to customers without mobilising your team.",
+						},
+						{
+							question: "Can Ori manage multiple accounts or locations?",
+							answer:
+								"Yes. You can connect multiple accounts and manage multiple locations. Each account can have its own rules and its own workflow.",
+						},
+					],
+				},
+				{
+					theme: "Security & commitment",
+					items: [
+						{
+							question: "Is my data secure?",
+							answer:
+								"Yes. Data is protected and used solely to operate the service. You retain control of your accounts and your exchanges.",
+						},
+						{
+							question: "Can I cancel at any time?",
+							answer:
+								"Yes. You are free to cancel at any time under the terms provided. The goal is simple: for you to stay because it brings you value.",
+						},
+					],
+				},
+			],
 		},
 
 		// ── Ori Messages — Pricing ────────────────────────────────────────────────
@@ -1575,9 +2110,9 @@ export const translations = {
 			},
 			duo: {
 				badge: "Most popular",
-				title: "DUO PACK",
+				title: "DUO",
 				tagline: "Instagram + WhatsApp",
-				cta: "Start Duo Pack",
+				cta: "Start Duo",
 				features: [
 					"Up to 500 conversations",
 					"Replies 24/7",

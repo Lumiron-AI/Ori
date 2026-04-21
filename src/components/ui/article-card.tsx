@@ -7,9 +7,12 @@ import type { Article } from "@/lib/articles";
 
 interface ArticleCardProps {
 	article: Article;
+	publishedOn: string;
+	readingTime: string;
+	readMore: string;
 }
 
-export function ArticleCard({ article }: ArticleCardProps) {
+export function ArticleCard({ article, publishedOn, readingTime, readMore }: ArticleCardProps) {
 	return (
 		<Link
 			href={`/ressources/${article.slug}`}
@@ -37,13 +40,13 @@ export function ArticleCard({ article }: ArticleCardProps) {
 				<div className="flex items-center gap-2 text-text-heading dark:text-text-tertiary">
 					<Calendar size={16} className="shrink-0" />
 					<span className="font-display font-normal text-sm sm:text-base">
-						Publié le {article.date}
+						{publishedOn} {article.date}
 					</span>
 				</div>
 				<div className="flex items-center gap-2 text-text-heading dark:text-text-tertiary">
 					<Clock size={16} className="shrink-0" />
 					<span className="font-display font-normal text-sm sm:text-base">
-						Temps de lecture : {article.readingTime}
+						{readingTime} : {article.readingTime}
 					</span>
 				</div>
 			</div>
@@ -53,7 +56,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
 			{/* Hover slide-up CTA */}
 			<div className="absolute -bottom-px left-0 right-0 translate-y-full sm:group-hover:translate-y-0 transition-transform duration-300 bg-primary rounded-b-4xl py-4 flex items-center justify-center gap-2">
 				<span className="font-display font-bold text-lg text-text">
-					Consulter
+					{readMore}
 				</span>
 				<ArrowRight size={18} className="text-text" />
 			</div>
