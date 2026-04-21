@@ -54,7 +54,7 @@ export function Solutions() {
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ delay: i * 0.12, duration: 0.55 }}
-								className="bg-background-element dark:bg-dark-elevated rounded-4xl shadow-card dark:shadow-none dark:border dark:border-dark-overlay p-5 md:p-7 flex flex-col gap-4 md:gap-5"
+								className="bg-background-element dark:bg-dark-surface rounded-4xl shadow-card dark:shadow-none dark:border dark:border-dark-overlay p-5 md:p-7 flex flex-col gap-4 md:gap-5"
 							>
 								<div className="flex items-start gap-4 sm:gap-5">
 									<div
@@ -80,7 +80,7 @@ export function Solutions() {
 									{sol.features.map((f) => (
 										<span
 											key={f}
-											className="inline-flex items-center gap-2 bg-background-secondary dark:bg-dark-overlay rounded-full h-9 sm:h-8 px-3 font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text-tertiary whitespace-nowrap"
+											className="inline-flex items-center gap-2 bg-background-secondary dark:bg-dark-overlay rounded-full h-9 sm:h-8 px-3 font-display font-normal text-xs text-text-primary dark:text-text-tertiary whitespace-nowrap"
 										>
 											<Check
 												size={14}

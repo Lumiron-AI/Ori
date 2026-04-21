@@ -101,7 +101,7 @@ export function Footer() {
 								<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
 									{footer.navTitle}
 								</p>
-								{(isMessages ? footer.messagesNavLinks : footer.navLinks).map(
+								{(isMessages ? footer.messagesNavLinks : isIndex ? footer.indexNavLinks : footer.navLinks).map(
 									(link) => (
 										<Link
 											key={link.href}
@@ -214,10 +214,16 @@ export function Footer() {
 
 			{/* Bottom bar */}
 			<div className="mx-8 md:mx-0 border-t border-text-secondary/20 dark:border-text-tertiary/50">
-				<div className="py-6 md:py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
+				<div className="py-6 md:py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
 					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
 						{footer.copyright}
 					</p>
+					<a
+						href="mailto:contact@lumiron.ai"
+						className={`mx-auto px-6 py-2 rounded-full font-display font-bold text-sm text-text bg-primary hover:bg-primary/90 active:bg-primary/80 shadow-orange-btn transition-colors`}
+					>
+						contact@lumiron.ai
+					</a>
 					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
 						{footer.madeBy}{" "}
 						<span

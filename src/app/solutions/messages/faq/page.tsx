@@ -10,8 +10,10 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
+import Link from "next/link";
 import {
 	ChevronDown,
+	ArrowLeft,
 	Rocket,
 	Cpu,
 	CalendarCheck,
@@ -247,6 +249,13 @@ export default function MessagesFAQPage() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
 				>
+					<Link
+						href="/solutions/messages"
+						className="flex items-center gap-2 font-display font-normal text-lg text-text-heading dark:text-text hover:text-primary dark:hover:text-primary transition-colors mb-6"
+					>
+						<ArrowLeft size={20} />
+						Retour
+					</Link>
 					<span className="font-display font-semibold text-sm text-ori-message tracking-widest">
 						FAQ
 					</span>

@@ -29,7 +29,7 @@ export function Hero() {
 				className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-[-100px] w-[600px] sm:w-[1000px] h-[400px] sm:h-[600px] blur-3xl opacity-15 dark:opacity-30 rounded-full bg-primary-glow"
 			/>
 
-			<div className="relative w-full max-w-5xl mx-auto flex flex-col items-center gap-6 sm:gap-6 my-8">
+			<div className="relative w-full max-w-5xl mx-auto flex flex-col items-center gap-6">
 				<motion.h1
 					custom={0}
 					variants={fadeUp}
@@ -38,6 +38,7 @@ export function Hero() {
 					className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-primary"
 				>
 					<span>Ori, </span>
+					<br />
 					<span className="text-text-primary dark:text-text">
 						{homeHero.title}
 					</span>
@@ -48,7 +49,7 @@ export function Hero() {
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="font-display font-semibold text-base sm:text-lg lg:text-2xl/6 text-text-secondary dark:text-text-tertiary max-w-3xl"
+					className="font-display font-semibold text-base sm:text-lg lg:text-2xl/6 text-text-secondary dark:text-text-tertiary max-w-3xl whitespace-pre-line"
 				>
 					{homeHero.subtitle}
 					<span className="font-bold">{homeHero.subtitleBold}</span>
@@ -59,7 +60,7 @@ export function Hero() {
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="w-fit flex flex-col sm:flex-row gap-3 sm:gap-6 items-stretch sm:items-center justify-center"
+					className="w-fit flex flex-col sm:flex-row gap-3 sm:gap-6 items-stretch sm:items-center justify-center mt-3"
 				>
 					<Link
 						href="/solutions/phone"

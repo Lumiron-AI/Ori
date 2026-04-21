@@ -13,11 +13,11 @@ export const translations = {
 		// ── Footer ────────────────────────────────────────────────────────────────
 		footer: {
 			brandTagline:
-				"Le standard téléphonique IA pour restaurants. Ori gère vos réservations, commandes et questions clients, 24h/24.",
+				"Ori, l’assistant IA qui prend en charge les appels de votre restaurant.",
 			indexBrandTagline:
 				"Ori, l'assistant IA qui répond à vos appels et messages pour la restauration.",
 			messagesBrandTagline:
-				"L'assistant messaging IA pour restaurants. Ori répond à vos messages WhatsApp et Instagram, 24h/24.",
+				"Ori, l’assistant IA qui gère les messages Instagram et WhatsApp de votre restaurant.",
 			navTitle: "Navigation",
 			legalTitle: "Légal",
 			socialTitle: "Réseaux sociaux",
@@ -25,6 +25,11 @@ export const translations = {
 			preferences: "Préférences",
 			copyright: "© 2026 ORI. Tous droits réservés.",
 			madeBy: "Un produit de",
+			indexNavLinks: [
+				{ href: "/#solutions", label: "Nos solutions" },
+				{ href: "/#fonctionnement", label: "Fonctionnement" },
+				{ href: "/ressources", label: "Ressources" },
+			],
 			navLinks: [
 				{ href: "/solutions/phone#use-case", label: "Cas d'usage" },
 				{ href: "/solutions/phone#interface", label: "Interface" },
@@ -155,7 +160,7 @@ export const translations = {
 			withHeader: "Avec Ori",
 			ctaLabel: "Voir avec Ori",
 			footer:
-				"Maximisez votre chiffre d'affaires en ne laissant plus aucun appel sans réponse. Chaque appel décroché est une opportunité préservée.",
+				"Maximisez votre chiffre d'affaires en ne laissant plus aucun appel sans réponse.\nChaque appel décroché est une opportunité préservée.",
 			rows: [
 				{
 					topic: "Disponibilité",
@@ -426,16 +431,37 @@ export const translations = {
 				},
 				{
 					name: "Martin",
-					preview: "Et pour anniversaire de quinze personnes, c'est possible ? ...",
+					preview:
+						"Et pour anniversaire de quinze personnes, c'est possible ? ...",
 				},
 			],
 			messages: [
-				{ sender: "Sophia", time: "18:03", text: "Bonjour, avez vous des créneaux pour 20h ?" },
-				{ sender: "Ori", time: "18:03", text: "20h est complet ce soir, mais nous avons des disponibilités après 20h30." },
+				{
+					sender: "Sophia",
+					time: "18:03",
+					text: "Bonjour, avez vous des créneaux pour 20h ?",
+				},
+				{
+					sender: "Ori",
+					time: "18:03",
+					text: "20h est complet ce soir, mais nous avons des disponibilités après 20h30.",
+				},
 				{ sender: "Sophia", time: "18:03", text: "Ok pour 20h30 !" },
-				{ sender: "Ori", time: "18:03", text: "Avez vous d'autres questions ?" },
-				{ sender: "Sophia", time: "18:03", text: "C'est tout pour moi, bonne journée." },
-				{ sender: "Ori", time: "18:03", text: "Avez vous d'autres questions ?" },
+				{
+					sender: "Ori",
+					time: "18:03",
+					text: "Avez vous d'autres questions ?",
+				},
+				{
+					sender: "Sophia",
+					time: "18:03",
+					text: "C'est tout pour moi, bonne journée.",
+				},
+				{
+					sender: "Ori",
+					time: "18:03",
+					text: "Avez vous d'autres questions ?",
+				},
 			],
 		},
 
@@ -642,7 +668,7 @@ export const translations = {
 			],
 			title: "l\u2019assistant IA qui répond à vos appels et messages.",
 			subtitle:
-				"Maximisez vos revenus en automatisant vos échanges. Sur Instagram, WhatsApp ou par téléphone, Ori gère chaque demande et enregistre vos réservations en temps réel, 24h/24 et 7j/7.",
+				"Maximisez vos revenus en automatisant vos échanges. Sur Instagram, WhatsApp ou par téléphone, Ori gère chaque demande et enregistre vos réservations en\ntemps réel, 24h/24 et 7j/7.",
 			subtitleBold: "",
 			ctaPhone: "Découvrir Ori téléphone",
 			ctaMessages: "Découvrir Ori messages",
@@ -697,7 +723,7 @@ export const translations = {
 					number: "02",
 					title: "Activation",
 					description:
-						"Ori se connecte à vos canaux (téléphone, WhatsApp, Instagram).",
+						"Ori se connecte à vos canaux (téléphone, Instagram, WhatsApp).",
 				},
 				{
 					number: "03",
@@ -717,8 +743,9 @@ export const translations = {
 			title: "Essayer Ori",
 			titleHighlight: "7 jours",
 			title2: "gratuits",
-			subtitle:
-				"Sans engagement. Configuration en 5 minutes. Un seul client perdu coûte plus cher qu\u2019un mois d\u2019Ori.",
+			subtitle: "Sans engagement. Configuration en 5 minutes.",
+			subtitleFooter:
+				"Un seul client perdu coûte plus cher qu\u2019un mois d\u2019Ori.",
 			ctaPhone: "Essayer Ori Téléphone",
 			ctaMessages: "Essayer Ori Message",
 		},
@@ -734,30 +761,30 @@ export const translations = {
 			perYear: "/ an",
 			annual: "Annuel",
 			discount: "-10%",
-			trialNote: "Essai gratuit 7 jours — sans engagement",
-			billingNote: "Facturation uniquement après l'essai",
+			trialNote: "Essai gratuit 7 jours. Sans engagement.",
+			billingNote: "Facturation uniquement après l'essai.",
 			instagram: {
 				title: "ASSISTANT INSTAGRAM",
-				tagline: "Boostez vos DMs",
+				tagline: "Instagram uniquement",
 				cta: "Activer Instagram",
 				features: [
 					"Jusqu'à 500 discussions",
-					"Réponses automatiques 24/7",
-					"Prise de réservation intégrée",
-					"100% des messages traités",
-					"0,10€ par discussion supplémentaire",
+					"Réponses 24h/24",
+					"Réservations intégrées",
+					"Tous les messages traités",
+					"0,05€ par conversation supplémentaire",
 				],
 			},
 			whatsapp: {
 				title: "ASSISTANT WHATSAPP",
-				tagline: "Votre numéro en automatique",
+				tagline: "WhatsApp uniquement",
 				cta: "Activer WhatsApp",
 				features: [
 					"Jusqu'à 500 discussions",
-					"Réponses automatiques 24/7",
-					"Prise de réservation intégrée",
-					"Zéro client ignoré",
-					"0,10€ par discussion supplémentaire",
+					"Réponses 24h/24",
+					"Réservations intégrées",
+					"Aucun message sans réponse",
+					"0,05€ par conversation supplémentaire",
 				],
 			},
 			duo: {
@@ -767,10 +794,10 @@ export const translations = {
 				cta: "Activer le Pack Duo",
 				features: [
 					"Jusqu'à 500 discussions",
-					"Réponses automatiques 24/7",
-					"Prise de réservation intégrée",
+					"Réponses 24h/24",
+					"Réservations intégrées",
 					"Centralisation complète",
-					"0,10€ par discussion supplémentaire",
+					"0,05€ par conversation supplémentaire",
 				],
 			},
 		},
@@ -790,11 +817,11 @@ export const translations = {
 		// ── Footer ────────────────────────────────────────────────────────────────
 		footer: {
 			brandTagline:
-				"The AI phone system for restaurants. Ori handles your reservations, orders and customer questions, 24/7.",
+				"Ori, the AI assistant that answers calls for your restaurant.",
 			indexBrandTagline:
 				"Ori, the AI assistant that answers your restaurant's calls and messages.",
 			messagesBrandTagline:
-				"The AI messaging assistant for restaurants. Ori replies to your WhatsApp and Instagram messages, 24/7.",
+				"Ori, the AI assistant that handles your Instagram and WhatsApp messages for your restaurant.",
 			navTitle: "Navigation",
 			legalTitle: "Legal",
 			socialTitle: "Social media",
@@ -802,6 +829,11 @@ export const translations = {
 			preferences: "Preferences",
 			copyright: "© 2026 ORI. All rights reserved.",
 			madeBy: "A product by",
+			indexNavLinks: [
+				{ href: "/#solutions", label: "Our solutions" },
+				{ href: "/#fonctionnement", label: "How it works" },
+				{ href: "/ressources", label: "Resources" },
+			],
 			navLinks: [
 				{ href: "/solutions/phone#use-case", label: "Use cases" },
 				{ href: "/solutions/phone#interface", label: "Interface" },
@@ -1197,12 +1229,32 @@ export const translations = {
 				},
 			],
 			messages: [
-				{ sender: "Sophia", time: "6:03 PM", text: "Hi, do you have any slots available at 8 PM?" },
-				{ sender: "Ori", time: "6:03 PM", text: "8 PM is fully booked tonight, but we have availability from 8:30 PM." },
+				{
+					sender: "Sophia",
+					time: "6:03 PM",
+					text: "Hi, do you have any slots available at 8 PM?",
+				},
+				{
+					sender: "Ori",
+					time: "6:03 PM",
+					text: "8 PM is fully booked tonight, but we have availability from 8:30 PM.",
+				},
 				{ sender: "Sophia", time: "6:03 PM", text: "8:30 PM works for me!" },
-				{ sender: "Ori", time: "6:03 PM", text: "Is there anything else I can help you with?" },
-				{ sender: "Sophia", time: "6:03 PM", text: "That's all, have a great day." },
-				{ sender: "Ori", time: "6:03 PM", text: "Is there anything else I can help you with?" },
+				{
+					sender: "Ori",
+					time: "6:03 PM",
+					text: "Is there anything else I can help you with?",
+				},
+				{
+					sender: "Sophia",
+					time: "6:03 PM",
+					text: "That's all, have a great day.",
+				},
+				{
+					sender: "Ori",
+					time: "6:03 PM",
+					text: "Is there anything else I can help you with?",
+				},
 			],
 		},
 
@@ -1425,7 +1477,11 @@ export const translations = {
 					title: "AI Assistant",
 					description:
 						"Ori answers for you, handles customer inquiries, and takes bookings in real-time\u2014without ever interrupting your team.",
-					features: ["24/7 Availability", "Appointment Booking", "Smart Call Transfer"],
+					features: [
+						"24/7 Availability",
+						"Appointment Booking",
+						"Smart Call Transfer",
+					],
 					cta: "Discover",
 				},
 				{
@@ -1442,8 +1498,7 @@ export const translations = {
 		homeHowItWorks: {
 			label: "How it works",
 			title: "Up and running in minutes.",
-			subtitle:
-				"Set up Ori in minutes. No technical skills required.",
+			subtitle: "Set up Ori in minutes. No technical skills required.",
 			steps: [
 				{
 					number: "01",
@@ -1454,7 +1509,7 @@ export const translations = {
 					number: "02",
 					title: "Activation",
 					description:
-						"Ori connects to your channels (phone, WhatsApp, Instagram).",
+						"Ori connects to your channels (phone, Instagram, WhatsApp).",
 				},
 				{
 					number: "03",
@@ -1474,8 +1529,9 @@ export const translations = {
 			title: "Try Ori",
 			titleHighlight: "7 days",
 			title2: "free",
-			subtitle:
-				"No commitment. Setup in 5 minutes. One lost customer costs more than a month of Ori.",
+			subtitle: "No commitment. Setup in 5 minutes.",
+			subtitleFooter:
+				"One lost customer costs more than a month of Ori.",
 			ctaPhone: "Try Ori Phone",
 			ctaMessages: "Try Ori Messages",
 		},
@@ -1520,7 +1576,7 @@ export const translations = {
 			duo: {
 				badge: "Most popular",
 				title: "DUO PACK",
-				tagline: "WhatsApp + Instagram.",
+				tagline: "Instagram + WhatsApp",
 				cta: "Start Duo Pack",
 				features: [
 					"Up to 500 conversations",

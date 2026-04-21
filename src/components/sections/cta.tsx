@@ -44,6 +44,10 @@ export function Cta() {
 						<ArrowRight size={18} strokeWidth={2.5} />
 					</Link>
 				</div>
+
+				<p className="font-sans font-normal text-sm text-text-secondary dark:text-text-tertiary mt-3">
+					{homeCta.subtitleFooter}
+				</p>
 			</motion.div>
 		</section>
 	);

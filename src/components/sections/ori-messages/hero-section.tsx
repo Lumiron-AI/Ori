@@ -170,7 +170,7 @@ export function OriMessagesHeroSection() {
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="w-full mt-2 sm:mt-4"
+					className="w-full mt-2 sm:mt-8"
 				>
 					<div className="flex flex-wrap justify-center gap-x-5 xs:gap-x-8 md:gap-x-12 gap-y-4 mt-2">
 						{stats.map((stat, i) => (

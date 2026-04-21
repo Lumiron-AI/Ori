@@ -10,8 +10,10 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
+import Link from "next/link";
 import {
 	ChevronDown,
+	ArrowLeft,
 	Rocket,
 	Cpu,
 	CalendarCheck,
@@ -241,11 +243,18 @@ export default function PhoneFAQPage() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
 				>
+					<Link
+						href="/solutions/phone"
+						className="flex items-center gap-2 font-display font-normal text-lg text-text-heading dark:text-text hover:text-primary dark:hover:text-primary transition-colors mb-6"
+					>
+						<ArrowLeft size={20} />
+						Retour
+					</Link>
 					<span className="font-display font-semibold text-sm text-primary tracking-widest">
 						FAQ
 					</span>
 					<h1 className="font-display font-bold text-3xl sm:text-5xl my-2 text-text-primary dark:text-text">
-						Toutes vos questions sur Ori
+						Tout savoir sur Ori phone.
 					</h1>
 					<p className="font-sans font-normal text-lg text-text-secondary dark:text-text-tertiary">
 						Tout savoir sur l'assistant conçu pour les restaurants.
@@ -287,7 +296,7 @@ export default function PhoneFAQPage() {
 					</div>
 
 					{/* Desktop tabs */}
-					<div className="hidden md:flex flex-wrap gap-2">
+					<div className="hidden md:flex flex-wrap gap-2 mt-10">
 						{tabs.map((tab) => {
 							const group = FAQ_GROUPS.find((g) => g.theme === tab);
 							const isActive = activeTheme === tab;
@@ -322,7 +331,7 @@ export default function PhoneFAQPage() {
 					</div>
 				</div>
 
-				<div className="mt-10 flex flex-col gap-12">
+				<div className="mt-14 flex flex-col gap-14">
 					{visibleGroups.map((group) => {
 						const startIndex = globalIndex;
 						globalIndex += group.items.length;
