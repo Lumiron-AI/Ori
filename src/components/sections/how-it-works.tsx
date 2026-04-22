@@ -4,10 +4,26 @@ import { motion } from "framer-motion";
 import { useLocale } from "@/context/locale-context";
 
 const STEP_STYLES = [
-	{ color: "text-primary", borderColor: "border-primary/40", bgColor: "bg-primary/5 dark:bg-dark-chip" },
-	{ color: "text-ori-message", borderColor: "border-ori-message/40", bgColor: "bg-ori-message/5 dark:bg-dark-chip" },
-	{ color: "text-primary", borderColor: "border-primary/40", bgColor: "bg-primary/5 dark:bg-dark-chip" },
-	{ color: "text-ori-message", borderColor: "border-ori-message/40", bgColor: "bg-ori-message/5 dark:bg-dark-chip" },
+	{
+		color: "text-primary",
+		borderColor: "border-primary/40",
+		bgColor: "bg-primary/5 dark:bg-dark-chip",
+	},
+	{
+		color: "text-ori-message",
+		borderColor: "border-ori-message/40",
+		bgColor: "bg-ori-message/5 dark:bg-dark-chip",
+	},
+	{
+		color: "text-primary",
+		borderColor: "border-primary/40",
+		bgColor: "bg-primary/5 dark:bg-dark-chip",
+	},
+	{
+		color: "text-ori-message",
+		borderColor: "border-ori-message/40",
+		bgColor: "bg-ori-message/5 dark:bg-dark-chip",
+	},
 ];
 
 export function HowItWorks() {
@@ -32,7 +48,7 @@ export function HowItWorks() {
 					</p>
 				</div>
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-8">
 					{homeHowItWorks.steps.map((step, i) => {
 						const style = STEP_STYLES[i];
 						return (
@@ -42,7 +58,7 @@ export function HowItWorks() {
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ delay: i * 0.1, duration: 0.5 }}
-								className="flex flex-col items-center text-center gap-4 sm:gap-5"
+								className="flex flex-col items-center text-center gap-3 sm:gap-5"
 							>
 								<div
 									className={`flex items-center justify-center rounded-full border-2 w-16 h-16 sm:w-20 sm:h-20 lg:w-[88px] lg:h-[88px] ${style.borderColor} ${style.bgColor} shrink-0`}

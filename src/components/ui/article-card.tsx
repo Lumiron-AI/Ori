@@ -15,7 +15,7 @@ interface ArticleCardProps {
 export function ArticleCard({ article, publishedOn, readingTime, readMore }: ArticleCardProps) {
 	return (
 		<Link
-			href={`/ressources/${article.slug}`}
+			href={`/blog/${article.slug}`}
 			className="group relative flex flex-col bg-background-element dark:bg-dark-surface border dark:border-text-secondary dark:shadow-[0_4px_30px_0_rgba(255,255,255,0.10)] rounded-4xl shadow-card overflow-hidden cursor-pointer"
 		>
 			{/* Cover image */}

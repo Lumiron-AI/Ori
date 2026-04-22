@@ -48,7 +48,7 @@ export function TrackingPanel() {
 							{d.tableHeaders.map((col, i) => (
 								<th
 									key={col}
-									className={`font-display font-semibold text-xs text-text px-3 py-2 ${i === 0 ? "text-left" : "text-center"} ${i === 1 ? "hidden sm:table-cell" : ""}`}
+									className={`font-display font-semibold text-xs text-text px-3 py-2 "text-center" ${i === 1 ? "hidden sm:table-cell" : ""}`}
 								>
 									{col}
 								</th>
@@ -58,7 +58,7 @@ export function TrackingPanel() {
 					<tbody className="bg-background-secondary dark:bg-dark-elevated divide-y divide-background-tertiary dark:divide-dark-overlay">
 						{CALL_HISTORY.map((row, i) => (
 							<tr key={i}>
-								<td className="px-3 py-2">
+								<td className="px-3 py-2 sm:table-cell text-center">
 									<p className="font-display font-normal text-xs text-text-primary dark:text-text">
 										{new Date(row.iso).toLocaleDateString(
 											locale === "en" ? "en-US" : "fr-FR",
@@ -77,12 +77,12 @@ export function TrackingPanel() {
 										{row.number}
 									</p>
 								</td>
-								<td className="px-3 py-2 text-center">
+								<td className="px-3 py-2 sm:table-cell text-center">
 									<p className="font-display font-normal text-xs text-text-primary dark:text-text">
 										{row.duration}
 									</p>
 								</td>
-								<td className="pl-3 pr-1 py-2 text-center">
+								<td className="px-3 py-2 sm:table-cell text-center">
 									<div className="flex items-center justify-center gap-1">
 										<button
 											aria-label="View"

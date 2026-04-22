@@ -8,22 +8,23 @@ import { OriMessagesFAQSection } from "@/components/sections/ori-messages/faq-se
 import { OriMessagesPricingSection } from "@/components/sections/ori-messages/pricing-section";
 
 export const metadata = {
-  title: "Ori Messages — Assistant IA WhatsApp & Instagram pour restaurateurs | Lumiron",
-  description:
-    "Ori répond instantanément à vos messages WhatsApp et Instagram, prend les réservations et gère vos questions fréquentes. Essai gratuit 7 jours, sans engagement.",
+	title:
+		"Ori Messages — Assistant IA WhatsApp & Instagram pour restaurateurs | Lumiron",
+	description:
+		"Ori répond instantanément à vos messages Instagram et WhatsApp, prend les réservations et gère vos questions fréquentes. Essai gratuit 7 jours, sans engagement.",
 };
 
 export default function OriMessagesPage() {
-  return (
-    <>
-      <OriMessagesHeroSection />
-      <OriMessagesUseCaseSection />
-      <OriMessagesInterfaceSection />
-      <OriMessagesTrialCTASection />
-      <OriMessagesComparisonSection />
-      <OriMessagesSponsorshipSection />
-      <OriMessagesFAQSection />
-      <OriMessagesPricingSection />
-    </>
-  );
+	return (
+		<>
+			<OriMessagesHeroSection />
+			<OriMessagesUseCaseSection />
+			<OriMessagesInterfaceSection />
+			<OriMessagesTrialCTASection />
+			<OriMessagesComparisonSection />
+			<OriMessagesSponsorshipSection />
+			<OriMessagesFAQSection />
+			<OriMessagesPricingSection />
+		</>
+	);
 }

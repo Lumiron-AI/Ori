@@ -8,7 +8,10 @@ function Bullet({ items }: { items: readonly string[] }) {
 	return (
 		<ul className="flex flex-col gap-2">
 			{items.map((item) => (
-				<li key={item} className="flex items-start gap-3 font-sans font-normal text-base text-text-primary dark:text-text/80">
+				<li
+					key={item}
+					className="flex items-start gap-3 font-sans font-normal text-base text-text-primary dark:text-text/80"
+				>
 					<span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
 					{item}
 				</li>
@@ -41,9 +44,17 @@ function GroupLabel({ children }: { children: React.ReactNode }) {
 	);
 }
 
-function SubSection({ number, title, children }: { number: string; title: string; children: React.ReactNode }) {
+function SubSection({
+	number,
+	title,
+	children,
+}: {
+	number: string;
+	title: string;
+	children: React.ReactNode;
+}) {
 	return (
-		<div className="mt-6 pl-4 border-l-2 border-background-secondary dark:border-dark-elevated">
+		<div className="mt-6">
 			<p className="font-display font-semibold text-lg text-text-heading dark:text-text mb-3">
 				{number}. {title}
 			</p>
@@ -68,17 +79,24 @@ function PriceCard({
 	overageLabel: string;
 }) {
 	return (
-		<div className="rounded-2xl border border-background-secondary dark:border-dark-elevated p-5 flex flex-col gap-3">
-			<div className="flex items-center justify-between">
-				<p className="font-display font-semibold text-base text-text-heading dark:text-text">{title}</p>
-				<span className="font-display font-bold text-xl text-primary">{price}</span>
+		<div className="rounded-2xl py-2 flex flex-col gap-3">
+			<div className="flex flex-col gap-0.5">
+				<p className="font-display font-semibold text-base text-text-heading dark:text-text">
+					{title}
+				</p>
+				<span className="font-display font-bold text-xl text-primary">
+					{price}
+				</span>
 			</div>
 			<div>
 				<GroupLabel>{includedLabel}</GroupLabel>
 				<Bullet items={includes} />
 			</div>
 			<p className="font-sans font-normal text-sm text-text-secondary dark:text-text-tertiary">
-				{overageLabel} <span className="font-medium text-text-primary dark:text-text/80">{overage}</span>
+				{overageLabel}{" "}
+				<span className="font-medium text-text-primary dark:text-text/80">
+					{overage}
+				</span>
 			</p>
 		</div>
 	);
@@ -108,7 +126,10 @@ export default function CGVPage() {
 
 				<div className="mt-12 flex flex-col gap-10">
 					{l.sections.map((section) => (
-						<div key={section.number} className="border-t border-background-secondary dark:border-dark-elevated pt-8">
+						<div
+							key={section.number}
+							className="border-t border-background-secondary dark:border-dark-elevated pt-8"
+						>
 							<div className="flex items-start gap-4">
 								<span className="shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary font-display font-bold text-sm">
 									{section.number}
@@ -123,11 +144,20 @@ export default function CGVPage() {
 										<>
 											<Body>{section.intro}</Body>
 											<div className="mt-4 flex flex-col gap-1.5 font-sans font-normal text-base text-text-primary dark:text-text/80 leading-relaxed">
-												<p className="font-semibold text-text-heading dark:text-text">{section.companyName}</p>
-												{section.companyDetails.map((d) => <p key={d}>{d}</p>)}
+												<p className="font-semibold text-text-heading dark:text-text">
+													{section.companyName}
+												</p>
+												{section.companyDetails.map((d) => (
+													<p key={d}>{d}</p>
+												))}
 												<p>
 													{section.emailLabel}{" "}
-													<a href="mailto:contact@lumiron.ai" className="text-primary hover:underline">contact@lumiron.ai</a>
+													<a
+														href="mailto:contact@lumiron.ai"
+														className="text-primary hover:underline"
+													>
+														contact@lumiron.ai
+													</a>
 												</p>
 											</div>
 											<p className="mt-4 font-sans font-normal text-base text-text-primary dark:text-text/80 leading-relaxed">
@@ -139,10 +169,19 @@ export default function CGVPage() {
 									{/* Section 2 — Définitions */}
 									{"items" in section && section.number === "2" && (
 										<div className="flex flex-col gap-3">
-											{(section.items as readonly { term: string; def: string }[]).map(({ term, def }) => (
+											{(
+												section.items as readonly {
+													term: string;
+													def: string;
+												}[]
+											).map(({ term, def }) => (
 												<div key={term} className="flex items-start gap-3">
-													<span className="mt-0.5 shrink-0 font-display font-semibold text-sm text-primary">{term}</span>
-													<span className="font-sans font-normal text-base text-text-primary dark:text-text/80">— {def}</span>
+													<span className="mt-0.5 shrink-0 font-display font-semibold text-sm text-primary">
+														{term}
+													</span>
+													<span className="font-sans font-normal text-base text-text-primary dark:text-text/80">
+														: {def}
+													</span>
 												</div>
 											))}
 										</div>
@@ -168,7 +207,11 @@ export default function CGVPage() {
 									{"subsections" in section && section.number === "4" && (
 										<>
 											{section.subsections.map((sub) => (
-												<SubSection key={sub.number} number={sub.number} title={sub.title}>
+												<SubSection
+													key={sub.number}
+													number={sub.number}
+													title={sub.title}
+												>
 													{"featuresIntro" in sub && (
 														<>
 															<SubLabel>{sub.featuresIntro}</SubLabel>
@@ -181,7 +224,9 @@ export default function CGVPage() {
 															)}
 														</>
 													)}
-													{"p1" in sub && !("featuresIntro" in sub) && <Body>{sub.p1}</Body>}
+													{"p1" in sub && !("featuresIntro" in sub) && (
+														<Body>{sub.p1}</Body>
+													)}
 												</SubSection>
 											))}
 										</>
@@ -238,7 +283,11 @@ export default function CGVPage() {
 									{"subsections" in section && section.number === "8" && (
 										<>
 											{section.subsections.map((sub) => (
-												<SubSection key={sub.number} number={sub.number} title={sub.title}>
+												<SubSection
+													key={sub.number}
+													number={sub.number}
+													title={sub.title}
+												>
 													{"intro" in sub && <SubLabel>{sub.intro}</SubLabel>}
 													<Bullet items={sub.items} />
 												</SubSection>
@@ -250,7 +299,11 @@ export default function CGVPage() {
 									{"subsections" in section && section.number === "9" && (
 										<>
 											{section.subsections.map((sub) => (
-												<SubSection key={sub.number} number={sub.number} title={sub.title}>
+												<SubSection
+													key={sub.number}
+													number={sub.number}
+													title={sub.title}
+												>
 													{"card" in sub && (
 														<PriceCard
 															title={sub.card.title}
@@ -276,9 +329,9 @@ export default function CGVPage() {
 															))}
 														</div>
 													)}
-													{"items" in sub && !("card" in sub) && !("cards" in sub) && (
-														<Bullet items={sub.items} />
-													)}
+													{"items" in sub &&
+														!("card" in sub) &&
+														!("cards" in sub) && <Bullet items={sub.items} />}
 												</SubSection>
 											))}
 										</>
@@ -357,42 +410,62 @@ export default function CGVPage() {
 									)}
 
 									{/* Sections 14, 15, 16, 17 — Intro + liste + note optionnelle */}
-									{"noGuaranteeIntro" in section && !("clientAcknowledgesIntro" in section) && (
-										<>
-											<SubLabel>{section.intro}</SubLabel>
-											<Bullet items={section.items} />
-											<div className="mt-3">
-												<SubLabel>{section.noGuaranteeIntro}</SubLabel>
-												<div className="mt-2">
-													<Bullet items={section.noGuarantee} />
+									{"noGuaranteeIntro" in section &&
+										!("clientAcknowledgesIntro" in section) && (
+											<>
+												<SubLabel>{section.intro}</SubLabel>
+												<Bullet items={section.items} />
+												<div className="mt-3">
+													<SubLabel>{section.noGuaranteeIntro}</SubLabel>
+													<div className="mt-2">
+														<Bullet items={section.noGuarantee} />
+													</div>
 												</div>
-											</div>
-										</>
-									)}
+											</>
+										)}
 
-									{"intro" in section && "items" in section && !("noGuaranteeIntro" in section) && !("companyName" in section) && !("referrerLabel" in section) && !("obligationsIntro" in section) && !("dataIntro" in section) && !("serviceIntro" in section) && (
-										<>
-											<SubLabel>{section.intro}</SubLabel>
-											<Bullet items={section.items} />
-											{"p1" in section && (
-												<p className="mt-3 font-sans font-normal text-base text-text-primary dark:text-text/80 leading-relaxed">
-													{section.p1}
-												</p>
-											)}
-										</>
-									)}
+									{"intro" in section &&
+										"items" in section &&
+										!("noGuaranteeIntro" in section) &&
+										!("companyName" in section) &&
+										!("referrerLabel" in section) &&
+										!("obligationsIntro" in section) &&
+										!("dataIntro" in section) &&
+										!("serviceIntro" in section) && (
+											<>
+												<SubLabel>{section.intro}</SubLabel>
+												<Bullet items={section.items} />
+												{"p1" in section && (
+													<p className="mt-3 font-sans font-normal text-base text-text-primary dark:text-text/80 leading-relaxed">
+														{section.p1}
+													</p>
+												)}
+											</>
+										)}
 
 									{/* Sections simples p1 seul (18, 19, 20) */}
-									{"p1" in section && !("intro" in section) && !("companyName" in section) && !("serviceIntro" in section) && !("clientAcknowledgesIntro" in section) && !("conditionsIntro" in section) && !("afterTrialIntro" in section) && !("subsections" in section) && !("nonPaymentIntro" in section) && !("referrerLabel" in section) && !("obligationsIntro" in section) && !("dataIntro" in section) && !("noGuaranteeIntro" in section) && (
-										<>
-											<Body>{section.p1}</Body>
-											{"p2" in section && (
-												<p className="mt-2 font-sans font-normal text-base text-text-primary dark:text-text/80 leading-relaxed">
-													{section.p2}
-												</p>
-											)}
-										</>
-									)}
+									{"p1" in section &&
+										!("intro" in section) &&
+										!("companyName" in section) &&
+										!("serviceIntro" in section) &&
+										!("clientAcknowledgesIntro" in section) &&
+										!("conditionsIntro" in section) &&
+										!("afterTrialIntro" in section) &&
+										!("subsections" in section) &&
+										!("nonPaymentIntro" in section) &&
+										!("referrerLabel" in section) &&
+										!("obligationsIntro" in section) &&
+										!("dataIntro" in section) &&
+										!("noGuaranteeIntro" in section) && (
+											<>
+												<Body>{section.p1}</Body>
+												{"p2" in section && (
+													<p className="mt-2 font-sans font-normal text-base text-text-primary dark:text-text/80 leading-relaxed">
+														{section.p2}
+													</p>
+												)}
+											</>
+										)}
 								</div>
 							</div>
 						</div>
