@@ -13,14 +13,16 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 	const [theme, setTheme] = useState<Theme>("light");
 
 	useEffect(() => {
-		const stored = localStorage.getItem("ori-theme") as Theme | null;
-		const resolved: Theme = stored
-			? stored
-			: window.matchMedia("(prefers-color-scheme: dark)").matches
-				? "dark"
-				: "light";
-		setTheme(resolved);
-		document.documentElement.classList.toggle("dark", resolved === "dark");
+		const mq = window.matchMedia("(prefers-color-scheme: dark)");
+		const apply = (dark: boolean) => {
+			const resolved: Theme = dark ? "dark" : "light";
+			setTheme(resolved);
+			document.documentElement.classList.toggle("dark", dark);
+		};
+		const handler = (e: MediaQueryListEvent) => apply(e.matches);
+		apply(mq.matches);
+		mq.addEventListener("change", handler);
+		return () => mq.removeEventListener("change", handler);
 	}, []);
 
 	const toggle = () => {
