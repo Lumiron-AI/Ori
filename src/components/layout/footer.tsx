@@ -222,8 +222,10 @@ export function Footer() {
 						{footer.copyright}
 					</p>
 					<a
-						href="mailto:contact@lumiron.ai"
-						className={`mx-auto px-6 py-2 rounded-full font-display font-bold text-sm text-text transition-colors ${isMessages ? "bg-ori-message hover:bg-ori-message/90 active:bg-ori-message/80 shadow-blue-btn" : "bg-primary hover:bg-primary/90 active:bg-primary/80 shadow-orange-btn"}`}
+						href="https://mail.google.com/mail/?view=cm&to=contact@lumiron.ai"
+						target="_blank"
+						rel="noopener noreferrer"
+						className={`mx-auto font-display font-normal text-sm text-text-primary dark:text-text transition-colors ${isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary"}`}
 					>
 						Contact
 					</a>

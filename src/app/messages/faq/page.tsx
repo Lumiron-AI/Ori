@@ -111,7 +111,7 @@ export default function MessagesFAQPage() {
 	const faqGroups: FAQGroup[] = page.groups.map((g, i) => ({
 		theme: g.theme,
 		icon: ICONS[i] ?? <Rocket size={15} />,
-		items: (g.items as unknown) as FAQItem[],
+		items: g.items as unknown as FAQItem[],
 	}));
 
 	const ALL_THEMES = page.seeAll;
@@ -219,7 +219,7 @@ export default function MessagesFAQPage() {
 					</div>
 				</div>
 
-				<div className="mt-10 flex flex-col gap-12">
+				<div className="mt-14 flex flex-col gap-12">
 					{visibleGroups.map((group) => {
 						const startIndex = globalIndex;
 						globalIndex += group.items.length;

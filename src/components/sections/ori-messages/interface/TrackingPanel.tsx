@@ -19,9 +19,7 @@ export function TrackingPanel() {
 						<div
 							key={conv.name}
 							className={`bg-background-secondary dark:bg-dark-elevated rounded-2xl p-3 ${
-								i === 0
-									? "border border-text-primary dark:border-text"
-									: ""
+								i === 0 ? "border border-text-primary dark:border-text" : ""
 							}`}
 						>
 							<p className="font-display font-semibold text-sm text-text-primary dark:text-text truncate">
@@ -45,17 +43,19 @@ export function TrackingPanel() {
 						{d.messages.map((msg, i) => (
 							<div
 								key={i}
-								className={`bg-background-tertiary dark:bg-dark-overlay rounded-xl p-2${i >= 3 ? " hidden lg:block" : ""}`}
+								className={`rounded-xl p-2${i >= 3 ? " hidden lg:block" : ""} ${
+									msg.sender === "Ori" ? "bg-primary/40" : "bg-text-primary/40 "
+								}`}
 							>
 								<div className="flex items-center gap-2 mb-0.5">
 									<span className="font-display font-semibold text-xs text-text-primary dark:text-text">
 										{msg.sender}
 									</span>
-									<span className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary">
+									<span className="font-display font-normal text-xs text-text-primary/60 dark:text-text/60">
 										{msg.time}
 									</span>
 								</div>
-								<p className="font-display font-normal text-xs text-text-secondary dark:text-text-tertiary leading-tight">
+								<p className="font-display font-normal text-xs text-text-primary/80 dark:text-text/80 leading-tight">
 									{msg.text}
 								</p>
 							</div>
