@@ -75,7 +75,7 @@ export function StandardCard({
 
 			{/* CTA */}
 			<Link
-				href="https://app.lumiron.ai/"
+				href="https://app.lumiron.ai/register"
 				target="_blank"
 				rel="noopener noreferrer"
 				className={buttonClass({

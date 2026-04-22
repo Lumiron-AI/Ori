@@ -19,7 +19,7 @@ export function Hero() {
 	const { homeHero } = t;
 
 	return (
-		<section className="relative flex flex-col items-center justify-center text-center section-padding pt-[80px] sm:pt-[96px] md:pt-[130px] pb-10 sm:pb-14 overflow-hidden">
+		<section className="relative flex flex-col items-center justify-center text-center section-padding pt-[100px] sm:pt-[96px] md:pt-[130px] pb-10 sm:pb-14 overflow-hidden">
 			<div
 				aria-hidden
 				className="pointer-events-none absolute inset-x-0 top-0 h-[700px] bg-gradient-to-b from-primary/10 via-primary/5 to-transparent dark:from-primary/20 dark:via-primary/10"
@@ -35,7 +35,7 @@ export function Hero() {
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-primary"
+					className="font-display font-bold text-5xl lg:text-6xl text-primary"
 				>
 					<span>Ori, </span>
 					<br />
@@ -49,7 +49,7 @@ export function Hero() {
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="font-display font-semibold text-base sm:text-lg lg:text-2xl/6 text-text-secondary dark:text-text-tertiary max-w-3xl whitespace-pre-line"
+					className="font-display font-semibold text-base sm:text-lg lg:text-2xl/6 text-text-secondary dark:text-text-tertiary max-w-3xl whitespace-pre-line lg:whitespace-normal"
 				>
 					{homeHero.subtitle}
 					<span className="font-bold">{homeHero.subtitleBold}</span>

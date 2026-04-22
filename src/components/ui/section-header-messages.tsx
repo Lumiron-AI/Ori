@@ -21,9 +21,9 @@ export function SectionHeaderMessages({
 	titleClassName,
 }: SectionHeaderMessagesProps) {
 	return (
-		<div className={cn("mb-8 sm:mb-12", className)}>
+		<div className={cn("mb-4 sm:mb-8", className)}>
 			<div className="flex items-center gap-1 mb-3 sm:mb-4">
-				<span className="font-display font-bold text-sm sm:text-lg text-ori-message">
+				<span className="font-display font-bold text-xssm:text-lg text-ori-message">
 					{label}
 				</span>
 				{/* <ChevronRight

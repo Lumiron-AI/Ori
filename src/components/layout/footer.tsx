@@ -218,9 +218,6 @@ export function Footer() {
 			{/* Bottom bar */}
 			<div className="mx-8 md:mx-0 border-t border-text-secondary/20 dark:border-text-tertiary/50">
 				<div className="py-6 md:py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
-					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
-						{footer.copyright}
-					</p>
 					<a
 						href="https://mail.google.com/mail/?view=cm&to=contact@lumiron.ai"
 						target="_blank"
@@ -231,6 +228,10 @@ export function Footer() {
 						<Mail size={14} className="hidden sm:block" />
 						Contact
 					</a>
+					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
+						{footer.copyright}
+					</p>
+
 					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
 						{footer.madeBy}{" "}
 						<span

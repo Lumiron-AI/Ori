@@ -59,7 +59,7 @@ const [scrolled, setScrolled] = useState(false);
 								alt="Ori"
 								width={80}
 								height={32}
-								className="h-5 md:h-7 w-auto dark:hidden"
+								className="h-6 md:h-7 w-auto dark:hidden"
 								priority
 							/>
 							<Image
@@ -67,7 +67,7 @@ const [scrolled, setScrolled] = useState(false);
 								alt="Ori"
 								width={80}
 								height={32}
-								className="h-5 md:h-7 w-auto hidden dark:block"
+								className="h-6 md:h-7 w-auto hidden dark:block"
 								priority
 							/>
 						</>

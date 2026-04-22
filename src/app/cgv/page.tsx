@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { useLocale } from "@/context/locale-context";
 
@@ -79,11 +79,13 @@ function PriceCard({
 	overageLabel: string;
 }) {
 	return (
-		<div className="rounded-2xl py-2 flex flex-col gap-3">
+		<div className="rounded-2xl pb-5 flex flex-col gap-3">
 			<div className="flex flex-col gap-0.5">
-				<p className="font-display font-semibold text-base text-text-heading dark:text-text">
-					{title}
-				</p>
+				{title && (
+					<p className="font-display font-semibold text-base text-text-heading dark:text-text">
+						{title}
+					</p>
+				)}
 				<span className="font-display font-bold text-xl text-primary">
 					{price}
 				</span>
@@ -105,17 +107,18 @@ function PriceCard({
 export default function CGVPage() {
 	const { t } = useLocale();
 	const l = t.cgv;
+	const router = useRouter();
 
 	return (
 		<main className="bg-background dark:bg-dark-bg min-h-screen">
 			<div className="max-w-4xl mx-auto px-5 md:px-10 pt-24 lg:pt-32 pb-16 lg:pb-24">
-				<Link
-					href="/"
+				<button
+					onClick={() => router.back()}
 					className="flex items-center gap-2 font-display font-normal text-lg text-text-heading dark:text-text hover:text-primary dark:hover:text-primary transition-colors mb-6"
 				>
 					<ArrowLeft size={20} />
 					{l.back}
-				</Link>
+				</button>
 
 				<h1 className="font-display font-bold text-5xl text-text-primary dark:text-text mt-3 leading-[80px]">
 					{l.title}

@@ -668,7 +668,7 @@ export const translations = {
 			],
 			title: "l\u2019assistant IA qui répond à vos appels et messages.",
 			subtitle:
-				"Maximisez vos revenus en automatisant vos échanges. Sur Instagram, WhatsApp ou par téléphone, Ori gère chaque demande et enregistre vos réservations en\ntemps réel, 24h/24 et 7j/7.",
+				"Maximisez vos revenus en automatisant vos échanges. Sur Instagram, WhatsApp ou par téléphone, Ori gère chaque demande et enregistre vos réservations en temps réel,\n24h/24 et 7j/7.",
 			subtitleBold: "",
 			ctaPhone: "Découvrir Ori téléphone",
 			ctaMessages: "Découvrir Ori messages",
@@ -1546,7 +1546,7 @@ export const translations = {
 							number: "1",
 							title: "Ori Téléphone",
 							card: {
-								title: "Ori Téléphone",
+								title: "",
 								price: "89 € HT / mois",
 								includes: [
 									"Jusqu'à 350 minutes d'appels entrants par mois",
@@ -2095,7 +2095,7 @@ export const translations = {
 			title: "Share Ori, win together.",
 			subtitle:
 				"Recommend Ori to your peers and enjoy exclusive benefits on your subscription.",
-			seeCta: "See the terms",
+			seeCta: "Log in",
 			cards: [
 				{
 					tag: "FOR THE REFERRING RESTAURANT",
@@ -3307,7 +3307,7 @@ export const translations = {
 							number: "1",
 							title: "Ori Phone",
 							card: {
-								title: "Ori Phone",
+								title: "",
 								price: "€89 excl. VAT / month",
 								includes: [
 									"Up to 350 inbound call minutes per month",
