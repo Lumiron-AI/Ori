@@ -13,7 +13,7 @@ export function Header() {
 const [scrolled, setScrolled] = useState(false);
 	const pathname = usePathname();
 	const isMessages = pathname === "/messages" || pathname === "/messages/faq";
-	const ctaHref = isMessages ? "/messages#pricing" : pathname === "/phone" ? "#pricing" : "/phone#pricing";
+	const ctaHref = "https://app.lumiron.ai/register";
 	const isPhone = pathname === "/phone";
 	const isProduct = isMessages || isPhone;
 	const { t } = useLocale();
@@ -97,6 +97,8 @@ const [scrolled, setScrolled] = useState(false);
 
 						<Link
 							href={ctaHref}
+							target="_blank"
+							rel="noopener noreferrer"
 							className={`inline-flex items-center gap-1.5 text-text font-display font-bold text-sm lg:text-base rounded-xl px-3 lg:px-4 py-1.5 lg:py-2 transition-colors whitespace-nowrap ${isMessages ? "bg-ori-message hover:bg-ori-message/90 active:bg-ori-message/80 shadow-blue-btn" : "bg-primary hover:bg-primary/90 active:bg-primary/80 shadow-orange-btn"}`}
 						>
 							{header.start}
@@ -153,6 +155,8 @@ const [scrolled, setScrolled] = useState(false);
 							<div className="flex justify-center my-4">
 								<Link
 									href={ctaHref}
+									target="_blank"
+									rel="noopener noreferrer"
 									onClick={() => setOpen(false)}
 									className={`inline-flex items-center justify-center gap-2 text-text font-display font-bold text-sm rounded-xl px-4 py-2 w-[90%] transition-colors ${isMessages ? "bg-ori-message hover:bg-ori-message/90" : "bg-primary hover:bg-primary/90"}`}
 								>

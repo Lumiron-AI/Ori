@@ -71,7 +71,9 @@ export function TrialCTASection() {
 					transition={{ delay: 0.24, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
 				>
 					<Link
-						href="#pricing"
+						href="https://app.lumiron.ai/register"
+						target="_blank"
+						rel="noopener noreferrer"
 						className={buttonClass({
 							variant: "primary",
 							size: "lg",

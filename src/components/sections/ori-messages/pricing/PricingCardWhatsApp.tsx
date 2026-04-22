@@ -17,7 +17,7 @@ export function PricingCardWhatsApp({
 	const d = p.whatsapp;
 
 	const monthlyPrice = 59;
-	const annualPrice = Math.round(monthlyPrice * 12 * 0.9);
+	const annualPrice = Math.round(monthlyPrice * 0.8) * 12;
 
 	return (
 		<div className="bg-background-element dark:bg-dark-surface rounded-3xl px-5 xs:px-7 py-5 xs:py-6 flex flex-col gap-3 xs:gap-3.5 shadow-card h-full border border-transparent hover:border-ori-message transition-colors">

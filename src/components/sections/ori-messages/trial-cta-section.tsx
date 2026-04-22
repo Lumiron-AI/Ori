@@ -67,7 +67,9 @@ export function OriMessagesTrialCTASection() {
 					transition={{ delay: 0.24, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
 				>
 					<Link
-						href="#pricing"
+						href="https://app.lumiron.ai/register"
+						target="_blank"
+						rel="noopener noreferrer"
 						className="inline-flex items-center justify-center gap-2 font-display font-bold rounded-2xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ori-message focus-visible:ring-offset-2 w-full sm:w-[261px] text-base sm:text-lg mt-2 h-[50px] px-8 bg-ori-message text-text shadow-blue-btn hover:bg-ori-message/90 active:bg-ori-message/80"
 					>
 						{d.cta}

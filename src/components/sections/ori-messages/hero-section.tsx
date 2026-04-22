@@ -126,7 +126,9 @@ export function OriMessagesHeroSection() {
 				>
 					{/* Instagram CTA */}
 					<Link
-						href="#use-case"
+						href="https://app.lumiron.ai/register"
+						target="_blank"
+						rel="noopener noreferrer"
 						className="relative overflow-visible inline-flex items-center justify-center gap-2 sm:gap-3 h-[46px] sm:h-[50px] px-6 sm:px-8 rounded-2xl font-display font-bold text-base sm:text-lg text-text opacity-95 transition-[filter] hover:brightness-90 active:brightness-80"
 						style={{
 							background:
@@ -148,7 +150,9 @@ export function OriMessagesHeroSection() {
 
 					{/* WhatsApp CTA */}
 					<Link
-						href="#use-case"
+						href="https://app.lumiron.ai/register"
+						target="_blank"
+						rel="noopener noreferrer"
 						className="relative overflow-visible inline-flex bg-[#2bad3d] items-center justify-center gap-2 sm:gap-3 h-[46px] sm:h-[50px] px-6 sm:px-8 rounded-2xl font-display font-bold text-base sm:text-lg text-text opacity-95 transition-[filter] hover:brightness-90 active:brightness-80"
 						style={{ background: "#2bad3d" }}
 					>
