@@ -54,7 +54,7 @@ export function OriMessagesHeroSection() {
 		<motion.section
 			ref={ref}
 			style={{ opacity }}
-			className="relative flex flex-col items-center justify-center text-center px-5 pt-[80px] xs:pt-[80px] md:pt-[80px] 3xl:pt-[170px] pb-6 3xl:pb-12 overflow-hidden bg-background dark:bg-dark-bg"
+			className="relative flex flex-col items-center justify-center text-center px-5 pt-[100px] xs:pt-[80px] md:pt-[80px] 3xl:pt-[170px] pb-6 3xl:pb-12 overflow-hidden bg-background dark:bg-dark-bg"
 		>
 			<div
 				aria-hidden
@@ -71,7 +71,7 @@ export function OriMessagesHeroSection() {
 					variants={fadeUp}
 					initial="hidden"
 					animate="show"
-					className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text-primary dark:text-text leading-tight max-w-6xl text-center"
+					className="font-display font-bold text-5xl lg:text-6xl text-text-primary dark:text-text leading-tight max-w-6xl text-center"
 				>
 					{d.titleOri ? (
 						<>

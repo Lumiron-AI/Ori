@@ -44,7 +44,9 @@ export function TrackingPanel() {
 							<div
 								key={i}
 								className={`rounded-xl p-2${i >= 3 ? " hidden lg:block" : ""} ${
-									msg.sender === "Ori" ? "bg-primary/40" : "bg-text-primary/40 "
+									msg.sender === "Ori"
+										? "bg-ori-message/60"
+										: "bg-text-primary/50 "
 								}`}
 							>
 								<div className="flex items-center gap-2 mb-0.5">

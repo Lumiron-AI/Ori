@@ -37,7 +37,9 @@ export function AdvancedCard() {
 
 			{/* CTA */}
 			<Link
-				href="/contact"
+				href="https://calendly.com/anthony-lumiron/decouvrir_lumiron_ori"
+				target="_blank"
+				rel="noopener noreferrer"
 				className={buttonClass({
 					variant: "primary",
 					size: "md",

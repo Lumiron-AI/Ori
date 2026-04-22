@@ -33,6 +33,7 @@
 	/* Non-editable elements — hide text cursor */
 	h1,
 	h2,
+	a,
 	button,
 	header,
 	header *,

@@ -29,7 +29,7 @@ export function OriMessagesSponsorshipSection() {
 					subtitleClassName="max-w-8xl"
 				/>
 
-				<div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8 mb-10 sm:mb-12">
+				<div className="flex flex-col sm:flex-row justify-center gap-10 sm:gap-8 mb-10 sm:mb-12">
 					{d.cards.map((card, i) => (
 						<motion.div
 							key={i}
@@ -41,7 +41,7 @@ export function OriMessagesSponsorshipSection() {
 								duration: 0.6,
 								ease: [0.22, 1, 0.36, 1],
 							}}
-							className="flex flex-col items-center gap-2 sm:gap-5 w-full sm:w-[40%]"
+							className="flex flex-col items-center mt-4 sm:mt-2 gap-2 sm:gap-5 w-full sm:w-[40%]"
 						>
 							<div className="flex flex-col items-center gap-1 sm:gap-2">
 								<p className="font-display font-semibold text-base xs:text-lg md:text-2xl text-text-primary dark:text-text text-center">
@@ -50,7 +50,7 @@ export function OriMessagesSponsorshipSection() {
 								<div className="w-24 h-0.5 bg-ori-message" />
 							</div>
 
-							<div className="w-full bg-dark-elevated dark:bg-dark-surface border border-transparent dark:border-text-secondary/30 rounded-4xl flex items-center justify-center py-10 sm:py-12 px-6">
+							<div className="w-full bg-dark-elevated dark:bg-dark-surface border border-transparent dark:border-text-secondary/30 rounded-4xl flex items-center justify-center py-8 sm:py-12 px-6">
 								<p className="font-display font-bold text-2xl sm:text-3xl text-center">
 									<span className="text-[#89A3D7]">{card.highlight}</span>
 									<span className="text-text">{card.rest}</span>

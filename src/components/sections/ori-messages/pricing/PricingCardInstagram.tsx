@@ -73,7 +73,9 @@ export function PricingCardInstagram({
 
 			{/* CTA */}
 			<Link
-				href="#trial"
+				href="https://app.lumiron.ai/register"
+				target="_blank"
+				rel="noopener noreferrer"
 				className="inline-flex items-center justify-center gap-2 font-display font-bold rounded-2xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ori-message focus-visible:ring-offset-2 w-full text-base px-6 h-11 sm:text-lg sm:px-8 sm:h-[50px] bg-ori-message text-text shadow-blue-btn hover:bg-ori-message/90 active:bg-ori-message/80"
 			>
 				{d.cta}

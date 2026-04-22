@@ -1,53 +1,203 @@
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import { getPostBySlug, getAllPosts } from '@/lib/mdx';
-import { mdxComponents } from '@/lib/mdx-components';
+"use client";
 
-interface Props {
-  params: Promise<{ slug: string }>;
+import { use } from "react";
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import {
+	getArticleBySlug,
+	getRelatedArticles,
+	type ContentBlock,
+} from "@/lib/articles";
+import { ArticleCard } from "@/components/ui/article-card";
+import { useLocale } from "@/context/locale-context";
+
+interface PageProps {
+	params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
-  const posts = await getAllPosts();
-  return posts.map((post) => ({ slug: post.slug }));
+function ContentBlockRenderer({ block }: { block: ContentBlock }) {
+	switch (block.type) {
+		case "p":
+			return (
+				<p className="font-sans font-normal text-base text-text-primary dark:text-text/80 leading-relaxed">
+					{block.text}
+				</p>
+			);
+		case "bold":
+			return (
+				<p className="font-display font-bold text-base text-text-primary dark:text-text">
+					{block.text}
+				</p>
+			);
+		case "ul":
+			return (
+				<ul className="list-disc ms-8 flex flex-col gap-1">
+					{block.items.map((item, i) => (
+						<li
+							key={i}
+							className="font-sans font-normal text-base text-text-primary dark:text-text/80 leading-relaxed"
+						>
+							{item}
+						</li>
+					))}
+				</ul>
+			);
+		case "ol":
+			return (
+				<ol className="list-decimal ms-8 flex flex-col gap-1">
+					{block.items.map((item, i) => (
+						<li
+							key={i}
+							className="font-sans font-normal text-base text-text-primary dark:text-text/80 leading-relaxed"
+						>
+							{item}
+						</li>
+					))}
+				</ol>
+			);
+		case "source":
+			return (
+				<a
+					href={block.text}
+					target="_blank"
+					rel="noopener noreferrer"
+					className="font-sans font-normal text-sm text-primary underline break-all"
+				>
+					{block.text}
+				</a>
+			);
+	}
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
-  if (!post) return {};
-  return {
-    title: post.title,
-    description: post.description,
-  };
-}
+export default function ArticlePage({ params }: PageProps) {
+	const { slug } = use(params);
+	const { t, locale } = useLocale();
+	const r = t.blog;
 
-export default async function BlogPostPage({ params }: Props) {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
-  if (!post) notFound();
+	const article = getArticleBySlug(slug, locale);
+	if (!article) notFound();
 
-  return (
-    <div className="min-h-screen bg-background pt-24 pb-20 section-padding">
-      <article className="max-w-3xl mx-auto">
-        <p className="font-sans font-normal text-sm text-text-tertiary mb-3">
-          {new Date(post.date).toLocaleDateString('fr-FR', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}
-        </p>
-        <h1 className="font-display font-bold text-5xl text-text-primary mb-6 leading-tight">
-          {post.title}
-        </h1>
-        <p className="font-sans font-normal text-lg text-text-secondary mb-10 pb-10 border-b border-background-secondary">
-          {post.description}
-        </p>
-        <div className="prose-ori">
-          <MDXRemote source={post.content} components={mdxComponents} />
-        </div>
-      </article>
-    </div>
-  );
+	const related = getRelatedArticles(slug, locale).slice(0, 3);
+
+	return (
+		<main className="bg-background dark:bg-dark-bg min-h-screen">
+			{/* Article content */}
+			<div className="max-w-8xl mx-auto px-5 md:px-10 pt-24 pb-12">
+				{/* Back */}
+				<div className="flex items-center gap-6 mb-6">
+					<Link
+						href="/blog"
+						className="flex items-center gap-2 font-display font-normal text-lg text-text-heading dark:text-text hover:text-primary dark:hover:text-primary transition-colors"
+					>
+						<ArrowLeft size={20} />
+						{r.back}
+					</Link>
+				</div>
+
+				{/* Hero */}
+				<div className="flex flex-col lg:flex-row gap-6 sm:gap-10 mb-12">
+					{/* Hero image */}
+					<div className="relative w-full lg:w-[461px] h-[280px] lg:h-[348px] shrink-0 rounded-4xl overflow-hidden">
+						<Image
+							src={article.image}
+							alt={article.title}
+							fill
+							className="object-cover"
+							priority
+						/>
+					</div>
+
+					{/* Hero metadata */}
+					<div className="flex flex-col gap-4 justify-start">
+						<h1 className="font-display font-bold text-3xl sm:text-5xl text-text-heading dark:text-text">
+							{article.title}
+						</h1>
+						<div className="flex flex-wrap items-center gap-3 sm:mt-2">
+							<div className="flex items-center gap-2 text-text-secondary dark:text-text-tertiary">
+								<Calendar size={18} className="shrink-0" />
+								<span className="font-display font-semibold text-base">
+									{r.publishedOn} {article.date}
+								</span>
+							</div>
+							<div className="flex items-center gap-2 text-text-secondary dark:text-text-tertiary">
+								<Clock size={18} className="shrink-0" />
+								<span className="font-display font-semibold text-base">
+									{r.readingTime} : {article.readingTime}
+								</span>
+							</div>
+						</div>
+						<span className="inline-flex w-fit bg-primary/10 text-primary font-display font-bold text-sm sm:text-base rounded-full px-3 py-0.5">
+							{article.category}
+						</span>
+					</div>
+				</div>
+
+				{/* Intro */}
+				<div className="flex flex-col gap-4 mb-10">
+					{article.intro.split("\n\n").map((para, i) => (
+						<p
+							key={i}
+							className="font-sans font-normal text-base text-text-primary dark:text-text/80 leading-relaxed"
+						>
+							{para}
+						</p>
+					))}
+				</div>
+
+				<hr className="border-background-tertiary dark:border-dark-overlay mb-10" />
+
+				{/* Sections */}
+				<div className="flex flex-col gap-10">
+					{article.sections.map((section, si) => (
+						<div key={si} className="flex flex-col gap-4">
+							<h2 className="font-display font-bold text-3xl text-text-primary dark:text-text">
+								{section.heading}
+							</h2>
+							<div className="flex flex-col gap-3">
+								{section.blocks.map((block, bi) => (
+									<ContentBlockRenderer key={bi} block={block} />
+								))}
+							</div>
+						</div>
+					))}
+				</div>
+
+				{/* Conclusion */}
+				<div className="mt-12 bg-background-secondary dark:bg-dark-elevated rounded-4xl p-8 md:p-10 flex flex-col gap-4">
+					<h2 className="font-display font-bold text-3xl text-text-primary dark:text-text">
+						{article.conclusion.heading}
+					</h2>
+					<div className="flex flex-col gap-3">
+						{article.conclusion.blocks.map((block, bi) => (
+							<ContentBlockRenderer key={bi} block={block} />
+						))}
+					</div>
+				</div>
+			</div>
+
+			{/* Related articles */}
+			{related.length > 0 && (
+				<section className="bg-background dark:bg-dark-bg py-8 px-5 md:px-10">
+					<div className="max-w-8xl mx-auto">
+						<h2 className="font-display font-bold text-3xl text-text-primary dark:text-text mb-8">
+							{r.relatedTitle}
+						</h2>
+						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+							{related.map((a) => (
+								<ArticleCard
+									key={a.slug}
+									article={a}
+									publishedOn={r.publishedOn}
+									readingTime={r.readingTime}
+									readMore={r.readMore}
+								/>
+							))}
+						</div>
+					</div>
+				</section>
+			)}
+		</main>
+	);
 }

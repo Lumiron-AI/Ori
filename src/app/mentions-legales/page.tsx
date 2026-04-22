@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { useLocale } from "@/context/locale-context";
 
@@ -20,17 +20,18 @@ function Bullet({ items }: { items: readonly string[] }) {
 export default function MentionsLegalesPage() {
 	const { t } = useLocale();
 	const l = t.legalNotice;
+	const router = useRouter();
 
 	return (
 		<main className="bg-background dark:bg-dark-bg min-h-screen">
 			<div className="max-w-4xl mx-auto px-5 md:px-10 pt-24 lg:pt-32 pb-16 lg:pb-24">
-				<Link
-					href="/"
+				<button
+					onClick={() => router.back()}
 					className="flex items-center gap-2 font-display font-normal text-lg text-text-heading dark:text-text hover:text-primary dark:hover:text-primary transition-colors mb-6"
 				>
 					<ArrowLeft size={20} />
 					{l.back}
-				</Link>
+				</button>
 
 				<h1 className="font-display font-bold text-5xl text-text-primary dark:text-text mt-3 leading-[80px]">
 					{l.title}

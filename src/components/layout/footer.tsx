@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Linkedin, Instagram, Sun, Moon } from "lucide-react";
+import { Linkedin, Instagram, Sun, Moon, Mail } from "lucide-react";
 
 import { useLocale } from "@/context/locale-context";
 import type { Locale } from "@/context/locale-context";
@@ -138,7 +138,7 @@ export function Footer() {
 								<p className="font-display font-bold text-base sm:text-lg text-text-primary dark:text-text">
 									{footer.socialTitle}
 								</p>
-								<div className="w-full sm:w-fit flex sm:flex-col justify-between sm:gap-8">
+								<div className="w-full sm:w-fit flex flex-col gap-8">
 									<div className="flex gap-2">
 										{SOCIAL.map(({ label, href, icon: Icon }) => (
 											<a
@@ -218,17 +218,20 @@ export function Footer() {
 			{/* Bottom bar */}
 			<div className="mx-8 md:mx-0 border-t border-text-secondary/20 dark:border-text-tertiary/50">
 				<div className="py-6 md:py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
-					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
-						{footer.copyright}
-					</p>
 					<a
 						href="https://mail.google.com/mail/?view=cm&to=contact@lumiron.ai"
 						target="_blank"
 						rel="noopener noreferrer"
-						className={`mx-auto font-display font-normal text-sm text-text-primary dark:text-text transition-colors ${isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary"}`}
+						className={`flex items-center gap-1.5 font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text transition-colors ${isMessages ? "hover:text-ori-message dark:hover:text-ori-message" : "hover:text-primary dark:hover:text-primary"}`}
 					>
+						<Mail size={12} className="sm:hidden" />
+						<Mail size={14} className="hidden sm:block" />
 						Contact
 					</a>
+					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
+						{footer.copyright}
+					</p>
+
 					<p className="font-display font-normal text-xs sm:text-sm text-text-primary dark:text-text">
 						{footer.madeBy}{" "}
 						<span

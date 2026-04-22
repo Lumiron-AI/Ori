@@ -10,13 +10,17 @@ import { useSectionFade } from "@/hooks/use-section-fade";
 import { useLocale } from "@/context/locale-context";
 
 const CARD_ICONS = [CalendarCheck, CircleHelp];
-const CARD_SRCS = ["/audio/ori-reservation.ogg", "/audio/ori-faq.ogg"];
 const CARD_DURATIONS = [39, 44];
 
 export function UseCaseSection() {
 	const { ref, opacity } = useSectionFade();
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
-	const { t } = useLocale();
+	const { t, locale } = useLocale();
+
+	const CARD_SRCS =
+		locale === "en"
+			? ["/audio/ori-reservation-en.mp3", "/audio/ori-faq-en.mp3"]
+			: ["/audio/ori-reservation.ogg", "/audio/ori-faq.ogg"];
 	const { useCase } = t;
 
 	return (

@@ -14,7 +14,7 @@ interface BigArticleCardProps {
 export function BigArticleCard({ article, publishedOn, readingTime }: BigArticleCardProps) {
 	return (
 		<Link
-			href={`/ressources/${article.slug}`}
+			href={`/blog/${article.slug}`}
 			className="group relative flex flex-col bg-background-element dark:bg-dark-surface dark:border dark:border-text-secondary dark:shadow-[0_4px_30px_0_rgba(255,255,255,0.10)] shadow-card rounded-4xl overflow-hidden cursor-pointer"
 		>
 			{/* Cover image */}

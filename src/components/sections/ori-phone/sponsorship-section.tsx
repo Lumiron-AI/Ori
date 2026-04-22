@@ -29,7 +29,7 @@ export function SponsorshipSection() {
 					subtitleClassName="max-w-8xl"
 				/>
 
-				<div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8 mb-10 sm:mb-12">
+				<div className="flex flex-col sm:flex-row justify-center gap-10 sm:gap-8 mb-10 sm:mb-12">
 					{sponsorship.cards.map((card, i) => (
 						<motion.div
 							key={i}

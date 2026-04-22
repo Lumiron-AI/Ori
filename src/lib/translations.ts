@@ -28,7 +28,7 @@ export const translations = {
 			indexNavLinks: [
 				{ href: "/#solutions", label: "Nos solutions" },
 				{ href: "/#fonctionnement", label: "Fonctionnement" },
-				{ href: "/ressources", label: "Ressources" },
+				{ href: "/blog", label: "Blog" },
 			],
 			navLinks: [
 				{ href: "/phone#use-case", label: "Cas d'usage" },
@@ -37,7 +37,7 @@ export const translations = {
 				{ href: "/phone#sponsorship", label: "Parrainage" },
 				{ href: "/phone#faq", label: "FAQ" },
 				{ href: "/phone#pricing", label: "Tarifs" },
-				{ href: "/ressources", label: "Ressources" },
+				{ href: "/blog", label: "Blog" },
 			],
 			messagesNavLinks: [
 				{ href: "/messages#use-case", label: "Cas d'usage" },
@@ -46,7 +46,7 @@ export const translations = {
 				{ href: "/messages#sponsorship", label: "Parrainage" },
 				{ href: "/messages#faq", label: "FAQ" },
 				{ href: "/messages#pricing", label: "Tarifs" },
-				{ href: "/ressources", label: "Ressources" },
+				{ href: "/blog", label: "Blog" },
 			],
 			legalLinks: [
 				{ href: "/mentions-legales", label: "Mentions légales" },
@@ -450,7 +450,7 @@ export const translations = {
 				{
 					sender: "Ori",
 					time: "18:03",
-					text: "Avez vous d'autres questions ?",
+					text: "Tres bien, Je retrouve une réservation précédente associée à ce numéro, au nom de Rossi. C’est bien vous ? ?",
 				},
 				{
 					sender: "Sophia",
@@ -519,7 +519,7 @@ export const translations = {
 					id: "setup",
 					label: "Connexion en un clic",
 					description:
-						"Liez vos comptes WhatsApp et Instagram instantanément. Ori est prêt à répondre à vos clients en moins de 5 minutes.",
+						"Liez vos comptes Instagram er WhatsApp instantanément. Ori est prêt à répondre à vos clients en moins de 5 minutes.",
 				},
 				{
 					id: "customize",
@@ -661,14 +661,14 @@ export const translations = {
 				},
 				{ value: "20+", label: "Langues en temps réel", color: "text-primary" },
 				{
-					value: "Illimitée",
+					value: "Illimité",
 					label: "Conversations simultanées",
 					color: "text-ori-message",
 				},
 			],
 			title: "l\u2019assistant IA qui répond à vos appels et messages.",
 			subtitle:
-				"Maximisez vos revenus en automatisant vos échanges. Sur Instagram, WhatsApp ou par téléphone, Ori gère chaque demande et enregistre vos réservations en\ntemps réel, 24h/24 et 7j/7.",
+				"Maximisez vos revenus en automatisant vos échanges. Sur Instagram, WhatsApp ou par téléphone, Ori gère chaque demande et enregistre vos réservations en temps réel,\n24h/24 et 7j/7.",
 			subtitleBold: "",
 			ctaPhone: "Découvrir Ori téléphone",
 			ctaMessages: "Découvrir Ori messages",
@@ -681,8 +681,8 @@ export const translations = {
 				"Ne laissez plus aucun client sans réponse. Ori prend en charge vos échanges pour vous permettre de vous concentrer sur l\u2019essentiel.",
 			solutions: [
 				{
-					label: "Ori Téléphone",
-					title: "Assistant IA",
+					label: "Assistant IA",
+					title: "Ori Téléphone",
 					description:
 						"Ori décroche à votre place, répond aux questions de vos clients et prend vos réservations en temps réel, sans jamais interrompre votre équipe.",
 					features: [
@@ -693,10 +693,10 @@ export const translations = {
 					cta: "Découvrir",
 				},
 				{
-					label: "Ori Message",
-					title: "Assistant IA",
+					label: "Assistant IA",
+					title: "Ori Message",
 					description:
-						"Ori gère vos conversations sur WhatsApp et Instagram. Il répond aux demandes et enregistre vos réservations en toute autonomie, sans aucune intervention de votre part.",
+						"Ori gère vos conversations sur Instagram et WhatsApp. Il répond aux demandes et enregistre vos réservations en toute autonomie, sans aucune intervention de votre part.",
 					features: [
 						"Multiplateforme",
 						"Réservation par écrit",
@@ -750,9 +750,9 @@ export const translations = {
 			ctaMessages: "Essayer Ori Message",
 		},
 
-		// ── Ressources ────────────────────────────────────────────────────────────
-		ressources: {
-			title: "Ressources",
+		// ── Blog ─────────────────────────────────────────────────────────────────
+		blog: {
+			title: "Blog",
 			seeAll: "Tout voir",
 			empty: "Aucun article dans cette catégorie pour le moment.",
 			publishedOn: "Publié le",
@@ -803,7 +803,8 @@ export const translations = {
 								"Ori parle de façon naturelle, sans menus du type « tapez 1, tapez 2 ». Le client s'exprime normalement, et Ori répond en temps réel, sans latence gênante. L'expérience est fluide et bien plus naturelle qu'un répondeur classique. La voix peut rester légèrement synthétique, mais la conversation est claire, rapide et efficace.",
 						},
 						{
-							question: "Que se passe-t-il si Ori ne peut pas répondre à une question ?",
+							question:
+								"Que se passe-t-il si Ori ne peut pas répondre à une question ?",
 							answer:
 								"Si une demande sort du cadre prévu, Ori ne bloque pas l'appel. Il peut transférer immédiatement vers votre équipe si vous l'avez prévu. Il peut aussi prendre les coordonnées du client et le motif de l'appel pour que vous rappeliez ensuite. Vous définissez les règles, Ori les applique.",
 						},
@@ -823,7 +824,8 @@ export const translations = {
 					theme: "Réservations & commandes",
 					items: [
 						{
-							question: "Est-ce qu'Ori peut prendre des réservations automatiquement ?",
+							question:
+								"Est-ce qu'Ori peut prendre des réservations automatiquement ?",
 							answer:
 								"Oui. Ori peut prendre une réservation par téléphone en demandant la date, l'heure, le nombre de personnes et le nom du client. Il enregistre les informations et confirme la demande selon le fonctionnement prévu. Le client est pris en charge immédiatement, sans faire attendre votre équipe au téléphone.",
 						},
@@ -833,7 +835,8 @@ export const translations = {
 								"Oui, si ce fonctionnement est activé dans votre configuration. Le client peut rappeler pour modifier ou annuler sa réservation, et Ori suit les règles que vous avez définies. Cela évite à votre équipe de gérer manuellement chaque changement simple.",
 						},
 						{
-							question: "Ori peut-il prendre des commandes à emporter ou en livraison ?",
+							question:
+								"Ori peut-il prendre des commandes à emporter ou en livraison ?",
 							answer:
 								"Oui. Ori peut prendre une commande par téléphone, enregistrer les articles demandés et guider le client tout au long de l'échange. Selon votre configuration, il peut aussi suggérer des produits complémentaires et transmettre les informations utiles pour la suite. Le but est simple : traiter plus d'appels sans surcharger votre équipe.",
 						},
@@ -843,7 +846,8 @@ export const translations = {
 					theme: "Contrôle & suivi",
 					items: [
 						{
-							question: "Puis-je décider quand un appel est transféré à mon équipe ?",
+							question:
+								"Puis-je décider quand un appel est transféré à mon équipe ?",
 							answer:
 								"Oui. Vous choisissez précisément dans quels cas Ori doit passer la main. Par exemple : demande complexe, gros panier, réclamation, urgence ou demande spéciale. Vous gardez le contrôle sur les règles de transfert.",
 						},
@@ -868,12 +872,14 @@ export const translations = {
 					theme: "Multi-sites, sécurité & abonnement",
 					items: [
 						{
-							question: "J'ai plusieurs restaurants. Est-ce qu'Ori peut tous les gérer ?",
+							question:
+								"J'ai plusieurs restaurants. Est-ce qu'Ori peut tous les gérer ?",
 							answer:
 								"Oui. Ori peut être utilisé sur plusieurs établissements. Chaque restaurant peut avoir ses propres horaires, ses propres consignes et son propre fonctionnement. Vous gardez une gestion claire, même à plusieurs sites.",
 						},
 						{
-							question: "Les données de mon restaurant et de mes clients sont-elles protégées ?",
+							question:
+								"Les données de mon restaurant et de mes clients sont-elles protégées ?",
 							answer:
 								"Oui. Les données sont sécurisées et utilisées uniquement pour faire fonctionner le service. L'objectif est de garantir un traitement fiable, confidentiel et conforme aux exigences de protection des données.",
 						},
@@ -921,7 +927,7 @@ export const translations = {
 						{
 							question: "Est-ce qu'Ori répond automatiquement aux messages ?",
 							answer:
-								"Oui. Ori répond automatiquement aux messages reçus sur WhatsApp et Instagram. Il comprend les demandes et répond de manière claire et immédiate. Vous ne laissez plus aucun message sans réponse.",
+								"Oui. Ori répond automatiquement aux messages reçus sur Instagram et WhatsApp. Il comprend les demandes et répond de manière claire et immédiate. Vous ne laissez plus aucun message sans réponse.",
 						},
 						{
 							question: "Est-ce qu'Ori répond comme un humain ?",
@@ -939,7 +945,8 @@ export const translations = {
 								"Oui, à tout moment. Vous pouvez intervenir directement depuis Instagram ou WhatsApp. Ori s'efface dès que vous reprenez la conversation.",
 						},
 						{
-							question: "Puis-je choisir quand Ori répond et quand je réponds moi-même ?",
+							question:
+								"Puis-je choisir quand Ori répond et quand je réponds moi-même ?",
 							answer:
 								"Oui. Vous pouvez décider que Ori répond en continu, uniquement en dehors des horaires, ou sur certains types de messages. Vous gardez le contrôle total.",
 						},
@@ -949,7 +956,8 @@ export const translations = {
 					theme: "Réservations & conversion",
 					items: [
 						{
-							question: "Est-ce qu'Ori peut gérer les réservations via message ?",
+							question:
+								"Est-ce qu'Ori peut gérer les réservations via message ?",
 							answer:
 								"Oui. Ori peut comprendre une demande de réservation, poser les bonnes questions et enregistrer les informations. Le client est pris en charge immédiatement, sans attente.",
 						},
@@ -959,7 +967,8 @@ export const translations = {
 								"Oui. Ori peut répondre rapidement, relancer, suggérer des options et guider le client. Résultat : plus de conversions et moins d'opportunités perdues.",
 						},
 						{
-							question: "Peut-il envoyer des liens (paiement, menu, réservation) ?",
+							question:
+								"Peut-il envoyer des liens (paiement, menu, réservation) ?",
 							answer:
 								"Oui. Ori peut partager des liens utiles : menu, réservation, paiement ou autre. Il guide le client jusqu'à l'action finale.",
 						},
@@ -994,7 +1003,8 @@ export const translations = {
 								"Oui. Vous pouvez activer Ori uniquement pendant vos heures de fermeture ou en dehors des services. Cela permet de répondre aux clients sans mobiliser votre équipe.",
 						},
 						{
-							question: "Est-ce qu'Ori peut gérer plusieurs comptes ou établissements ?",
+							question:
+								"Est-ce qu'Ori peut gérer plusieurs comptes ou établissements ?",
 							answer:
 								"Oui. Vous pouvez connecter plusieurs comptes et gérer plusieurs établissements. Chaque compte peut avoir ses propres règles et son propre fonctionnement.",
 						},
@@ -1048,10 +1058,15 @@ export const translations = {
 					title: "Hébergement",
 					hostingIntro: "Le site et les services sont hébergés par :",
 					hostName: "Heroku (Salesforce Inc.)",
-					hostAddress: ["Salesforce Tower", "415 Mission Street, 3rd Floor", "San Francisco, CA 94105 – États-Unis"],
+					hostAddress: [
+						"Salesforce Tower",
+						"415 Mission Street, 3rd Floor",
+						"San Francisco, CA 94105 – États-Unis",
+					],
 					hostWebsiteLabel: "Site :",
 					hostPhone: "Téléphone : +1 (415) 901-7000",
-					hostNote: "Les données peuvent être hébergées et traitées en dehors de l'Union européenne. Dans ce cadre, Lumiron met en œuvre des garanties appropriées conformément à la réglementation applicable.",
+					hostNote:
+						"Les données peuvent être hébergées et traitées en dehors de l'Union européenne. Dans ce cadre, Lumiron met en œuvre des garanties appropriées conformément à la réglementation applicable.",
 				},
 				{
 					number: "3",
@@ -1085,7 +1100,8 @@ export const translations = {
 				{
 					number: "7",
 					title: "Cookies",
-					listIntro: "Le site peut utiliser des cookies ou technologies similaires afin :",
+					listIntro:
+						"Le site peut utiliser des cookies ou technologies similaires afin :",
 					listItems: [
 						"D'assurer le bon fonctionnement du site",
 						"D'améliorer l'expérience utilisateur",
@@ -1122,12 +1138,20 @@ export const translations = {
 				{ label: "Prospects", value: "3 ans" },
 				{ label: "Cookies", value: "13 mois maximum" },
 			],
-			rights: ["Accès", "Rectification", "Effacement", "Limitation", "Opposition", "Portabilité"],
+			rights: [
+				"Accès",
+				"Rectification",
+				"Effacement",
+				"Limitation",
+				"Opposition",
+				"Portabilité",
+			],
 			sections: [
 				{
 					number: "1",
 					title: "Responsable du traitement",
-					intro: "Les données personnelles collectées via le site https://ori.lumiron.ai ainsi que dans le cadre de l'utilisation des services Ori sont traitées par :",
+					intro:
+						"Les données personnelles collectées via le site https://ori.lumiron.ai ainsi que dans le cadre de l'utilisation des services Ori sont traitées par :",
 					companyName: "LUMIRON SAS",
 					companyDetails: [
 						"Société par actions simplifiée",
@@ -1158,11 +1182,20 @@ export const translations = {
 					groups: [
 						{
 							label: "Données du Client",
-							items: ["Nom, prénom", "Email", "Informations de compte", "Données de facturation"],
+							items: [
+								"Nom, prénom",
+								"Email",
+								"Informations de compte",
+								"Données de facturation",
+							],
 						},
 						{
 							label: "Données d'utilisation",
-							items: ["Logs de connexion", "Données techniques", "Statistiques d'usage"],
+							items: [
+								"Logs de connexion",
+								"Données techniques",
+								"Statistiques d'usage",
+							],
 						},
 						{
 							label: "Données issues du Service",
@@ -1181,11 +1214,21 @@ export const translations = {
 					groups: [
 						{
 							label: "Exécution du contrat",
-							items: ["Accès au Service", "Configuration des agents IA", "Traitement des appels et messages", "Support client", "Facturation"],
+							items: [
+								"Accès au Service",
+								"Configuration des agents IA",
+								"Traitement des appels et messages",
+								"Support client",
+								"Facturation",
+							],
 						},
 						{
 							label: "Intérêt légitime",
-							items: ["Amélioration du Service", "Analyse des performances", "Sécurité"],
+							items: [
+								"Amélioration du Service",
+								"Analyse des performances",
+								"Sécurité",
+							],
 						},
 						{
 							label: "Consentement",
@@ -1196,7 +1239,8 @@ export const translations = {
 				{
 					number: "5",
 					title: "Utilisation des données pour l'amélioration du Service",
-					intro: "Lumiron peut utiliser certaines données, notamment de manière anonymisée ou agrégée, afin :",
+					intro:
+						"Lumiron peut utiliser certaines données, notamment de manière anonymisée ou agrégée, afin :",
 					items: [
 						"D'améliorer les performances des modèles",
 						"D'optimiser les réponses",
@@ -1218,10 +1262,18 @@ export const translations = {
 				{
 					number: "7",
 					title: "Transferts hors Union européenne",
-					intro: "Certaines données peuvent être transférées hors UE, notamment via :",
-					items: ["Fournisseurs cloud", "Fournisseurs d'IA", "Prestataires techniques"],
+					intro:
+						"Certaines données peuvent être transférées hors UE, notamment via :",
+					items: [
+						"Fournisseurs cloud",
+						"Fournisseurs d'IA",
+						"Prestataires techniques",
+					],
 					basisIntro: "Ces transferts sont encadrés par :",
-					basisItems: ["Décisions d'adéquation, ou", "Clauses Contractuelles Types (CCT)"],
+					basisItems: [
+						"Décisions d'adéquation, ou",
+						"Clauses Contractuelles Types (CCT)",
+					],
 				},
 				{
 					number: "8",
@@ -1240,14 +1292,23 @@ export const translations = {
 					number: "10",
 					title: "Sécurité",
 					intro: "Lumiron met en œuvre :",
-					items: ["Contrôle des accès", "Chiffrement des échanges", "Systèmes sécurisés", "Sauvegardes régulières"],
+					items: [
+						"Contrôle des accès",
+						"Chiffrement des échanges",
+						"Systèmes sécurisés",
+						"Sauvegardes régulières",
+					],
 					note: "Le Client est responsable de la sécurité de ses accès.",
 				},
 				{
 					number: "11",
 					title: "Cookies",
 					intro: "Le site utilise des cookies pour :",
-					items: ["Fonctionnement technique", "Mesure d'audience", "Amélioration de l'expérience"],
+					items: [
+						"Fonctionnement technique",
+						"Mesure d'audience",
+						"Amélioration de l'expérience",
+					],
 					note: "Les cookies non essentiels sont soumis au consentement. L'utilisateur peut accepter, refuser ou modifier ses préférences via le bandeau cookies ou un gestionnaire dédié.",
 				},
 			],
@@ -1264,7 +1325,8 @@ export const translations = {
 				{
 					number: "1",
 					title: "Identification de la société",
-					intro: "Les présentes Conditions Générales de Vente (ci-après les « CGV ») régissent les services proposés sous la marque Ori, éditée par :",
+					intro:
+						"Les présentes Conditions Générales de Vente (ci-après les « CGV ») régissent les services proposés sous la marque Ori, éditée par :",
 					companyName: "LUMIRON SAS",
 					companyDetails: [
 						"Société par actions simplifiée au capital de 1 000 €",
@@ -1273,22 +1335,53 @@ export const translations = {
 						"TVA intracommunautaire : FR86 988 278 446",
 					],
 					emailLabel: "Email :",
-					proNote: "Les services sont exclusivement destinés à des professionnels agissant dans le cadre de leur activité.",
+					proNote:
+						"Les services sont exclusivement destinés à des professionnels agissant dans le cadre de leur activité.",
 				},
 				{
 					number: "2",
 					title: "Définitions",
 					items: [
-						{ term: "Ori", def: "Solution SaaS d'assistants conversationnels automatisés développée par Lumiron" },
-						{ term: "Ori Téléphone", def: "Module permettant le traitement automatisé des appels entrants" },
-						{ term: "Ori Messages", def: "Module permettant le traitement automatisé des messages via WhatsApp Business et/ou Instagram" },
-						{ term: "Pack Duo", def: "Offre combinant Ori Téléphone et Ori Messages" },
-						{ term: "Offre Avancée", def: "Solution personnalisée faisant l'objet d'un devis spécifique" },
-						{ term: "Client", def: "Toute personne morale ou entrepreneur individuel souscrivant aux Services" },
-						{ term: "Utilisateur", def: "Toute personne autorisée par le Client à utiliser le Service" },
-						{ term: "Discussion", def: "Échange continu de messages avec un même interlocuteur sur une période maximale de 24 heures" },
-						{ term: "Minute", def: "Minute d'appel entrant effectivement connectée, toute minute entamée étant due" },
-						{ term: "Plateformes tierces", def: "Notamment Meta (WhatsApp, Instagram), opérateurs télécom, fournisseurs cloud et fournisseurs d'IA" },
+						{
+							term: "Ori",
+							def: "Solution SaaS d'assistants conversationnels automatisés développée par Lumiron",
+						},
+						{
+							term: "Ori Téléphone",
+							def: "Module permettant le traitement automatisé des appels entrants",
+						},
+						{
+							term: "Ori Messages",
+							def: "Module permettant le traitement automatisé des messages via WhatsApp Business et/ou Instagram",
+						},
+						{
+							term: "Pack Duo",
+							def: "Offre combinant Ori Téléphone et Ori Messages",
+						},
+						{
+							term: "Offre Avancée",
+							def: "Solution personnalisée faisant l'objet d'un devis spécifique",
+						},
+						{
+							term: "Client",
+							def: "Toute personne morale ou entrepreneur individuel souscrivant aux Services",
+						},
+						{
+							term: "Utilisateur",
+							def: "Toute personne autorisée par le Client à utiliser le Service",
+						},
+						{
+							term: "Discussion",
+							def: "Échange continu de messages avec un même interlocuteur sur une période maximale de 24 heures",
+						},
+						{
+							term: "Minute",
+							def: "Minute d'appel entrant effectivement connectée, toute minute entamée étant due",
+						},
+						{
+							term: "Plateformes tierces",
+							def: "Notamment Meta (WhatsApp, Instagram), opérateurs télécom, fournisseurs cloud et fournisseurs d'IA",
+						},
 					],
 				},
 				{
@@ -1371,7 +1464,8 @@ export const translations = {
 						"Ces technologies peuvent produire des erreurs, imprécisions ou interprétations incorrectes",
 						"Les performances présentées (taux de réponse, rapidité, disponibilité) sont indicatives",
 					],
-					noGuaranteeIntro: "En conséquence, Lumiron ne garantit notamment pas :",
+					noGuaranteeIntro:
+						"En conséquence, Lumiron ne garantit notamment pas :",
 					noGuarantee: [
 						"Le nombre de clients générés",
 						"Le nombre de réservations",
@@ -1384,7 +1478,10 @@ export const translations = {
 					number: "6",
 					title: "Souscription",
 					conditionsIntro: "La souscription devient effective après :",
-					conditions: ["Acceptation des présentes CGV", "Validation du moyen de paiement"],
+					conditions: [
+						"Acceptation des présentes CGV",
+						"Validation du moyen de paiement",
+					],
 					p1: "Le Client garantit l'exactitude des informations fournies.",
 				},
 				{
@@ -1411,12 +1508,22 @@ export const translations = {
 						{
 							number: "1",
 							title: "Offres mensuelles",
-							items: ["Durée indéterminée", "Renouvellement automatique mensuel", "Résiliation possible à tout moment", "Toute période entamée est due"],
+							items: [
+								"Durée indéterminée",
+								"Renouvellement automatique mensuel",
+								"Résiliation possible à tout moment",
+								"Toute période entamée est due",
+							],
 						},
 						{
 							number: "2",
 							title: "Offres annuelles",
-							items: ["Engagement ferme de 12 mois", "Paiement intégral à la souscription", "Non résiliable avant échéance", "Non remboursable"],
+							items: [
+								"Engagement ferme de 12 mois",
+								"Paiement intégral à la souscription",
+								"Non résiliable avant échéance",
+								"Non remboursable",
+							],
 						},
 						{
 							number: "3",
@@ -1439,7 +1546,7 @@ export const translations = {
 							number: "1",
 							title: "Ori Téléphone",
 							card: {
-								title: "Ori Téléphone",
+								title: "",
 								price: "89 € HT / mois",
 								includes: [
 									"Jusqu'à 350 minutes d'appels entrants par mois",
@@ -1447,7 +1554,8 @@ export const translations = {
 									"Accès à l'interface",
 									"Suivi des statistiques",
 								],
-								overage: "0,20 € HT par minute supplémentaire — toute minute entamée est facturée",
+								overage:
+									"0,20 € HT par minute supplémentaire — toute minute entamée est facturée",
 							},
 						},
 						{
@@ -1457,19 +1565,33 @@ export const translations = {
 								{
 									title: "Assistant Instagram",
 									price: "39 € HT / mois",
-									includes: ["Jusqu'à 500 discussions par mois", "Réponses automatisées", "Gestion des demandes", "Interface de pilotage"],
+									includes: [
+										"Jusqu'à 500 discussions par mois",
+										"Réponses automatisées",
+										"Gestion des demandes",
+										"Interface de pilotage",
+									],
 									overage: "0,05 € HT par discussion supplémentaire",
 								},
 								{
 									title: "Assistant WhatsApp",
 									price: "59 € HT / mois",
-									includes: ["Jusqu'à 500 discussions par mois", "Réponses automatisées", "Gestion des demandes", "Interface"],
+									includes: [
+										"Jusqu'à 500 discussions par mois",
+										"Réponses automatisées",
+										"Gestion des demandes",
+										"Interface",
+									],
 									overage: "0,05 € HT par discussion supplémentaire",
 								},
 								{
 									title: "Pack Duo Messages",
 									price: "79 € HT / mois",
-									includes: ["WhatsApp + Instagram", "500 discussions mutualisées", "Centralisation des échanges"],
+									includes: [
+										"WhatsApp + Instagram",
+										"500 discussions mutualisées",
+										"Centralisation des échanges",
+									],
 									overage: "0,10 € HT par discussion supplémentaire",
 								},
 							],
@@ -1490,9 +1612,16 @@ export const translations = {
 					number: "10",
 					title: "Paiement",
 					p1: "Le paiement est effectué via Stripe ou tout prestataire équivalent.",
-					items: ["Prélèvement automatique mensuel", "Paiement annuel en une fois", "Facturation des dépassements en fin de période"],
+					items: [
+						"Prélèvement automatique mensuel",
+						"Paiement annuel en une fois",
+						"Facturation des dépassements en fin de période",
+					],
 					nonPaymentIntro: "En cas de non-paiement :",
-					nonPayment: ["Suspension ou interruption du Service", "Maintien de l'obligation de paiement"],
+					nonPayment: [
+						"Suspension ou interruption du Service",
+						"Maintien de l'obligation de paiement",
+					],
 				},
 				{
 					number: "11",
@@ -1523,23 +1652,44 @@ export const translations = {
 						"Fournir des informations exactes",
 					],
 					responsibilityIntro: "Le Client demeure seul responsable :",
-					responsibilities: ["Des contenus transmis", "Des paramétrages effectués", "Des réponses générées via le Service"],
+					responsibilities: [
+						"Des contenus transmis",
+						"Des paramétrages effectués",
+						"Des réponses générées via le Service",
+					],
 				},
 				{
 					number: "13",
 					title: "Données personnelles",
-					roles: ["Le Client est responsable de traitement", "Lumiron agit en qualité de sous-traitant"],
+					roles: [
+						"Le Client est responsable de traitement",
+						"Lumiron agit en qualité de sous-traitant",
+					],
 					dataIntro: "Les données peuvent être traitées via :",
-					dataItems: ["Fournisseurs cloud", "Fournisseurs d'intelligence artificielle", "Opérateurs télécom", "Plateformes Meta"],
+					dataItems: [
+						"Fournisseurs cloud",
+						"Fournisseurs d'intelligence artificielle",
+						"Opérateurs télécom",
+						"Plateformes Meta",
+					],
 					p1: "Les données sont conservées pendant la durée du contrat et supprimées dans un délai raisonnable après résiliation.",
 				},
 				{
 					number: "14",
 					title: "Dépendance aux services tiers",
 					intro: "Le Service dépend de services tiers, notamment :",
-					items: ["Meta (WhatsApp, Instagram)", "Opérateurs télécom", "Fournisseurs d'IA", "Hébergeurs cloud"],
+					items: [
+						"Meta (WhatsApp, Instagram)",
+						"Opérateurs télécom",
+						"Fournisseurs d'IA",
+						"Hébergeurs cloud",
+					],
 					noGuaranteeIntro: "Lumiron ne peut garantir :",
-					noGuarantee: ["La disponibilité continue", "L'absence d'interruption", "La stabilité des services tiers"],
+					noGuarantee: [
+						"La disponibilité continue",
+						"L'absence d'interruption",
+						"La stabilité des services tiers",
+					],
 				},
 				{
 					number: "15",
@@ -1565,7 +1715,12 @@ export const translations = {
 					number: "17",
 					title: "Propriété intellectuelle",
 					intro: "Lumiron conserve la propriété :",
-					items: ["Du logiciel", "Des technologies", "Des modèles d'IA", "Des interfaces"],
+					items: [
+						"Du logiciel",
+						"Des technologies",
+						"Des modèles d'IA",
+						"Des interfaces",
+					],
 					p1: "Le Client conserve la propriété de ses données.",
 				},
 				{
@@ -1669,7 +1824,7 @@ export const translations = {
 			indexNavLinks: [
 				{ href: "/#solutions", label: "Our solutions" },
 				{ href: "/#fonctionnement", label: "How it works" },
-				{ href: "/ressources", label: "Resources" },
+				{ href: "/blog", label: "Blog" },
 			],
 			navLinks: [
 				{ href: "/phone#use-case", label: "Use cases" },
@@ -1678,7 +1833,7 @@ export const translations = {
 				{ href: "/phone#sponsorship", label: "Referral" },
 				{ href: "/phone#faq", label: "FAQ" },
 				{ href: "/phone#pricing", label: "Pricing" },
-				{ href: "/ressources", label: "Resources" },
+				{ href: "/blog", label: "Blog" },
 			],
 			messagesNavLinks: [
 				{ href: "/messages#use-case", label: "Use cases" },
@@ -1687,7 +1842,7 @@ export const translations = {
 				{ href: "/messages#sponsorship", label: "Referral" },
 				{ href: "/messages#faq", label: "FAQ" },
 				{ href: "/messages#pricing", label: "Pricing" },
-				{ href: "/ressources", label: "Resources" },
+				{ href: "/blog", label: "Blog" },
 			],
 			legalLinks: [
 				{ href: "/mentions-legales", label: "Legal notice" },
@@ -1742,34 +1897,34 @@ export const translations = {
 					title: "Reservation management",
 					tagGroups: [
 						{
-							at: 10,
+							at: 12,
 							tags: ["8 PM slot full", "8:30 PM alternative accepted"],
 						},
 						{
-							at: 23,
+							at: 20,
 							tags: [
 								"Customer identified by number",
 								"Preference \u201cquiet table\u201d confirmed",
 							],
 						},
-						{ at: 30, tags: ["Reservation recorded in CRM"] },
+						{ at: 28, tags: ["Reservation recorded in CRM"] },
 					],
 				},
 				{
 					title: "Frequently asked questions",
 					tagGroups: [
 						{
-							at: 7,
+							at: 9,
 							tags: ["Menu information provided", "Opening hours shared"],
 						},
 						{
-							at: 19,
+							at: 28,
 							tags: [
 								"Birthday request qualified (15 guests)",
 								"Group packages sent by SMS",
 							],
 						},
-						{ at: 28, tags: ["Events manager notified"] },
+						{ at: 33, tags: ["Events manager notified"] },
 					],
 				},
 			],
@@ -1940,7 +2095,7 @@ export const translations = {
 			title: "Share Ori, win together.",
 			subtitle:
 				"Recommend Ori to your peers and enjoy exclusive benefits on your subscription.",
-			seeCta: "See the terms",
+			seeCta: "Log in",
 			cards: [
 				{
 					tag: "FOR THE REFERRING RESTAURANT",
@@ -2372,9 +2527,9 @@ export const translations = {
 			ctaMessages: "Try Ori Messages",
 		},
 
-		// ── Ressources ────────────────────────────────────────────────────────────
-		ressources: {
-			title: "Resources",
+		// ── Blog ─────────────────────────────────────────────────────────────────
+		blog: {
+			title: "Blog",
 			seeAll: "View all",
 			empty: "No articles in this category yet.",
 			publishedOn: "Published on",
@@ -2388,7 +2543,8 @@ export const translations = {
 		phoneFaqPage: {
 			back: "Back",
 			title: "Everything about Ori Phone.",
-			subtitle: "All you need to know about the assistant built for restaurants.",
+			subtitle:
+				"All you need to know about the assistant built for restaurants.",
 			seeAll: "View all",
 			groups: [
 				{
@@ -2490,7 +2646,8 @@ export const translations = {
 					theme: "Multi-site, security & subscription",
 					items: [
 						{
-							question: "I have several restaurants. Can Ori manage all of them?",
+							question:
+								"I have several restaurants. Can Ori manage all of them?",
 							answer:
 								"Yes. Ori can be used across multiple locations. Each restaurant can have its own hours, its own instructions and its own workflow. You keep a clear overview, even across multiple sites.",
 						},
@@ -2521,7 +2678,8 @@ export const translations = {
 					theme: "Getting started",
 					items: [
 						{
-							question: "Do I need to change my Instagram or WhatsApp accounts?",
+							question:
+								"Do I need to change my Instagram or WhatsApp accounts?",
 							answer:
 								"No. Ori connects directly to your existing accounts (WhatsApp Business or Instagram). You keep your access, your history and your usual workflow. Nothing is recreated, nothing is lost.",
 						},
@@ -2561,7 +2719,8 @@ export const translations = {
 								"Yes, at any time. You can step in directly from Instagram or WhatsApp. Ori steps back as soon as you take over the conversation.",
 						},
 						{
-							question: "Can I choose when Ori replies and when I reply myself?",
+							question:
+								"Can I choose when Ori replies and when I reply myself?",
 							answer:
 								"Yes. You can set Ori to reply continuously, only outside opening hours, or only for certain types of messages. You keep full control.",
 						},
@@ -2670,10 +2829,15 @@ export const translations = {
 					title: "Hosting",
 					hostingIntro: "The website and services are hosted by:",
 					hostName: "Heroku (Salesforce Inc.)",
-					hostAddress: ["Salesforce Tower", "415 Mission Street, 3rd Floor", "San Francisco, CA 94105 – United States"],
+					hostAddress: [
+						"Salesforce Tower",
+						"415 Mission Street, 3rd Floor",
+						"San Francisco, CA 94105 – United States",
+					],
 					hostWebsiteLabel: "Website:",
 					hostPhone: "Phone: +1 (415) 901-7000",
-					hostNote: "Data may be hosted and processed outside the European Union. In this context, Lumiron implements appropriate safeguards in accordance with applicable regulations.",
+					hostNote:
+						"Data may be hosted and processed outside the European Union. In this context, Lumiron implements appropriate safeguards in accordance with applicable regulations.",
 				},
 				{
 					number: "3",
@@ -2707,7 +2871,8 @@ export const translations = {
 				{
 					number: "7",
 					title: "Cookies",
-					listIntro: "The website may use cookies or similar technologies in order to:",
+					listIntro:
+						"The website may use cookies or similar technologies in order to:",
 					listItems: [
 						"Ensure proper functioning of the website",
 						"Improve user experience",
@@ -2744,12 +2909,20 @@ export const translations = {
 				{ label: "Prospects", value: "3 years from last contact" },
 				{ label: "Cookies", value: "Up to 13 months" },
 			],
-			rights: ["Access", "Rectification", "Erasure", "Restriction", "Object", "Portability"],
+			rights: [
+				"Access",
+				"Rectification",
+				"Erasure",
+				"Restriction",
+				"Object",
+				"Portability",
+			],
 			sections: [
 				{
 					number: "1",
 					title: "Data Controller",
-					intro: "Personal data collected through the website https://ori.lumiron.ai and in connection with the use of Ori services is processed by:",
+					intro:
+						"Personal data collected through the website https://ori.lumiron.ai and in connection with the use of Ori services is processed by:",
 					companyName: "LUMIRON SAS",
 					companyDetails: [
 						"Simplified joint-stock company (SAS)",
@@ -2780,7 +2953,12 @@ export const translations = {
 					groups: [
 						{
 							label: "Client Data",
-							items: ["Name and surname", "Email address", "Account information", "Billing information"],
+							items: [
+								"Name and surname",
+								"Email address",
+								"Account information",
+								"Billing information",
+							],
 						},
 						{
 							label: "Usage Data",
@@ -2803,11 +2981,21 @@ export const translations = {
 					groups: [
 						{
 							label: "Performance of a Contract",
-							items: ["Access to the Service", "Configuration of AI agents", "Processing of calls and messages", "Customer support", "Billing"],
+							items: [
+								"Access to the Service",
+								"Configuration of AI agents",
+								"Processing of calls and messages",
+								"Customer support",
+								"Billing",
+							],
 						},
 						{
 							label: "Legitimate Interest",
-							items: ["Service improvement", "Performance analysis", "Security"],
+							items: [
+								"Service improvement",
+								"Performance analysis",
+								"Security",
+							],
 						},
 						{
 							label: "Consent",
@@ -2818,7 +3006,8 @@ export const translations = {
 				{
 					number: "5",
 					title: "Use of Data for Service Improvement",
-					intro: "Lumiron may use certain data, including in anonymized or aggregated form, in order to:",
+					intro:
+						"Lumiron may use certain data, including in anonymized or aggregated form, in order to:",
 					items: [
 						"Improve AI model performance",
 						"Enhance response quality",
@@ -2840,10 +3029,18 @@ export const translations = {
 				{
 					number: "7",
 					title: "Transfers Outside the European Union",
-					intro: "Some data may be transferred outside the European Union, particularly through:",
-					items: ["Cloud providers", "AI providers", "Technical service providers"],
+					intro:
+						"Some data may be transferred outside the European Union, particularly through:",
+					items: [
+						"Cloud providers",
+						"AI providers",
+						"Technical service providers",
+					],
 					basisIntro: "Such transfers are governed by:",
-					basisItems: ["Adequacy decisions, or", "Standard Contractual Clauses (SCCs) approved by the European Commission"],
+					basisItems: [
+						"Adequacy decisions, or",
+						"Standard Contractual Clauses (SCCs) approved by the European Commission",
+					],
 				},
 				{
 					number: "8",
@@ -2861,15 +3058,25 @@ export const translations = {
 				{
 					number: "10",
 					title: "Security",
-					intro: "Lumiron implements appropriate technical and organizational measures, including:",
-					items: ["Strict access control", "Encryption of communications", "Secure administration systems", "Regular backups"],
+					intro:
+						"Lumiron implements appropriate technical and organizational measures, including:",
+					items: [
+						"Strict access control",
+						"Encryption of communications",
+						"Secure administration systems",
+						"Regular backups",
+					],
 					note: "The Client remains responsible for securing its access credentials.",
 				},
 				{
 					number: "11",
 					title: "Cookies",
 					intro: "The website uses cookies and similar technologies to:",
-					items: ["Ensure proper technical functioning", "Measure audience and usage", "Improve user experience"],
+					items: [
+						"Ensure proper technical functioning",
+						"Measure audience and usage",
+						"Improve user experience",
+					],
 					note: "Non-essential cookies are only placed with the user's consent. Users may accept, refuse, or modify their preferences at any time via the cookie banner or a dedicated cookie management tool.",
 				},
 			],
@@ -2886,7 +3093,8 @@ export const translations = {
 				{
 					number: "1",
 					title: "Company Identification",
-					intro: "These Terms and Conditions of Sale (the \"Terms\") govern the services provided under the brand Ori, operated by:",
+					intro:
+						'These Terms and Conditions of Sale (the "Terms") govern the services provided under the brand Ori, operated by:',
 					companyName: "LUMIRON SAS",
 					companyDetails: [
 						"Simplified joint-stock company (SAS) with share capital of €1,000",
@@ -2895,22 +3103,47 @@ export const translations = {
 						"VAT number: FR86 988 278 446",
 					],
 					emailLabel: "Email:",
-					proNote: "The Services are exclusively intended for professionals acting within the scope of their business activity.",
+					proNote:
+						"The Services are exclusively intended for professionals acting within the scope of their business activity.",
 				},
 				{
 					number: "2",
 					title: "Definitions",
 					items: [
-						{ term: "Ori", def: "SaaS solution providing automated conversational assistants" },
+						{
+							term: "Ori",
+							def: "SaaS solution providing automated conversational assistants",
+						},
 						{ term: "Ori Phone", def: "Module handling inbound phone calls" },
-						{ term: "Ori Messages", def: "Module handling WhatsApp Business and/or Instagram messages" },
-						{ term: "Duo Pack", def: "Combined offer including both modules" },
-						{ term: "Advanced Offer", def: "Customized solution subject to a specific quotation" },
-						{ term: "Client", def: "Any legal entity or sole trader subscribing to the Services" },
-						{ term: "User", def: "Any individual authorized by the Client to use the Service" },
-						{ term: "Conversation", def: "Continuous exchange of messages with a single end user within a 24-hour period" },
-						{ term: "Minute", def: "Connected inbound call minute; any started minute may be billed in full" },
-						{ term: "Third-party platforms", def: "Including Meta (WhatsApp, Instagram), telecom operators, cloud providers, and AI providers" },
+						{
+							term: "Ori Messages",
+							def: "Module handling WhatsApp Business and/or Instagram messages",
+						},
+						{ term: "Duo", def: "Combined offer including both modules" },
+						{
+							term: "Advanced Offer",
+							def: "Customized solution subject to a specific quotation",
+						},
+						{
+							term: "Client",
+							def: "Any legal entity or sole trader subscribing to the Services",
+						},
+						{
+							term: "User",
+							def: "Any individual authorized by the Client to use the Service",
+						},
+						{
+							term: "Conversation",
+							def: "Continuous exchange of messages with a single end user within a 24-hour period",
+						},
+						{
+							term: "Minute",
+							def: "Connected inbound call minute; any started minute may be billed in full",
+						},
+						{
+							term: "Third-party platforms",
+							def: "Including Meta (WhatsApp, Instagram), telecom operators, cloud providers, and AI providers",
+						},
 					],
 				},
 				{
@@ -2967,8 +3200,8 @@ export const translations = {
 						},
 						{
 							number: "3",
-							title: "Duo Pack",
-							p1: "The Duo Pack combines Ori Phone and Ori Messages. All conditions applicable to each module apply cumulatively.",
+							title: "Duo",
+							p1: "The Duo combines Ori Phone and Ori Messages. All conditions applicable to each module apply cumulatively.",
 						},
 						{
 							number: "4",
@@ -3006,7 +3239,10 @@ export const translations = {
 					number: "6",
 					title: "Subscription",
 					conditionsIntro: "The subscription becomes effective after:",
-					conditions: ["Acceptance of these Terms", "Validation of the payment method"],
+					conditions: [
+						"Acceptance of these Terms",
+						"Validation of the payment method",
+					],
 					p1: "The Client guarantees the accuracy of the information provided.",
 				},
 				{
@@ -3033,12 +3269,22 @@ export const translations = {
 						{
 							number: "1",
 							title: "Monthly Plans",
-							items: ["Indefinite duration", "Automatic monthly renewal", "May be canceled at any time", "Any started period is due"],
+							items: [
+								"Indefinite duration",
+								"Automatic monthly renewal",
+								"May be canceled at any time",
+								"Any started period is due",
+							],
 						},
 						{
 							number: "2",
 							title: "Annual Plans",
-							items: ["12-month binding commitment", "Full payment at subscription", "Non-cancellable before term", "Non-refundable"],
+							items: [
+								"12-month binding commitment",
+								"Full payment at subscription",
+								"Non-cancellable before term",
+								"Non-refundable",
+							],
 						},
 						{
 							number: "3",
@@ -3061,7 +3307,7 @@ export const translations = {
 							number: "1",
 							title: "Ori Phone",
 							card: {
-								title: "Ori Phone",
+								title: "",
 								price: "€89 excl. VAT / month",
 								includes: [
 									"Up to 350 inbound call minutes per month",
@@ -3069,7 +3315,8 @@ export const translations = {
 									"Access to dashboard",
 									"Analytics",
 								],
-								overage: "€0.20 excl. VAT per additional minute — any started minute is billable",
+								overage:
+									"€0.20 excl. VAT per additional minute — any started minute is billable",
 							},
 						},
 						{
@@ -3079,19 +3326,33 @@ export const translations = {
 								{
 									title: "Instagram Assistant",
 									price: "€39 excl. VAT / month",
-									includes: ["Up to 500 conversations per month", "Automated responses", "Request handling", "Dashboard access"],
+									includes: [
+										"Up to 500 conversations per month",
+										"Automated responses",
+										"Request handling",
+										"Dashboard access",
+									],
 									overage: "€0.10 excl. VAT per additional conversation",
 								},
 								{
 									title: "WhatsApp Assistant",
 									price: "€59 excl. VAT / month",
-									includes: ["Up to 500 conversations per month", "Automated responses", "Request handling", "Dashboard"],
+									includes: [
+										"Up to 500 conversations per month",
+										"Automated responses",
+										"Request handling",
+										"Dashboard",
+									],
 									overage: "€0.10 excl. VAT per additional conversation",
 								},
 								{
 									title: "Duo Messages Pack",
 									price: "€79 excl. VAT / month",
-									includes: ["WhatsApp + Instagram", "500 shared conversations", "Centralized management"],
+									includes: [
+										"WhatsApp + Instagram",
+										"500 shared conversations",
+										"Centralized management",
+									],
 									overage: "€0.10 excl. VAT per additional conversation",
 								},
 							],
@@ -3112,9 +3373,16 @@ export const translations = {
 					number: "10",
 					title: "Payment",
 					p1: "Payments are processed via Stripe or equivalent provider.",
-					items: ["Monthly automatic billing", "Annual upfront payment", "Overages billed at the end of each billing cycle"],
+					items: [
+						"Monthly automatic billing",
+						"Annual upfront payment",
+						"Overages billed at the end of each billing cycle",
+					],
 					nonPaymentIntro: "In case of non-payment:",
-					nonPayment: ["Service may be suspended or terminated", "Payment obligations remain"],
+					nonPayment: [
+						"Service may be suspended or terminated",
+						"Payment obligations remain",
+					],
 				},
 				{
 					number: "11",
@@ -3145,23 +3413,44 @@ export const translations = {
 						"Provide accurate and up-to-date information",
 					],
 					responsibilityIntro: "The Client remains solely responsible for:",
-					responsibilities: ["All content transmitted", "Configuration settings", "Outputs generated based on its data"],
+					responsibilities: [
+						"All content transmitted",
+						"Configuration settings",
+						"Outputs generated based on its data",
+					],
 				},
 				{
 					number: "13",
 					title: "Personal Data",
-					roles: ["The Client acts as data controller", "Lumiron acts as data processor"],
+					roles: [
+						"The Client acts as data controller",
+						"Lumiron acts as data processor",
+					],
 					dataIntro: "Data may be processed through:",
-					dataItems: ["Cloud infrastructure providers", "AI service providers", "Telecom operators", "Meta platforms"],
+					dataItems: [
+						"Cloud infrastructure providers",
+						"AI service providers",
+						"Telecom operators",
+						"Meta platforms",
+					],
 					p1: "Data is retained for the duration of the contract and deleted within a reasonable time after termination.",
 				},
 				{
 					number: "14",
 					title: "Third-Party Dependencies",
 					intro: "The Service relies on third-party services, including:",
-					items: ["Meta (WhatsApp, Instagram)", "Telecom operators", "AI providers", "Cloud infrastructure"],
+					items: [
+						"Meta (WhatsApp, Instagram)",
+						"Telecom operators",
+						"AI providers",
+						"Cloud infrastructure",
+					],
 					noGuaranteeIntro: "Lumiron does not guarantee:",
-					noGuarantee: ["Uninterrupted availability", "Absence of service disruptions", "Stability of third-party systems"],
+					noGuarantee: [
+						"Uninterrupted availability",
+						"Absence of service disruptions",
+						"Stability of third-party systems",
+					],
 				},
 				{
 					number: "15",
